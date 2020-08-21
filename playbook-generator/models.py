@@ -126,7 +126,7 @@ class AtomicTest:
             markdown.append("Elevation Required (e.g. root or admin)")
         if self.executor == "manual":
             markdown.append("Run it with these steps!")
-            markdown.append("\n".join(self.steps))
+            markdown.append(self.steps)
             cells.append(JupyterCells.quick_initialize_markdown(value=markdown))
         else:
             if self.dependencies:

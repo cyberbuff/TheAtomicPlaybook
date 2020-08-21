@@ -8,8 +8,6 @@ from functools import reduce
 from models import AttackTactic, AttackTechnique, _atomics_folder_path, _home_path, JupyterCells
 import os
 
-
-
 class PlaybookGenerator:
     def __init__(self):
         self.attack_client = attack_client()
@@ -29,12 +27,11 @@ class PlaybookGenerator:
         markdown.append("| -------- | --------- | --------- |")
         for i in stix_tactics:
             tactic = AttackTactic(i,self.get_techniques_by_tactic(i["x_mitre_shortname"]))
-            self.generate_notebook(file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics/{tactic.short_name}/{tactic.short_name}', cells=tactic.__repr__())
+            self.generate_notebook(file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics/{tactic.short_name}', cells=tactic.__repr__())
             desc = tactic.description.split("\n")[0]
             markdown.append(f'| {tactic.id} | {tactic.name} | {desc}|')
-            print(desc)
         cells = [JupyterCells.quick_initialize_markdown(markdown).__repr__()]
-        self.generate_notebook(file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics/tactics', cells=cells)
+        self.generate_notebook(file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics', cells=cells)
         
 
     def get_techniques_by_tactic(self, tactic):
