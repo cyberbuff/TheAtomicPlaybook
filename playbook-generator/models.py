@@ -111,9 +111,10 @@ class AtomicTest:
             input_args = atomic_test["input_arguments"]
             self.command = self.replace_command_with_input_args(self.command, input_args)
             self.cleanup_command = self.replace_command_with_input_args(self.cleanup_command, input_args)
-            for i in self.dependencies:
-                i.get_pre_req_command = self.replace_command_with_input_args(i.get_pre_req_command, input_args)
-                i.check_pre_req_command = self.replace_command_with_input_args(i.check_pre_req_command, input_args)
+            if(get_value_or_404(atomic_test, "dependencies")):
+                for i in self.dependencies:
+                    i.get_pre_req_command = self.replace_command_with_input_args(i.get_pre_req_command, input_args)
+                    i.check_pre_req_command = self.replace_command_with_input_args(i.check_pre_req_command, input_args)
         
     def __repr__(self):
         """ Converts AtomicTest to [JupyterCell] object"""
@@ -148,7 +149,7 @@ class AtomicTest:
         """ Replace the input arguments in the commands."""
         if command:
             for k,v in input_arguments.items():
-                command = command.replace(f'#{{{k}}}',v["default"])
+                command = command.replace(f'#{{{k}}}',str(v["default"]))
             return command
         else:
             return None
@@ -156,7 +157,7 @@ class AtomicTest:
 def get_value_or_404(json:dict, key:str):
     """ If a key is present in a dict, it returns the value of key else None."""
     try:
-        return json["key"]
+        return json[key]
     except:
         # print(f'{key} not found')
         return None
