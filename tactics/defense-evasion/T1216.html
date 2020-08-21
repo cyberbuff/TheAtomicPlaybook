@@ -979,7 +979,7 @@ Upon execution, calc.exe will be launched.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\windows\system32\SyncAppvPublishingServer.vbs &quot;\n;#{command_to_execute}&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\windows\system32\SyncAppvPublishingServer.vbs &quot;\n;Start-Process calc&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -997,7 +997,7 @@ Upon execution, calc.exe will be launched.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>set comspec=#{command_to_execute}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>set comspec=%windir%\System32\calc.exe
 cscript %windir%\System32\manage-bde.wsf
 </pre></div>
 </div>

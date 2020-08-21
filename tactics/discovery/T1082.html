@@ -605,12 +605,12 @@ ls -al /Applications
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>uname -a &gt;&gt; <span class="c1">#{output_file}</span>
-<span class="k">if</span> <span class="o">[</span> -f /etc/lsb-release <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/lsb-release &gt;&gt; <span class="c1">#{output_file}; fi;</span>
-<span class="k">if</span> <span class="o">[</span> -f /etc/redhat-release <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/redhat-release &gt;&gt; <span class="c1">#{output_file}; fi;      </span>
-<span class="k">if</span> <span class="o">[</span> -f /etc/issue <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/issue &gt;&gt; <span class="c1">#{output_file}; fi;</span>
-uptime &gt;&gt; <span class="c1">#{output_file}</span>
-cat <span class="c1">#{output_file} 2&gt;/dev/null</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>uname -a &gt;&gt; /tmp/T1082.txt
+<span class="k">if</span> <span class="o">[</span> -f /etc/lsb-release <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/lsb-release &gt;&gt; /tmp/T1082.txt<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/redhat-release <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/redhat-release &gt;&gt; /tmp/T1082.txt<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>      
+<span class="k">if</span> <span class="o">[</span> -f /etc/issue <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/issue &gt;&gt; /tmp/T1082.txt<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+uptime &gt;&gt; /tmp/T1082.txt
+cat /tmp/T1082.txt <span class="m">2</span>&gt;/dev/null
 </pre></div>
 </div>
 <div class="cell docutils container">

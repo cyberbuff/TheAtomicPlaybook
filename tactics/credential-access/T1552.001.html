@@ -551,7 +551,8 @@
 <div class="section" id="atomic-test-1-extract-browser-and-system-credentials-with-lazagne">
 <h3>Atomic Test #1 - Extract Browser and System credentials with LaZagne<a class="headerlink" href="#atomic-test-1-extract-browser-and-system-credentials-with-lazagne" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/AlessandroZ/LaZagne">LaZagne Source</a></p>
-<p><strong>Supported Platforms:</strong> macos</p>
+<p><strong>Supported Platforms:</strong> macos
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python2 laZagne.py all
@@ -572,7 +573,7 @@
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep -ri password <span class="c1">#{file_path}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep -ri password /
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -607,7 +608,8 @@
 <h3>Atomic Test #4 - Access unattend.xml<a class="headerlink" href="#atomic-test-4-access-unattend-xml" title="Permalink to this headline">¶</a></h3>
 <p>Attempts to access unattend.xml, where credentials are commonly stored, within the Panther directory where installation logs are stored.
 If these files exist, their contents will be displayed. They are used to store credentials/answers during the unattended windows install process.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>type C:\Windows\Panther\unattend.xml

@@ -664,6 +664,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-bash">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bash
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-shared-library-must-exist-on-disk-at-specified-location-path-malicious-plist">
+         Description: The shared library must exist on disk at specified location (#{path_malicious_plist})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-bash">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -671,6 +699,11 @@
          bash
         </span>
        </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cleanup">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -709,17 +742,55 @@
 <div class="section" id="atomic-test-1-launch-agent">
 <h3>Atomic Test #1 - Launch Agent<a class="headerlink" href="#atomic-test-1-launch-agent" title="Permalink to this headline">¶</a></h3>
 <p>Create a plist and execute it</p>
-<p><strong>Supported Platforms:</strong> macos</p>
+<p><strong>Supported Platforms:</strong> macos
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-bash">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code>!<a class="headerlink" href="#dependencies-run-with-bash" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-the-shared-library-must-exist-on-disk-at-specified-location-path-malicious-plist">
+<h5>Description: The shared library must exist on disk at specified location (#{path_malicious_plist})<a class="headerlink" href="#description-the-shared-library-must-exist-on-disk-at-specified-location-path-malicious-plist" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -f <span class="nv">$PathToAtomicsFolder</span>/T1543.001/src/atomicredteam_T1543_001.plist <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;The shared library doesn&#39;t exist. Check the path&quot;</span><span class="p">;</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1543</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d ~/Library/LaunchAgents <span class="o">]</span><span class="p">;</span> <span class="k">then</span> mkdir ~/Library/LaunchAgents<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
-sudo cp <span class="c1">#{path_malicious_plist} ~/Library/LaunchAgents/#{plist_filename}</span>
-sudo launchctl load -w ~/Library/LaunchAgents/#<span class="o">{</span>plist_filename<span class="o">}</span>
+sudo cp <span class="nv">$PathToAtomicsFolder</span>/T1543.001/src/atomicredteam_T1543_001.plist ~/Library/LaunchAgents/com.atomicredteam.plist
+sudo launchctl load -w ~/Library/LaunchAgents/com.atomicredteam.plist
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1543</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cleanup">
+<h4>Cleanup:<a class="headerlink" href="#cleanup" title="Permalink to this headline">¶</a></h4>
+<p>sudo launchctl unload ~/Library/LaunchAgents/com.atomicredteam.plist
+sudo rm ~/Library/LaunchAgents/com.atomicredteam.plist</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1543</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">Cleanup</span>
 </pre></div>
 </div>
 </div>

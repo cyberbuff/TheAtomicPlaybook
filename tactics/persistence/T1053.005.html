@@ -802,7 +802,8 @@
 <h3>Atomic Test #1 - Scheduled Task Startup Script<a class="headerlink" href="#atomic-test-1-scheduled-task-startup-script" title="Permalink to this headline">¶</a></h3>
 <p>Run an exe on user logon or system startup.  Upon execution, success messages will be displayed for the two scheduled tasks. To view
 the tasks, open the Task Scheduler and look in the Active Tasks pane.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>schtasks /create /tn &quot;T1053_005_OnLogon&quot; /sc onlogon /tr &quot;cmd.exe /c calc.exe&quot;
@@ -824,7 +825,7 @@ schtasks /create /tn &quot;T1053_005_OnStartup&quot; /sc onstart /ru system /tr 
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>SCHTASKS /Create /SC ONCE /TN spawn /TR #{task_command} /ST #{time}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>SCHTASKS /Create /SC ONCE /TN spawn /TR C:\windows\system32\cmd.exe /ST 1210
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -840,10 +841,11 @@ schtasks /create /tn &quot;T1053_005_OnStartup&quot; /sc onstart /ru system /tr 
 <h3>Atomic Test #3 - Scheduled task Remote<a class="headerlink" href="#atomic-test-3-scheduled-task-remote" title="Permalink to this headline">¶</a></h3>
 <p>Create a task on a remote system.</p>
 <p>Upon successful execution, cmd.exe will create a scheduled task to spawn cmd.exe at 20:10 on a remote endpoint.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>SCHTASKS /Create /S #{target} /RU #{user_name} /RP #{password} /TN &quot;Atomic task&quot; /TR &quot;#{task_command}&quot; /SC daily /ST #{time}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>SCHTASKS /Create /S localhost /RU DOMAIN\user /RP At0micStrong /TN &quot;Atomic task&quot; /TR &quot;C:\windows\system32\cmd.exe&quot; /SC daily /ST 1210
 </pre></div>
 </div>
 <div class="cell docutils container">

@@ -484,6 +484,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-sh">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-check-if-arp-command-exists-on-the-machine">
+         Description: Check if arp command exists on the machine
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-sh">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -535,7 +563,65 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-have-python-3-installed">
+         Description: Computer must have python 3 installed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-have-pip-installed">
+         Description: Computer must have pip installed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id8">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id9">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-adidnsdump-must-be-installed-and-part-of-path">
+         Description: adidnsdump must be installed and part of PATH
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id10">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id11">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -624,7 +710,7 @@ net view
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>nltest.exe /dclist:#{target_domain}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>nltest.exe /dclist:domain.local
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -679,6 +765,31 @@ net view
 <p>Identify remote systems via arp.</p>
 <p>Upon successful execution, sh will execute arp to list out the arp cache. Output will be via stdout.</p>
 <p><strong>Supported Platforms:</strong> linux, macos</p>
+<div class="section" id="dependencies-run-with-sh">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code>!<a class="headerlink" href="#dependencies-run-with-sh" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-check-if-arp-command-exists-on-the-machine">
+<h5>Description: Check if arp command exists on the machine<a class="headerlink" href="#description-check-if-arp-command-exists-on-the-machine" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v arp<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Install arp on the machine.&quot;</span><span class="p">;</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1018</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">6</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>arp -a <span class="p">|</span> grep -v <span class="s1">&#39;^?&#39;</span>
@@ -700,7 +811,7 @@ net view
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id5">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> ip in <span class="k">$(</span>seq <span class="c1">#{start_host} #{stop_host}); do ping -c 1 #{subnet}.$ip; [ $? -eq 0 ] &amp;&amp; echo &quot;#{subnet}.$ip UP&quot; || : ; done</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> ip in <span class="k">$(</span>seq <span class="m">1</span> <span class="m">254</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> ping -c <span class="m">1</span> <span class="m">192</span>.168.1.<span class="nv">$ip</span><span class="p">;</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;192.168.1.</span><span class="nv">$ip</span><span class="s2"> UP&quot;</span> <span class="o">||</span> : <span class="p">;</span> <span class="k">done</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -716,7 +827,8 @@ net view
 <h3>Atomic Test #8 - Remote System Discovery - nslookup<a class="headerlink" href="#atomic-test-8-remote-system-discovery-nslookup" title="Permalink to this headline">¶</a></h3>
 <p>Powershell script that runs nslookup on cmd.exe against the local /24 network of the first network adaptor listed in ipconfig.</p>
 <p>Upon successful execution, powershell will identify the ip range (via ipconfig) and perform a for loop and execute nslookup against that IP range. Output will be via stdout.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$localip</span> <span class="p">=</span> <span class="p">((</span><span class="n">ipconfig</span> <span class="p">|</span> <span class="n">findstr</span> <span class="p">[</span><span class="n">0</span><span class="p">-</span><span class="n">9</span><span class="p">].\.)[</span><span class="n">0</span><span class="p">]).</span><span class="n">Split</span><span class="p">()[-</span><span class="n">1</span><span class="p">]</span>
@@ -741,10 +853,66 @@ net view
 <p>This tool enables enumeration and exporting of all DNS records in the zone for recon purposes of internal networks
 Python 3 and adidnsdump must be installed, use the get_prereq_command’s to meet the prerequisites for this test.
 Successful execution of this test will list dns zones in the terminal.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-computer-must-have-python-3-installed">
+<h5>Description: Computer must have python 3 installed<a class="headerlink" href="#description-computer-must-have-python-3-installed" title="Permalink to this headline">¶</a></h5>
+</div>
 <div class="section" id="id6">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>adidnsdump -u #{user_name} -p #{acct_pass} --print-zones #{host_name}
+<h5>Check Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">python</span> <span class="p">-</span><span class="n">-version</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo </span><span class="s2">&quot;Python 3 must be installed manually&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-computer-must-have-pip-installed">
+<h5>Description: Computer must have pip installed<a class="headerlink" href="#description-computer-must-have-pip-installed" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id8">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">pip3</span> <span class="n">-V</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo </span><span class="s2">&quot;PIP must be installed manually&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-adidnsdump-must-be-installed-and-part-of-path">
+<h5>Description: adidnsdump must be installed and part of PATH<a class="headerlink" href="#description-adidnsdump-must-be-installed-and-part-of-path" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id10">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">cmd</span> <span class="p">/</span><span class="n">c</span> <span class="n">adidnsdump</span> <span class="n">-h</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">adidnsdump</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1018</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">9</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>adidnsdump -u domain\user -p password --print-zones 192.168.1.1
 </pre></div>
 </div>
 <div class="cell docutils container">

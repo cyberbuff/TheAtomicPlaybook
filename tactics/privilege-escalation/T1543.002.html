@@ -719,23 +719,23 @@
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;[Unit]&quot;</span> &gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;Description=Atomic Red Team Systemd Service&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;[Service]&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;[Unit]&quot;</span> &gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;Description=Atomic Red Team Systemd Service&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;[Service]&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
 <span class="nb">echo</span> <span class="s2">&quot;Type=simple&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;ExecStart=#{execstart_action}&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;ExecStartPre=#{execstartpre_action}&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;ExecStartPost=#{execstartpost_action}&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;ExecReload=#{execreload_action}&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;ExecStop=#{execstop_action}&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;ExecStopPost=#{execstoppost_action}&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;[Install]&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
-<span class="nb">echo</span> <span class="s2">&quot;WantedBy=default.target&quot;</span> &gt;&gt; <span class="c1">#{systemd_service_path}/#{systemd_service_file}</span>
+<span class="nb">echo</span> <span class="s2">&quot;ExecStart=/bin/touch /tmp/art-systemd-execstart-marker&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;ExecStartPre=/bin/touch /tmp/art-systemd-execstartpre-marker&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;ExecStartPost=/bin/touch /tmp/art-systemd-execstartpost-marker&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;ExecReload=/bin/touch /tmp/art-systemd-execreload-marker&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;ExecStop=/bin/touch /tmp/art-systemd-execstop-marker&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;ExecStopPost=/bin/touch /tmp/art-systemd-execstoppost-marker&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;[Install]&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
+<span class="nb">echo</span> <span class="s2">&quot;WantedBy=default.target&quot;</span> &gt;&gt; /etc/systemd/system/art-systemd-service.service
 systemctl daemon-reload
-systemctl <span class="nb">enable</span> <span class="c1">#{systemd_service_file}</span>
-systemctl start <span class="c1">#{systemd_service_file}</span>
+systemctl <span class="nb">enable</span> art-systemd-service.service
+systemctl start art-systemd-service.service
 </pre></div>
 </div>
 <div class="cell docutils container">

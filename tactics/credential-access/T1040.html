@@ -454,6 +454,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-bash">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bash
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-check-if-at-least-one-of-the-tools-are-installed-on-the-machine">
+         Description: Check if at least one of the tools are installed on the machine.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-bash">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -472,6 +500,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bash
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Description: Check if at least one of the tools are installed on the machine.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -487,6 +543,34 @@
      Atomic Test #3 - Packet Capture Windows Command Prompt
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-tshark-must-be-installed-and-in-the-default-path-of-c-program-files-wireshark-tshark-exe">
+         Description: tshark must be installed and in the default path of “c:\Program Files\Wireshark\Tshark.exe”.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
@@ -505,7 +589,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
+      <a class="reference internal nav-link" href="#id8">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -552,11 +636,37 @@
 <h3>Atomic Test #1 - Packet Capture Linux<a class="headerlink" href="#atomic-test-1-packet-capture-linux" title="Permalink to this headline">¶</a></h3>
 <p>Perform a PCAP. Wireshark will be required for tshark. TCPdump may already be installed.</p>
 <p>Upon successful execution, tshark or tcpdump will execute and capture 5 packets on interface ens33.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-bash">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code>!<a class="headerlink" href="#dependencies-run-with-bash" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-check-if-at-least-one-of-the-tools-are-installed-on-the-machine">
+<h5>Description: Check if at least one of the tools are installed on the machine.<a class="headerlink" href="#description-check-if-at-least-one-of-the-tools-are-installed-on-the-machine" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v tcpdump<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> ! -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v tshark<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Install tcpdump and/or tshark for the test to run.&quot;</span><span class="p">;</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1040</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tcpdump -c <span class="m">5</span> -nnni <span class="c1">#{interface}</span>
-tshark -c <span class="m">5</span> -i <span class="c1">#{interface}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tcpdump -c <span class="m">5</span> -nnni ens33
+tshark -c <span class="m">5</span> -i ens33
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -572,11 +682,37 @@ tshark -c <span class="m">5</span> -i <span class="c1">#{interface}</span>
 <h3>Atomic Test #2 - Packet Capture macOS<a class="headerlink" href="#atomic-test-2-packet-capture-macos" title="Permalink to this headline">¶</a></h3>
 <p>Perform a PCAP on macOS. This will require Wireshark/tshark to be installed. TCPdump may already be installed.</p>
 <p>Upon successful execution, tshark or tcpdump will execute and capture 5 packets on interface en0A.</p>
-<p><strong>Supported Platforms:</strong> macos</p>
+<p><strong>Supported Platforms:</strong> macos
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo tcpdump -c <span class="m">5</span> -nnni <span class="c1">#{interface}    </span>
-<span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v tshark<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> sudo tshark -c <span class="m">5</span> -i <span class="c1">#{interface}; fi;</span>
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h5>Description: Check if at least one of the tools are installed on the machine.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v tcpdump<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> ! -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v tshark<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Install tcpdump and/or tshark for the test to run.&quot;</span><span class="p">;</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1040</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo tcpdump -c <span class="m">5</span> -nnni en0A    
+<span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v tshark<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> sudo tshark -c <span class="m">5</span> -i en0A<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -593,10 +729,38 @@ tshark -c <span class="m">5</span> -i <span class="c1">#{interface}</span>
 <p>Perform a packet capture using the windows command prompt. This will require a host that has Wireshark/Tshark
 installed.</p>
 <p>Upon successful execution, tshark will execute and capture 5 packets on interface “Ethernet”.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-tshark-must-be-installed-and-in-the-default-path-of-c-program-files-wireshark-tshark-exe">
+<h5>Description: tshark must be installed and in the default path of “c:\Program Files\Wireshark\Tshark.exe”.<a class="headerlink" href="#description-tshark-must-be-installed-and-in-the-default-path-of-c-program-files-wireshark-tshark-exe" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id6">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">test-path</span> <span class="s2">&quot;c:\program files\wireshark\tshark.exe&quot;</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest -OutFile $env:temp\wireshark_installer.exe https://2.na.dl.wireshark.org/win64/Wireshark-win64-3.2.6.exe
+Start-Process $env:temp\wireshark_installer.exe /S
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1040</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>&quot;c:\Program Files\Wireshark\tshark.exe&quot; -i #{interface} -c 5
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>&quot;c:\Program Files\Wireshark\tshark.exe&quot; -i Ethernet -c 5
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -612,9 +776,10 @@ installed.</p>
 <h3>Atomic Test #4 - Windows Internal Packet Capture<a class="headerlink" href="#atomic-test-4-windows-internal-packet-capture" title="Permalink to this headline">¶</a></h3>
 <p>Uses the built-in Windows packet capture
 After execution you should find a file named trace.etl and trace.cab in the temp directory
-<strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>netsh trace start capture=yes tracefile=%temp%\trace.etl maxsize=10```
 </pre></div>
 </div>

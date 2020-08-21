@@ -416,6 +416,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-none">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-system-must-be-centos-or-rhel-v7">
+         Description: System must be CentOS or RHEL v7
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -434,6 +462,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-system-must-be-centos-or-rhel-v6">
+         Description: System must be CentOS or RHEL v6
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -450,7 +506,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#id6">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -484,7 +540,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id7">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -501,7 +557,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id8">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -565,6 +621,33 @@
 <h3>Atomic Test #2 - Examine password complexity policy - CentOS/RHEL 7.x<a class="headerlink" href="#atomic-test-2-examine-password-complexity-policy-centos-rhel-7-x" title="Permalink to this headline">¶</a></h3>
 <p>Lists the password complexity policy to console on CentOS/RHEL 7.x Linux.</p>
 <p><strong>Supported Platforms:</strong> linux</p>
+<div class="section" id="dependencies-run-with-none">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-system-must-be-centos-or-rhel-v7">
+<h5>Description: System must be CentOS or RHEL v7<a class="headerlink" href="#description-system-must-be-centos-or-rhel-v7" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>if [ $(rpm -q --queryformat &#39;%{VERSION}&#39;) -eq &quot;7&quot; ]; then exit /b 0; else exit /b 1; fi;
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>echo Please run from CentOS or RHEL v7
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1201</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /etc/security/pwquality.conf
@@ -584,7 +667,34 @@
 <p>Lists the password complexity policy to console on CentOS/RHEL 6.x Linux.</p>
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-system-must-be-centos-or-rhel-v6">
+<h5>Description: System must be CentOS or RHEL v6<a class="headerlink" href="#description-system-must-be-centos-or-rhel-v6" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>if [ $(rpm -q --queryformat &#39;%{VERSION}&#39;) -eq &quot;6&quot; ]; then exit /b 0; else exit /b 1; fi;
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>echo Please run from CentOS or RHEL v6
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1201</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /etc/pam.d/system-auth
 cat /etc/security/pwquality.conf
 </pre></div>
@@ -602,8 +712,8 @@ cat /etc/security/pwquality.conf
 <h3>Atomic Test #4 - Examine password expiration policy - All Linux<a class="headerlink" href="#atomic-test-4-examine-password-expiration-policy-all-linux" title="Permalink to this headline">¶</a></h3>
 <p>Lists the password expiration policy to console on CentOS/RHEL/Ubuntu.</p>
 <p><strong>Supported Platforms:</strong> linux</p>
-<div class="section" id="id3">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /etc/login.defs
 </pre></div>
 </div>
@@ -638,8 +748,8 @@ cat /etc/security/pwquality.conf
 <h3>Atomic Test #6 - Examine domain password policy - Windows<a class="headerlink" href="#atomic-test-6-examine-domain-password-policy-windows" title="Permalink to this headline">¶</a></h3>
 <p>Lists the domain password policy to console on Windows.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id4">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net accounts /domain
 </pre></div>
 </div>
@@ -656,8 +766,8 @@ cat /etc/security/pwquality.conf
 <h3>Atomic Test #7 - Examine password policy - macOS<a class="headerlink" href="#atomic-test-7-examine-password-policy-macos" title="Permalink to this headline">¶</a></h3>
 <p>Lists the password policy to console on macOS.</p>
 <p><strong>Supported Platforms:</strong> macos</p>
-<div class="section" id="id5">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pwpolicy getaccountpolicies<span class="sb">```</span>
 </pre></div>
 </div>

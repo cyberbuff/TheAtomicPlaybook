@@ -664,6 +664,67 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-sh">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-at-and-atd-executables-must-exist-in-the-path">
+         Description: The
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           at
+          </span>
+         </code>
+         and
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           atd
+          </span>
+         </code>
+         executables must exist in the PATH
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-atd-daemon-must-be-running">
+         Description: The
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           atd
+          </span>
+         </code>
+         daemon must be running
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-sh">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -710,9 +771,49 @@
 <h3>Atomic Test #1 - At - Schedule a job<a class="headerlink" href="#atomic-test-1-at-schedule-a-job" title="Permalink to this headline">¶</a></h3>
 <p>This test submits a command to be run in the future by the <code class="docutils literal notranslate"><span class="pre">at</span></code> daemon.</p>
 <p><strong>Supported Platforms:</strong> linux</p>
+<div class="section" id="dependencies-run-with-sh">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code>!<a class="headerlink" href="#dependencies-run-with-sh" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-the-at-and-atd-executables-must-exist-in-the-path">
+<h5>Description: The <code class="docutils literal notranslate"><span class="pre">at</span></code> and <code class="docutils literal notranslate"><span class="pre">atd</span></code> executables must exist in the PATH<a class="headerlink" href="#description-the-at-and-atd-executables-must-exist-in-the-path" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>which at <span class="o">&amp;&amp;</span> which atd
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;Please install `at` and `atd`; they were not found in the PATH (Package name: `at`)&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-the-atd-daemon-must-be-running">
+<h5>Description: The <code class="docutils literal notranslate"><span class="pre">atd</span></code> daemon must be running<a class="headerlink" href="#description-the-atd-daemon-must-be-running" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id1">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>systemctl status atd <span class="o">||</span> service atd status
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;Please start the `atd` daemon (sysv: `service atd start` ; systemd: `systemctl start atd`)&#39;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1053</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;#{at_command}&quot;</span> <span class="p">|</span> at <span class="c1">#{time_spec}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;echo Hello from Atomic Red Team&quot;</span> <span class="p">|</span> at now + <span class="m">1</span> minute
 </pre></div>
 </div>
 <div class="cell docutils container">

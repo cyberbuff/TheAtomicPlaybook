@@ -914,6 +914,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-csharp-source-file-must-exist-on-disk-at-specified-location-source-file">
+         Description: The CSharp source file must exist on disk at specified location (#{source_file})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -930,6 +958,34 @@
      Atomic Test #2 - Regsvcs Uninstall Method Call Test
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Description: The CSharp source file must exist on disk at specified location (#{source_file})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
@@ -977,10 +1033,36 @@
 <h3>Atomic Test #1 - Regasm Uninstall Method Call Test<a class="headerlink" href="#atomic-test-1-regasm-uninstall-method-call-test" title="Permalink to this headline">¶</a></h3>
 <p>Executes the Uninstall Method, No Admin Rights Required. Upon execution, “I shouldn’t really execute either.” will be displayed.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-the-csharp-source-file-must-exist-on-disk-at-specified-location-source-file">
+<h5>Description: The CSharp source file must exist on disk at specified location (#{source_file})<a class="headerlink" href="#description-the-csharp-source-file-must-exist-on-disk-at-specified-location-source-file" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">.</span><span class="n">cs</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">.</span><span class="n">cs</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.009/src/T1218.009.cs&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.009\src\T1218.009.cs&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">009</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll /out:&quot;#{output_file}&quot; /target:library #{source_file}
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /U #{output_file}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll /out:&quot;%tmp%\T1218.009.dll&quot; /target:library PathToAtomicsFolder\T1218.009\src\T1218.009.cs
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /U %tmp%\T1218.009.dll
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -996,14 +1078,41 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /U #{output_file}
 <h3>Atomic Test #2 - Regsvcs Uninstall Method Call Test<a class="headerlink" href="#atomic-test-2-regsvcs-uninstall-method-call-test" title="Permalink to this headline">¶</a></h3>
 <p>Executes the Uninstall Method, No Admin Rights Required, Requires SNK. Upon execution, “I shouldn’t really execute” will be displayed
 along with other information about the assembly being installed.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="id1">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h5>Description: The CSharp source file must exist on disk at specified location (#{source_file})<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">.</span><span class="n">cs</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">009</span><span class="p">.</span><span class="n">cs</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.009/src/T1218.009.cs&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.009\src\T1218.009.cs&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">009</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$key = &#39;BwIAAAAkAABSU0EyAAQAAAEAAQBhXtvkSeH85E31z64cAX+X2PWGc6DHP9VaoD13CljtYau9SesUzKVLJdHphY5ppg5clHIGaL7nZbp6qukLH0lLEq/vW979GWzVAgSZaGVCFpuk6p1y69cSr3STlzljJrY76JIjeS4+RhbdWHp99y8QhwRllOC0qu/WxZaffHS2te/PKzIiTuFfcP46qxQoLR8s3QZhAJBnn9TGJkbix8MTgEt7hD1DC2hXv7dKaC531ZWqGXB54OnuvFbD5P2t+vyvZuHNmAy3pX0BDXqwEfoZZ+hiIk1YUDSNOE79zwnpVP1+BN0PK5QCPCS+6zujfRlQpJ+nfHLLicweJ9uT7OG3g/P+JpXGN0/+Hitolufo7Ucjh+WvZAU//dzrGny5stQtTmLxdhZbOsNDJpsqnzwEUfL5+o8OhujBHDm/ZQ0361mVsSVWrmgDPKHGGRx+7FbdgpBEq3m15/4zzg343V9NBwt1+qZU+TSVPU0wRvkWiZRerjmDdehJIboWsx4V8aiWx8FPPngEmNz89tBAQ8zbIrJFfmtYnj1fFmkNu3lglOefcacyYEHPX/tqcBuBIg/cpcDHps/6SGCCciX3tufnEeDMAQjmLku8X4zHcgJx6FpVK7qeEuvyV0OGKvNor9b/WKQHIHjkzG+z6nWHMoMYV5VMTZ0jLM5aZQ6ypwmFZaNmtL6KDzKv8L1YN2TkKjXEoWulXNliBpelsSJyuICplrCTPGGSxPGihT3rpZ9tbLZUefrFnLNiHfVjNi53Yg4=&#39;
 $Content = [System.Convert]::FromBase64String($key)
 Set-Content $env:Temp\key.snk -Value $Content -Encoding Byte
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll /out:&quot;#{output_file}&quot; /target:library /keyfile:$env:Temp\key.snk #{source_file}
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\regsvcs.exe #{output_file}
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll /out:&quot;$Env:TEMP\T1218.009.dll&quot; /target:library /keyfile:$env:Temp\key.snk PathToAtomicsFolder\T1218.009\src\T1218.009.cs
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regsvcs.exe $Env:TEMP\T1218.009.dll
 </pre></div>
 </div>
 <div class="cell docutils container">

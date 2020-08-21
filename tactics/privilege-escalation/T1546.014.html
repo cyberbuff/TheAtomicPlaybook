@@ -710,10 +710,11 @@
 <div class="section" id="atomic-test-1-persistance-with-event-monitor-emond">
 <h3>Atomic Test #1 - Persistance with Event Monitor - emond<a class="headerlink" href="#atomic-test-1-persistance-with-event-monitor-emond" title="Permalink to this headline">¶</a></h3>
 <p>Establish persistence via a rule run by OSX’s emond (Event Monitor) daemon at startup, based on https://posts.specterops.io/leveraging-emond-on-macos-for-persistence-a040a2785124</p>
-<p><strong>Supported Platforms:</strong> macos</p>
+<p><strong>Supported Platforms:</strong> macos
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp <span class="s2">&quot;#{plist}&quot;</span> /etc/emond.d/rules/T1546.014_emond.plist
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp <span class="s2">&quot;PathToAtomicsFolder/T1546.014/src/T1546.014_emond.plist&quot;</span> /etc/emond.d/rules/T1546.014_emond.plist
 sudo touch /private/var/db/emondClients/T1546.014
 </pre></div>
 </div>

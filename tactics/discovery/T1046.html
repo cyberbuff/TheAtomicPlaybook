@@ -416,6 +416,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-sh">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-check-if-nmap-command-exists-on-the-machine">
+         Description: Check if nmap command exists on the machine
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -432,6 +460,34 @@
      Atomic Test #3 - Port Scan NMap for Windows
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-nmap-must-be-installed">
+         Description: NMap must be installed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
@@ -502,11 +558,36 @@
 <p>Scan ports to check for listening ports with Nmap.</p>
 <p>Upon successful execution, sh will utilize nmap, telnet, and nc to contact a single or range of adresseses on port 80 to determine if listening. Results will be via stdout.</p>
 <p><strong>Supported Platforms:</strong> linux, macos</p>
+<div class="section" id="dependencies-run-with-sh">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code>!<a class="headerlink" href="#dependencies-run-with-sh" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-check-if-nmap-command-exists-on-the-machine">
+<h5>Description: Check if nmap command exists on the machine<a class="headerlink" href="#description-check-if-nmap-command-exists-on-the-machine" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v nmap<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Install nmap on the machine to run the test.&quot;</span><span class="p">;</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1046</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nmap -sS <span class="c1">#{network_range} -p #{port}</span>
-telnet <span class="c1">#{host} #{port}</span>
-nc -nv <span class="c1">#{host} #{port}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nmap -sS <span class="m">192</span>.168.1.0/24 -p <span class="m">80</span>
+telnet <span class="m">192</span>.168.1.1 <span class="m">80</span>
+nc -nv <span class="m">192</span>.168.1.1 <span class="m">80</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -521,10 +602,38 @@ nc -nv <span class="c1">#{host} #{port}</span>
 <div class="section" id="atomic-test-3-port-scan-nmap-for-windows">
 <h3>Atomic Test #3 - Port Scan NMap for Windows<a class="headerlink" href="#atomic-test-3-port-scan-nmap-for-windows" title="Permalink to this headline">¶</a></h3>
 <p>Scan ports to check for listening ports for the local host 127.0.0.1
-<strong>Supported Platforms:</strong> windows</p>
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-nmap-must-be-installed">
+<h5>Description: NMap must be installed<a class="headerlink" href="#description-nmap-must-be-installed" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id2">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">cmd</span> <span class="p">/</span><span class="n">c</span> <span class="s2">&quot;nmap 2&gt;nul&quot;</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest -OutFile $env:temp\nmap-7.80-setup.exe https://nmap.org/dist/nmap-7.80-setup.exe
+Start-Process $env:temp\nmap-7.80-setup.exe /S
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1046</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">nmap</span> <span class="c">#{host_to_scan}```</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">nmap</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">```</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

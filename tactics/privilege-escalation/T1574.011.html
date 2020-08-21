@@ -715,7 +715,7 @@ reg add “HKLM\SYSTEM\CurrentControlSet\Services#{weak_service_name}” /v Imag
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">get-acl</span> <span class="n">REGISTRY</span><span class="p">::</span><span class="n">HKLM</span><span class="p">\</span><span class="n">SYSTEM</span><span class="p">\</span><span class="n">CurrentControlSet</span><span class="p">\</span><span class="n">Services</span><span class="p">\*</span> <span class="p">|</span><span class="nb">FL</span>
-<span class="nb">get-acl</span> <span class="n">REGISTRY</span><span class="p">::</span><span class="n">HKLM</span><span class="p">\</span><span class="n">SYSTEM</span><span class="p">\</span><span class="n">CurrentControlSet</span><span class="p">\</span><span class="n">Services</span><span class="p">\</span><span class="c">#{weak_service_name} |FL</span>
+<span class="nb">get-acl</span> <span class="n">REGISTRY</span><span class="p">::</span><span class="n">HKLM</span><span class="p">\</span><span class="n">SYSTEM</span><span class="p">\</span><span class="n">CurrentControlSet</span><span class="p">\</span><span class="n">Services</span><span class="p">\</span><span class="n">weakservicename</span> <span class="p">|</span><span class="nb">FL</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

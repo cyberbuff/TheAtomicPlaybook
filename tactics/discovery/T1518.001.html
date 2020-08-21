@@ -582,7 +582,8 @@ ps aux <span class="p">|</span> grep falcond
 <h3>Atomic Test #4 - Security Software Discovery - Sysmon Service<a class="headerlink" href="#atomic-test-4-security-software-discovery-sysmon-service" title="Permalink to this headline">¶</a></h3>
 <p>Discovery of an installed Sysinternals Sysmon service using driver altitude (even if the name is changed).</p>
 <p>when sucessfully executed, the test is going to display sysmon driver instance if it is installed.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>fltmc.exe | findstr.exe 385201
@@ -601,7 +602,8 @@ ps aux <span class="p">|</span> grep falcond
 <h3>Atomic Test #5 - Security Software Discovery - AV Discovery via WMI<a class="headerlink" href="#atomic-test-5-security-software-discovery-av-discovery-via-wmi" title="Permalink to this headline">¶</a></h3>
 <p>Discovery of installed antivirus products via a WMI query.</p>
 <p>when sucessfully executed, the test is going to display installed AV software.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic.exe /Namespace:\\root\SecurityCenter2 Path AntiVirusProduct Get displayName /Format:List```

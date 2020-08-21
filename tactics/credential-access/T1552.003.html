@@ -501,7 +501,7 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat <span class="c1">#{bash_history_filename} | grep #{bash_history_grep_args} &gt; #{output_file}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat ~/.bash_history <span class="p">|</span> grep -e <span class="s1">&#39;-p &#39;</span> -e <span class="s1">&#39;pass&#39;</span> -e <span class="s1">&#39;ssh&#39;</span> &gt; ~/loot.txt
 </pre></div>
 </div>
 <div class="cell docutils container">

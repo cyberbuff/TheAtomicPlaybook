@@ -914,6 +914,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-bash">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bash
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-binary-must-exist-on-disk-at-specified-location-file-to-pad">
+         Description: The binary must exist on disk at specified location (#{file_to_pad})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-sh">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -961,9 +989,34 @@
 <p>Uses dd to add a zero to the binary to change the hash.</p>
 <p>Upon successful execution, dd will modify <code class="docutils literal notranslate"><span class="pre">/tmp/evil-binary</span></code>, therefore the expected hash will change.</p>
 <p><strong>Supported Platforms:</strong> macos, linux</p>
+<div class="section" id="dependencies-run-with-bash">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code>!<a class="headerlink" href="#dependencies-run-with-bash" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-the-binary-must-exist-on-disk-at-specified-location-file-to-pad">
+<h5>Description: The binary must exist on disk at specified location (#{file_to_pad})<a class="headerlink" href="#description-the-binary-must-exist-on-disk-at-specified-location-file-to-pad" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -f /tmp/evil-binary <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp /bin/ls /tmp/evil-binary
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1027</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">bs</span><span class="o">=</span><span class="m">1</span> <span class="nv">count</span><span class="o">=</span><span class="m">1</span> &gt;&gt; <span class="c1">#{file_to_pad}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">bs</span><span class="o">=</span><span class="m">1</span> <span class="nv">count</span><span class="o">=</span><span class="m">1</span> &gt;&gt; /tmp/evil-binary
 </pre></div>
 </div>
 <div class="cell docutils container">

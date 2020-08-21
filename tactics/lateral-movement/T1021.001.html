@@ -339,6 +339,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-none">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-be-domain-joined">
+         Description: Computer must be domain joined
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -403,11 +431,38 @@
 <h3>Atomic Test #1 - RDPto-DomainController<a class="headerlink" href="#atomic-test-1-rdpto-domaincontroller" title="Permalink to this headline">¶</a></h3>
 <p>Attempt an RDP session via Remote Desktop Application to a DomainController.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-none">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-computer-must-be-domain-joined">
+<h5>Description: Computer must be domain joined<a class="headerlink" href="#description-computer-must-be-domain-joined" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>if((Get-CIMInstance -Class Win32_ComputerSystem).PartOfDomain) { exit 0} else { exit 1}
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>Write-Host Joining this computer to a domain must be done manually
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1021</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$Server=#{logonserver}
-$User = Join-Path #{domain} #{username}
-$Password=&quot;#{password}&quot;
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$Server=$ENV:logonserver.TrimStart(&quot;\&quot;)
+$User = Join-Path $Env:USERDOMAIN $ENV:USERNAME
+$Password=&quot;1password2!&quot;
 cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
 mstsc /v:$Server
 echo &quot;RDP connection established&quot;
@@ -428,9 +483,9 @@ echo &quot;RDP connection established&quot;
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$Server=&quot;#{logonserver}&quot;
-$User=&quot;#{username}&quot;
-$Password=&quot;#{password}&quot;
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$Server=&quot;WIN-DC&quot;
+$User=&quot;Administrator&quot;
+$Password=&quot;1password2!&quot;
 cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
 mstsc /v:$Server
 echo &quot;RDP connection established&quot;

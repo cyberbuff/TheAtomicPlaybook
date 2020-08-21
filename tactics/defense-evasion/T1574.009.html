@@ -962,11 +962,12 @@
 <p>When a service is created whose executable path contains spaces and isn’t enclosed within quotes, leads to a vulnerability
 known as Unquoted Service Path which allows a user to gain SYSTEM privileges.
 In this case, if an executable program.exe in C:\ exists, C:\program.exe will be executed instead of test.exe in C:\Program Files\subfolder\test.exe.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy #{service_executable} &quot;C:\Program Files\windows_service.exe&quot;
-copy #{service_executable} &quot;C:\program.exe&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy PathToAtomicsFolder\T1574.009\bin\WindowsServiceExample.exe &quot;C:\Program Files\windows_service.exe&quot;
+copy PathToAtomicsFolder\T1574.009\bin\WindowsServiceExample.exe &quot;C:\program.exe&quot;
 sc create &quot;Example Service&quot; binpath= &quot;C:\Program Files\windows_service.exe&quot; Displayname= &quot;Example Service&quot; start= auto
 sc start &quot;Example Service&quot;
 </pre></div>

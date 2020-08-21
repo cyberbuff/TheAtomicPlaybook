@@ -999,6 +999,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-exe-file-to-copy-must-exist-on-disk-at-specified-location-inputfile">
+         Description: Exe file to copy must exist on disk at specified location (#{inputfile})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -1196,10 +1224,36 @@ cmd.exe /K %APPDATA%\taskhostw.exe
 <p>Copies an exe, renames it as a windows exe, and launches it to masquerade as a real windows exe</p>
 <p>Upon successful execution, powershell will execute T1036.003.exe as svchost.exe from on a non-standard path.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-exe-file-to-copy-must-exist-on-disk-at-specified-location-inputfile">
+<h5>Description: Exe file to copy must exist on disk at specified location (#{inputfile})<a class="headerlink" href="#description-exe-file-to-copy-must-exist-on-disk-at-specified-location-inputfile" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1036</span><span class="p">.</span><span class="n">003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1036</span><span class="p">.</span><span class="n">003</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1036</span><span class="p">.</span><span class="n">003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1036</span><span class="p">.</span><span class="n">003</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1036.003/bin/T1036.003.exe&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1036.003\bin\T1036.003.exe&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1036</span><span class="o">.</span><span class="mi">003</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">6</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">copy </span><span class="c">#{inputfile} #{outputfile}</span>
-<span class="nv">$myT1036_003</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Start-Process</span> <span class="n">-PassThru</span> <span class="n">-FilePath</span> <span class="c">#{outputfile}).Id</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">copy </span><span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1036</span><span class="p">.</span><span class="n">003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1036</span><span class="p">.</span><span class="n">003</span><span class="p">.</span><span class="n">exe</span> <span class="p">(</span><span class="nv">$env:TEMP</span> <span class="p">+</span> <span class="s2">&quot;\svchost.exe&quot;</span><span class="p">)</span>
+<span class="nv">$myT1036_003</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Start-Process</span> <span class="n">-PassThru</span> <span class="n">-FilePath</span> <span class="p">(</span><span class="nv">$env:TEMP</span> <span class="p">+</span> <span class="s2">&quot;\svchost.exe&quot;</span><span class="p">)).</span><span class="n">Id</span>
 <span class="nb">Stop-Process</span> <span class="n">-ID</span> <span class="nv">$myT1036_003</span>
 </pre></div>
 </div>
@@ -1218,8 +1272,8 @@ cmd.exe /K %APPDATA%\taskhostw.exe
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">copy </span><span class="c">#{inputfile} #{outputfile}</span>
-<span class="nv">$myT1036_003</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Start-Process</span> <span class="n">-PassThru</span> <span class="n">-FilePath</span> <span class="c">#{outputfile}).Id</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">copy </span><span class="nv">$env:ComSpec</span> <span class="p">(</span><span class="nv">$env:TEMP</span> <span class="p">+</span> <span class="s2">&quot;\svchost.exe&quot;</span><span class="p">)</span>
+<span class="nv">$myT1036_003</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Start-Process</span> <span class="n">-PassThru</span> <span class="n">-FilePath</span> <span class="p">(</span><span class="nv">$env:TEMP</span> <span class="p">+</span> <span class="s2">&quot;\svchost.exe&quot;</span><span class="p">)).</span><span class="n">Id</span>
 <span class="nb">Stop-Process</span> <span class="n">-ID</span> <span class="nv">$myT1036_003</span>
 </pre></div>
 </div>
@@ -1237,7 +1291,8 @@ cmd.exe /K %APPDATA%\taskhostw.exe
 <p>Detect LSM running from an incorrect directory and an incorrect service account
 This works by copying cmd.exe to a file, naming it lsm.exe, then copying a file to the C:\ folder.</p>
 <p>Upon successful execution, cmd.exe will be renamed as lsm.exe and executed from non-standard path.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id5">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy C:\Windows\System32\cmd.exe C:\lsm.exe
@@ -1260,15 +1315,15 @@ C:\lsm.exe /c echo T1036.003 &gt; C:\T1036.003.txt
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id6">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy #{exe_path} %temp%\T1036.003_masquerading.docx.exe /Y
-copy #{exe_path} %temp%\T1036.003_masquerading.pdf.exe /Y
-copy #{exe_path} %temp%\T1036.003_masquerading.ps1.exe /Y
-copy #{vbs_path} %temp%\T1036.003_masquerading.xls.vbs /Y
-copy #{vbs_path} %temp%\T1036.003_masquerading.xlsx.vbs /Y
-copy #{vbs_path} %temp%\T1036.003_masquerading.png.vbs /Y
-copy #{ps1_path} %temp%\T1036.003_masquerading.doc.ps1 /Y
-copy #{ps1_path} %temp%\T1036.003_masquerading.pdf.ps1 /Y
-copy #{ps1_path} %temp%\T1036.003_masquerading.rtf.ps1 /Y
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy C:\Windows\System32\calc.exe %temp%\T1036.003_masquerading.docx.exe /Y
+copy C:\Windows\System32\calc.exe %temp%\T1036.003_masquerading.pdf.exe /Y
+copy C:\Windows\System32\calc.exe %temp%\T1036.003_masquerading.ps1.exe /Y
+copy PathToAtomicsFolder\T1036.003\src\T1036.003_masquerading.vbs %temp%\T1036.003_masquerading.xls.vbs /Y
+copy PathToAtomicsFolder\T1036.003\src\T1036.003_masquerading.vbs %temp%\T1036.003_masquerading.xlsx.vbs /Y
+copy PathToAtomicsFolder\T1036.003\src\T1036.003_masquerading.vbs %temp%\T1036.003_masquerading.png.vbs /Y
+copy PathToAtomicsFolder\T1036.003\src\T1036.003_masquerading.ps1 %temp%\T1036.003_masquerading.doc.ps1 /Y
+copy PathToAtomicsFolder\T1036.003\src\T1036.003_masquerading.ps1 %temp%\T1036.003_masquerading.pdf.ps1 /Y
+copy PathToAtomicsFolder\T1036.003\src\T1036.003_masquerading.ps1 %temp%\T1036.003_masquerading.rtf.ps1 /Y
 %temp%\T1036.003_masquerading.docx.exe
 %temp%\T1036.003_masquerading.pdf.exe
 %temp%\T1036.003_masquerading.ps1.exe

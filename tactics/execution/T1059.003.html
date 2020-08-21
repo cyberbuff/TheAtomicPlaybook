@@ -384,6 +384,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-batch-file-must-exist-on-disk-at-specified-location-script-path">
+         Description: Batch file must exist on disk at specified location (#{script_path})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -431,9 +459,35 @@
 <h3>Atomic Test #1 - Create and Execute Batch Script<a class="headerlink" href="#atomic-test-1-create-and-execute-batch-script" title="Permalink to this headline">¶</a></h3>
 <p>Creates and executes a simple batch script. Upon execution, CMD will briefly launh to run the batch script then close again.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-batch-file-must-exist-on-disk-at-specified-location-script-path">
+<h5>Description: Batch file must exist on disk at specified location (#{script_path})<a class="headerlink" href="#description-batch-file-must-exist-on-disk-at-specified-location-script-path" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1059</span><span class="p">.</span><span class="n">003_script</span><span class="p">.</span><span class="n">bat</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1059</span><span class="p">.</span><span class="n">003_script</span><span class="p">.</span><span class="n">bat</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Set-Content</span> <span class="n">-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1059</span><span class="p">.</span><span class="n">003_script</span><span class="p">.</span><span class="n">bat</span> <span class="n">-Value</span> <span class="s2">&quot;dir&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">003</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-Process</span> <span class="c">#{script_path}</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-Process</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1059</span><span class="p">.</span><span class="n">003_script</span><span class="p">.</span><span class="n">bat</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

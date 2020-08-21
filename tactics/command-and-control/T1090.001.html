@@ -507,7 +507,7 @@
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="c1">#{proxy_scheme}_proxy=#{proxy_server}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8080
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -527,8 +527,8 @@ The test will modify and enable the “Web Proxy” and “Secure Web Proxy” s
 <p><strong>Supported Platforms:</strong> macos</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>networksetup -setwebproxy <span class="c1">#{interface} #{proxy_server} #{proxy_port}</span>
-networksetup -setsecurewebproxy <span class="c1">#{interface} #{proxy_server} #{proxy_port}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>networksetup -setwebproxy Wi-Fi <span class="m">127</span>.0.0.1 <span class="m">8080</span>
+networksetup -setsecurewebproxy Wi-Fi <span class="m">127</span>.0.0.1 <span class="m">8080</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -545,10 +545,11 @@ networksetup -setsecurewebproxy <span class="c1">#{interface} #{proxy_server} #{
 <p>Adds a registry key to set up a proxy on the endpoint at HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PortProxy\v4tov4
 Upon execution there will be a new proxy entry in netsh
 netsh interface portproxy show all</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="n">listenport</span><span class="p">=</span><span class="c">#{listenport} connectport=#{connectport} connectaddress=#{connectaddress}```</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="n">listenport</span><span class="p">=</span><span class="n">1337</span> <span class="n">connectport</span><span class="p">=</span><span class="n">1337</span> <span class="n">connectaddress</span><span class="p">=</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">```</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

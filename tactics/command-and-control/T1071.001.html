@@ -441,6 +441,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-curl-must-be-installed-on-system">
+         Description: Curl must be installed on system
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -508,10 +536,10 @@ Use an application such as Wireshark to record the session and observe user agen
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-WebRequest</span> <span class="c">#{domain} -UserAgent &quot;HttpBrowser/1.0&quot; | out-null</span>
-<span class="nb">Invoke-WebRequest</span> <span class="c">#{domain} -UserAgent &quot;Wget/1.9+cvs-stable (Red Hat modified)&quot; | out-null</span>
-<span class="nb">Invoke-WebRequest</span> <span class="c">#{domain} -UserAgent &quot;Opera/8.81 (Windows NT 6.0; U; en)&quot; | out-null</span>
-<span class="nb">Invoke-WebRequest</span> <span class="c">#{domain} -UserAgent &quot;*&lt;|&gt;*&quot; | out-null</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-WebRequest</span> <span class="n">www</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-UserAgent</span> <span class="s2">&quot;HttpBrowser/1.0&quot;</span> <span class="p">|</span> <span class="nb">out-null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="n">www</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-UserAgent</span> <span class="s2">&quot;Wget/1.9+cvs-stable (Red Hat modified)&quot;</span> <span class="p">|</span> <span class="nb">out-null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="n">www</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-UserAgent</span> <span class="s2">&quot;Opera/8.81 (Windows NT 6.0; U; en)&quot;</span> <span class="p">|</span> <span class="nb">out-null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="n">www</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-UserAgent</span> <span class="s2">&quot;*&lt;|&gt;*&quot;</span> <span class="p">|</span> <span class="nb">out-null</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -529,12 +557,43 @@ Use an application such as Wireshark to record the session and observe user agen
 Use an application such as Wireshark to record the session and observe user agent strings and responses.</p>
 <p>Inspired by APTSimulator - https://github.com/NextronSystems/APTSimulator/blob/master/test-sets/command-and-control/malicious-user-agents.bat</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-curl-must-be-installed-on-system">
+<h5>Description: Curl must be installed on system<a class="headerlink" href="#description-curl-must-be-installed-on-system" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>if (Test-Path C:\Windows\System32\Curl.exe) {exit 0} else {exit 1}
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest &quot;https://curl.haxx.se/windows/dl-7.71.1/curl-7.71.1-win32-mingw.zip&quot; -Outfile $env:temp\curl.zip
+Expand-Archive -Path $env:temp\curl.zip -DestinationPath $env:temp\curl
+Copy-Item $env:temp\curl\curl-7.71.1-win32-mingw\bin\curl.exe C:\Windows\System32\Curl.exe
+Remove-Item $env:temp\curl
+Remove-Item $env:temp\curl.zip
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1071</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>#{curl_path} -s -A &quot;HttpBrowser/1.0&quot; -m3 #{domain} &gt;nul 2&gt;&amp;1
-#{curl_path} -s -A &quot;Wget/1.9+cvs-stable (Red Hat modified)&quot; -m3 #{domain} &gt;nul 2&gt;&amp;1
-#{curl_path} -s -A &quot;Opera/8.81 (Windows NT 6.0; U; en)&quot; -m3 #{domain} &gt;nul 2&gt;&amp;1
-#{curl_path} -s -A &quot;*&lt;|&gt;*&quot; -m3 #{domain} &gt;nul 2&gt;&amp;1
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\System32\Curl.exe -s -A &quot;HttpBrowser/1.0&quot; -m3 www.google.com &gt;nul 2&gt;&amp;1
+C:\Windows\System32\Curl.exe -s -A &quot;Wget/1.9+cvs-stable (Red Hat modified)&quot; -m3 www.google.com &gt;nul 2&gt;&amp;1
+C:\Windows\System32\Curl.exe -s -A &quot;Opera/8.81 (Windows NT 6.0; U; en)&quot; -m3 www.google.com &gt;nul 2&gt;&amp;1
+C:\Windows\System32\Curl.exe -s -A &quot;*&lt;|&gt;*&quot; -m3 www.google.com &gt;nul 2&gt;&amp;1
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -553,10 +612,10 @@ Inspired by APTSimulator - https://github.com/NextronSystems/APTSimulator/blob/m
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -s -A <span class="s2">&quot;HttpBrowser/1.0&quot;</span> -m3 <span class="c1">#{domain}</span>
-curl -s -A <span class="s2">&quot;Wget/1.9+cvs-stable (Red Hat modified)&quot;</span> -m3 <span class="c1">#{domain}</span>
-curl -s -A <span class="s2">&quot;Opera/8.81 (Windows NT 6.0; U; en)&quot;</span> -m3 <span class="c1">#{domain}</span>
-curl -s -A <span class="s2">&quot;*&lt;|&gt;*&quot;</span> -m3 <span class="c1">#{domain}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -s -A <span class="s2">&quot;HttpBrowser/1.0&quot;</span> -m3 www.google.com
+curl -s -A <span class="s2">&quot;Wget/1.9+cvs-stable (Red Hat modified)&quot;</span> -m3 www.google.com
+curl -s -A <span class="s2">&quot;Opera/8.81 (Windows NT 6.0; U; en)&quot;</span> -m3 www.google.com
+curl -s -A <span class="s2">&quot;*&lt;|&gt;*&quot;</span> -m3 www.google.com
 </pre></div>
 </div>
 <div class="cell docutils container">

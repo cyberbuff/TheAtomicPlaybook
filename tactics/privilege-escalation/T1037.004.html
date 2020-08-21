@@ -710,7 +710,8 @@
 <h3>Atomic Test #1 - rc.common<a class="headerlink" href="#atomic-test-1-rc-common" title="Permalink to this headline">¶</a></h3>
 <p>Modify rc.common</p>
 <p><a class="reference external" href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/StartupItems.html">Reference</a></p>
-<p><strong>Supported Platforms:</strong> macos</p>
+<p><strong>Supported Platforms:</strong> macos
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo <span class="nb">echo</span> osascript -e <span class="s1">&#39;tell app &quot;Finder&quot; to display dialog &quot;Hello World&quot;&#39;</span> &gt;&gt; /etc/rc.common

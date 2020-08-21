@@ -439,7 +439,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd.exe /c &quot;net use \\#{computer_name}\#{share_name} #{password} /u:#{user_name}&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd.exe /c &quot;net use \\Target\C$ P@ssw0rd1 /u:DOMAIN\Administrator&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -457,7 +457,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-PSDrive</span> <span class="n">-name</span> <span class="c">#{map_name} -psprovider filesystem -root \\#{computer_name}\#{share_name}</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-PSDrive</span> <span class="n">-name</span> <span class="n">g</span> <span class="n">-psprovider</span> <span class="n">filesystem</span> <span class="n">-root</span> <span class="p">\\</span><span class="n">Target</span><span class="p">\</span><span class="n">C</span><span class="p">$</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -472,10 +472,11 @@
 <div class="section" id="atomic-test-3-copy-and-execute-file-with-psexec">
 <h3>Atomic Test #3 - Copy and Execute File with PsExec<a class="headerlink" href="#atomic-test-3-copy-and-execute-file-with-psexec" title="Permalink to this headline">¶</a></h3>
 <p>Copies a file to a remote host and executes it using PsExec. Requires the download of PsExec from <a class="reference external" href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec">https://docs.microsoft.com/en-us/sysinternals/downloads/psexec</a>.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>psexec.exe #{remote_host} -accepteula -c #{command_path}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>psexec.exe \\localhost -accepteula -c C:\Windows\System32\cmd.exe
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -491,10 +492,11 @@
 <h3>Atomic Test #4 - Execute command writing output to local Admin Share<a class="headerlink" href="#atomic-test-4-execute-command-writing-output-to-local-admin-share" title="Permalink to this headline">¶</a></h3>
 <p>Executes a command, writing the output to a local Admin Share.
 This technique is used by post-exploitation frameworks.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd.exe /Q /c #{command_to_execute} 1&gt; \\127.0.0.1\ADMIN$\#{output_file} 2&gt;&amp;1
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd.exe /Q /c hostname 1&gt; \\127.0.0.1\ADMIN$\output.txt 2&gt;&amp;1
 </pre></div>
 </div>
 <div class="cell docutils container">

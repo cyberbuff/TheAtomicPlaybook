@@ -704,6 +704,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-bash">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bash
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-kernel-module-must-exist-on-disk-at-specified-location">
+         Description: The kernel module must exist on disk at specified location
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-bash">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -751,10 +779,39 @@
 <div class="section" id="atomic-test-1-linux-load-kernel-module-via-insmod">
 <h3>Atomic Test #1 - Linux - Load Kernel Module via insmod<a class="headerlink" href="#atomic-test-1-linux-load-kernel-module-via-insmod" title="Permalink to this headline">¶</a></h3>
 <p>This test uses the insmod command to load a kernel module for Linux.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-bash">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code>!<a class="headerlink" href="#dependencies-run-with-bash" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-the-kernel-module-must-exist-on-disk-at-specified-location">
+<h5>Description: The kernel module must exist on disk at specified location<a class="headerlink" href="#description-the-kernel-module-must-exist-on-disk-at-specified-location" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -f /tmp/T1547.006/T1547006.ko <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d /tmp/T1547.006 <span class="o">]</span><span class="p">;</span> <span class="k">then</span> mkdir /tmp/T1547.006<span class="p">;</span> touch /tmp/T1547.006/safe_to_delete<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+cp PathToAtomicsFolder/T1547.006/src/* /tmp/T1547.006/
+<span class="nb">cd</span> /tmp/T1547.006<span class="p">;</span> make
+<span class="k">if</span> <span class="o">[</span> ! -f /tmp/T1547.006/T1547006.ko <span class="o">]</span><span class="p">;</span> <span class="k">then</span> mv /tmp/T1547.006/T1547006.ko /tmp/T1547.006/T1547006.ko<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1547</span><span class="o">.</span><span class="mi">006</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo insmod <span class="c1">#{module_path}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo insmod /tmp/T1547.006/T1547006.ko
 </pre></div>
 </div>
 <div class="cell docutils container">

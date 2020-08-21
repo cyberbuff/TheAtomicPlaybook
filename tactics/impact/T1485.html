@@ -354,6 +354,49 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-secure-delete-tool-from-sysinternals-must-exist-on-disk-at-specified-location-sdelete-exe">
+         Description: Secure delete tool from Sysinternals must exist on disk at specified location (#{sdelete_exe})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-file-to-delete-must-exist-at-file-to-delete">
+         Description: The file to delete must exist at #{file_to_delete}
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -419,9 +462,51 @@
 <p>Overwrites and deletes a file using Sysinternals SDelete. Upon successful execution, “Files deleted: 1” will be displayed in
 the powershell session along with other information about the file that was deleted.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-secure-delete-tool-from-sysinternals-must-exist-on-disk-at-specified-location-sdelete-exe">
+<h5>Description: Secure delete tool from Sysinternals must exist on disk at specified location (#{sdelete_exe})<a class="headerlink" href="#description-secure-delete-tool-from-sysinternals-must-exist-on-disk-at-specified-location-sdelete-exe" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Sdelete</span><span class="p">\</span><span class="n">sdelete</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://download.sysinternals.com/files/SDelete.zip&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;$env:TEMP\SDelete.zip&quot;</span>
+<span class="nb">Expand-Archive</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">SDelete</span><span class="p">.</span><span class="n">zip</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Sdelete</span> <span class="n">-Force</span>
+<span class="nb">Remove-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">SDelete</span><span class="p">.</span><span class="n">zip</span> <span class="n">-Force</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-the-file-to-delete-must-exist-at-file-to-delete">
+<h5>Description: The file to delete must exist at #{file_to_delete}<a class="headerlink" href="#description-the-file-to-delete-must-exist-at-file-to-delete" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id1">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1485</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">0</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">1</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1485</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1485</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-Expression</span> <span class="n">-Command</span> <span class="s2">&quot;#{sdelete_exe} -accepteula #{file_to_delete}&quot;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-Expression</span> <span class="n">-Command</span> <span class="s2">&quot;$env:TEMP\Sdelete\sdelete.exe -accepteula $env:TEMP\T1485.txt&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -440,7 +525,7 @@ To stop the test, break the command with CTRL/CMD+C.</p>
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dd <span class="nv">of</span><span class="o">=</span><span class="c1">#{file_to_overwrite} if=#{overwrite_source}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dd <span class="nv">of</span><span class="o">=</span>/var/log/syslog <span class="k">if</span><span class="o">=</span>/dev/zero
 </pre></div>
 </div>
 <div class="cell docutils container">

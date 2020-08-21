@@ -1094,7 +1094,8 @@ netsh advfirewall firewall set rule group=&quot;file and printer sharing&quot; n
 <h3>Atomic Test #4 - Opening ports for proxy - HARDRAIN<a class="headerlink" href="#atomic-test-4-opening-ports-for-proxy-hardrain" title="Permalink to this headline">¶</a></h3>
 <p>This test creates a listening interface on a victim device. This tactic was used by HARDRAIN for proxying.</p>
 <p>reference: https://www.us-cert.gov/sites/default/files/publications/MAR-10135536-F.pdf</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>netsh advfirewall firewall add rule name=&quot;atomic testing&quot; action=allow dir=in protocol=TCP localport=450 
@@ -1112,10 +1113,11 @@ netsh advfirewall firewall set rule group=&quot;file and printer sharing&quot; n
 <div class="section" id="atomic-test-5-open-a-local-port-through-windows-firewall-to-any-profile">
 <h3>Atomic Test #5 - Open a local port through Windows Firewall to any profile<a class="headerlink" href="#atomic-test-5-open-a-local-port-through-windows-firewall-to-any-profile" title="Permalink to this headline">¶</a></h3>
 <p>This test will attempt to open a local port defined by input arguments to any profile
-<strong>Supported Platforms:</strong> windows</p>
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">advfirewall</span> <span class="n">firewall</span> <span class="n">add</span> <span class="n">rule</span> <span class="n">name</span><span class="p">=</span><span class="s2">&quot;Open Port to Any&quot;</span> <span class="n">dir</span><span class="p">=</span><span class="k">in</span> <span class="n">protocol</span><span class="p">=</span><span class="n">tcp</span> <span class="n">localport</span><span class="p">=</span><span class="c">#{local_port} action=allow profile=any```</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">advfirewall</span> <span class="n">firewall</span> <span class="n">add</span> <span class="n">rule</span> <span class="n">name</span><span class="p">=</span><span class="s2">&quot;Open Port to Any&quot;</span> <span class="n">dir</span><span class="p">=</span><span class="k">in</span> <span class="n">protocol</span><span class="p">=</span><span class="n">tcp</span> <span class="n">localport</span><span class="p">=</span><span class="n">3389</span> <span class="n">action</span><span class="p">=</span><span class="n">allow</span> <span class="n">profile</span><span class="p">=</span><span class="n">any</span><span class="p">```</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

@@ -577,10 +577,11 @@
 <div class="section" id="atomic-test-1-shutdown-system-windows">
 <h3>Atomic Test #1 - Shutdown System - Windows<a class="headerlink" href="#atomic-test-1-shutdown-system-windows" title="Permalink to this headline">¶</a></h3>
 <p>This test shuts down a Windows system.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>shutdown /s /t #{timeout}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>shutdown /s /t 1
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -595,10 +596,11 @@
 <div class="section" id="atomic-test-2-restart-system-windows">
 <h3>Atomic Test #2 - Restart System - Windows<a class="headerlink" href="#atomic-test-2-restart-system-windows" title="Permalink to this headline">¶</a></h3>
 <p>This test restarts a Windows system.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>shutdown /r /t #{timeout}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>shutdown /r /t 1
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -613,10 +615,11 @@
 <div class="section" id="atomic-test-3-restart-system-via-shutdown-macos-linux">
 <h3>Atomic Test #3 - Restart System via <code class="docutils literal notranslate"><span class="pre">shutdown</span></code> - macOS/Linux<a class="headerlink" href="#atomic-test-3-restart-system-via-shutdown-macos-linux" title="Permalink to this headline">¶</a></h3>
 <p>This test restarts a macOS/Linux system.</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>shutdown -r <span class="c1">#{timeout}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>shutdown -r now
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -631,10 +634,11 @@
 <div class="section" id="atomic-test-4-shutdown-system-via-shutdown-macos-linux">
 <h3>Atomic Test #4 - Shutdown System via <code class="docutils literal notranslate"><span class="pre">shutdown</span></code> - macOS/Linux<a class="headerlink" href="#atomic-test-4-shutdown-system-via-shutdown-macos-linux" title="Permalink to this headline">¶</a></h3>
 <p>This test shuts down a macOS/Linux system using a halt.</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>shutdown -h <span class="c1">#{timeout}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>shutdown -h now
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -649,7 +653,8 @@
 <div class="section" id="atomic-test-5-restart-system-via-reboot-macos-linux">
 <h3>Atomic Test #5 - Restart System via <code class="docutils literal notranslate"><span class="pre">reboot</span></code> - macOS/Linux<a class="headerlink" href="#atomic-test-5-restart-system-via-reboot-macos-linux" title="Permalink to this headline">¶</a></h3>
 <p>This test restarts a macOS/Linux system via <code class="docutils literal notranslate"><span class="pre">reboot</span></code>.</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>reboot
@@ -667,7 +672,8 @@
 <div class="section" id="atomic-test-6-shutdown-system-via-halt-linux">
 <h3>Atomic Test #6 - Shutdown System via <code class="docutils literal notranslate"><span class="pre">halt</span></code> - Linux<a class="headerlink" href="#atomic-test-6-shutdown-system-via-halt-linux" title="Permalink to this headline">¶</a></h3>
 <p>This test shuts down a Linux system using <code class="docutils literal notranslate"><span class="pre">halt</span></code>.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>halt -p
@@ -685,7 +691,8 @@
 <div class="section" id="atomic-test-7-reboot-system-via-halt-linux">
 <h3>Atomic Test #7 - Reboot System via <code class="docutils literal notranslate"><span class="pre">halt</span></code> - Linux<a class="headerlink" href="#atomic-test-7-reboot-system-via-halt-linux" title="Permalink to this headline">¶</a></h3>
 <p>This test restarts a Linux system using <code class="docutils literal notranslate"><span class="pre">halt</span></code>.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id5">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>halt --reboot
@@ -703,7 +710,8 @@
 <div class="section" id="atomic-test-8-shutdown-system-via-poweroff-linux">
 <h3>Atomic Test #8 - Shutdown System via <code class="docutils literal notranslate"><span class="pre">poweroff</span></code> - Linux<a class="headerlink" href="#atomic-test-8-shutdown-system-via-poweroff-linux" title="Permalink to this headline">¶</a></h3>
 <p>This test shuts down a Linux system using <code class="docutils literal notranslate"><span class="pre">poweroff</span></code>.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id6">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poweroff
@@ -721,7 +729,8 @@
 <div class="section" id="atomic-test-9-reboot-system-via-poweroff-linux">
 <h3>Atomic Test #9 - Reboot System via <code class="docutils literal notranslate"><span class="pre">poweroff</span></code> - Linux<a class="headerlink" href="#atomic-test-9-reboot-system-via-poweroff-linux" title="Permalink to this headline">¶</a></h3>
 <p>This test restarts a Linux system using <code class="docutils literal notranslate"><span class="pre">poweroff</span></code>.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id7">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poweroff --reboot

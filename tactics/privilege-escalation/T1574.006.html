@@ -664,6 +664,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-bash">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bash
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-shared-library-must-exist-on-disk-at-specified-location-path-to-shared-library">
+         Description: The shared library must exist on disk at specified location (#{path_to_shared_library})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-bash">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -682,6 +710,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         bash
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Description: The shared library must exist on disk at specified location (#{path_to_shared_library})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -728,10 +784,36 @@
 <h3>Atomic Test #1 - Shared Library Injection via /etc/ld.so.preload<a class="headerlink" href="#atomic-test-1-shared-library-injection-via-etc-ld-so-preload" title="Permalink to this headline">¶</a></h3>
 <p>This test adds a shared library to the <code class="docutils literal notranslate"><span class="pre">ld.so.preload</span></code> list to execute and intercept API calls. This technique was used by threat actor Rocke during the exploitation of Linux web servers. This requires the <code class="docutils literal notranslate"><span class="pre">glibc</span></code> package.</p>
 <p>Upon successful execution, bash will echo <code class="docutils literal notranslate"><span class="pre">../bin/T1574.006.so</span></code> to /etc/ld.so.preload.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-bash">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code>!<a class="headerlink" href="#dependencies-run-with-bash" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-the-shared-library-must-exist-on-disk-at-specified-location-path-to-shared-library">
+<h5>Description: The shared library must exist on disk at specified location (#{path_to_shared_library})<a class="headerlink" href="#description-the-shared-library-must-exist-on-disk-at-specified-location-path-to-shared-library" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -f <span class="c1">#{path_to_shared_library ]; then exit 0; else exit 1; fi;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc -shared -fPIC -o /tmp/T1574006.so PathToAtomicsFolder/T1574.006/src/Linux/T1574.006.c
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1574</span><span class="o">.</span><span class="mi">006</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo sh -c <span class="s1">&#39;echo #{path_to_shared_library} &gt; /etc/ld.so.preload&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo sh -c <span class="s1">&#39;echo /tmp/T1574006.so &gt; /etc/ld.so.preload&#39;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -749,8 +831,33 @@
 <p>Upon successful execution, bash will utilize LD_PRELOAD to load the shared object library <code class="docutils literal notranslate"><span class="pre">/etc/ld.so.preload</span></code>. Output will be via stdout.</p>
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="id1">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="c1">#{path_to_shared_library} ls</span>
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h5>Description: The shared library must exist on disk at specified location (#{path_to_shared_library})<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -f /tmp/T1574006.so <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc -shared -fPIC -o /tmp/T1574006.so PathToAtomicsFolder/T1574.006/src/Linux/T1574.006.c
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1574</span><span class="o">.</span><span class="mi">006</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LD_PRELOAD</span><span class="o">=</span>/tmp/T1574006.so ls
 </pre></div>
 </div>
 <div class="cell docutils container">

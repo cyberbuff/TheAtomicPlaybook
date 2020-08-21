@@ -982,10 +982,11 @@
 <div class="section" id="atomic-test-1-clear-logs">
 <h3>Atomic Test #1 - Clear Logs<a class="headerlink" href="#atomic-test-1-clear-logs" title="Permalink to this headline">¶</a></h3>
 <p>Upon execution this test will clear Windows Event Logs. Open the System.evtx logs at C:\Windows\System32\winevt\Logs and verify that it is now empty.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wevtutil cl #{log_name}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wevtutil cl System
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1002,7 +1003,8 @@
 <p>Clear event logs using built-in PowerShell commands.
 Upon successful execution, you should see the list of deleted event logs
 Upon execution, open the Security.evtx logs at C:\Windows\System32\winevt\Logs and verify that it is now empty or has very few logs in it.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$logs</span> <span class="p">=</span> <span class="nb">Get-EventLog</span> <span class="n">-List</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Log</span><span class="p">}</span>

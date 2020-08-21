@@ -1001,7 +1001,8 @@
 <div class="section" id="atomic-test-1-rm-rf">
 <h3>Atomic Test #1 - rm -rf<a class="headerlink" href="#atomic-test-1-rm-rf" title="Permalink to this headline">¶</a></h3>
 <p>Delete system and audit logs</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo rm -rf /private/var/log/system.log*
@@ -1023,7 +1024,7 @@ sudo rm -rf /private/var/audit/*
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">0</span>&gt; /var/spool/mail/#<span class="o">{</span>username<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">0</span>&gt; /var/spool/mail/root
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1041,7 +1042,7 @@ sudo rm -rf /private/var/audit/*
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">0</span>&gt; <span class="c1">#{log_path}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">0</span>&gt; /var/log/secure
 </pre></div>
 </div>
 <div class="cell docutils container">

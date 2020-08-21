@@ -914,6 +914,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-command-prompt">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-test-requrires-a-file-to-take-ownership-of-to-be-located-at-file-folder-to-own">
+         Description: Test requrires a file to take ownership of to be located at (#{file_folder_to_own})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -932,6 +960,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-test-requrires-a-file-to-modifyto-be-located-at-file-or-folder">
+         Description: Test requrires a file to modifyto be located at (#{file_or_folder})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -948,7 +1004,35 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
+      <a class="reference internal nav-link" href="#id5">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-test-requrires-a-file-to-modify-to-be-located-at-file-or-folder">
+         Description: Test requrires a file to modify to be located at (#{file_or_folder})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -996,9 +1080,38 @@
 <p>Modifies the filesystem permissions of the specified file or folder to take ownership of the object. Upon execution, “SUCCESS” will
 be displayed for the folder and each file inside of it.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-command-prompt">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code>!<a class="headerlink" href="#dependencies-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-test-requrires-a-file-to-take-ownership-of-to-be-located-at-file-folder-to-own">
+<h5>Description: Test requrires a file to take ownership of to be located at (#{file_folder_to_own})<a class="headerlink" href="#description-test-requrires-a-file-to-take-ownership-of-to-be-located-at-file-folder-to-own" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>IF EXIST %temp%\T1222.001_takeown_folder ( EXIT 0 ) ELSE ( EXIT 1 )
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mkdir %temp%\T1222.001_takeown_folder
+echo T1222.001_takeown1 &gt;&gt; %temp%\T1222.001_takeown_folder\T1222.001_takeown1.txt
+echo T1222.001_takeown2 &gt;&gt; %temp%\T1222.001_takeown_folder\T1222.001_takeown2.txt
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1222</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>takeown.exe /f #{file_folder_to_own} /r
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>takeown.exe /f %temp%\T1222.001_takeown_folder /r
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1017,8 +1130,37 @@ is displayed it may be because the file or folder doesn’t exit. Run the prereq
 will be displayed.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>Icacls.exe #{file_or_folder} /grant #{user_or_group}:F
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-test-requrires-a-file-to-modifyto-be-located-at-file-or-folder">
+<h5>Description: Test requrires a file to modifyto be located at (#{file_or_folder})<a class="headerlink" href="#description-test-requrires-a-file-to-modifyto-be-located-at-file-or-folder" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id2">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>IF EXIST %temp%\T1222.001_cacls ( EXIT 0 ) ELSE ( EXIT 1 )
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mkdir %temp%\T1222.001_cacls
+echo T1222.001_cacls1 &gt;&gt; %temp%\T1222.001_cacls\T1222.001_cacls1.txt
+echo T1222.001_cacls2 &gt;&gt; %temp%\T1222.001_cacls\T1222.001_cacls2.txt
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1222</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>Icacls.exe %temp%\T1222.001_cacls /grant Everyone:F
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1035,9 +1177,40 @@ will be displayed.</p>
 <p>Removes the read-only attribute from a file or folder using the attrib.exe command. Upon execution, no output will be displayed.
 Open the file in File Explorer &gt; Right Click - Prperties and observe that the Read Only checkbox is empty.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>attrib.exe -r #{file_or_folder}\*.* /s
+<div class="section" id="id5">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code>!<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-test-requrires-a-file-to-modify-to-be-located-at-file-or-folder">
+<h5>Description: Test requrires a file to modify to be located at (#{file_or_folder})<a class="headerlink" href="#description-test-requrires-a-file-to-modify-to-be-located-at-file-or-folder" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id6">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>IF EXIST %temp%\T1222.001_attrib ( EXIT 0 ) ELSE ( EXIT 1 )
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mkdir %temp%\T1222.001_attrib
+echo T1222.001_attrib1 &gt;&gt; %temp%\T1222.001_attrib\T1222.001_attrib1.txt
+echo T1222.001_attrib2 &gt;&gt; %temp%\T1222.001_attrib\T1222.001_attrib2.txt
+attrib.exe +r %temp%\T1222.001_attrib\T1222.001_attrib1.txt
+attrib.exe +r %temp%\T1222.001_attrib\T1222.001_attrib2.txt
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1222</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>attrib.exe -r %temp%\T1222.001_attrib\*.* /s
 </pre></div>
 </div>
 <div class="cell docutils container">

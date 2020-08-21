@@ -704,6 +704,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-none">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-microsoft-exchange-snapin-must-be-installed">
+         Description: Microsoft Exchange SnapIn must be installed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -750,12 +778,40 @@
 <h3>Atomic Test #1 - Install MS Exchange Transport Agent Persistence<a class="headerlink" href="#atomic-test-1-install-ms-exchange-transport-agent-persistence" title="Permalink to this headline">¶</a></h3>
 <p>Install a Microsoft Exchange Transport Agent for persistence. This requires execution from an Exchange Client Access Server and the creation of a DLL with specific exports. Seen in use by Turla.
 More details- https://docs.microsoft.com/en-us/exchange/transport-agents-exchange-2013-help</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-none">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-microsoft-exchange-snapin-must-be-installed">
+<h5>Description: Microsoft Exchange SnapIn must be installed<a class="headerlink" href="#description-microsoft-exchange-snapin-must-be-installed" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>Get-TransportAgent -TransportService FrontEnd
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1505</span><span class="o">.</span><span class="mi">002</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Install-TransportAgent</span> <span class="n">-Name</span> <span class="c">#{transport_agent_identity} -TransportAgentFactory #{class_factory} -AssemblyPath #{dll_path}</span>
-<span class="nb">Enable-TransportAgent</span> <span class="c">#{transport_agent_identity}</span>
-<span class="nb">Get-TransportAgent</span> <span class="p">|</span> <span class="nb">Format-List</span> <span class="n">Name</span><span class="p">,</span><span class="n">Enabled</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Install-TransportAgent -Name Security Interop Agent -TransportAgentFactory Microsoft.Exchange.Security.Interop.SecurityInteropAgentFactory -AssemblyPath c:\program files\microsoft\Exchange Server\v15\bin\Microsoft.Exchange.Security.Interop.dll
+Enable-TransportAgent Security Interop Agent
+Get-TransportAgent | Format-List Name,Enabled
 </pre></div>
 </div>
 <div class="cell docutils container">

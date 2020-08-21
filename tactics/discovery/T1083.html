@@ -546,10 +546,10 @@ tree /F &gt;&gt; %temp%\download
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls -a &gt;&gt; <span class="c1">#{output_file}</span>
-<span class="k">if</span> <span class="o">[</span> -d /Library/Preferences/ <span class="o">]</span><span class="p">;</span> <span class="k">then</span> ls -la /Library/Preferences/ &gt; <span class="c1">#{output_file}; fi;</span>
-file */* *&gt;&gt; <span class="c1">#{output_file}</span>
-cat <span class="c1">#{output_file} 2&gt;/dev/null</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls -a &gt;&gt; /tmp/T1083.txt
+<span class="k">if</span> <span class="o">[</span> -d /Library/Preferences/ <span class="o">]</span><span class="p">;</span> <span class="k">then</span> ls -la /Library/Preferences/ &gt; /tmp/T1083.txt<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+file */* *&gt;&gt; /tmp/T1083.txt
+cat /tmp/T1083.txt <span class="m">2</span>&gt;/dev/null
 find . -type f
 ls -R <span class="p">|</span> grep <span class="s2">&quot;:</span>$<span class="s2">&quot;</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/:$//&#39;</span> -e <span class="s1">&#39;s/[^-][^\/]*\//--/g&#39;</span> -e <span class="s1">&#39;s/^/ /&#39;</span> -e <span class="s1">&#39;s/-/|/&#39;</span>
 locate *
@@ -571,10 +571,10 @@ which sh
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span> <span class="o">&amp;&amp;</span> find . -print <span class="p">|</span> sed -e <span class="s1">&#39;s;[^/]*/;|__;g;s;__|; |;g&#39;</span> &gt; <span class="c1">#{output_file}</span>
-<span class="k">if</span> <span class="o">[</span> -f /etc/mtab <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/mtab &gt;&gt; <span class="c1">#{output_file}; fi;</span>
-find . -type f -iname *.pdf &gt;&gt; <span class="c1">#{output_file}</span>
-cat <span class="c1">#{output_file}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span> <span class="o">&amp;&amp;</span> find . -print <span class="p">|</span> sed -e <span class="s1">&#39;s;[^/]*/;|__;g;s;__|; |;g&#39;</span> &gt; /tmp/T1083.txt
+<span class="k">if</span> <span class="o">[</span> -f /etc/mtab <span class="o">]</span><span class="p">;</span> <span class="k">then</span> cat /etc/mtab &gt;&gt; /tmp/T1083.txt<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
+find . -type f -iname *.pdf &gt;&gt; /tmp/T1083.txt
+cat /tmp/T1083.txt
 find . -type f -name <span class="s2">&quot;.*&quot;</span>
 </pre></div>
 </div>

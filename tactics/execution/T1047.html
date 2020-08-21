@@ -578,7 +578,7 @@ if the provided remote host is unreacheable</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic /node:&quot;#{node}&quot; service where (caption like &quot;%#{service_search_string}%&quot;)
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic /node:&quot;127.0.0.1&quot; service where (caption like &quot;%Spooler%&quot;)
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -597,7 +597,7 @@ When the test completes , a new process will be started locally .A notepad appli
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic process call create #{process_to_execute}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic process call create notepad.exe
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -617,7 +617,7 @@ A common error message is “Node - (provided IP or default)  ERROR Description 
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id5">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic /node:&quot;#{node}&quot; process call create #{process_to_execute}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic /node:&quot;127.0.0.1&quot; process call create notepad.exe
 </pre></div>
 </div>
 <div class="cell docutils container">

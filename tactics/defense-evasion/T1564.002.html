@@ -959,10 +959,11 @@
 <div class="section" id="atomic-test-1-hidden-users">
 <h3>Atomic Test #1 - Hidden Users<a class="headerlink" href="#atomic-test-1-hidden-users" title="Permalink to this headline">¶</a></h3>
 <p>Add a hidden user on MacOS</p>
-<p><strong>Supported Platforms:</strong> macos</p>
+<p><strong>Supported Platforms:</strong> macos
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dscl . -create /Users/#<span class="o">{</span>user_name<span class="o">}</span> UniqueID <span class="m">333</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dscl . -create /Users/APT UniqueID <span class="m">333</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

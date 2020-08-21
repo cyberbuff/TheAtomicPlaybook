@@ -709,13 +709,14 @@
 <div class="section" id="atomic-test-1-modify-ssp-configuration-in-registry">
 <h3>Atomic Test #1 - Modify SSP configuration in registry<a class="headerlink" href="#atomic-test-1-modify-ssp-configuration-in-registry" title="Permalink to this headline">¶</a></h3>
 <p>Add a value to a Windows registry SSP key, simulating an adversarial modification of those keys.
-<strong>Supported Platforms:</strong> windows</p>
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span># run these in sequence
 $SecurityPackages = Get-ItemProperty HKLM:\System\CurrentControlSet\Control\Lsa -Name &#39;Security Packages&#39; | Select-Object -ExpandProperty &#39;Security Packages&#39;
 $SecurityPackagesUpdated = $SecurityPackages
-$SecurityPackagesUpdated += &quot;#{fake_ssp_dll}&quot;
+$SecurityPackagesUpdated += &quot;not-a-ssp&quot;
 Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa -Name &#39;Security Packages&#39; -Value $SecurityPackagesUpdated
 
 # revert (before reboot)

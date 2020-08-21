@@ -721,6 +721,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-none">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-ps-module-activedirectory">
+         Description: PS Module ActiveDirectory
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -765,7 +793,8 @@
 <div class="section" id="atomic-test-1-admin-account-manipulate">
 <h3>Atomic Test #1 - Admin Account Manipulate<a class="headerlink" href="#atomic-test-1-admin-account-manipulate" title="Permalink to this headline">¶</a></h3>
 <p>Manipulate Admin Account Name</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$x</span> <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">2</span> <span class="n">-Maximum</span> <span class="n">9999</span>
@@ -807,6 +836,43 @@ service account whose delegation is given onto a dedicated OU for user creation 
 as group manager of the target group.</p>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">Invoke-AtomicTest</span> <span class="pre">-Session</span> <span class="pre">$session</span> <span class="pre">'T1098'</span> <span class="pre">-TestNames</span> <span class="pre">&quot;Domain</span> <span class="pre">Account</span> <span class="pre">and</span> <span class="pre">Group</span> <span class="pre">Manipulate&quot;</span> <span class="pre">-InputArgs</span> <span class="pre">&#64;{&quot;group&quot;</span> <span class="pre">=</span> <span class="pre">&quot;DNSAdmins&quot;</span> <span class="pre">}</span></code></p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-none">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-ps-module-activedirectory">
+<h5>Description: PS Module ActiveDirectory<a class="headerlink" href="#description-ps-module-activedirectory" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>Try {
+    Import-Module ActiveDirectory -ErrorAction Stop | Out-Null
+    exit 0
+} 
+Catch {
+    exit 1
+}
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>if((Get-CimInstance -ClassName Win32_OperatingSystem).ProductType -eq 1) {
+  Add-WindowsCapability -Name (Get-WindowsCapability -Name RSAT.ActiveDirectory.DS* -Online).Name -Online
+} else {
+  Install-WindowsFeature RSAT-AD-PowerShell
+}
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1098</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$x = Get-Random -Minimum 2 -Maximum 99
@@ -815,9 +881,9 @@ $z = Get-Random -Minimum 2 -Maximum 99
 $w = Get-Random -Minimum 2 -Maximum 99
 
 Import-Module ActiveDirectory
-$account = &quot;#{account_prefix}-$x$y$z&quot;
-New-ADUser -Name $account -GivenName &quot;Test&quot; -DisplayName $account -SamAccountName $account -Surname $account -Enabled:$False #{create_args}
-Add-ADGroupMember &quot;#{group}&quot; $account
+$account = &quot;atr--$x$y$z&quot;
+New-ADUser -Name $account -GivenName &quot;Test&quot; -DisplayName $account -SamAccountName $account -Surname $account -Enabled:$False 
+Add-ADGroupMember &quot;Domain Admins&quot; $account
 </pre></div>
 </div>
 <div class="cell docutils container">

@@ -467,6 +467,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-sh">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-check-if-lastlog-command-exists-on-the-machine">
+         Description: Check if lastlog command exists on the machine
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id4">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -617,8 +645,8 @@
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat /etc/passwd &gt; <span class="c1">#{output_file}</span>
-cat <span class="c1">#{output_file}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat /etc/passwd &gt; /tmp/T1087.001.txt
+cat /tmp/T1087.001.txt
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -633,11 +661,12 @@ cat <span class="c1">#{output_file}</span>
 <div class="section" id="atomic-test-2-view-sudoers-access">
 <h3>Atomic Test #2 - View sudoers access<a class="headerlink" href="#atomic-test-2-view-sudoers-access" title="Permalink to this headline">¶</a></h3>
 <p>(requires root)</p>
-<p><strong>Supported Platforms:</strong> linux, macos</p>
+<p><strong>Supported Platforms:</strong> linux, macos
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cat /etc/sudoers &gt; <span class="c1">#{output_file}</span>
-cat <span class="c1">#{output_file}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cat /etc/sudoers &gt; /tmp/T1087.001.txt
+cat /tmp/T1087.001.txt
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -655,8 +684,8 @@ cat <span class="c1">#{output_file}</span>
 <p><strong>Supported Platforms:</strong> linux, macos</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep <span class="s1">&#39;x:0:&#39;</span> /etc/passwd &gt; <span class="c1">#{output_file}</span>
-cat <span class="c1">#{output_file} 2&gt;/dev/null</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep <span class="s1">&#39;x:0:&#39;</span> /etc/passwd &gt; /tmp/T1087.001.txt
+cat /tmp/T1087.001.txt <span class="m">2</span>&gt;/dev/null
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -690,10 +719,35 @@ cat <span class="c1">#{output_file} 2&gt;/dev/null</span>
 <h3>Atomic Test #5 - Show if a user account has ever logged in remotely<a class="headerlink" href="#atomic-test-5-show-if-a-user-account-has-ever-logged-in-remotely" title="Permalink to this headline">¶</a></h3>
 <p>Show if a user account has ever logged in remotely</p>
 <p><strong>Supported Platforms:</strong> linux</p>
+<div class="section" id="dependencies-run-with-sh">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code>!<a class="headerlink" href="#dependencies-run-with-sh" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-check-if-lastlog-command-exists-on-the-machine">
+<h5>Description: Check if lastlog command exists on the machine<a class="headerlink" href="#description-check-if-lastlog-command-exists-on-the-machine" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -x <span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> -v lastlog<span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">exit</span> <span class="m">0</span><span class="p">;</span> <span class="k">else</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Install lastlog on the machine to run the test.&quot;</span><span class="p">;</span> <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1087</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">5</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>lastlog &gt; <span class="c1">#{output_file}</span>
-cat <span class="c1">#{output_file}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>lastlog &gt; /tmp/T1087.001.txt
+cat /tmp/T1087.001.txt
 </pre></div>
 </div>
 <div class="cell docutils container">

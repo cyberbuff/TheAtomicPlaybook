@@ -729,7 +729,7 @@
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;* * * * * #{command}&quot;</span> &gt; <span class="c1">#{tmp_cron} &amp;&amp; crontab #{tmp_cron}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;* * * * * /tmp/evil.sh&quot;</span> &gt; /tmp/persistevil <span class="o">&amp;&amp;</span> crontab /tmp/persistevil
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -744,10 +744,11 @@
 <div class="section" id="atomic-test-2-cron-add-script-to-cron-folder">
 <h3>Atomic Test #2 - Cron - Add script to cron folder<a class="headerlink" href="#atomic-test-2-cron-add-script-to-cron-folder" title="Permalink to this headline">¶</a></h3>
 <p>This test adds a script to a cron folder configured to execute on a schedule. This technique was used by the threat actor Rocke during the exploitation of Linux web servers.</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;#{command}&quot;</span> &gt; /etc/cron.daily/#<span class="o">{</span>cron_script_name<span class="o">}</span><span class="sb">```</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;echo &#39;Hello from Atomic Red Team&#39; &gt; /tmp/atomic.log&quot;</span> &gt; /etc/cron.daily/persistevil<span class="sb">```</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

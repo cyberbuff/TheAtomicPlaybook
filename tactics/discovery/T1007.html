@@ -461,7 +461,8 @@
 <h3>Atomic Test #1 - System Service Discovery<a class="headerlink" href="#atomic-test-1-system-service-discovery" title="Permalink to this headline">¶</a></h3>
 <p>Identify system services.</p>
 <p>Upon successful execution, cmd.exe will execute service commands with expected result to stdout.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>tasklist.exe
@@ -485,7 +486,7 @@ sc query state= all
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net.exe start &gt;&gt; #{output_file}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net.exe start &gt;&gt; C:\Windows\Temp\service-list.txt
 </pre></div>
 </div>
 <div class="cell docutils container">

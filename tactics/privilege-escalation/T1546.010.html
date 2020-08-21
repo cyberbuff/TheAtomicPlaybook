@@ -664,6 +664,49 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-reg-files-must-exist-on-disk-at-specified-locations-registry-file-and-registry-cleanup-file">
+         Description: Reg files must exist on disk at specified locations (#{registry_file} and #{registry_cleanup_file})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-dll-s-must-exist-in-the-c-tools-directory-t1546-010-dll-and-t1546-010x86-dll">
+         Description: DLL’s must exist in the C:\Tools directory (T1546.010.dll and T1546.010x86.dll)
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -713,10 +756,58 @@
 you will see the message “The operation completed successfully.” Each time the DLL is loaded, you will see a message box with a message of “Install AppInit Shim DLL was called!” appear.
 This will happen regularly as your computer starts up various applications and may in fact drive you crazy. A reliable way to make the message box appear and verify the
 AppInit Dlls are loading is to start the notepad application. Be sure to run the cleanup commands afterwards so you don’t keep getting message boxes showing up</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-reg-files-must-exist-on-disk-at-specified-locations-registry-file-and-registry-cleanup-file">
+<h5>Description: Reg files must exist on disk at specified locations (#{registry_file} and #{registry_cleanup_file})<a class="headerlink" href="#description-reg-files-must-exist-on-disk-at-specified-locations-registry-file-and-registry-cleanup-file" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">((</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1546</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1546</span><span class="p">.</span><span class="n">010</span><span class="p">.</span><span class="n">reg</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1546</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1546</span><span class="p">.</span><span class="n">010-cleanup</span><span class="p">.</span><span class="n">reg</span><span class="p">))</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
+<span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1546</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1546</span><span class="p">.</span><span class="n">010</span><span class="p">.</span><span class="n">reg</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1546.010/src/T1546.010.reg&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1546.010\src\T1546.010.reg&quot;</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1546.010/src/T1546.010-cleanup.reg&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1546.010\src\T1546.010-cleanup.reg&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-dll-s-must-exist-in-the-c-tools-directory-t1546-010-dll-and-t1546-010x86-dll">
+<h5>Description: DLL’s must exist in the C:\Tools directory (T1546.010.dll and T1546.010x86.dll)<a class="headerlink" href="#description-dll-s-must-exist-in-the-c-tools-directory-t1546-010-dll-and-t1546-010x86-dll" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id1">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>if ((Test-Path c:\Tools\T1546.010.dll) -and (Test-Path c:\Tools\T1546.010x86.dll)) {exit 0} else {exit 1}
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>New-Item -Type Directory C:\Tools -ErrorAction ignore | Out-Null
+Invoke-WebRequest &quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1546.010/bin/T1546.010.dll&quot; -OutFile C:\Tools\T1546.010.dll
+Invoke-WebRequest &quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1546.010/bin/T1546.010x86.dll&quot; -OutFile C:\Tools\T1546.010x86.dll
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1546</span><span class="o">.</span><span class="mi">010</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg.exe import #{registry_file}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg.exe import PathToAtomicsFolder\T1546.010\src\T1546.010.reg
 </pre></div>
 </div>
 <div class="cell docutils container">

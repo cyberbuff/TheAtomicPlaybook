@@ -435,10 +435,11 @@
 <p>Stops a specified service using the sc.exe command. Upon execution, if the spooler service was running infomration will be displayed saying
 it has changed to a state of STOP_PENDING. If the spooler service was not running “The service has not been started.” will be displayed and it can be
 started by running the cleanup command.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>sc.exe stop #{service_name}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>sc.exe stop spooler
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -455,10 +456,11 @@ started by running the cleanup command.</p>
 <p>Stops a specified service using the net.exe command. Upon execution, if the service was running “The Print Spooler service was stopped successfully.”
 will be displayed. If the service was not running, “The Print Spooler service is not started.” will be displayed and it can be
 started by running the cleanup command.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net.exe stop #{service_name}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net.exe stop spooler
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -479,7 +481,7 @@ started by running the cleanup command.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>taskkill.exe /f /im #{process_name}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>taskkill.exe /f /im spoolsv.exe
 </pre></div>
 </div>
 <div class="cell docutils container">

@@ -840,10 +840,11 @@
 <div class="section" id="atomic-test-1-create-a-user-account-on-a-linux-system">
 <h3>Atomic Test #1 - Create a user account on a Linux system<a class="headerlink" href="#atomic-test-1-create-a-user-account-on-a-linux-system" title="Permalink to this headline">¶</a></h3>
 <p>Create a user via useradd</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-bash">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#attack-commands-run-with-bash" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>useradd -M -N -r -s /bin/bash -c evil_account <span class="c1">#{username}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>useradd -M -N -r -s /bin/bash -c evil_account evil_user
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -858,15 +859,16 @@
 <div class="section" id="atomic-test-2-create-a-user-account-on-a-macos-system">
 <h3>Atomic Test #2 - Create a user account on a MacOS system<a class="headerlink" href="#atomic-test-2-create-a-user-account-on-a-macos-system" title="Permalink to this headline">¶</a></h3>
 <p>Creates a user on a MacOS system with dscl</p>
-<p><strong>Supported Platforms:</strong> macos</p>
+<p><strong>Supported Platforms:</strong> macos
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dscl . -create /Users/#<span class="o">{</span>username<span class="o">}</span>
-dscl . -create /Users/#<span class="o">{</span>username<span class="o">}</span> UserShell /bin/zsh
-dscl . -create /Users/#<span class="o">{</span>username<span class="o">}</span> RealName <span class="s2">&quot;#{realname}&quot;</span>
-dscl . -create /Users/#<span class="o">{</span>username<span class="o">}</span> UniqueID <span class="s2">&quot;1010&quot;</span>
-dscl . -create /Users/#<span class="o">{</span>username<span class="o">}</span> PrimaryGroupID <span class="m">80</span>
-dscl . -create /Users/#<span class="o">{</span>username<span class="o">}</span> NFSHomeDirectory /Users/#<span class="o">{</span>username<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dscl . -create /Users/evil_user
+dscl . -create /Users/evil_user UserShell /bin/zsh
+dscl . -create /Users/evil_user RealName <span class="s2">&quot;Evil Account&quot;</span>
+dscl . -create /Users/evil_user UniqueID <span class="s2">&quot;1010&quot;</span>
+dscl . -create /Users/evil_user PrimaryGroupID <span class="m">80</span>
+dscl . -create /Users/evil_user NFSHomeDirectory /Users/evil_user
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -882,10 +884,11 @@ dscl . -create /Users/#<span class="o">{</span>username<span class="o">}</span> 
 <h3>Atomic Test #3 - Create a new user in a command prompt<a class="headerlink" href="#atomic-test-3-create-a-new-user-in-a-command-prompt" title="Permalink to this headline">¶</a></h3>
 <p>Creates a new user in a command prompt. Upon execution, “The command completed successfully.” will be displayed. To verify the
 new account, run “net user” in powershell or CMD and observe that there is a new user named “T1136.001_CMD”</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net user /add &quot;#{username}&quot; &quot;#{password}&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net user /add &quot;T1136.001_CMD&quot; &quot;T1136.001_CMD!&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -901,10 +904,11 @@ new account, run “net user” in powershell or CMD and observe that there is a
 <h3>Atomic Test #4 - Create a new user in PowerShell<a class="headerlink" href="#atomic-test-4-create-a-new-user-in-powershell" title="Permalink to this headline">¶</a></h3>
 <p>Creates a new user in PowerShell. Upon execution, details about the new account will be displayed in the powershell session. To verify the
 new account, run “net user” in powershell or CMD and observe that there is a new user named “T1136.001_PowerShell”</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-LocalUser</span> <span class="n">-Name</span> <span class="s2">&quot;#{username}&quot;</span> <span class="n">-NoPassword</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-LocalUser</span> <span class="n">-Name</span> <span class="s2">&quot;T1136.001_PowerShell&quot;</span> <span class="n">-NoPassword</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -919,11 +923,12 @@ new account, run “net user” in powershell or CMD and observe that there is a
 <div class="section" id="atomic-test-5-create-a-new-user-in-linux-with-root-uid-and-gid">
 <h3>Atomic Test #5 - Create a new user in Linux with <code class="docutils literal notranslate"><span class="pre">root</span></code> UID and GID.<a class="headerlink" href="#atomic-test-5-create-a-new-user-in-linux-with-root-uid-and-gid" title="Permalink to this headline">¶</a></h3>
 <p>Creates a new user in Linux and adds the user to the <code class="docutils literal notranslate"><span class="pre">root</span></code> group. This technique was used by adversaries during the Butter attack campaign.</p>
-<p><strong>Supported Platforms:</strong> linux</p>
+<p><strong>Supported Platforms:</strong> linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">bash</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>useradd -g <span class="m">0</span> -M -d /root -s /bin/bash <span class="c1">#{username}</span>
-<span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>cat /etc/os-release <span class="p">|</span> grep -i <span class="s1">&#39;Name=&quot;ubuntu&quot;&#39;</span><span class="k">)</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&quot;#{username}:#{password}&quot;</span> <span class="p">|</span> sudo chpasswd<span class="p">;</span> <span class="k">else</span> <span class="nb">echo</span> <span class="s2">&quot;#{password}&quot;</span> <span class="p">|</span> passwd --stdin <span class="c1">#{username}; fi;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>useradd -g <span class="m">0</span> -M -d /root -s /bin/bash butter
+<span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>cat /etc/os-release <span class="p">|</span> grep -i <span class="s1">&#39;Name=&quot;ubuntu&quot;&#39;</span><span class="k">)</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&quot;butter:BetterWithButter&quot;</span> <span class="p">|</span> sudo chpasswd<span class="p">;</span> <span class="k">else</span> <span class="nb">echo</span> <span class="s2">&quot;BetterWithButter&quot;</span> <span class="p">|</span> passwd --stdin butter<span class="p">;</span> <span class="k">fi</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -938,11 +943,12 @@ new account, run “net user” in powershell or CMD and observe that there is a
 <div class="section" id="atomic-test-6-create-a-new-windows-admin-user">
 <h3>Atomic Test #6 - Create a new Windows admin user<a class="headerlink" href="#atomic-test-6-create-a-new-windows-admin-user" title="Permalink to this headline">¶</a></h3>
 <p>Creates a new admin user in a command prompt.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net user /add &quot;#{username}&quot; &quot;#{password}&quot;
-net localgroup administrators &quot;#{username}&quot; /add
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net user /add &quot;T1136.001_Admin&quot; &quot;T1136_pass&quot;
+net localgroup administrators &quot;T1136.001_Admin&quot; /add
 </pre></div>
 </div>
 <div class="cell docutils container">

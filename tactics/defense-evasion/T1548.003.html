@@ -996,7 +996,8 @@
 <div class="section" id="atomic-test-1-sudo-usage">
 <h3>Atomic Test #1 - Sudo usage<a class="headerlink" href="#atomic-test-1-sudo-usage" title="Permalink to this headline">¶</a></h3>
 <p>Common Sudo enumeration methods.</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo -l      
@@ -1016,7 +1017,8 @@ sudo vim /etc/sudoers
 <div class="section" id="atomic-test-2-unlimited-sudo-cache-timeout">
 <h3>Atomic Test #2 - Unlimited sudo cache timeout<a class="headerlink" href="#atomic-test-2-unlimited-sudo-cache-timeout" title="Permalink to this headline">¶</a></h3>
 <p>Sets sudo caching timestamp_timeout to a value for unlimited. This is dangerous to modify without using ‘visudo’, do not do this on a production system.</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo sed -i <span class="s1">&#39;s/env_reset.*$/env_reset,timestamp_timeout=-1/&#39;</span> /etc/sudoers
@@ -1035,7 +1037,8 @@ sudo visudo -c -f /etc/sudoers
 <div class="section" id="atomic-test-3-disable-tty-tickets-for-sudo-caching">
 <h3>Atomic Test #3 - Disable tty_tickets for sudo caching<a class="headerlink" href="#atomic-test-3-disable-tty-tickets-for-sudo-caching" title="Permalink to this headline">¶</a></h3>
 <p>Sets sudo caching tty_tickets value to disabled. This is dangerous to modify without using ‘visudo’, do not do this on a production system.</p>
-<p><strong>Supported Platforms:</strong> macos, linux</p>
+<p><strong>Supported Platforms:</strong> macos, linux
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo sh -c <span class="s2">&quot;echo Defaults &quot;</span><span class="s1">&#39;!&#39;</span><span class="s2">&quot;tty_tickets &gt;&gt; /etc/sudoers&quot;</span>

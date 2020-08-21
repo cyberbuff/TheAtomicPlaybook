@@ -714,7 +714,8 @@ Programs that fall victim to path hijacking may appear to behave normally becaus
 <p>Adversaries can take advantage of insecure library loading by PowerShell to load a vulnerable version of amsi.dll in order to bypass AMSI (Anti-Malware Scanning Interface)
 https://enigma0x3.net/2017/07/19/bypassing-amsi-via-com-server-hijacking/</p>
 <p>Upon successful execution, powershell.exe will be copied and renamed to updater.exe and load amsi.dll from a non-standard path.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy %windir%\System32\windowspowershell\v1.0\powershell.exe %APPDATA%\updater.exe

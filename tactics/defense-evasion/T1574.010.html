@@ -914,6 +914,49 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-a-file-must-exist-on-disk-at-specified-location-weak-permission-file">
+         Description: A file must exist on disk at specified location (#{weak_permission_file})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-a-file-to-replace-the-original-weak-permission-file-in-an-attack-this-would-be-the-malicious-file-gaining-extra-privileges">
+         Description: A file to replace the original weak_permission_file. In an attack this would be the malicious file gaining extra privileges
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -964,10 +1007,53 @@ copy /Y C:\temp\payload.exe C:\ProgramData\folder\Update\weakpermissionfile.exe 
 <p>Upon execution, open the weak permission file at %temp%\T1574.010_weak_permission_file.txt and verify that it’s contents read “T1574.010 Malicious file”. To verify
 the weak file permissions, open File Explorer to%temp%\T1574.010_weak_permission_file.exe then open Properties and Security to view the Full Control permission is enabled.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-a-file-must-exist-on-disk-at-specified-location-weak-permission-file">
+<h5>Description: A file must exist on disk at specified location (#{weak_permission_file})<a class="headerlink" href="#description-a-file-must-exist-on-disk-at-specified-location-weak-permission-file" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_weak_permission_file</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_weak_permission_file</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Set-Content</span> <span class="n">-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_weak_permission_file</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Value</span> <span class="s2">&quot; T1574.010 Weak permission file&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-a-file-to-replace-the-original-weak-permission-file-in-an-attack-this-would-be-the-malicious-file-gaining-extra-privileges">
+<h5>Description: A file to replace the original weak_permission_file. In an attack this would be the malicious file gaining extra privileges<a class="headerlink" href="#description-a-file-to-replace-the-original-weak-permission-file-in-an-attack-this-would-be-the-malicious-file-gaining-extra-privileges" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id1">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_malicious_file</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010</span><span class="p">\</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">New-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_malicious_file</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Set-Content</span> <span class="n">-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_malicious_file</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Value</span> <span class="s2">&quot; T1574.010 Malicious file&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1574</span><span class="o">.</span><span class="mi">010</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-WmiObject</span> <span class="n">win32_service</span> <span class="p">|</span> <span class="nb">select </span><span class="n">PathName</span>
-<span class="nb">Copy-Item</span> <span class="c">#{malicious_file} -Destination #{weak_permission_file} -Force</span>
+<span class="nb">Copy-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_malicious_file</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Destination</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1574</span><span class="p">.</span><span class="n">010_weak_permission_file</span><span class="p">.</span><span class="n">txt</span> <span class="n">-Force</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

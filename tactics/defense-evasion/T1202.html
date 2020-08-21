@@ -981,8 +981,8 @@ Upon execution, calc.exe should open</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>pcalua.exe -a #{process}
-pcalua.exe -a #{payload_path}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>pcalua.exe -a calc.exe
+pcalua.exe -a C:\Windows\System32\calc.exe
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1003,7 +1003,7 @@ Upon execution calc.exe will be opened</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>forfiles /p c:\windows\system32 /m notepad.exe /c #{process}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>forfiles /p c:\windows\system32 /m notepad.exe /c calc.exe
 forfiles /p c:\windows\system32 /m notepad.exe /c &quot;c:\folder\normal.dll:evil.exe&quot;
 </pre></div>
 </div>

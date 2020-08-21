@@ -485,11 +485,11 @@ Additionally, two files will be written to disk - computers.txt and usernames.tx
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd.exe /C whoami
 wmic useraccount get /ALL
-quser /SERVER:&quot;#{computer_name}&quot;
+quser /SERVER:&quot;localhost&quot;
 quser
-qwinsta.exe /server:#{computer_name}
+qwinsta.exe /server:localhost
 qwinsta.exe
-for /F &quot;tokens=1,2&quot; %i in (&#39;qwinsta /server:#{computer_name} ^| findstr &quot;Active Disc&quot;&#39;) do @echo %i | find /v &quot;#&quot; | find /v &quot;console&quot; || echo %j &gt; usernames.txt
+for /F &quot;tokens=1,2&quot; %i in (&#39;qwinsta /server:localhost ^| findstr &quot;Active Disc&quot;&#39;) do @echo %i | find /v &quot;#&quot; | find /v &quot;console&quot; || echo %j &gt; usernames.txt
 @FOR /F %n in (computers.txt) DO @FOR /F &quot;tokens=1,2&quot; %i in (&#39;qwinsta /server:%n ^| findstr &quot;Active Disc&quot;&#39;) do @echo %i | find /v &quot;#&quot; | find /v &quot;console&quot; || echo %j &gt; usernames.txt
 </pre></div>
 </div>

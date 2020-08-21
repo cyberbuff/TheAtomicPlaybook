@@ -450,10 +450,10 @@
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sh -c <span class="s2">&quot;echo &#39;echo Hello from the Atomic Red Team&#39; &gt; #{script_path}&quot;</span>
-sh -c <span class="s2">&quot;echo &#39;ping -c 4 8.8.8.8&#39; &gt;&gt; #{script_path}&quot;</span>
-chmod +x <span class="c1">#{script_path}</span>
-sh <span class="c1">#{script_path}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sh -c <span class="s2">&quot;echo &#39;echo Hello from the Atomic Red Team&#39; &gt; /tmp/art.sh&quot;</span>
+sh -c <span class="s2">&quot;echo &#39;ping -c 4 8.8.8.8&#39; &gt;&gt; /tmp/art.sh&quot;</span>
+chmod +x /tmp/art.sh
+sh /tmp/art.sh
 </pre></div>
 </div>
 <div class="cell docutils container">

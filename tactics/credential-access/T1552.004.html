@@ -553,7 +553,8 @@
 <h3>Atomic Test #1 - Private Keys<a class="headerlink" href="#atomic-test-1-private-keys" title="Permalink to this headline">¶</a></h3>
 <p>Find private keys on the Windows file system.
 File extensions include: .key, .pgp, .gpg, .ppk., .p12, .pem, pfx, .cer, .p7b, .asc</p>
-<p><strong>Supported Platforms:</strong> windows</p>
+<p><strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)</p>
 <div class="section" id="attack-commands-run-with-command-prompt">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>dir c:\ /b /s .key | findstr /e .key
@@ -574,8 +575,8 @@ File extensions include: .key, .pgp, .gpg, .ppk., .p12, .pem, pfx, .cer, .p7b, .
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find <span class="c1">#{search_path} -name id_rsa &gt;&gt; #{output_file}</span>
-find <span class="c1">#{search_path} -name id_dsa &gt;&gt; #{output_file}</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find / -name id_rsa &gt;&gt; /tmp/keyfile_locations.txt
+find / -name id_dsa &gt;&gt; /tmp/keyfile_locations.txt
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -593,9 +594,9 @@ find <span class="c1">#{search_path} -name id_dsa &gt;&gt; #{output_file}</span>
 <p><strong>Supported Platforms:</strong> linux</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir <span class="c1">#{output_folder}</span>
-find <span class="c1">#{search_path} -name id_rsa -exec cp --parents {} #{output_folder} \;</span>
-find <span class="c1">#{search_path} -name id_dsa -exec cp --parents {} #{output_folder} \;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir /tmp/art-staging
+find / -name id_rsa -exec cp --parents <span class="o">{}</span> /tmp/art-staging <span class="se">\;</span>
+find / -name id_dsa -exec cp --parents <span class="o">{}</span> /tmp/art-staging <span class="se">\;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -613,9 +614,9 @@ find <span class="c1">#{search_path} -name id_dsa -exec cp --parents {} #{output
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir <span class="c1">#{output_folder}</span>
-find <span class="c1">#{search_path} -name id_rsa -exec rsync -R {} #{output_folder} \;</span>
-find <span class="c1">#{search_path} -name id_dsa -exec rsync -R {} #{output_folder} \;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir /tmp/art-staging
+find / -name id_rsa -exec rsync -R <span class="o">{}</span> /tmp/art-staging <span class="se">\;</span>
+find / -name id_dsa -exec rsync -R <span class="o">{}</span> /tmp/art-staging <span class="se">\;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

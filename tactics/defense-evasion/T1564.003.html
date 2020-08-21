@@ -965,7 +965,7 @@ Upon execution a hidden PowerShell window will launch calc.exe</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="attack-commands-run-with-powershell">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-Process</span> <span class="c">#{powershell_command}</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Start-Process</span> <span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-WindowStyle</span> <span class="n">hidden</span> <span class="n">calc</span><span class="p">.</span><span class="n">exe</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
