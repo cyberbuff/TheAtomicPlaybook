@@ -2,9 +2,5 @@
 title: The Atomic Playbook
 author: Hare Sudhan Muthusamy
 logo: logo.png
-
-latex:
-  latex_documents:
-    targetname: book.tex
 execute:
-  execute_notebooks         : off
+  execute_notebooks: 'off'

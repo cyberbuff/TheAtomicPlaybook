@@ -4,7 +4,6 @@
     - file: tactics/initial-access
       sections:
         - file: tactics/initial-access/T1133.ipynb
-        - file: tactics/initial-access/.DS_Store
         - file: tactics/initial-access/T1190.ipynb
         - file: tactics/initial-access/T1189.ipynb
         - file: tactics/initial-access/T1091.ipynb
@@ -26,7 +25,6 @@
     - file: tactics/execution
       sections:
         - file: tactics/execution/T1569.002.ipynb
-        - file: tactics/execution/.DS_Store
         - file: tactics/execution/T1072.ipynb
         - file: tactics/execution/T1204.002.ipynb
         - file: tactics/execution/T1569.001.ipynb
@@ -76,7 +74,6 @@
         - file: tactics/persistence/T1133.ipynb
         - file: tactics/persistence/T1137.001.ipynb
         - file: tactics/persistence/T1176.ipynb
-        - file: tactics/persistence/.DS_Store
         - file: tactics/persistence/T1543.ipynb
         - file: tactics/persistence/T1542.003.ipynb
         - file: tactics/persistence/T1037.ipynb
@@ -170,7 +167,6 @@
         - file: tactics/privilege-escalation/T1543.004.ipynb
         - file: tactics/privilege-escalation/T1547.010.ipynb
         - file: tactics/privilege-escalation/T1574.012.ipynb
-        - file: tactics/privilege-escalation/.DS_Store
         - file: tactics/privilege-escalation/T1548.004.ipynb
         - file: tactics/privilege-escalation/T1543.ipynb
         - file: tactics/privilege-escalation/T1037.ipynb
@@ -268,7 +264,6 @@
         - file: tactics/defense-evasion/T1218.008.ipynb
         - file: tactics/defense-evasion/T1027.003.ipynb
         - file: tactics/defense-evasion/T1574.012.ipynb
-        - file: tactics/defense-evasion/.DS_Store
         - file: tactics/defense-evasion/T1548.004.ipynb
         - file: tactics/defense-evasion/T1564.006.ipynb
         - file: tactics/defense-evasion/T1542.003.ipynb
@@ -397,7 +392,6 @@
         - file: tactics/credential-access/T1212.ipynb
         - file: tactics/credential-access/T1110.003.ipynb
         - file: tactics/credential-access/T1056.003.ipynb
-        - file: tactics/credential-access/.DS_Store
         - file: tactics/credential-access/T1056.ipynb
         - file: tactics/credential-access/T1556.003.ipynb
         - file: tactics/credential-access/T1556.001.ipynb
@@ -445,7 +439,6 @@
         - file: tactics/discovery/T1033.ipynb
         - file: tactics/discovery/T1087.002.ipynb
         - file: tactics/discovery/T1526.ipynb
-        - file: tactics/discovery/.DS_Store
         - file: tactics/discovery/T1497.002.ipynb
         - file: tactics/discovery/T1087.004.ipynb
         - file: tactics/discovery/T1069.002.ipynb
@@ -484,7 +477,6 @@
         - file: tactics/lateral-movement/T1021.001.ipynb
         - file: tactics/lateral-movement/T1550.001.ipynb
         - file: tactics/lateral-movement/T1563.ipynb
-        - file: tactics/lateral-movement/.DS_Store
         - file: tactics/lateral-movement/T1072.ipynb
         - file: tactics/lateral-movement/T1021.005.ipynb
         - file: tactics/lateral-movement/T1563.001.ipynb
@@ -508,7 +500,6 @@
         - file: tactics/collection/T1074.ipynb
         - file: tactics/collection/T1113.ipynb
         - file: tactics/collection/T1056.003.ipynb
-        - file: tactics/collection/.DS_Store
         - file: tactics/collection/T1056.ipynb
         - file: tactics/collection/T1115.ipynb
         - file: tactics/collection/T1213.ipynb
@@ -544,7 +535,6 @@
         - file: tactics/command-and-control/T1092.ipynb
         - file: tactics/command-and-control/T1568.003.ipynb
         - file: tactics/command-and-control/T1071.001.ipynb
-        - file: tactics/command-and-control/.DS_Store
         - file: tactics/command-and-control/T1102.001.ipynb
         - file: tactics/command-and-control/T1008.ipynb
         - file: tactics/command-and-control/T1102.003.ipynb
@@ -583,7 +573,6 @@
       sections:
         - file: tactics/exfiltration/T1052.ipynb
         - file: tactics/exfiltration/T1567.ipynb
-        - file: tactics/exfiltration/.DS_Store
         - file: tactics/exfiltration/T1048.002.ipynb
         - file: tactics/exfiltration/T1011.ipynb
         - file: tactics/exfiltration/T1029.ipynb
@@ -605,7 +594,6 @@
         - file: tactics/impact/T1565.003.ipynb
         - file: tactics/impact/T1565.001.ipynb
         - file: tactics/impact/T1491.002.ipynb
-        - file: tactics/impact/.DS_Store
         - file: tactics/impact/T1565.ipynb
         - file: tactics/impact/T1485.ipynb
         - file: tactics/impact/T1491.001.ipynb
