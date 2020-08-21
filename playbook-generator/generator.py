@@ -26,11 +26,13 @@ class PlaybookGenerator:
         #TODO: Swap Exfiltration and C2C
         markdown = []
         markdown.append("| ID      | Name | Description |")
-        markdown.append("| :--------: | :---------: | :---------: |")
+        markdown.append("| -------- | --------- | --------- |")
         for i in stix_tactics:
             tactic = AttackTactic(i,self.get_techniques_by_tactic(i["x_mitre_shortname"]))
             self.generate_notebook(file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics/{tactic.short_name}/{tactic.short_name}', cells=tactic.__repr__())
-            markdown.append(f'| {tactic.id} | {tactic.name} | {tactic.description} |')
+            desc = tactic.description.split("\n")[0]
+            markdown.append(f'| {tactic.id} | {tactic.name} | {desc}|')
+            print(desc)
         cells = [JupyterCells.quick_initialize_markdown(markdown).__repr__()]
         self.generate_notebook(file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics/tactics', cells=cells)
         
