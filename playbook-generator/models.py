@@ -62,7 +62,7 @@ class AttackTechnique:
         cells.append(JupyterCells(type=JupyterCells.Type.MARKDOWN,value=[f'# {self.id} - {self.name}', "\n", self.description]))
         if self.atomic_tests:
             cells.append(JupyterCells(type=JupyterCells.Type.MARKDOWN, value=["## Atomic Tests"]))
-            cells.append(JupyterCells.quick_initialize_code(value=[f'#Import the Module before running the tests.\nImport-Module {_atomics_folder_path}/invoke-atomicredteam/Invoke-AtomicRedTeam.psd1 - Force']))
+            cells.append(JupyterCells.quick_initialize_code(value=[f'#Import the Module before running the tests.\n# Checkout Jupyter Notebook at https://github.com/haresudhan/TheAtomicPlaybook to run PS scripts.\nImport-Module {_atomics_folder_path}/invoke-atomicredteam/Invoke-AtomicRedTeam.psd1 - Force']))
             cells += reduce(lambda x,y: x+y,[i.__repr__() for i in self.atomic_tests])
         else:
             cells.append(JupyterCells.quick_initialize_markdown(value=["## Atomic Tests:","Currently, no tests are available for this technique."]))
@@ -141,7 +141,7 @@ class AtomicTest:
             cells.append(JupyterCells.quick_initialize_markdown(value=markdown))
             cells.append(JupyterCells.quick_initialize_code(value=[f'Invoke-AtomicTest {self.technique_id} -TestNumbers {self.test_number}']))
             if self.cleanup_command:
-                cells.append(JupyterCells.quick_initialize_markdown(["#### Cleanup: ", self.cleanup_command]))
+                cells.append(JupyterCells.quick_initialize_markdown(["#### Cleanup: ", f'```{self.executor}{self.cleanup_command}```']))
                 cells.append(JupyterCells.quick_initialize_code(value=[f'Invoke-AtomicTest {self.technique_id} -TestNumbers {self.test_number} -Cleanup']))
         return cells
 
