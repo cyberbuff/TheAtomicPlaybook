@@ -2,5 +2,5 @@
 */*/ipynb_checkpoints
 */*/*/ipynb_checkpoints
 */__pycache__
-playbook/_build/jupyter_execute
+playbook/_build
 .DS_Store
