@@ -3,3 +3,4 @@
 */*/*/ipynb_checkpoints
 */__pycache__
 playbook/_build/jupyter_execute
+.DS_Store
