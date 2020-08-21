@@ -1,0 +1,595 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Execution &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="T1569.002 - System Services: Service Execution" href="execution/T1569.002.html" />
+    <link rel="prev" title="T1078.004 - Cloud Accounts" href="initial-access/T1078.004.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Execution
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1569.002.html">
+     T1569.002 - System Services: Service Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1072.html">
+     T1072 - Software Deployment Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1204.002.html">
+     T1204.002 - User Execution: Malicious Link
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1569.001.html">
+     T1569.001 - System Services: Launchctl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1053.html">
+     T1053 - Scheduled Task/Job
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1129.html">
+     T1129 - Shared Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1175.html">
+     T1175 - Component Object Model and Distributed COM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1559.html">
+     T1559 - Inter-Process Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1153.html">
+     T1153 - Source
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1204.001.html">
+     T1204.001 - Malicious Link
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.003.html">
+     T1059.003 - Command and Scripting Interpreter: Windows Command Shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1053.004.html">
+     T1053.004 - Scheduled Task/Job: Launchd
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.html">
+     T1059 - Command and Scripting Interpreter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1064.html">
+     T1064 - Scripting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.001.html">
+     T1059.001 - Command and Scripting Interpreter: PowerShell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.005.html">
+     T1059.005 - Command and Scripting Interpreter: Visual Basic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1204.html">
+     T1204 - User Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1053.002.html">
+     T1053.002 - Scheduled Task/Job: At (Windows)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1559.001.html">
+     T1559.001 - Component Object Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.007.html">
+     T1059.007 - JavaScript/JScript
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1569.html">
+     T1569 - System Services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.002.html">
+     T1059.002 - Command and Scripting Interpreter: AppleScript
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1053.005.html">
+     T1053.005 - Scheduled Task/Job: Scheduled Task
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1203.html">
+     T1203 - Exploitation for Client Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1559.002.html">
+     T1559.002 - Inter-Process Communication: Dynamic Data Exchange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1053.001.html">
+     T1053.001 - Scheduled Task/Job: At (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1106.html">
+     T1106 - Native API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1047.html">
+     T1047 - Windows Management Instrumentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.006.html">
+     T1059.006 - Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1059.004.html">
+     T1059.004 - Command and Scripting Interpreter: Bash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1061.html">
+     T1061 - Graphical User Interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="execution/T1053.003.html">
+     T1053.003 - Scheduled Task/Job: Cron
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tactics/execution.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#techniques">
+   Techniques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#browser-based-exploitation">
+     Browser-based Exploitation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#office-applications">
+     Office Applications
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-third-party-applications">
+     Common Third-party Applications
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="execution">
+<h1>Execution<a class="headerlink" href="#execution" title="Permalink to this headline">¶</a></h1>
+<p>The adversary is trying to run malicious code.</p>
+<p>Execution consists of techniques that result in adversary-controlled code running on a local or remote system. Techniques that run malicious code are often paired with techniques from all other tactics to achieve broader goals, like exploring a network or stealing data. For example, an adversary might use a remote access tool to run a PowerShell script that does Remote System Discovery.</p>
+<div class="section" id="techniques">
+<h2>Techniques<a class="headerlink" href="#techniques" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>ID</p></th>
+<th class="text-align:center head"><p>Name</p></th>
+<th class="text-align:center head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>T1059.007</p></td>
+<td class="text-align:center"><p>JavaScript/JScript</p></td>
+<td class="text-align:center"><p>Adversaries may abuse JavaScript and/or JScript for execution. JavaScript (JS) is a platform-agnostic scripting language (compiled just-in-time at runtime) commonly associated with scripts in webpages, though JS can be executed in runtime environments outside the browser.(Citation: NodeJS)</p></td>
+</tr>
+</tbody>
+</table>
+<p>JScript is the Microsoft implementation of the same scripting standard. JScript is interpreted via the Windows Script engine and thus integrated with many components of Windows such as the <a class="reference external" href="https://attack.mitre.org/techniques/T1559/001">Component Object Model</a> and Internet Explorer HTML Application (HTA) pages.(Citation: JScrip May 2018)(Citation: Microsoft JScript 2007)(Citation: Microsoft Windows Scripts)</p>
+<p>Adversaries may abuse JavaScript / JScript to execute various behaviors. Common uses include hosting malicious scripts on websites as part of a <a class="reference external" href="https://attack.mitre.org/techniques/T1189">Drive-by Compromise</a> or downloading and executing these script files as secondary payloads. Since these payloads are text-based, it is also very common for adversaries to obfuscate their content as part of <a class="reference external" href="https://attack.mitre.org/techniques/T1027">Obfuscated Files or Information</a>.
+T1204.002 | Malicious File | An adversary may rely upon a user opening a malicious file in order to gain execution. Users may be subjected to social engineering to get them to open a file that will lead to code execution. This user action will typically be observed as follow-on behavior from <a class="reference external" href="https://attack.mitre.org/techniques/T1566/001">Spearphishing Attachment</a>. Adversaries may use several types of files that require a user to execute them, including .doc, .pdf, .xls, .rtf, .scr, .exe, .lnk, .pif, and .cpl.</p>
+<p>Adversaries may employ various forms of <a class="reference external" href="https://attack.mitre.org/techniques/T1036">Masquerading</a> on the file to increase the likelihood that a user will open it.</p>
+<p>While <a class="reference external" href="https://attack.mitre.org/techniques/T1204/002">Malicious File</a> frequently occurs shortly after Initial Access it may occur at other phases of an intrusion, such as when an adversary places a file in a shared directory or on a user’s desktop hoping that a user will click on it. This activity may also be seen shortly after <a class="reference external" href="https://attack.mitre.org/techniques/T1534">Internal Spearphishing</a>.
+T1204.001 | Malicious Link | An adversary may rely upon a user clicking a malicious link in order to gain execution. Users may be subjected to social engineering to get them to click on a link that will lead to code execution. This user action will typically be observed as follow-on behavior from <a class="reference external" href="https://attack.mitre.org/techniques/T1566/002">Spearphishing Link</a>. Clicking on a link may also lead to other execution techniques such as exploitation of a browser or application vulnerability via <a class="reference external" href="https://attack.mitre.org/techniques/T1203">Exploitation for Client Execution</a>. Links may also lead users to download files that require execution via <a class="reference external" href="https://attack.mitre.org/techniques/T1204/002">Malicious File</a>.
+T1569.002 | Service Execution | Adversaries may abuse the Windows service control manager to execute malicious commands or payloads. The Windows service control manager (<code>services.exe</code>) is an interface to manage and manipulate services.(Citation: Microsoft Service Control Manager) The service control manager is accessible to users via GUI components as well as system utilities such as <code>sc.exe</code> and <a class="reference external" href="https://attack.mitre.org/software/S0039">Net</a>.</p>
+<p><a class="reference external" href="https://attack.mitre.org/software/S0029">PsExec</a> can also be used to execute commands or payloads via a temporary Windows service created through the service control manager API.(Citation: Russinovich Sysinternals)</p>
+<p>Adversaries may leverage these mechanisms to execute malicious content. This can be done by either executing a new or modified service. This technique is the execution used in conjunction with <a class="reference external" href="https://attack.mitre.org/techniques/T1543/003">Windows Service</a> during service persistence or privilege escalation.
+T1569.001 | Launchctl | Adversaries may abuse launchctl to execute commands or programs. Launchctl controls the macOS launchd process, which handles things like <a class="reference external" href="https://attack.mitre.org/techniques/T1543/001">Launch Agent</a>s and <a class="reference external" href="https://attack.mitre.org/techniques/T1543/004">Launch Daemon</a>s, but can execute other commands or programs itself. Launchctl supports taking subcommands on the command-line, interactively, or even redirected from standard input.(Citation: Launchctl Man)</p>
+<p>By loading or reloading <a class="reference external" href="https://attack.mitre.org/techniques/T1543/001">Launch Agent</a>s or <a class="reference external" href="https://attack.mitre.org/techniques/T1543/004">Launch Daemon</a>s, adversaries can install persistence or execute changes they made.(Citation: Sofacy Komplex Trojan)</p>
+<p>Running a command from launchctl is as simple as <code>launchctl submit -l <labelName> – /Path/to/thing/to/execute “arg” “arg” “arg”</code>. Adversaries can abuse this functionality to execute code or even bypass application control if launchctl is an allowed process.
+T1569 | System Services | Adversaries may abuse system services or daemons to execute commands or programs. Adversaries can execute malicious content by interacting with or creating services. Many services are set to run at boot, which can aid in achieving persistence (<a class="reference external" href="https://attack.mitre.org/techniques/T1543">Create or Modify System Process</a>), but adversaries can also abuse services for one-time or temporary execution.
+T1059.006 | Python | Adversaries may abuse Python commands and scripts for execution. Python is a very popular scripting/programming language, with capabilities to perform many functions. Python can be executed interactively from the command-line (via the <code>python.exe</code> interpreter) or via scripts (.py) that can be written and distributed to different systems. Python code can also be compiled into binary executables.</p>
+<p>Python comes with many built-in packages to interact with the underlying system, such as file operations and device I/O. Adversaries can use these libraries to download and execute commands or other scripts as well as perform various malicious behaviors.
+T1059.005 | Visual Basic | Adversaries may abuse Visual Basic (VB) for execution. VB is a programming language created by Microsoft with interoperability with many Windows technologies such as <a class="reference external" href="https://attack.mitre.org/techniques/T1559/001">Component Object Model</a> and the <a class="reference external" href="https://attack.mitre.org/techniques/T1106">Native API</a> through the Windows API. Although tagged as legacy with no planned future evolutions, VB is integrated and supported in the .NET Framework and cross-platform .NET Core.(Citation: VB .NET Mar 2020)(Citation: VB Microsoft)</p>
+<p>Derivative languages based on VB have also been created, such as Visual Basic for Applications (VBA) and VBScript. VBA is an event-driven programming language built into Office applications.(Citation: Microsoft VBA)  VBA enables documents to contain macros used to automate the execution of tasks and other functionality on the host. VBScript is a default scripting language on Windows hosts and can also be used in place of <a class="reference external" href="https://attack.mitre.org/techniques/T1059/007">JavaScript/JScript</a> on HTML Application (HTA) webpages served to Internet Explorer (though most modern browsers do not come with VBScript support).(Citation: Microsoft VBScript)</p>
+<p>Adversaries may use VB payloads to execute malicious commands. Common malicious usage includes automating execution of behaviors with VBScript or embedding VBA content into <a class="reference external" href="https://attack.mitre.org/techniques/T1566/001">Spearphishing Attachment</a> payloads.
+T1059.004 | Unix Shell | Adversaries may abuse Unix shell commands and scripts for execution. Unix shells are the primary command prompt on Linux and macOS systems, though many variations of the Unix shell exist (e.g. sh, bash, zsh, etc.) depending on the specific OS or distribution.(Citation: DieNet Bash)(Citation: Apple ZShell) Unix shells can control every aspect of a system, with certain commands requiring elevated privileges.</p>
+<p>Unix shells also support scripts that enable sequential execution of commands as well as other typical programming operations such as conditionals and loops. Common uses of shell scripts include long or repetitive tasks, or the need to run the same set of commands on multiple systems.</p>
+<p>Adversaries may abuse Unix shells to execute various commands or payloads. Interactive shells may be accessed through command and control channels or during lateral movement such as with <a class="reference external" href="https://attack.mitre.org/techniques/T1021/004">SSH</a>. Adversaries may also leverage shell scripts to deliver and execute multiple commands on victims or as part of payloads used for persistence.
+T1059.003 | Windows Command Shell | Adversaries may abuse the Windows command shell for execution. The Windows command shell (<code>cmd.exe</code>) is the primary command prompt on Windows systems. The Windows command prompt can be used to control almost any aspect of a system, with various permission levels required for different subsets of commands.</p>
+<p>Batch files (ex: .bat or .cmd) also provide the shell with a list of sequential commands to run, as well as normal scripting operations such as conditionals and loops. Common uses of batch files include long or repetitive tasks, or the need to run the same set of commands on multiple systems.</p>
+<p>Adversaries may leverage <code>cmd.exe</code> to execute various commands and payloads. Common uses include <code>cmd.exe /c</code> to execute a single command, or abusing <code>cmd.exe</code> interactively with input and output forwarded over a command and control channel.
+T1059.002 | AppleScript | Adversaries may abuse AppleScript for execution. AppleScript is a macOS scripting language designed to control applications and parts of the OS via inter-application messages called AppleEvents. (Citation: Apple AppleScript) These AppleEvent messages can be easily scripted with AppleScript for local or remote execution.</p>
+<p><code>osascript</code> executes AppleScript and any other Open Scripting Architecture (OSA) language scripts. A list of OSA languages installed on a system can be found by using the <code>osalang</code> program. AppleEvent messages can be sent independently or as part of a script. These events can locate open windows, send keystrokes, and interact with almost any open application locally or remotely.</p>
+<p>Adversaries can use this to execute various behaviors, such as interacting with an open SSH connection, moving to remote machines, and even presenting users with fake dialog boxes. These events cannot start applications remotely (they can start them locally though), but can interact with applications if they’re already running remotely. Since this is a scripting language, it can be used to launch more common techniques as well such as a reverse shell via <a class="reference external" href="https://attack.mitre.org/techniques/T1059/006">Python</a>(Citation: Macro Malware Targets Macs). Scripts can be run from the command-line via <code>osascript /path/to/script</code> or <code>osascript -e “script here”</code>.
+T1059.001 | PowerShell | Adversaries may abuse PowerShell commands and scripts for execution. PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system. (Citation: TechNet PowerShell) Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the <code>Start-Process</code> cmdlet which can be used to run an executable and the <code>Invoke-Command</code> cmdlet which runs a command locally or on a remote computer (though administrator permissions are required to use PowerShell to connect to remote systems).</p>
+<p>PowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.</p>
+<p>A number of PowerShell-based offensive testing tools are available, including <a class="reference external" href="https://attack.mitre.org/software/S0363">Empire</a>,  <a class="reference external" href="https://attack.mitre.org/software/S0194">PowerSploit</a>, <a class="reference external" href="https://attack.mitre.org/software/S0378">PoshC2</a>, and PSAttack.(Citation: Github PSAttack)</p>
+<p>PowerShell commands/scripts can also be executed without directly invoking the <code>powershell.exe</code> binary through interfaces to PowerShell’s underlying <code>System.Management.Automation</code> assembly DLL exposed through the .NET framework and Windows Common Language Interface (CLI). (Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)(Citation: Microsoft PSfromCsharp APR 2014)
+T1559.002 | Dynamic Data Exchange | Adversaries may use Windows Dynamic Data Exchange (DDE) to execute arbitrary commands. DDE is a client-server protocol for one-time and/or continuous inter-process communication (IPC) between applications. Once a link is established, applications can autonomously exchange transactions consisting of strings, warm data links (notifications when a data item changes), hot data links (duplications of changes to a data item), and requests for command execution.</p>
+<p>Object Linking and Embedding (OLE), or the ability to link data between documents, was originally implemented through DDE. Despite being superseded by <a class="reference external" href="https://attack.mitre.org/techniques/T1559/001">Component Object Model</a>, DDE may be enabled in Windows 10 and most of Microsoft Office 2016 via Registry keys. (Citation: BleepingComputer DDE Disabled in Word Dec 2017) (Citation: Microsoft ADV170021 Dec 2017) (Citation: Microsoft DDE Advisory Nov 2017)</p>
+<p>Microsoft Office documents can be poisoned with DDE commands (Citation: SensePost PS DDE May 2016) (Citation: Kettle CSV DDE Aug 2014), directly or through embedded files (Citation: Enigma Reviving DDE Jan 2018), and used to deliver execution via <a class="reference external" href="https://attack.mitre.org/techniques/T1566">Phishing</a> campaigns or hosted Web content, avoiding the use of Visual Basic for Applications (VBA) macros. (Citation: SensePost MacroLess DDE Oct 2017) DDE could also be leveraged by an adversary operating on a compromised machine who does not have direct access to a <a class="reference external" href="https://attack.mitre.org/techniques/T1059">Command and Scripting Interpreter</a>.
+T1559.001 | Component Object Model | Adversaries may use the Windows Component Object Model (COM) for local code execution. COM is an inter-process communication (IPC) component of the native Windows application programming interface (API) that enables interaction between software objects, or executable code that implements one or more interfaces.(Citation: Fireeye Hunting COM June 2019) Through COM, a client object can call methods of server objects, which are typically binary Dynamic Link Libraries (DLL) or executables (EXE).(Citation: Microsoft COM)</p>
+<p>Various COM interfaces are exposed that can be abused to invoke arbitrary execution via a variety of programming languages such as C, C++, Java, and <a class="reference external" href="https://attack.mitre.org/techniques/T1059/005">Visual Basic</a>.(Citation: Microsoft COM) Specific COM objects also exist to directly perform functions beyond code execution, such as creating a <a class="reference external" href="https://attack.mitre.org/techniques/T1053">Scheduled Task/Job</a>, fileless download/execution, and other adversary behaviors related to privilege escalation and persistence.(Citation: Fireeye Hunting COM June 2019)(Citation: ProjectZero File Write EoP Apr 2018)
+T1559 | Inter-Process Communication | Adversaries may abuse inter-process communication (IPC) mechanisms for local code or command execution. IPC is typically used by processes to share data, communicate with each other, or synchronize execution. IPC is also commonly used to avoid situations such as deadlocks, which occurs when processes are stuck in a cyclic waiting pattern.</p>
+<p>Adversaries may abuse IPC to execute arbitrary code or commands. IPC mechanisms may differ depending on OS, but typically exists in a form accessible through programming languages/libraries or native interfaces such as Windows <a class="reference external" href="https://attack.mitre.org/techniques/T1559/002">Dynamic Data Exchange</a> or <a class="reference external" href="https://attack.mitre.org/techniques/T1559/001">Component Object Model</a>. Higher level execution mediums, such as those of <a class="reference external" href="https://attack.mitre.org/techniques/T1059">Command and Scripting Interpreter</a>s, may also leverage underlying IPC mechanisms.
+T1053.003 | Cron | Adversaries may abuse the <code>cron</code> utility to perform task scheduling for initial or recurring execution of malicious code. The <code>cron</code> utility is a time-based job scheduler for Unix-like operating systems.  The <code> crontab</code> file contains the schedule of cron entries to be run and the specified times for execution. Any <code>crontab</code> files are stored in operating system-specific file paths.</p>
+<p>An adversary may use <code>cron</code> in Linux or Unix environments to execute programs at system startup or on a scheduled basis for persistence. <code>cron</code> can also be abused to conduct remote Execution as part of Lateral Movement and or to run a process under the context of a specified account.
+T1053.004 | Launchd | Adversaries may abuse the <code>Launchd</code> daemon to perform task scheduling for initial or recurring execution of malicious code. The <code>launchd</code> daemon, native to macOS, is responsible for loading and maintaining services within the operating system. This process loads the parameters for each launch-on-demand system-level daemon from the property list (plist) files found in <code>/System/Library/LaunchDaemons</code> and <code>/Library/LaunchDaemons</code> (Citation: AppleDocs Launch Agent Daemons). These LaunchDaemons have property list files which point to the executables that will be launched (Citation: Methods of Mac Malware Persistence).</p>
+<p>An adversary may use the <code>launchd</code> daemon in macOS environments to schedule new executables to run at system startup or on a scheduled basis for persistence. <code>launchd</code> can also be abused to run a process under the context of a specified account. Daemons, such as <code>launchd</code>, run with the permissions of the root user account, and will operate regardless of which user account is logged in.
+T1053.001 | At (Linux) | Adversaries may abuse the <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> utility to perform task scheduling for initial or recurring execution of malicious code. The <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> command within Linux operating systems enables administrators to schedule tasks.(Citation: Kifarunix - Task Scheduling in Linux)</p>
+<p>An adversary may use <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> in Linux environments to execute programs at system startup or on a scheduled basis for persistence. <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> can also be abused to conduct remote Execution as part of Lateral Movement and or to run a process under the context of a specified account.
+T1053.005 | Scheduled Task | Adversaries may abuse the Windows Task Scheduler to perform task scheduling for initial or recurring execution of malicious code. There are multiple ways to access the Task Scheduler in Windows. The <code>schtasks</code> can be run directly on the command line, or the Task Scheduler can be opened through the GUI within the Administrator Tools section of the Control Panel. In some cases, adversaries have used a .NET wrapper for the Windows Task Scheduler, and alternatively, adversaries have used the Windows netapi32 library to create a scheduled task.</p>
+<p>The deprecated <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> utility could also be abused by adversaries (ex: <a class="reference external" href="https://attack.mitre.org/techniques/T1053/002">At (Windows)</a>), though <code>at.exe</code> can not access tasks created with <code>schtasks</code> or the Control Panel.</p>
+<p>An adversary may use Windows Task Scheduler to execute programs at system startup or on a scheduled basis for persistence. The Windows Task Scheduler can also be abused to conduct remote Execution as part of Lateral Movement and or to run a process under the context of a specified account (such as SYSTEM).
+T1053.002 | At (Windows) | Adversaries may abuse the <code>at.exe</code> utility to perform task scheduling for initial or recurring execution of malicious code. The <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> utility exists as an executable within Windows for scheduling tasks at a specified time and date. Using <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> requires that the Task Scheduler service be running, and the user to be logged on as a member of the local Administrators group.</p>
+<p>An adversary may use <code>at.exe</code> in Windows environments to execute programs at system startup or on a scheduled basis for persistence. <a class="reference external" href="https://attack.mitre.org/software/S0110">at</a> can also be abused to conduct remote Execution as part of Lateral Movement and or to run a process under the context of a specified account (such as SYSTEM).</p>
+<p>Note: The <code>at.exe</code> command line utility has been deprecated in current versions of Windows in favor of <code>schtasks</code>.
+T1203 | Exploitation for Client Execution | Adversaries may exploit software vulnerabilities in client applications to execute code. Vulnerabilities can exist in software due to unsecure coding practices that can lead to unanticipated behavior. Adversaries can take advantage of certain vulnerabilities through targeted exploitation for the purpose of arbitrary code execution. Oftentimes the most valuable exploits to an offensive toolkit are those that can be used to obtain code execution on a remote system because they can be used to gain access to that system. Users will expect to see files related to the applications they commonly used to do work, so they are a useful target for exploit research and development because of their high utility.</p>
+<p>Several types exist:</p>
+<div class="section" id="browser-based-exploitation">
+<h3>Browser-based Exploitation<a class="headerlink" href="#browser-based-exploitation" title="Permalink to this headline">¶</a></h3>
+<p>Web browsers are a common target through <a class="reference external" href="https://attack.mitre.org/techniques/T1189">Drive-by Compromise</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1566/002">Spearphishing Link</a>. Endpoint systems may be compromised through normal web browsing or from certain users being targeted by links in spearphishing emails to adversary controlled sites used to exploit the web browser. These often do not require an action by the user for the exploit to be executed.</p>
+</div>
+<div class="section" id="office-applications">
+<h3>Office Applications<a class="headerlink" href="#office-applications" title="Permalink to this headline">¶</a></h3>
+<p>Common office and productivity applications such as Microsoft Office are also targeted through <a class="reference external" href="https://attack.mitre.org/techniques/T1566">Phishing</a>. Malicious files will be transmitted directly as attachments or through links to download them. These require the user to open the document or file for the exploit to run.</p>
+</div>
+<div class="section" id="common-third-party-applications">
+<h3>Common Third-party Applications<a class="headerlink" href="#common-third-party-applications" title="Permalink to this headline">¶</a></h3>
+<p>Other applications that are commonly seen or are part of the software deployed in a target network may also be used for exploitation. Applications such as Adobe Reader and Flash, which are common in enterprise environments, have been routinely targeted by adversaries attempting to gain access to systems. Depending on the software and nature of the vulnerability, some may be exploited in the browser or require the user to open a file. For instance, some Flash exploits have been delivered as objects within Microsoft Office documents.
+T1204 | User Execution | An adversary may rely upon specific actions by a user in order to gain execution. Users may be subjected to social engineering to get them to execute malicious code by, for example, opening a malicious document file or link. These user actions will typically be observed as follow-on behavior from forms of <a class="reference external" href="https://attack.mitre.org/techniques/T1566">Phishing</a>.</p>
+<p>While <a class="reference external" href="https://attack.mitre.org/techniques/T1204">User Execution</a> frequently occurs shortly after Initial Access it may occur at other phases of an intrusion, such as when an adversary places a file in a shared directory or on a user’s desktop hoping that a user will click on it. This activity may also be seen shortly after <a class="reference external" href="https://attack.mitre.org/techniques/T1534">Internal Spearphishing</a>.
+T1175 | Component Object Model and Distributed COM | <strong>This technique has been deprecated. Please use <a class="reference external" href="https://attack.mitre.org/techniques/T1021/003">Distributed Component Object Model</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1559/001">Component Object Model</a>.</strong></p>
+<p>Adversaries may use the Windows Component Object Model (COM) and Distributed Component Object Model (DCOM) for local code execution or to execute on remote systems as part of lateral movement.</p>
+<p>COM is a component of the native Windows application programming interface (API) that enables interaction between software objects, or executable code that implements one or more interfaces.(Citation: Fireeye Hunting COM June 2019) Through COM, a client object can call methods of server objects, which are typically Dynamic Link Libraries (DLL) or executables (EXE).(Citation: Microsoft COM) DCOM is transparent middleware that extends the functionality of Component Object Model (COM) (Citation: Microsoft COM) beyond a local computer using remote procedure call (RPC) technology.(Citation: Fireeye Hunting COM June 2019)</p>
+<p>Permissions to interact with local and remote server COM objects are specified by access control lists (ACL) in the Registry. (Citation: Microsoft COM ACL)(Citation: Microsoft Process Wide Com Keys)(Citation: Microsoft System Wide Com Keys) By default, only Administrators may remotely activate and launch COM objects through DCOM.</p>
+<p>Adversaries may abuse COM for local command and/or payload execution. Various COM interfaces are exposed that can be abused to invoke arbitrary execution via a variety of programming languages such as C, C++, Java, and VBScript.(Citation: Microsoft COM) Specific COM objects also exists to directly perform functions beyond code execution, such as creating a <a class="reference external" href="https://attack.mitre.org/techniques/T1053">Scheduled Task/Job</a>, fileless download/execution, and other adversary behaviors such as Privilege Escalation and Persistence.(Citation: Fireeye Hunting COM June 2019)(Citation: ProjectZero File Write EoP Apr 2018)</p>
+<p>Adversaries may use DCOM for lateral movement. Through DCOM, adversaries operating in the context of an appropriately privileged user can remotely obtain arbitrary and even direct shellcode execution through Office applications (Citation: Enigma Outlook DCOM Lateral Movement Nov 2017) as well as other Windows objects that contain insecure methods.(Citation: Enigma MMC20 COM Jan 2017)(Citation: Enigma DCOM Lateral Movement Jan 2017) DCOM can also execute macros in existing documents (Citation: Enigma Excel DCOM Sept 2017) and may also invoke <a class="reference external" href="https://attack.mitre.org/techniques/T1173">Dynamic Data Exchange</a> (DDE) execution directly through a COM created instance of a Microsoft Office application (Citation: Cyberreason DCOM DDE Lateral Movement Nov 2017), bypassing the need for a malicious document.
+T1153 | Source | <strong>This technique has been deprecated and should no longer be used.</strong></p>
+<p>The <code>source</code> command loads functions into the current shell or executes files in the current context. This built-in command can be run in two different ways <code>source /path/to/filename [arguments]</code> or <code>.<strong>This technique has been deprecated and should no longer be used.</strong> /path/to/filename [arguments]</code>. Take note of the space after the “.”. Without a space, a new shell is created that runs the program instead of running the program within the current context. This is often used to make certain features or functions available to a shell or to update a specific shell’s environment.(Citation: Source Manual)</p>
+<p>Adversaries can abuse this functionality to execute programs. The file executed with this technique does not need to be marked executable beforehand.
+T1129 | Shared Modules | Adversaries may abuse shared modules to execute malicious payloads. The Windows module loader can be instructed to load DLLs from arbitrary local paths and arbitrary Universal Naming Convention (UNC) network paths. This functionality resides in NTDLL.dll and is part of the Windows <a class="reference external" href="https://attack.mitre.org/techniques/T1106">Native API</a> which is called from functions like <code>CreateProcess</code>, <code>LoadLibrary</code>, etc. of the Win32 API. (Citation: Wikipedia Windows Library Files)</p>
+<p>The module loader can load DLLs:</p>
+<ul class="simple">
+<li><p>via specification of the (fully-qualified or relative) DLL pathname in the IMPORT directory;</p></li>
+<li><p>via EXPORT forwarded to another DLL, specified with (fully-qualified or relative) pathname (but without extension);</p></li>
+<li><p>via an NTFS junction or symlink program.exe.local with the fully-qualified or relative pathname of a directory containing the DLLs specified in the IMPORT directory or forwarded EXPORTs;</p></li>
+<li><p>via <code>&lt;file name=”filename.extension” loadFrom=”fully-qualified or relative pathname”&gt;</code> in an embedded or external “application manifest”. The file name refers to an entry in the IMPORT directory or a forwarded EXPORT.</p></li>
+</ul>
+<p>Adversaries may use this functionality as a way to execute arbitrary code on a victim system. For example, malware may execute share modules to load additional components or features.
+T1106 | Native API | Adversaries may directly interact with the native OS application programming interface (API) to execute behaviors. Native APIs provide a controlled means of calling low-level OS services within the kernel, such as those involving hardware/devices, memory, and processes.(Citation: NT API Windows)(Citation: Linux Kernel API) These native APIs are leveraged by the OS during system boot (when other system components are not yet initialized) as well as carrying out tasks and requests during routine operations.</p>
+<p>Functionality provided by native APIs are often also exposed to user-mode applications via interfaces and libraries. For example, functions such as the Windows API <code>CreateProcess()</code> or GNU <code>fork()</code> will allow programs and scripts to start other processes.(Citation: Microsoft CreateProcess)(Citation: GNU Fork) This may allow API callers to execute a binary, run a CLI command, load modules, etc. as thousands of similar API functions exist for various system operations.(Citation: Microsoft Win32)(Citation: LIBC)(Citation: GLIBC)</p>
+<p>Higher level software frameworks, such as Microsoft .NET and macOS Cocoa, are also available to interact with native APIs. These frameworks typically provide language wrappers/abstractions to API functionalities and are designed for ease-of-use/portability of code.(Citation: Microsoft NET)(Citation: Apple Core Services)(Citation: MACOS Cocoa)(Citation: macOS Foundation)</p>
+<p>Adversaries may abuse these native API functions as a means of executing behaviors. Similar to <a class="reference external" href="https://attack.mitre.org/techniques/T1059">Command and Scripting Interpreter</a>, the native API and its hierarchy of interfaces, provide mechanisms to interact with and utilize various components of a victimized system.
+T1072 | Software Deployment Tools | Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, VNC, HBSS, Altiris, etc.).</p>
+<p>Access to a third-party network-wide or enterprise-wide software system may enable an adversary to have remote code execution on all systems that are connected to such a system. The access may be used to laterally move to other systems, gather information, or cause a specific effect, such as wiping the hard drives on all endpoints.</p>
+<p>The permissions required for this action vary by system configuration; local credentials may be sufficient with direct access to the third-party system, or specific domain credentials may be required. However, the system may require an administrative account to log in or to perform it’s intended purpose.
+T1064 | Scripting | <strong>This technique has been deprecated. Please use <a class="reference external" href="https://attack.mitre.org/techniques/T1059">Command and Scripting Interpreter</a> where appropriate.</strong></p>
+<p>Adversaries may use scripts to aid in operations and perform multiple actions that would otherwise be manual. Scripting is useful for speeding up operational tasks and reducing the time required to gain access to critical resources. Some scripting languages may be used to bypass process monitoring mechanisms by directly interacting with the operating system at an API level instead of calling other programs. Common scripting languages for Windows include VBScript and <a class="reference external" href="https://attack.mitre.org/techniques/T1086">PowerShell</a> but could also be in the form of command-line batch scripts.</p>
+<p>Scripts can be embedded inside Office documents as macros that can be set to execute when files used in <a class="reference external" href="https://attack.mitre.org/techniques/T1193">Spearphishing Attachment</a> and other types of spearphishing are opened. Malicious embedded macros are an alternative means of execution than software exploitation through <a class="reference external" href="https://attack.mitre.org/techniques/T1203">Exploitation for Client Execution</a>, where adversaries will rely on macros being allowed or that the user will accept to activate them.</p>
+<p>Many popular offensive frameworks exist which use forms of scripting for security testers and adversaries alike. Metasploit (Citation: Metasploit_Ref), Veil (Citation: Veil_Ref), and PowerSploit (Citation: Powersploit) are three examples that are popular among penetration testers for exploit and post-compromise operations and include many features for evading defenses. Some adversaries are known to use PowerShell. (Citation: Alperovitch 2014)
+T1061 | Graphical User Interface | <strong>This technique has been deprecated. Please use <a class="reference external" href="https://attack.mitre.org/techniques/T1021">Remote Services</a> where appropriate.</strong></p>
+<p>The Graphical User Interfaces (GUI) is a common way to interact with an operating system. Adversaries may use a system’s GUI during an operation, commonly through a remote interactive session such as <a class="reference external" href="https://attack.mitre.org/techniques/T1076">Remote Desktop Protocol</a>, instead of through a <a class="reference external" href="https://attack.mitre.org/techniques/T1059">Command and Scripting Interpreter</a>, to search for information and execute files via mouse double-click events, the Windows Run command (Citation: Wikipedia Run Command), or other potentially difficult to monitor interactions.
+T1059 | Command and Scripting Interpreter | Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms. Most systems come with some built-in command-line interface and scripting capabilities, for example, macOS and Linux distributions include some flavor of <a class="reference external" href="https://attack.mitre.org/techniques/T1059/004">Unix Shell</a> while Windows installations include the <a class="reference external" href="https://attack.mitre.org/techniques/T1059/003">Windows Command Shell</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1059/001">PowerShell</a>.</p>
+<p>There are also cross-platform interpreters such as <a class="reference external" href="https://attack.mitre.org/techniques/T1059/006">Python</a>, as well as those commonly associated with client applications such as <a class="reference external" href="https://attack.mitre.org/techniques/T1059/007">JavaScript/JScript</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1059/005">Visual Basic</a>.</p>
+<p>Adversaries may abuse these technologies in various ways as a means of executing arbitrary commands. Commands and scripts can be embedded in <a class="reference external" href="https://attack.mitre.org/tactics/TA0001">Initial Access</a> payloads delivered to victims as lure documents or as secondary payloads downloaded from an existing C2. Adversaries may also execute commands through interactive terminals/shells.
+T1053 | Scheduled Task/Job | Adversaries may abuse task scheduling functionality to facilitate initial or recurring execution of malicious code. Utilities exist within all major operating systems to schedule programs or scripts to be executed at a specified date and time. A task can also be scheduled on a remote system, provided the proper authentication is met (ex: RPC and file and printer sharing in Windows environments). Scheduling a task on a remote system typically requires being a member of an admin or otherwise privileged group on the remote system.(Citation: TechNet Task Scheduler Security)</p>
+<p>Adversaries may use task scheduling to execute programs at system startup or on a scheduled basis for persistence. These mechanisms can also be abused to run a process under the context of a specified account (such as one with elevated permissions/privileges).
+T1047 | Windows Management Instrumentation | Adversaries may abuse Windows Management Instrumentation (WMI) to achieve execution. WMI is a Windows administration feature that provides a uniform environment for local and remote access to Windows system components. It relies on the WMI service for local and remote access and the server message block (SMB) (Citation: Wikipedia SMB) and Remote Procedure Call Service (RPCS) (Citation: TechNet RPC) for remote access. RPCS operates over port 135. (Citation: MSDN WMI)</p>
+<p>An adversary can use WMI to interact with local and remote systems and use it as a means to perform many tactic functions, such as gathering information for Discovery and remote Execution of files as part of Lateral Movement. (Citation: FireEye WMI SANS 2015) (Citation: FireEye WMI 2015)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span><span class="o">-</span><span class="n">By</span> <span class="o">-</span><span class="n">Tactic</span> <span class="n">execution</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="initial-access/T1078.004.html" title="previous page">T1078.004 - Cloud Accounts</a>
+    <a class='right-next' id="next-link" href="execution/T1569.002.html" title="next page">T1569.002 - System Services: Service Execution</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

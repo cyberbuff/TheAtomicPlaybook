@@ -1,0 +1,782 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>T1078.002 - Domain Accounts &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="T1546.002 - Event Triggered Execution: Screensaver" href="T1546.002.html" />
+    <link rel="prev" title="T1053.005 - Scheduled Task/Job: Scheduled Task" href="T1053.005.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1108.html">
+     T1108 - Redundant Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1098.004.html">
+     T1098.004 - SSH Authorized Keys
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.008.html">
+     T1546.008 - Event Triggered Execution: Accessibility Features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.011.html">
+     T1546.011 - Event Triggered Execution: Application Shimming
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.013.html">
+     T1546.013 - Event Triggered Execution: PowerShell Profile
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.html">
+     T1547 - Boot or Logon Autostart Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.009.html">
+     T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1137.html">
+     T1137 - Office Application Startup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1137.005.html">
+     T1137.005 - Outlook Rules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1543.004.html">
+     T1543.004 - Create or Modify System Process: Launch Daemon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.010.html">
+     T1547.010 - Port Monitors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1098.002.html">
+     T1098.002 - Exchange Email Delegate Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.012.html">
+     T1574.012 - Hijack Execution Flow: COR_PROFILER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1133.html">
+     T1133 - External Remote Services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1137.001.html">
+     T1137.001 - Office Template Macros
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1176.html">
+     T1176 - Browser Extensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1543.html">
+     T1543 - Create or Modify System Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.003.html">
+     T1542.003 - Bootkit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.html">
+     T1037 - Boot or Logon Initialization Scripts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1136.002.html">
+     T1136.002 - Domain Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.009.html">
+     T1574.009 - Hijack Execution Flow: Path Interception by Unquoted Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.001.html">
+     T1542.001 - System Firmware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.015.html">
+     T1546.015 - Component Object Model Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1543.002.html">
+     T1543.002 - Create or Modify System Process: Systemd Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1205.001.html">
+     T1205.001 - Port Knocking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.010.html">
+     T1574.010 - Hijack Execution Flow: Services File Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1137.003.html">
+     T1137.003 - Outlook Forms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.008.html">
+     T1547.008 - LSASS Driver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1197.html">
+     T1197 - BITS Jobs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.html">
+     T1546 - Event Triggered Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.012.html">
+     T1546.012 - Event Triggered Execution: Image File Execution Options Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.011.html">
+     T1547.011 - Boot or Logon Autostart Execution: Plist Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html">
+     T1053 - Scheduled Task/Job
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1136.html">
+     T1136 - Create Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1137.004.html">
+     T1137.004 - Outlook Home Page
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.009.html">
+     T1546.009 - AppCert DLLs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1137.006.html">
+     T1137.006 - Add-ins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1525.html">
+     T1525 - Implant Container Image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.010.html">
+     T1546.010 - Event Triggered Execution: AppInit DLLs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.014.html">
+     T1546.014 - Event Triggered Execution: Emond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1034.html">
+     T1034 - Path Interception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.008.html">
+     T1574.008 - Path Interception by Search Order Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1505.html">
+     T1505 - Server Software Component
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1136.001.html">
+     T1136.001 - Create Account: Local Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.011.html">
+     T1574.011 - Hijack Execution Flow: Services Registry Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1137.002.html">
+     T1137.002 - Office Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1098.001.html">
+     T1098.001 - Additional Azure Service Principal Credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1543.003.html">
+     T1543.003 - Create or Modify System Process: Windows Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1543.001.html">
+     T1543.001 - Create or Modify System Process: Launch Agent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1098.003.html">
+     T1098.003 - Add Office 365 Global Administrator Role
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1136.003.html">
+     T1136.003 - Cloud Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.html">
+     T1542 - Pre-OS Boot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.002.html">
+     T1542.002 - Component Firmware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1505.002.html">
+     T1505.002 - Server Software Component: Transport Agent
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.006.html">
+     T1574.006 - Hijack Execution Flow: LD_PRELOAD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.003.html">
+     T1037.003 - Network Logon Script
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.003.html">
+     T1546.003 - Event Triggered Execution: Windows Management Instrumentation Event Subscription
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.003.html">
+     T1078.003 - Local Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.004.html">
+     T1053.004 - Scheduled Task/Job: Launchd
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.001.html">
+     T1078.001 - Valid Accounts: Default Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.001.html">
+     T1546.001 - Event Triggered Execution: Change Default File Association
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.001.html">
+     T1037.001 - Boot or Logon Initialization Scripts: Logon Script (Windows)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.002.html">
+     T1547.002 - Authentication Package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.004.html">
+     T1574.004 - Dylib Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.006.html">
+     T1547.006 - Boot or Logon Autostart Execution: Kernel Modules and Extensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.005.html">
+     T1037.005 - Boot or Logon Initialization Scripts: Startup Items
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.002.html">
+     T1053.002 - Scheduled Task/Job: At (Windows)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.005.html">
+     T1546.005 - Event Triggered Execution: Trap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.007.html">
+     T1546.007 - Event Triggered Execution: Netsh Helper DLL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1062.html">
+     T1062 - Hypervisor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.002.html">
+     T1574.002 - Hijack Execution Flow: DLL Side-Loading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.004.html">
+     T1547.004 - Boot or Logon Autostart Execution: Winlogon Helper DLL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1098.html">
+     T1098 - Account Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1554.html">
+     T1554 - Compromise Client Software Binary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.005.html">
+     T1574.005 - Executable Installer File Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1505.001.html">
+     T1505.001 - SQL Stored Procedures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.003.html">
+     T1547.003 - Time Providers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.001.html">
+     T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.002.html">
+     T1037.002 - Boot or Logon Initialization Scripts: Logon Script (Mac)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.007.html">
+     T1574.007 - Path Interception by PATH Environment Variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1505.003.html">
+     T1505.003 - Server Software Component: Web Shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.005.html">
+     T1053.005 - Scheduled Task/Job: Scheduled Task
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     T1078.002 - Domain Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.002.html">
+     T1546.002 - Event Triggered Execution: Screensaver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.001.html">
+     T1053.001 - Scheduled Task/Job: At (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.006.html">
+     T1546.006 - LC_LOAD_DYLIB Addition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.005.html">
+     T1547.005 - Boot or Logon Autostart Execution: Security Support Provider
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html">
+     T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.001.html">
+     T1574.001 - Hijack Execution Flow: DLL Search Order Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1547.007.html">
+     T1547.007 - Boot or Logon Autostart Execution: Re-opened Applications
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.html">
+     T1574 - Hijack Execution Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.004.html">
+     T1037.004 - Boot or Logon Initialization Scripts: Rc.common
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1546.004.html">
+     T1546.004 - Event Triggered Execution: .bash_profile and .bashrc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.004.html">
+     T1078.004 - Cloud Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1205.html">
+     T1205 - Traffic Signaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.003.html">
+     T1053.003 - Scheduled Task/Job: Cron
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tactics/persistence/T1078.002.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-tests">
+   Atomic Tests:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection">
+   Detection
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1078-002-domain-accounts">
+<h1>T1078.002 - Domain Accounts<a class="headerlink" href="#t1078-002-domain-accounts" title="Permalink to this headline">¶</a></h1>
+<p>Adversaries may obtain and abuse credentials of a domain account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. (Citation: TechNet Credential Theft) Domain accounts are those managed by Active Directory Domain Services where access and permissions are configured across systems and services that are part of that domain. Domain accounts can cover users, administrators, and services.(Citation: Microsoft AD Accounts)</p>
+<p>Adversaries may compromise domain accounts, some with a high level of privileges, through various means such as <a class="reference external" href="https://attack.mitre.org/techniques/T1003">OS Credential Dumping</a> or password reuse, allowing access to privileged resources of the domain.</p>
+<div class="section" id="atomic-tests">
+<h2>Atomic Tests:<a class="headerlink" href="#atomic-tests" title="Permalink to this headline">¶</a></h2>
+<p>Currently, no tests are available for this technique.</p>
+</div>
+<div class="section" id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
+<p>Configure robust, consistent account activity audit policies across the enterprise and with externally accessible services.(Citation: TechNet Audit Policy) Look for suspicious account behavior across systems that share accounts, either user, admin, or service accounts. Examples: one account logged into multiple systems simultaneously; multiple accounts logged into the same machine simultaneously; accounts logged in at odd times or outside of business hours. Activity may be from interactive login sessions or process ownership from accounts being used to execute binaries on a remote system as a particular account. Correlate other security systems with login information (e.g., a user has an active login session but has not entered the building or does not have VPN access).</p>
+<p>Perform regular audits of domain accounts to detect accounts that may have been created by an adversary for persistence.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics/persistence"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T1053.005.html" title="previous page">T1053.005 - Scheduled Task/Job: Scheduled Task</a>
+    <a class='right-next' id="next-link" href="T1546.002.html" title="next page">T1546.002 - Event Triggered Execution: Screensaver</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

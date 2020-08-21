@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exfiltration &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="T1052 - Exfiltration Over Physical Medium" href="exfiltration/T1052.html" />
+    <link rel="prev" title="T1205 - Traffic Signaling" href="command-and-control/T1205.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exfiltration
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1052.html">
+     T1052 - Exfiltration Over Physical Medium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1567.html">
+     T1567 - Exfiltration Over Web Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1048.002.html">
+     T1048.002 - Exfiltration Over Asymmetric Encrypted Non-C2 Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1011.html">
+     T1011 - Exfiltration Over Other Network Medium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1029.html">
+     T1029 - Scheduled Transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1030.html">
+     T1030 - Data Transfer Size Limits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1048.html">
+     T1048 - Exfiltration Over Alternative Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1048.003.html">
+     T1048.003 - Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1048.001.html">
+     T1048.001 - Exfiltration Over Symmetric Encrypted Non-C2 Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1567.001.html">
+     T1567.001 - Exfiltration to Code Repository
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1052.001.html">
+     T1052.001 - Exfiltration over USB
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1020.html">
+     T1020 - Automated Exfiltration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1041.html">
+     T1041 - Exfiltration Over C2 Channel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1567.002.html">
+     T1567.002 - Exfiltration to Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1537.html">
+     T1537 - Transfer Data to Cloud Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exfiltration/T1011.001.html">
+     T1011.001 - Exfiltration Over Bluetooth
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tactics/exfiltration.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#techniques">
+   Techniques
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="exfiltration">
+<h1>Exfiltration<a class="headerlink" href="#exfiltration" title="Permalink to this headline">¶</a></h1>
+<p>The adversary is trying to steal data.</p>
+<p>Exfiltration consists of techniques that adversaries may use to steal data from your network. Once they’ve collected data, adversaries often package it to avoid detection while removing it. This can include compression and encryption. Techniques for getting data out of a target network typically include transferring it over their command and control channel or an alternate channel and may also include putting size limits on the transmission.</p>
+<div class="section" id="techniques">
+<h2>Techniques<a class="headerlink" href="#techniques" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>ID</p></th>
+<th class="text-align:center head"><p>Name</p></th>
+<th class="text-align:center head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>T1048.003</p></td>
+<td class="text-align:center"><p>Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol</p></td>
+<td class="text-align:center"><p>Adversaries may steal data by exfiltrating it over an un-encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Adversaries may opt to obfuscate this data, without the use of encryption, within network protocols that are natively unencrypted (such as HTTP, FTP, or DNS). This may include custom or publicly available encoding/compression algorithms (such as base64) as well as embedding data within protocol headers and fields.
+T1048.002 | Exfiltration Over Asymmetric Encrypted Non-C2 Protocol | Adversaries may steal data by exfiltrating it over an asymmetrically encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.</p>
+<p>Asymmetric encryption algorithms are those that use different keys on each end of the channel. Also known as public-key cryptography, this requires pairs of cryptographic keys that can encrypt/decrypt data from the corresponding key. Each end of the communication channels requires a private key (only in the procession of that entity) and the public key of the other entity. The public keys of each entity are exchanged before encrypted communications begin.</p>
+<p>Network protocols that use asymmetric encryption (such as HTTPS/TLS/SSL) often utilize symmetric encryption once keys are exchanged. Adversaries may opt to use these encrypted mechanisms that are baked into a protocol.
+T1048.001 | Exfiltration Over Symmetric Encrypted Non-C2 Protocol | Adversaries may steal data by exfiltrating it over a symmetrically encrypted network protocol other than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.</p>
+<p>Symmetric encryption algorithms are those that use shared or the same keys/secrets on each end of the channel. This requires an exchange or pre-arranged agreement/possession of the value used to encrypt and decrypt data.</p>
+<p>Network protocols that use asymmetric encryption often utilize symmetric encryption once keys are exchanged, but adversaries may opt to manually share keys and implement symmetric cryptographic algorithms (ex: RC4, AES) vice using mechanisms that are baked into a protocol. This may result in multiple layers of encryption (in protocols that are natively encrypted such as HTTPS) or encryption in protocols that not typically encrypted (such as HTTP or FTP).
+T1052.001 | Exfiltration over USB | Adversaries may attempt to exfiltrate data over a USB connected physical device. In certain circumstances, such as an air-gapped network compromise, exfiltration could occur via a USB device introduced by a user. The USB device could be used as the final exfiltration point or to hop between otherwise disconnected systems.
+T1011.001 | Exfiltration Over Bluetooth | Adversaries may attempt to exfiltrate data over Bluetooth rather than the command and control channel. If the command and control network is a wired Internet connection, an attacker may opt to exfiltrate data using a Bluetooth communication channel.</p>
+<p>Adversaries may choose to do this if they have sufficient access and proximity. Bluetooth connections might not be secured or defended as well as the primary Internet-connected channel because it is not routed through the same enterprise network.
+T1567.002 | Exfiltration to Cloud Storage | Adversaries may exfiltrate data to a cloud storage service rather than over their primary command and control channel. Cloud storage services allow for the storage, edit, and retrieval of data from a remote cloud storage server over the Internet.</p>
+<p>Examples of cloud storage services include Dropbox and Google Docs. Exfiltration to these cloud storage services can provide a significant amount of cover to the adversary if hosts within the network are already communicating with the service.
+T1567.001 | Exfiltration to Code Repository | Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. Code repositories are often accessible via an API (ex: https://api.github.com). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.</p>
+<p>Exfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network.
+T1567 | Exfiltration Over Web Service | Adversaries may use an existing, legitimate external Web service to exfiltrate data rather than their primary command and control channel. Popular Web services acting as an exfiltration mechanism may give a significant amount of cover due to the likelihood that hosts within a network are already communicating with them prior to compromise. Firewall rules may also already exist to permit traffic to these services.</p>
+<p>Web service providers also commonly use SSL/TLS encryption, giving adversaries an added level of protection.
+T1537 | Transfer Data to Cloud Account | Adversaries may exfiltrate data by transferring the data, including backups of cloud environments, to another cloud account they control on the same service to avoid typical file transfers/downloads and network-based exfiltration detection.</p>
+<p>A defender who is monitoring for large transfers to outside the cloud environment through normal file transfers or over command and control channels may not be watching for data transfers to another account within the same cloud provider. Such transfers may utilize existing cloud provider APIs and the internal address space of the cloud provider to blend into normal traffic or avoid data transfers over external network interfaces.</p>
+<p>Incidents have been observed where adversaries have created backups of cloud instances and transferred them to separate accounts.(Citation: DOJ GRU Indictment Jul 2018)
+T1052 | Exfiltration Over Physical Medium | Adversaries may attempt to exfiltrate data via a physical medium, such as a removable drive. In certain circumstances, such as an air-gapped network compromise, exfiltration could occur via a physical medium or device introduced by a user. Such media could be an external hard drive, USB drive, cellular phone, MP3 player, or other removable storage and processing device. The physical medium or device could be used as the final exfiltration point or to hop between otherwise disconnected systems.
+T1048 | Exfiltration Over Alternative Protocol | Adversaries may steal data by exfiltrating it over a different protocol than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.</p>
+<p>Alternate protocols include FTP, SMTP, HTTP/S, DNS, SMB, or any other network protocol not being used as the main command and control channel. Different protocol channels could also include Web services such as cloud storage. Adversaries may also opt to encrypt and/or obfuscate these alternate channels.</p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1048">Exfiltration Over Alternative Protocol</a> can be done using various common operating system utilities such as <a class="reference external" href="https://attack.mitre.org/software/S0039">Net</a>/SMB or FTP.(Citation: Palo Alto OilRig Oct 2016)
+T1041 | Exfiltration Over C2 Channel | Adversaries may steal data by exfiltrating it over an existing command and control channel. Stolen data is encoded into the normal communications channel using the same protocol as command and control communications.
+T1030 | Data Transfer Size Limits | An adversary may exfiltrate data in fixed size chunks instead of whole files or limit packet sizes below certain thresholds. This approach may be used to avoid triggering network data transfer threshold alerts.
+T1029 | Scheduled Transfer | Adversaries may schedule data exfiltration to be performed only at certain times of day or at certain intervals. This could be done to blend traffic patterns with normal activity or availability.</p>
+<p>When scheduled exfiltration is used, other exfiltration techniques likely apply as well to transfer the information out of the network, such as <a class="reference external" href="https://attack.mitre.org/techniques/T1041">Exfiltration Over C2 Channel</a> or <a class="reference external" href="https://attack.mitre.org/techniques/T1048">Exfiltration Over Alternative Protocol</a>.
+T1020 | Automated Exfiltration | Adversaries may exfiltrate data, such as sensitive documents, through the use of automated processing after being gathered during Collection.</p>
+<p>When automated exfiltration is used, other exfiltration techniques likely apply as well to transfer the information out of the network, such as <a class="reference external" href="https://attack.mitre.org/techniques/T1041">Exfiltration Over C2 Channel</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1048">Exfiltration Over Alternative Protocol</a>.
+T1011 | Exfiltration Over Other Network Medium | Adversaries may attempt to exfiltrate data over a different network medium than the command and control channel. If the command and control network is a wired Internet connection, the exfiltration may occur, for example, over a WiFi connection, modem, cellular data connection, Bluetooth, or another radio frequency (RF) channel.</p>
+<p>Adversaries may choose to do this if they have sufficient access or proximity, and the connection might not be secured or defended as well as the primary Internet-connected channel because it is not routed through the same enterprise network</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span><span class="o">-</span><span class="n">By</span> <span class="o">-</span><span class="n">Tactic</span> <span class="n">exfiltration</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="command-and-control/T1205.html" title="previous page">T1205 - Traffic Signaling</a>
+    <a class='right-next' id="next-link" href="exfiltration/T1052.html" title="next page">T1052 - Exfiltration Over Physical Medium</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

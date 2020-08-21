@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lateral Movement &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="T1550.003 - Use Alternate Authentication Material: Pass the Ticket" href="lateral-movement/T1550.003.html" />
+    <link rel="prev" title="T1120 - Peripheral Device Discovery" href="discovery/T1120.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lateral Movement
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1550.003.html">
+     T1550.003 - Use Alternate Authentication Material: Pass the Ticket
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1210.html">
+     T1210 - Exploitation of Remote Services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1021.003.html">
+     T1021.003 - Distributed Component Object Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1021.001.html">
+     T1021.001 - Remote Services: Remote Desktop Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1550.001.html">
+     T1550.001 - Application Access Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1563.html">
+     T1563 - Remote Service Session Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1072.html">
+     T1072 - Software Deployment Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1021.005.html">
+     T1021.005 - VNC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1563.001.html">
+     T1563.001 - SSH Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1091.html">
+     T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1550.002.html">
+     T1550.002 - Use Alternate Authentication Material: Pass the Hash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1051.html">
+     T1051 - Shared Webroot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1021.002.html">
+     T1021.002 - Remote Services: SMB/Windows Admin Shares
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1021.006.html">
+     T1021.006 - Remote Services: Windows Remote Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1175.html">
+     T1175 - Component Object Model and Distributed COM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1563.002.html">
+     T1563.002 - Remote Service Session Hijacking: RDP Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1550.004.html">
+     T1550.004 - Web Session Cookie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1021.004.html">
+     T1021.004 - SSH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1021.html">
+     T1021 - Remote Services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1534.html">
+     T1534 - Internal Spearphishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1080.html">
+     T1080 - Taint Shared Content
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1570.html">
+     T1570 - Lateral Tool Transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lateral-movement/T1550.html">
+     T1550 - Use Alternate Authentication Material
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tactics/lateral-movement.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#techniques">
+   Techniques
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lateral-movement">
+<h1>Lateral Movement<a class="headerlink" href="#lateral-movement" title="Permalink to this headline">¶</a></h1>
+<p>The adversary is trying to move through your environment.</p>
+<p>Lateral Movement consists of techniques that adversaries use to enter and control remote systems on a network. Following through on their primary objective often requires exploring the network to find their target and subsequently gaining access to it. Reaching their objective often involves pivoting through multiple systems and accounts to gain. Adversaries might install their own remote access tools to accomplish Lateral Movement or use legitimate credentials with native network and operating system tools, which may be stealthier.</p>
+<div class="section" id="techniques">
+<h2>Techniques<a class="headerlink" href="#techniques" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>ID</p></th>
+<th class="text-align:center head"><p>Name</p></th>
+<th class="text-align:center head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>T1570</p></td>
+<td class="text-align:center"><p>Lateral Tool Transfer</p></td>
+<td class="text-align:center"><p>Adversaries may transfer tools or other files between systems in a compromised environment. Files may be copied from one system to another to stage adversary tools or other files over the course of an operation. Adversaries may copy files laterally between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over SMB to connected network shares or with authenticated connections with <a class="reference external" href="https://attack.mitre.org/techniques/T1021/002">SMB/Windows Admin Shares</a> or <a class="reference external" href="https://attack.mitre.org/techniques/T1021/001">Remote Desktop Protocol</a>. Files can also be copied over on Mac and Linux with native tools like scp, rsync, and sftp.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>T1563.002</p></td>
+<td class="text-align:center"><p>RDP Hijacking</p></td>
+<td class="text-align:center"><p>Adversaries may hijack a legitimate user’s remote desktop session to move laterally within an environment. Remote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Adversaries may perform RDP session hijacking which involves stealing a legitimate user’s remote session. Typically, a user is notified when someone else is trying to steal their session. With System permissions and using Terminal Services Console, <code class="docutils literal notranslate"><span class="pre">c:\windows\system32\tscon.exe</span> <span class="pre">[session</span> <span class="pre">number</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">stolen]</span></code>, an adversary can hijack a session without the need for credentials or prompts to the user.(Citation: RDP Hijacking Korznikov) This can be done remotely or locally and with active or disconnected sessions.(Citation: RDP Hijacking Medium) It can also lead to <a class="reference external" href="https://attack.mitre.org/techniques/T1018">Remote System Discovery</a> and Privilege Escalation by stealing a Domain Admin or higher privileged account session. All of this can be done by using native Windows commands, but it has also been added as a feature in red teaming tools.(Citation: Kali Redsnarf)
+T1563.001 | SSH Hijacking | Adversaries may hijack a legitimate user’s SSH session to move laterally within an environment. Secure Shell (SSH) is a standard means of remote access on Linux and macOS systems. It allows a user to connect to another system via an encrypted tunnel, commonly authenticating through a password, certificate or the use of an asymmetric encryption key pair.</p>
+<p>In order to move laterally from a compromised host, adversaries may take advantage of trust relationships established with other systems via public key authentication in active SSH sessions by hijacking an existing connection to another system. This may occur through compromising the SSH agent itself or by having access to the agent’s socket. If an adversary is able to obtain root access, then hijacking SSH sessions is likely trivial.(Citation: Slideshare Abusing SSH)(Citation: SSHjack Blackhat)(Citation: Clockwork SSH Agent Hijacking)(Citation: Breach Post-mortem SSH Hijack)</p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1563/001">SSH Hijacking</a> differs from use of <a class="reference external" href="https://attack.mitre.org/techniques/T1021/004">SSH</a> because it hijacks an existing SSH session rather than creating a new session using <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a>.
+T1563 | Remote Service Session Hijacking | Adversaries may take control of preexisting sessions with remote services to move laterally in an environment. Users may use valid credentials to log into a service specifically designed to accept remote connections, such as telnet, SSH, and RDP. When a user logs into a service, a session will be established that will allow them to maintain a continuous interaction with that service.</p>
+<p>Adversaries may commandeer these sessions to carry out actions on remote systems. <a class="reference external" href="https://attack.mitre.org/techniques/T1563">Remote Service Session Hijacking</a> differs from use of <a class="reference external" href="https://attack.mitre.org/techniques/T1021">Remote Services</a> because it hijacks an existing session rather than creating a new session using <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a>.(Citation: RDP Hijacking Medium)(Citation: Breach Post-mortem SSH Hijack)
+T1021.006 | Windows Remote Management | Adversaries may use <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to interact with remote systems using Windows Remote Management (WinRM). The adversary may then perform actions as the logged-on user.</p>
+<p>WinRM is the name of both a Windows service and a protocol that allows a user to interact with a remote system (e.g., run an executable, modify the Registry, modify services).(Citation: Microsoft WinRM) It may be called with the <code class="docutils literal notranslate"><span class="pre">winrm</span></code> command or by any number of programs such as PowerShell.(Citation: Jacobsen 2014)
+T1021.005 | VNC | Adversaries may use <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to remotely control machines using Virtual Network Computing (VNC). The adversary may then perform actions as the logged-on user.</p>
+<p>VNC is a desktop sharing system that allows users to remotely control another computer’s display by relaying mouse and keyboard inputs over the network. VNC does not necessarily use standard user credentials. Instead, a VNC client and server may be configured with sets of credentials that are used only for VNC connections.
+T1021.004 | SSH | Adversaries may use <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to log into remote machines using Secure Shell (SSH). The adversary may then perform actions as the logged-on user.</p>
+<p>SSH is a protocol that allows authorized users to open remote shells on other computers. Many Linux and macOS versions come with SSH installed by default, although typically disabled until the user enables it. The SSH server can be configured to use standard password authentication or public-private keypairs in lieu of or in addition to a password. In this authentication scenario, the user’s public key must be in a special file on the computer running the server that lists which keypairs are allowed to login as that user.(Citation: SSH Secure Shell)
+T1021.003 | Distributed Component Object Model | Adversaries may use <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to interact with remote machines by taking advantage of Distributed Component Object Model (DCOM). The adversary may then perform actions as the logged-on user.</p>
+<p>The Windows Component Object Model (COM) is a component of the native Windows application programming interface (API) that enables interaction between software objects, or executable code that implements one or more interfaces. Through COM, a client object can call methods of server objects, which are typically Dynamic Link Libraries (DLL) or executables (EXE). Distributed COM (DCOM) is transparent middleware that extends the functionality of COM beyond a local computer using remote procedure call (RPC) technology.(Citation: Fireeye Hunting COM June 2019)(Citation: Microsoft COM)</p>
+<p>Permissions to interact with local and remote server COM objects are specified by access control lists (ACL) in the Registry.(Citation: Microsoft Process Wide Com Keys) By default, only Administrators may remotely activate and launch COM objects through DCOM.(Citation: Microsoft COM ACL)</p>
+<p>Through DCOM, adversaries operating in the context of an appropriately privileged user can remotely obtain arbitrary and even direct shellcode execution through Office applications(Citation: Enigma Outlook DCOM Lateral Movement Nov 2017) as well as other Windows objects that contain insecure methods.(Citation: Enigma MMC20 COM Jan 2017)(Citation: Enigma DCOM Lateral Movement Jan 2017) DCOM can also execute macros in existing documents(Citation: Enigma Excel DCOM Sept 2017) and may also invoke Dynamic Data Exchange (DDE) execution directly through a COM created instance of a Microsoft Office application(Citation: Cyberreason DCOM DDE Lateral Movement Nov 2017), bypassing the need for a malicious document.
+T1021.002 | SMB/Windows Admin Shares | Adversaries may use <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to interact with a remote network share using Server Message Block (SMB). The adversary may then perform actions as the logged-on user.</p>
+<p>SMB is a file, printer, and serial port sharing protocol for Windows machines on the same network or domain. Adversaries may use SMB to interact with file shares, allowing them to move laterally throughout a network. Linux and macOS implementations of SMB typically use Samba.</p>
+<p>Windows systems have hidden network shares that are accessible only to administrators and provide the ability for remote file copy and other administrative functions. Example network shares include <code class="docutils literal notranslate"><span class="pre">C$</span></code>, <code class="docutils literal notranslate"><span class="pre">ADMIN$</span></code>, and <code class="docutils literal notranslate"><span class="pre">IPC$</span></code>. Adversaries may use this technique in conjunction with administrator-level <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to remotely access a networked system over SMB,(Citation: Wikipedia Server Message Block) to interact with systems using remote procedure calls (RPCs),(Citation: TechNet RPC) transfer files, and run transferred binaries through remote Execution. Example execution techniques that rely on authenticated sessions over SMB/RPC are <a class="reference external" href="https://attack.mitre.org/techniques/T1053">Scheduled Task/Job</a>, <a class="reference external" href="https://attack.mitre.org/techniques/T1569/002">Service Execution</a>, and <a class="reference external" href="https://attack.mitre.org/techniques/T1047">Windows Management Instrumentation</a>. Adversaries can also use NTLM hashes to access administrator shares on systems with <a class="reference external" href="https://attack.mitre.org/techniques/T1550/002">Pass the Hash</a> and certain configuration and patch levels.(Citation: Microsoft Admin Shares)
+T1021.001 | Remote Desktop Protocol | Adversaries may use <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to log into a computer using the Remote Desktop Protocol (RDP). The adversary may then perform actions as the logged-on user.</p>
+<p>Remote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services)</p>
+<p>Adversaries may connect to a remote system over RDP/RDS to expand access if the service is enabled and allows access to accounts with known credentials. Adversaries will likely use Credential Access techniques to acquire credentials to use with RDP. Adversaries may also use RDP in conjunction with the <a class="reference external" href="https://attack.mitre.org/techniques/T1546/008">Accessibility Features</a> technique for Persistence.(Citation: Alperovitch Malware)
+T1550.004 | Web Session Cookie | Adversaries can use stolen session cookies to authenticate to web applications and services. This technique bypasses some multi-factor authentication protocols since the session is already authenticated.(Citation: Pass The Cookie)</p>
+<p>Authentication cookies are commonly used in web applications, including cloud-based services, after a user has authenticated to the service so credentials are not passed and re-authentication does not need to occur as frequently. Cookies are often valid for an extended period of time, even if the web application is not actively used. After the cookie is obtained through <a class="reference external" href="https://attack.mitre.org/techniques/T1539">Steal Web Session Cookie</a>, the adversary may then import the cookie into a browser they control and is then able to use the site or application as the user for as long as the session cookie is active. Once logged into the site, an adversary can access sensitive information, read email, or perform actions that the victim account has permissions to perform.</p>
+<p>There have been examples of malware targeting session cookies to bypass multi-factor authentication systems.(Citation: Unit 42 Mac Crypto Cookies January 2019)
+T1550.001 | Application Access Token | Adversaries may use stolen application access tokens to bypass the typical authentication process and access restricted accounts, information, or services on remote systems. These tokens are typically stolen from users and used in lieu of login credentials.</p>
+<p>Application access tokens are used to make authorized API requests on behalf of a user and are commonly used as a way to access resources in cloud-based applications and software-as-a-service (SaaS).(Citation: Auth0 - Why You Should Always Use Access Tokens to Secure APIs Sept 2019) OAuth is one commonly implemented framework that issues tokens to users for access to systems. These frameworks are used collaboratively to verify the user and determine what actions the user is allowed to perform. Once identity is established, the token allows actions to be authorized, without passing the actual credentials of the user. Therefore, compromise of the token can grant the adversary access to resources of other sites through a malicious application.(Citation: okta)</p>
+<p>For example, with a cloud-based email service once an OAuth access token is granted to a malicious application, it can potentially gain long-term access to features of the user account if a “refresh” token enabling background access is awarded.(Citation: Microsoft Identity Platform Access 2019) With an OAuth access token an adversary can use the user-granted REST API to perform functions such as email searching and contact enumeration.(Citation: Staaldraad Phishing with OAuth 2017)</p>
+<p>Compromised access tokens may be used as an initial step in compromising other services. For example, if a token grants access to a victim’s primary email, the adversary may be able to extend access to all other services which the target subscribes by triggering forgotten password routines. Direct API access through a token negates the effectiveness of a second authentication factor and may be immune to intuitive countermeasures like changing passwords. Access abuse over an API channel can be difficult to detect even from the service provider end, as the access can still align well with a legitimate workflow.
+T1550.003 | Pass the Ticket | Adversaries may “pass the ticket” using stolen Kerberos tickets to move laterally within an environment, bypassing normal system access controls. Pass the ticket (PtT) is a method of authenticating to a system using Kerberos tickets without having access to an account’s password. Kerberos authentication can be used as the first step to lateral movement to a remote system.</p>
+<p>In this technique, valid Kerberos tickets for <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> are captured by <a class="reference external" href="https://attack.mitre.org/techniques/T1003">OS Credential Dumping</a>. A user’s service tickets or ticket granting ticket (TGT) may be obtained, depending on the level of access. A service ticket allows for access to a particular resource, whereas a TGT can be used to request service tickets from the Ticket Granting Service (TGS) to access any resource the user has privileges to access.(Citation: ADSecurity AD Kerberos Attacks)(Citation: GentilKiwi Pass the Ticket)</p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1558/002">Silver Ticket</a> can be obtained for services that use Kerberos as an authentication mechanism and are used to generate tickets to access that particular resource and the system that hosts the resource (e.g., SharePoint).(Citation: ADSecurity AD Kerberos Attacks)</p>
+<p><a class="reference external" href="https://attack.mitre.org/techniques/T1558/001">Golden Ticket</a> can be obtained for the domain using the Key Distribution Service account KRBTGT account NTLM hash, which enables generation of TGTs for any account in Active Directory.(Citation: Campbell 2014)
+T1550.002 | Pass the Hash | Adversaries may “pass the hash” using stolen password hashes to move laterally within an environment, bypassing normal system access controls. Pass the hash (PtH) is a method of authenticating as a user without having access to the user’s cleartext password. This method bypasses standard authentication steps that require a cleartext password, moving directly into the portion of the authentication that uses the password hash. In this technique, valid password hashes for the account being used are captured using a Credential Access technique. Captured hashes are used with PtH to authenticate as that user. Once authenticated, PtH may be used to perform actions on local or remote systems.</p>
+<p>Windows 7 and higher with KB2871997 require valid domain user credentials or RID 500 administrator hashes.(Citation: NSA Spotting)
+T1550 | Use Alternate Authentication Material | Adversaries may use alternate authentication material, such as password hashes, Kerberos tickets, and application access tokens, in order to move laterally within an environment and bypass normal system access controls.</p>
+<p>Authentication processes generally require a valid identity (e.g., username) along with one or more authentication factors (e.g., password, pin, physical smart card, token generator, etc.). Alternate authentication material is legitimately generated by systems after a user or application successfully authenticates by providing a valid identity and the required authentication factor(s). Alternate authentication material may also be generated during the identity creation process.(Citation: NIST Authentication)(Citation: NIST MFA)</p>
+<p>Caching alternate authentication material allows the system to verify an identity has successfully authenticated without asking the user to reenter authentication factor(s). Because the alternate authentication must be maintained by the system—either in memory or on disk—it may be at risk of being stolen through <a class="reference external" href="https://attack.mitre.org/tactics/TA0006">Credential Access</a> techniques. By stealing alternate authentication material, adversaries are able to bypass system access controls and authenticate to systems without knowing the plaintext password or any additional authentication factors.</p>
+<p>T1534 | Internal Spearphishing | Adversaries may use internal spearphishing to gain access to additional information or exploit other users within the same organization after they already have access to accounts or systems within the environment. Internal spearphishing is multi-staged attack where an email account is owned either by controlling the user’s device with previously installed malware or by compromising the account credentials of the user. Adversaries attempt to take advantage of a trusted internal account to increase the likelihood of tricking the target into falling for the phish attempt.(Citation: Trend Micro When Phishing Starts from the Inside 2017)</p>
+<p>Adversaries may leverage <a class="reference external" href="https://attack.mitre.org/techniques/T1566/001">Spearphishing Attachment</a> or <a class="reference external" href="https://attack.mitre.org/techniques/T1566/002">Spearphishing Link</a> as part of internal spearphishing to deliver a payload or redirect to an external site to capture credentials through <a class="reference external" href="https://attack.mitre.org/techniques/T1056">Input Capture</a> on sites that mimic email login interfaces.</p>
+<p>There have been notable incidents where internal spearphishing has been used. The Eye Pyramid campaign used phishing emails with malicious attachments for lateral movement between victims, compromising nearly 18,000 email accounts in the process.(Citation: Trend Micro When Phishing Starts from the Inside 2017) The Syrian Electronic Army (SEA) compromised email accounts at the Financial Times (FT) to steal additional account credentials. Once FT learned of the attack and began warning employees of the threat, the SEA sent phishing emails mimicking the Financial Times IT department and were able to compromise even more users.(Citation: THE FINANCIAL TIMES LTD 2019.)
+T1210 | Exploitation of Remote Services | Adversaries may exploit remote services to gain unauthorized access to internal systems once inside of a network. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. A common goal for post-compromise exploitation of remote services is for lateral movement to enable access to a remote system.</p>
+<p>An adversary may need to determine if the remote system is in a vulnerable state, which may be done through <a class="reference external" href="https://attack.mitre.org/techniques/T1046">Network Service Scanning</a> or other Discovery methods looking for common, vulnerable software that may be deployed in the network, the lack of certain patches that may indicate vulnerabilities,  or security software that may be used to detect or contain remote exploitation. Servers are likely a high value target for lateral movement exploitation, but endpoint systems may also be at risk if they provide an advantage or access to additional resources.</p>
+<p>There are several well-known vulnerabilities that exist in common services such as SMB (Citation: CIS Multiple SMB Vulnerabilities) and RDP (Citation: NVD CVE-2017-0176) as well as applications that may be used within internal networks such as MySQL (Citation: NVD CVE-2016-6662) and web server services. (Citation: NVD CVE-2014-7169)</p>
+<p>Depending on the permissions level of the vulnerable remote service an adversary may achieve <a class="reference external" href="https://attack.mitre.org/techniques/T1068">Exploitation for Privilege Escalation</a> as a result of lateral movement exploitation as well.
+T1175 | Component Object Model and Distributed COM | <strong>This technique has been deprecated. Please use <a class="reference external" href="https://attack.mitre.org/techniques/T1021/003">Distributed Component Object Model</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1559/001">Component Object Model</a>.</strong></p>
+<p>Adversaries may use the Windows Component Object Model (COM) and Distributed Component Object Model (DCOM) for local code execution or to execute on remote systems as part of lateral movement.</p>
+<p>COM is a component of the native Windows application programming interface (API) that enables interaction between software objects, or executable code that implements one or more interfaces.(Citation: Fireeye Hunting COM June 2019) Through COM, a client object can call methods of server objects, which are typically Dynamic Link Libraries (DLL) or executables (EXE).(Citation: Microsoft COM) DCOM is transparent middleware that extends the functionality of Component Object Model (COM) (Citation: Microsoft COM) beyond a local computer using remote procedure call (RPC) technology.(Citation: Fireeye Hunting COM June 2019)</p>
+<p>Permissions to interact with local and remote server COM objects are specified by access control lists (ACL) in the Registry. (Citation: Microsoft COM ACL)(Citation: Microsoft Process Wide Com Keys)(Citation: Microsoft System Wide Com Keys) By default, only Administrators may remotely activate and launch COM objects through DCOM.</p>
+<p>Adversaries may abuse COM for local command and/or payload execution. Various COM interfaces are exposed that can be abused to invoke arbitrary execution via a variety of programming languages such as C, C++, Java, and VBScript.(Citation: Microsoft COM) Specific COM objects also exists to directly perform functions beyond code execution, such as creating a <a class="reference external" href="https://attack.mitre.org/techniques/T1053">Scheduled Task/Job</a>, fileless download/execution, and other adversary behaviors such as Privilege Escalation and Persistence.(Citation: Fireeye Hunting COM June 2019)(Citation: ProjectZero File Write EoP Apr 2018)</p>
+<p>Adversaries may use DCOM for lateral movement. Through DCOM, adversaries operating in the context of an appropriately privileged user can remotely obtain arbitrary and even direct shellcode execution through Office applications (Citation: Enigma Outlook DCOM Lateral Movement Nov 2017) as well as other Windows objects that contain insecure methods.(Citation: Enigma MMC20 COM Jan 2017)(Citation: Enigma DCOM Lateral Movement Jan 2017) DCOM can also execute macros in existing documents (Citation: Enigma Excel DCOM Sept 2017) and may also invoke <a class="reference external" href="https://attack.mitre.org/techniques/T1173">Dynamic Data Exchange</a> (DDE) execution directly through a COM created instance of a Microsoft Office application (Citation: Cyberreason DCOM DDE Lateral Movement Nov 2017), bypassing the need for a malicious document.
+T1091 | Replication Through Removable Media | Adversaries may move onto systems, possibly those on disconnected or air-gapped networks, by copying malware to removable media and taking advantage of Autorun features when the media is inserted into a system and executes. In the case of Lateral Movement, this may occur through modification of executable files stored on removable media or by copying malware and renaming it to look like a legitimate file to trick users into executing it on a separate system. In the case of Initial Access, this may occur through manual manipulation of the media, modification of systems used to initially format the media, or modification to the media’s firmware itself.
+T1080 | Taint Shared Content |
+Adversaries may deliver payloads to remote systems by adding content to shared storage locations, such as network drives or internal code repositories. Content stored on network drives or in other shared locations may be tainted by adding malicious programs, scripts, or exploit code to otherwise valid files. Once a user opens the shared tainted content, the malicious portion can be executed to run the adversary’s code on a remote system. Adversaries may use tainted shared content to move laterally.</p>
+<p>A directory share pivot is a variation on this technique that uses several other techniques to propagate malware when users access a shared network directory. It uses <a class="reference external" href="https://attack.mitre.org/techniques/T1547/009">Shortcut Modification</a> of directory .LNK files that use <a class="reference external" href="https://attack.mitre.org/techniques/T1036">Masquerading</a> to look like the real directories, which are hidden through <a class="reference external" href="https://attack.mitre.org/techniques/T1564/001">Hidden Files and Directories</a>. The malicious .LNK-based directories have an embedded command that executes the hidden malware file in the directory and then opens the real intended directory so that the user’s expected action still occurs. When used with frequently used network directories, the technique may result in frequent reinfections and broad access to systems and potentially to new and higher privileged accounts. (Citation: Retwin Directory Share Pivot)</p>
+<p>Adversaries may also compromise shared network directories through binary infections by appending or prepending its code to the healthy binary on the shared network directory. The malware may modify the original entry point (OEP) of the healthy binary to ensure that it is executed before the legitimate code. The infection could continue to spread via the newly infected file when it is executed by a remote system. These infections may target both binary and non-binary formats that end with extensions including, but not limited to, .EXE, .DLL, .SCR, .BAT, and/or .VBS.
+T1072 | Software Deployment Tools | Adversaries may gain access to and use third-party software suites installed within an enterprise network, such as administration, monitoring, and deployment systems, to move laterally through the network. Third-party applications and software deployment systems may be in use in the network environment for administration purposes (e.g., SCCM, VNC, HBSS, Altiris, etc.).</p>
+<p>Access to a third-party network-wide or enterprise-wide software system may enable an adversary to have remote code execution on all systems that are connected to such a system. The access may be used to laterally move to other systems, gather information, or cause a specific effect, such as wiping the hard drives on all endpoints.</p>
+<p>The permissions required for this action vary by system configuration; local credentials may be sufficient with direct access to the third-party system, or specific domain credentials may be required. However, the system may require an administrative account to log in or to perform it’s intended purpose.
+T1051 | Shared Webroot | <strong>This technique has been deprecated and should no longer be used.</strong></p>
+<p>Adversaries may add malicious content to an internally accessible website through an open network file share that contains the website’s webroot or Web content directory (Citation: Microsoft Web Root OCT 2016) (Citation: Apache Server 2018) and then browse to that content with a Web browser to cause the server to execute the malicious content. The malicious content will typically run under the context and permissions of the Web server process, often resulting in local system or administrative privileges, depending on how the Web server is configured.</p>
+<p>This mechanism of shared access and remote execution could be used for lateral movement to the system running the Web server. For example, a Web server running PHP with an open network share could allow an adversary to upload a remote access tool and PHP script to execute the RAT on the system running the Web server when a specific page is visited. (Citation: Webroot PHP 2011)
+T1021 | Remote Services | Adversaries may use <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> to log into a service specifically designed to accept remote connections, such as telnet, SSH, and VNC. The adversary may then perform actions as the logged-on user.</p>
+<p>In an enterprise environment, servers and workstations can be organized into domains. Domains provide centralized identity management, allowing users to login using one set of credentials across the entire network. If an adversary is able to obtain a set of valid domain credentials, they could login to many different machines using remote access protocols such as secure shell (SSH) or remote desktop protocol (RDP).(Citation: SSH Secure Shell)(Citation: TechNet Remote Desktop Services)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span><span class="o">-</span><span class="n">By</span> <span class="o">-</span><span class="n">Tactic</span> <span class="n">lateral</span><span class="o">-</span><span class="n">movement</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="discovery/T1120.html" title="previous page">T1120 - Peripheral Device Discovery</a>
+    <a class='right-next' id="next-link" href="lateral-movement/T1550.003.html" title="next page">T1550.003 - Use Alternate Authentication Material: Pass the Ticket</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

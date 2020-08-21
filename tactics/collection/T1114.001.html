@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>T1114.001 - Email Collection: Local Email Collection &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="T1025 - Data from Removable Media" href="T1025.html" />
+    <link rel="prev" title="T1530 - Data from Cloud Storage Object" href="T1530.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../collection.html">
+   Collection
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1056.001.html">
+     T1056.001 - Input Capture: Keylogging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1074.html">
+     T1074 - Data Staged
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1113.html">
+     T1113 - Screen Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1056.003.html">
+     T1056.003 - Web Portal Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1056.html">
+     T1056 - Input Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1115.html">
+     T1115 - Clipboard Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1213.html">
+     T1213 - Data from Information Repositories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1056.002.html">
+     T1056.002 - Input Capture: GUI Input Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1560.html">
+     T1560 - Archive Collected Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1114.html">
+     T1114 - Email Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1056.004.html">
+     T1056.004 - Input Capture: Credential API Hooking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1557.001.html">
+     T1557.001 - LLMNR/NBT-NS Poisoning and SMB Relay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1557.html">
+     T1557 - Man-in-the-Middle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1074.002.html">
+     T1074.002 - Remote Data Staging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1005.html">
+     T1005 - Data from Local System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1125.html">
+     T1125 - Video Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1530.html">
+     T1530 - Data from Cloud Storage Object
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     T1114.001 - Email Collection: Local Email Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1025.html">
+     T1025 - Data from Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1213.001.html">
+     T1213.001 - Confluence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1123.html">
+     T1123 - Audio Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1114.003.html">
+     T1114.003 - Email Forwarding Rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1560.002.html">
+     T1560.002 - Archive via Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1185.html">
+     T1185 - Man in the Browser
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1074.001.html">
+     T1074.001 - Data Staged: Local Data Staging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1039.html">
+     T1039 - Data from Network Shared Drive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1119.html">
+     T1119 - Automated Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1560.003.html">
+     T1560.003 - Archive via Custom Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1114.002.html">
+     T1114.002 - Remote Email Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1560.001.html">
+     T1560.001 - Archive Collected Data: Archive via Utility
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1213.002.html">
+     T1213.002 - Sharepoint
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tactics/collection/T1114.001.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-tests">
+   Atomic Tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-1-email-collection-with-powershell-get-inbox">
+     Atomic Test #1 - Email Collection with PowerShell Get-Inbox
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection">
+   Detection
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1114-001-email-collection-local-email-collection">
+<h1>T1114.001 - Email Collection: Local Email Collection<a class="headerlink" href="#t1114-001-email-collection-local-email-collection" title="Permalink to this headline">¶</a></h1>
+<p>Adversaries may target user email on local systems to collect sensitive information. Files containing email data can be acquired from a user’s local system, such as Outlook storage or cache files.</p>
+<p>Outlook stores data locally in offline data files with an extension of .ost. Outlook 2010 and later supports .ost file sizes up to 50GB, while earlier versions of Outlook support up to 20GB.(Citation: Outlook File Sizes) IMAP accounts in Outlook 2013 (and earlier) and POP accounts use Outlook Data Files (.pst) as opposed to .ost, whereas IMAP accounts in Outlook 2016 (and later) use .ost files. Both types of Outlook data files are typically stored in <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\Documents\Outlook</span> <span class="pre">Files</span></code> or <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\AppData\Local\Microsoft\Outlook</span></code>.(Citation: Microsoft Outlook Files)</p>
+<div class="section" id="atomic-tests">
+<h2>Atomic Tests<a class="headerlink" href="#atomic-tests" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the Module before running the tests.</span>
+<span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="mh">0x6c</span><span class="o">/</span><span class="n">AtomicRedTeam</span><span class="o">/</span><span class="n">atomics</span><span class="o">/</span><span class="n">invoke</span><span class="o">-</span><span class="n">atomicredteam</span><span class="o">/</span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicRedTeam</span><span class="o">.</span><span class="n">psd1</span> <span class="o">-</span> <span class="n">Force</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-1-email-collection-with-powershell-get-inbox">
+<h3>Atomic Test #1 - Email Collection with PowerShell Get-Inbox<a class="headerlink" href="#atomic-test-1-email-collection-with-powershell-get-inbox" title="Permalink to this headline">¶</a></h3>
+<p>Search through local Outlook installation, extract mail, compress the contents, and saves everything to a directory for later exfiltration.
+Successful execution will produce stdout message stating “Please be patient, this may take some time…”. Upon completion, final output will be a mail.csv file.</p>
+<p>Note: Outlook is required, but no email account necessary to produce artifacts.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-powershell">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-executionpolicy</span> <span class="n">bypass</span> <span class="n">-command</span> <span class="c">#{file_path}\Get-Inbox.ps1 -file #{output_file}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1114</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
+<p>Monitor processes and command-line arguments for actions that could be taken to gather local email files. Monitor for unusual processes accessing local email files. Remote access tools with built-in features may interact directly with the Windows API to gather information. Information may also be acquired through Windows system management tools such as <a class="reference external" href="https://attack.mitre.org/techniques/T1047">Windows Management Instrumentation</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1059/001">PowerShell</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics/collection"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T1530.html" title="previous page">T1530 - Data from Cloud Storage Object</a>
+    <a class='right-next' id="next-link" href="T1025.html" title="next page">T1025 - Data from Removable Media</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

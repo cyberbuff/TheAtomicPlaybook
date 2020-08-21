@@ -1,0 +1,1040 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>T1055.012 - Process Injection: Process Hollowing &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="T1550.001 - Application Access Token" href="T1550.001.html" />
+    <link rel="prev" title="T1070.006 - Indicator Removal on Host: Timestomp" href="T1070.006.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../defense-evasion.html">
+   Defense Evasion
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.002.html">
+     T1548.002 - Abuse Elevation Control Mechanism: Bypass User Access Control
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1108.html">
+     T1108 - Redundant Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.003.html">
+     T1550.003 - Use Alternate Authentication Material: Pass the Ticket
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.005.html">
+     T1027.005 - Indicator Removal from Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.html">
+     T1578 - Modify Cloud Compute Infrastructure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.004.html">
+     T1070.004 - Indicator Removal on Host: File Deletion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.006.html">
+     T1562.006 - Indicator Blocking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.009.html">
+     T1055.009 - Proc Memory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.004.html">
+     T1562.004 - Impair Defenses: Disable or Modify System Firewall
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.011.html">
+     T1218.011 - Signed Binary Proxy Execution: Rundll32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.006.html">
+     T1070.006 - Indicator Removal on Host: Timestomp
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     T1055.012 - Process Injection: Process Hollowing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.001.html">
+     T1550.001 - Application Access Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.002.html">
+     T1564.002 - Hide Artifacts: Hidden Users
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1222.001.html">
+     T1222.001 - File and Directory Permissions Modification: Windows File and Directory Permissions Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.008.html">
+     T1218.008 - Signed Binary Proxy Execution: Odbcconf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.003.html">
+     T1027.003 - Steganography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.012.html">
+     T1574.012 - Hijack Execution Flow: COR_PROFILER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.004.html">
+     T1548.004 - Elevated Execution with Prompt
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.006.html">
+     T1564.006 - Run Virtual Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.003.html">
+     T1542.003 - Bootkit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.002.html">
+     T1070.002 - Indicator Removal on Host: Clear Linux or Mac System Logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.003.html">
+     T1556.003 - Pluggable Authentication Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1216.html">
+     T1216 - Signed Script Proxy Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.001.html">
+     T1556.001 - Domain Controller Authentication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.009.html">
+     T1574.009 - Hijack Execution Flow: Path Interception by Unquoted Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.002.html">
+     T1497.002 - User Activity Based Checks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.001.html">
+     T1542.001 - System Firmware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.002.html">
+     T1562.002 - Impair Defenses: Disable Windows Event Logging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.html">
+     T1070 - Indicator Removal on Host
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1149.html">
+     T1149 - LC_MAIN Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.004.html">
+     T1564.004 - Hide Artifacts: NTFS File Attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1205.001.html">
+     T1205.001 - Port Knocking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.001.html">
+     T1027.001 - Obfuscated Files or Information: Binary Padding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.010.html">
+     T1574.010 - Hijack Execution Flow: Services File Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.014.html">
+     T1055.014 - VDSO Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.010.html">
+     T1218.010 - Signed Binary Proxy Execution: Regsvr32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1112.html">
+     T1112 - Modify Registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1197.html">
+     T1197 - BITS Jobs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.html">
+     T1562 - Impair Defenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.009.html">
+     T1218.009 - Signed Binary Proxy Execution: Regsvcs/Regasm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.001.html">
+     T1548.001 - Abuse Elevation Control Mechanism: Setuid and Setgid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.003.html">
+     T1564.003 - Hide Artifacts: Hidden Window
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.013.html">
+     T1055.013 - Process Doppelgänging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.004.html">
+     T1027.004 - Obfuscated Files or Information: Compile After Delivery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1216.001.html">
+     T1216.001 - Signed Script Proxy Execution: Pubprn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.002.html">
+     T1550.002 - Use Alternate Authentication Material: Pass the Hash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.011.html">
+     T1055.011 - Extra Window Memory Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.html">
+     T1134 - Access Token Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1222.002.html">
+     T1222.002 - File and Directory Permissions Modification: Linux and Mac File and Directory Permissions Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1014.html">
+     T1014 - Rootkit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.003.html">
+     T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.001.html">
+     T1564.001 - Hide Artifacts: Hidden Files and Directories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1480.html">
+     T1480 - Execution Guardrails
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.008.html">
+     T1055.008 - Ptrace System Calls
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.007.html">
+     T1562.007 - Disable or Modify Cloud Firewall
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.005.html">
+     T1070.005 - Indicator Removal on Host: Network Share Connection Removal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1211.html">
+     T1211 - Exploitation for Defense Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.003.html">
+     T1562.003 - Impair Defenses: HISTCONTROL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.008.html">
+     T1574.008 - Path Interception by Search Order Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.003.html">
+     T1497.003 - Time Based Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.001.html">
+     T1070.001 - Indicator Removal on Host: Clear Windows Event Logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.011.html">
+     T1574.011 - Hijack Execution Flow: Services Registry Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.html">
+     T1055 - Process Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1484.html">
+     T1484 - Group Policy Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.005.html">
+     T1564.005 - Hidden File System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.html">
+     T1564 - Hide Artifacts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.004.html">
+     T1550.004 - Web Session Cookie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.002.html">
+     T1027.002 - Obfuscated Files or Information: Software Packing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.002.html">
+     T1556.002 - Modify Authentication Process: Password Filter DLL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.003.html">
+     T1070.003 - Indicator Removal on Host: Clear Command History
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.html">
+     T1036 - Masquerading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.001.html">
+     T1562.001 - Impair Defenses: Disable or Modify Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.html">
+     T1542 - Pre-OS Boot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.002.html">
+     T1542.002 - Component Firmware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.001.html">
+     T1497.001 - System Checks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1127.html">
+     T1127 - Trusted Developer Utilities Proxy Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.002.html">
+     T1055.002 - Portable Executable Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.006.html">
+     T1574.006 - Hijack Execution Flow: LD_PRELOAD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.004.html">
+     T1134.004 - Access Token Manipulation: Parent PID Spoofing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1127.001.html">
+     T1127.001 - Trusted Developer Utilities Proxy Execution: MSBuild
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.003.html">
+     T1078.003 - Local Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.001.html">
+     T1218.001 - Signed Binary Proxy Execution: Compiled HTML File
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1202.html">
+     T1202 - Indirect Command Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.001.html">
+     T1078.001 - Valid Accounts: Default Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.003.html">
+     T1218.003 - Signed Binary Proxy Execution: CMSTP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1064.html">
+     T1064 - Scripting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.002.html">
+     T1036.002 - Right-to-Left Override
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.002.html">
+     T1553.002 - Code Signing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.004.html">
+     T1574.004 - Dylib Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.html">
+     T1548 - Abuse Elevation Control Mechanism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1220.html">
+     T1220 - XSL Script Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.002.html">
+     T1134.002 - Create Process with Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.004.html">
+     T1055.004 - Process Injection: Asynchronous Procedure Call
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.001.html">
+     T1578.001 - Create Snapshot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1140.html">
+     T1140 - Deobfuscate/Decode Files or Information
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.007.html">
+     T1218.007 - Signed Binary Proxy Execution: Msiexec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.006.html">
+     T1036.006 - Masquerading: Space after Filename
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.004.html">
+     T1036.004 - Masquerade Task or Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.html">
+     T1027 - Obfuscated Files or Information
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.html">
+     T1553 - Subvert Trust Controls
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1480.001.html">
+     T1480.001 - Environmental Keying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.005.html">
+     T1218.005 - Signed Binary Proxy Execution: Mshta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.004.html">
+     T1553.004 - Subvert Trust Controls: Install Root Certificate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.002.html">
+     T1574.002 - Hijack Execution Flow: DLL Side-Loading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1222.html">
+     T1222 - File and Directory Permissions Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.003.html">
+     T1578.003 - Delete Cloud Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.html">
+     T1497 - Virtualization/Sandbox Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.003.html">
+     T1036.003 - Masquerading: Rename System Utilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.002.html">
+     T1218.002 - Signed Binary Proxy Execution: Control Panel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.003.html">
+     T1553.003 - SIP and Trust Provider Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.001.html">
+     T1055.001 - Dynamic-link Library Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.005.html">
+     T1574.005 - Executable Installer File Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.004.html">
+     T1578.004 - Revert Cloud Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1535.html">
+     T1535 - Unused/Unsupported Cloud Regions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.html">
+     T1218 - Signed Binary Proxy Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1006.html">
+     T1006 - Direct Volume Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.001.html">
+     T1553.001 - Subvert Trust Controls: Gatekeeper Bypass
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.003.html">
+     T1055.003 - Thread Execution Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.007.html">
+     T1574.007 - Path Interception by PATH Environment Variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.005.html">
+     T1134.005 - SID-History Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.002.html">
+     T1078.002 - Domain Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.001.html">
+     T1036.001 - Invalid Code Signature
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.html">
+     T1556 - Modify Authentication Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1207.html">
+     T1207 - Rogue Domain Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.004.html">
+     T1218.004 - Signed Binary Proxy Execution: InstallUtil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.005.html">
+     T1036.005 - Match Legitimate Name or Location
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.002.html">
+     T1578.002 - Create Cloud Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.001.html">
+     T1134.001 - Token Impersonation/Theft
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html">
+     T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1221.html">
+     T1221 - Template Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.003.html">
+     T1134.003 - Make and Impersonate Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.005.html">
+     T1055.005 - Thread Local Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.001.html">
+     T1574.001 - Hijack Execution Flow: DLL Search Order Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.html">
+     T1574 - Hijack Execution Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.html">
+     T1550 - Use Alternate Authentication Material
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.004.html">
+     T1078.004 - Cloud Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1205.html">
+     T1205 - Traffic Signaling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tactics/defense-evasion/T1055.012.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-tests">
+   Atomic Tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-1-process-hollowing-using-powershell">
+     Atomic Test #1 - Process Hollowing using PowerShell
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection">
+   Detection
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1055-012-process-injection-process-hollowing">
+<h1>T1055.012 - Process Injection: Process Hollowing<a class="headerlink" href="#t1055-012-process-injection-process-hollowing" title="Permalink to this headline">¶</a></h1>
+<p>Adversaries may inject malicious code into suspended and hollowed processes in order to evade process-based defenses. Process hollowing is a method of executing arbitrary code in the address space of a separate live process.</p>
+<p>Process hollowing is commonly performed by creating a process in a suspended state then unmapping/hollowing its memory, which can then be replaced with malicious code. A victim process can be created with native Windows API calls such as <code>CreateProcess</code>, which includes a flag to suspend the processes primary thread. At this point the process can be unmapped using APIs calls such as <code>ZwUnmapViewOfSection</code> or <code>NtUnmapViewOfSection</code>  before being written to, realigned to the injected code, and resumed via <code>VirtualAllocEx</code>, <code>WriteProcessMemory</code>, <code>SetThreadContext</code>, then <code>ResumeThread</code> respectively.(Citation: Leitch Hollowing)(Citation: Endgame Process Injection July 2017)</p>
+<p>This is very similar to <a class="reference external" href="https://attack.mitre.org/techniques/T1055/005">Thread Local Storage</a> but creates a new process rather than targeting an existing process. This behavior will likely not result in elevated privileges since the injected process was spawned from (and thus inherits the security context) of the injecting process. However, execution via process hollowing may also evade detection from security products since the execution is masked under a legitimate process.</p>
+<div class="section" id="atomic-tests">
+<h2>Atomic Tests<a class="headerlink" href="#atomic-tests" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the Module before running the tests.</span>
+<span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="mh">0x6c</span><span class="o">/</span><span class="n">AtomicRedTeam</span><span class="o">/</span><span class="n">atomics</span><span class="o">/</span><span class="n">invoke</span><span class="o">-</span><span class="n">atomicredteam</span><span class="o">/</span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicRedTeam</span><span class="o">.</span><span class="n">psd1</span> <span class="o">-</span> <span class="n">Force</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-1-process-hollowing-using-powershell">
+<h3>Atomic Test #1 - Process Hollowing using PowerShell<a class="headerlink" href="#atomic-test-1-process-hollowing-using-powershell" title="Permalink to this headline">¶</a></h3>
+<p>This test uses PowerShell to create a Hollow from a PE on disk with explorer as the parent.
+Credit to FuzzySecurity (https://github.com/FuzzySecurity/PowerShell-Suite/blob/master/Start-Hollow.ps1)</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-powershell">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.</span> <span class="nv">$PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1055</span><span class="p">.</span><span class="n">012</span><span class="p">\</span><span class="n">src</span><span class="p">\</span><span class="nb">Start-Hollow</span><span class="p">.</span><span class="n">ps1</span>
+<span class="nv">$ppid</span><span class="p">=</span><span class="nb">Get-Process</span> <span class="c">#{parent_process_name} | select -expand id</span>
+<span class="nb">Start-Hollow</span> <span class="n">-Sponsor</span> <span class="s2">&quot;#{sponsor_binary_path}&quot;</span> <span class="n">-Hollow</span> <span class="s2">&quot;#{hollow_binary_path}&quot;</span> <span class="n">-ParentPID</span> <span class="nv">$ppid</span> <span class="n">-Verbose</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1055</span><span class="o">.</span><span class="mi">012</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
+<p>Monitoring Windows API calls indicative of the various types of code injection may generate a significant amount of data and may not be directly useful for defense unless collected under specific circumstances for known bad sequences of calls, since benign use of API functions may be common and difficult to distinguish from malicious behavior. Windows API calls such as <code>CreateRemoteThread</code>, <code>SuspendThread</code>/<code>SetThreadContext</code>/<code>ResumeThread</code>, and those that can be used to modify memory within another process, such as <code>VirtualAllocEx</code>/<code>WriteProcessMemory</code>, may be used for this technique.(Citation: Endgame Process Injection July 2017)</p>
+<p>Analyze process behavior to determine if a process is performing actions it usually does not, such as opening network connections, reading files, or other suspicious actions that could relate to post-compromise behavior.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics/defense-evasion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T1070.006.html" title="previous page">T1070.006 - Indicator Removal on Host: Timestomp</a>
+    <a class='right-next' id="next-link" href="T1550.001.html" title="next page">T1550.001 - Application Access Token</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

