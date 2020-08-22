@@ -92,8 +92,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1133.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1190.html">
      T1190 - Exploit Public-Facing Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1190.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -102,8 +112,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1091.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -112,8 +132,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1195.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1566.html">
      T1566 - Phishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1566.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -137,6 +167,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1200.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1566.002.html">
      T1566.002 - Spearphishing Link
     </a>
@@ -144,6 +179,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1199.html">
      T1199 - Trusted Relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1199.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -174,6 +214,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1078.html">
      T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,6 +409,27 @@
 <p>Firewalls and proxies can inspect URLs for potentially known-bad domains or parameters. They can also do reputation-based analytics on websites and their requested resources such as how old a domain is, who it’s registered to, if it’s on a known bad list, or how many other users have connected to it before.</p>
 <p>Network intrusion detection systems, sometimes with SSL/TLS MITM inspection, can be used to look for known malicious scripts (recon, heap spray, and browser identification scripts have been frequently reused), common script obfuscation, and exploit code.</p>
 <p>Detecting compromise based on the drive-by exploit from a legitimate website may be difficult. Also look for behavior on the endpoint system that might indicate successful compromise, such as abnormal behavior of browser processes. This could include suspicious files written to disk, evidence of <a class="reference external" href="https://attack.mitre.org/techniques/T1055">Process Injection</a> for attempts to hide execution, evidence of Discovery, or other unusual network traffic that may indicate additional tools transferred to the system.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="decoy-system">
+<h2>Decoy System<a class="headerlink" href="#decoy-system" title="Permalink to this headline">¶</a></h2>
+<p>Configure a computing system to serve as an attack target or experimental environment.</p>
+<p>A decoy system is a computing resource presented to the adversary in support of active defense.  The underlying system can be real, virtual, or simulated, and can be presented as one of a variety of IT devices including user workstations, servers, networking systems, IOT (embedded devices), mobile systems like phones, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to study the adversary and collect first-hand observations about them and their tools.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can use a decoy system to access a compromised website to see how it works (study the exploit sequence, collect relevant artifacts, etc.).</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Use an isolated system to visit a suspected compromised website.  Collect any associated scripting code or files dropped onto the system.
+Setup a server which appears to be something that is commonly expected within a network, such as web server.</p>
+</div>
 </div>
 </div>
 

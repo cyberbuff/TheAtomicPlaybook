@@ -102,6 +102,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1072.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1204.002.html">
      T1204.002 - User Execution: Malicious Link
     </a>
@@ -117,8 +122,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1129.html">
      T1129 - Shared Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1129.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -129,6 +144,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1559.html">
      T1559 - Inter-Process Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1559.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,6 +177,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1059.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1064.html">
      T1064 - Scripting
     </a>
@@ -174,6 +199,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1204.html">
      T1204 - User Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1204.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -197,6 +227,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1059.002.html">
      T1059.002 - Command and Scripting Interpreter: AppleScript
     </a>
@@ -209,6 +244,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1203.html">
      T1203 - Exploitation for Client Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1203.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,8 +267,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1106.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1047.html">
      T1047 - Windows Management Instrumentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1047.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -403,6 +453,27 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor for command line invocations of tools capable of modifying services that doesn’t correspond to normal usage patterns and known software, patch cycles, etc. Also monitor for changes to executables and other files associated with services. Changes to Windows services may also be reflected in the Registry.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="api-monitoring">
+<h2>API Monitoring<a class="headerlink" href="#api-monitoring" title="Permalink to this headline">¶</a></h2>
+<p>Monitor local APIs that might be used by adversary tools and activity.</p>
+<p>API Monitoring involves capturing an internal Operating System (OS) function for its usage, accompanying arguments, and result. When a defender captures this information, the intelligence gathered can be analyzed to gain insight into the activity of an adversary at a level deeper than normal system activity monitoring.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity for the defender to observe the adversary and control what they can see, what effects they can have, and/or what data they can access.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can monitor and analyze operating system functions calls for detection and alerting.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Trace activity through WinSock TCP API functions to view potentially  malicious network events. Log it such that it can be pushed to a centralized location and analyzed further.
+Hook the Win32 DeleteFile() function to log all attempts at deleting a given file. This information can be used to trigger restoration attempts on critical data, reducing potential disruption if those files are unavailable for prolonged periods of time.</p>
+</div>
 </div>
 </div>
 

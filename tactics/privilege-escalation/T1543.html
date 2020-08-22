@@ -132,6 +132,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1547.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1547.009.html">
      T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification
     </a>
@@ -167,8 +172,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1037.html">
      T1037 - Boot or Logon Initialization Scripts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -207,6 +222,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1546.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1546.012.html">
      T1546.012 - Event Triggered Execution: Image File Execution Options Injection
     </a>
@@ -227,6 +247,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1055.013.html">
      T1055.013 - Process Doppelgänging
     </a>
@@ -244,6 +269,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1134.html">
      T1134 - Access Token Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -287,13 +317,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1068.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1055.html">
      T1055 - Process Injection
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1055.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1484.html">
      T1484 - Group Policy Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1484.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -379,6 +424,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1548.html">
      T1548 - Abuse Elevation Control Mechanism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -497,6 +547,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1134.003.html">
      T1134.003 - Make and Impersonate Token
     </a>
@@ -519,6 +574,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1574.html">
      T1574 - Hijack Execution Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -687,6 +747,27 @@
 <p>Monitor for changes to system processes that do not correlate with known software, patch cycles, etc., including by comparing results against a trusted system baseline. New, benign system processes may be created during installation of new software. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as network connections made for Command and Control, learning details about the environment through Discovery, and Lateral Movement.</p>
 <p>Command-line invocation of tools capable of modifying services may be unusual, depending on how systems are typically used in a particular environment. Look for abnormal process call trees from known services and for execution of other commands that could relate to Discovery or other adversary techniques.</p>
 <p>Monitor for changes to files associated with system-level processes.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="security-controls">
+<h2>Security Controls<a class="headerlink" href="#security-controls" title="Permalink to this headline">¶</a></h2>
+<p>Alter security controls to make the system more or less vulnerable to attack.</p>
+<p>Manipulating security controls involves making configuration changes to the security settings of a system including things like modifying Group Policies, disabling/enabling autorun for removable media, and tightening or relaxing system firewalls, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to use security controls to stop or allow an adversary’s activity.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can choose to harden or weaken security controls on a system to affect an adversaries ability to modify or create system processes.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Weaken security controls on a system to allow for leaking of credentials via network connection poisoning.
+Implement policies on a system to prevent the insecure storage of passwords in the registry. This may force an adversary to revert these changes or find another way to access cached credentials.</p>
+</div>
 </div>
 </div>
 

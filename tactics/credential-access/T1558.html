@@ -127,8 +127,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1111.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1212.html">
      T1212 - Exploitation for Credential Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1212.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -147,6 +157,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1056.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
      T1556.003 - Pluggable Authentication Modules
     </a>
@@ -161,9 +176,19 @@
      T1539 - Steal Web Session Cookie
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1539.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1558 - Steal or Forge Kerberos Tickets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -184,6 +209,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.html">
      T1110 - Brute Force
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1110.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,6 +242,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1557.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
      T1552.003 - Unsecured Credentials: Bash History
     </a>
@@ -227,8 +262,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1555.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1040.html">
      T1040 - Network Sniffing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1040.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,6 +312,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1003.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
      T1003.003 - OS Credential Dumping: NTDS
     </a>
@@ -287,8 +337,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1187.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1556.html">
      T1556 - Modify Authentication Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,6 +364,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.html">
      T1552 - Unsecured Credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1552.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,6 +404,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1528.html">
      T1528 - Steal Application Access Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1528.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -478,6 +548,27 @@
 <p>Monitor for indications of <a class="reference external" href="https://attack.mitre.org/techniques/T1550/003">Pass the Ticket</a> being used to move laterally.</p>
 <p>Enable Audit Kerberos Service Ticket Operations to log Kerberos TGS service ticket requests. Particularly investigate irregular patterns of activity (ex: accounts making numerous requests, Event ID 4769, within a small time frame, especially if they also request RC4 encryption [Type 0x17]).(Citation: Microsoft Detecting Kerberoasting Feb 2018) (Citation: AdSecurity Cracking Kerberos Dec 2015)</p>
 <p>Monitor for unexpected processes interacting with lsass.exe.(Citation: Medium Detecting Attempts to Steal Passwords from Memory) Common credential dumpers such as <a class="reference external" href="https://attack.mitre.org/software/S0002">Mimikatz</a> access the LSA Subsystem Service (LSASS) process by opening the process, locating the LSA secrets key, and decrypting the sections in memory where credential details, including Kerberos tickets, are stored.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="network-diversity">
+<h2>Network Diversity<a class="headerlink" href="#network-diversity" title="Permalink to this headline">¶</a></h2>
+<p>Use a diverse set of devices on the network to help establish the legitimacy of a decoy network.</p>
+<p>Network diversity involves the use a diverse collection of network items to make a decoy network look more realistic.  It also ensures the network contains the appropriate amount and types of things that would normally be expected, perhaps including networking devices, firewalls, printers, phones, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to determine adversary capabilities or preferences by controlling aspects of the engagement environment.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can setup networks that use Kerberos authentication and systems that authenticate using it.  This gives you a chance to see if an adversary has the capacity to steal or forge Kerberos tickets for lateral movement.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Deploy a mix of network devices (systems, servers, printers, phones, etc.) to make a decoy network look realistic.
+Deploy a variety of systems which reflect the use of multiple operating systems, hardware platforms, network services, etc.</p>
+</div>
 </div>
 </div>
 

@@ -92,8 +92,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1133.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1190.html">
      T1190 - Exploit Public-Facing Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1190.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -102,8 +112,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1189.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1091.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -111,9 +131,19 @@
      T1195 - Supply Chain Compromise
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1195.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1566 - Phishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -137,6 +167,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1200.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1566.002.html">
      T1566.002 - Spearphishing Link
     </a>
@@ -144,6 +179,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1199.html">
      T1199 - Trusted Relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1199.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -174,6 +214,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1078.html">
      T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -342,6 +387,27 @@
 <p>URL inspection within email (including expanding shortened links) can help detect links leading to known malicious sites. Detonation chambers can be used to detect these links and either automatically go to these sites to determine if they’re potentially malicious, or wait and capture the content if a user visits the link.</p>
 <p>Because most common third-party services used for phishing via service leverage TLS encryption, SSL/TLS inspection is generally required to detect the initial communication/delivery. With SSL/TLS inspection intrusion detection signatures or other security gateway appliances may be able to detect malware.</p>
 <p>Anti-virus can potentially detect malicious documents and files that are downloaded on the user’s computer. Many possible detections of follow-on behavior may take place once <a class="reference external" href="https://attack.mitre.org/techniques/T1204">User Execution</a> occurs.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="email-manipulation">
+<h2>Email Manipulation<a class="headerlink" href="#email-manipulation" title="Permalink to this headline">¶</a></h2>
+<p>Modify the flow or contents of email.</p>
+<p>Email flow manipulation includes changing which mail appliances process mail flows, to which systems they forward mail, or moving mail after it arrives in an inbox.  Email content manipulation includes altering the contents of an email message.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>A phishing email can be detected and blocked from arriving at the intended recipient.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can intercept emails that are detected as suspicious or malicious by email detection tools and prevent deliver to the intended target.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Modify the destination of inbound email to facilitate the collection of inbound spearphishing messages.
+Modify the contents of an email message to maintain continuity when it is used for adversary engagement purposes.</p>
+</div>
 </div>
 </div>
 

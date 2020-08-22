@@ -127,8 +127,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1111.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1212.html">
      T1212 - Exploitation for Credential Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1212.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -147,6 +157,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1056.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
      T1556.003 - Pluggable Authentication Modules
     </a>
@@ -162,8 +177,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1539.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1558.html">
      T1558 - Steal or Forge Kerberos Tickets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1558.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -184,6 +209,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.html">
      T1110 - Brute Force
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1110.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,6 +242,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1557.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
      T1552.003 - Unsecured Credentials: Bash History
     </a>
@@ -227,8 +262,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1555.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1040.html">
      T1040 - Network Sniffing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1040.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,6 +312,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1003.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
      T1003.003 - OS Credential Dumping: NTDS
     </a>
@@ -286,9 +336,19 @@
      T1187 - Forced Authentication
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1187.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1556 - Modify Authentication Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,6 +364,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.html">
      T1552 - Unsecured Credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1552.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,6 +404,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1528.html">
      T1528 - Steal Application Access Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1528.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -478,6 +548,27 @@
 <p>Monitor for calls to <code>OpenProcess</code> that can be used to manipulate lsass.exe running on a domain controller as well as for malicious modifications to functions exported from authentication-related system DLLs (such as cryptdll.dll and samsrv.dll).(Citation: Dell Skeleton)</p>
 <p>Monitor PAM configuration and module paths (ex: <code>/etc/pam.d/</code>) for changes. Use system-integrity tools such as AIDE and monitoring tools such as auditd to monitor PAM files.</p>
 <p>Configure robust, consistent account activity audit policies across the enterprise and with externally accessible services. (Citation: TechNet Audit Policy) Look for suspicious account behavior across systems that share accounts, either user, admin, or service accounts. Examples: one account logged into multiple systems simultaneously; multiple accounts logged into the same machine simultaneously; accounts logged in at odd times or outside of business hours. Activity may be from interactive login sessions or process ownership from accounts being used to execute binaries on a remote system as a particular account. Correlate other security systems with login information (e.g., a user has an active login session but has not entered the building or does not have VPN access).</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="security-controls">
+<h2>Security Controls<a class="headerlink" href="#security-controls" title="Permalink to this headline">¶</a></h2>
+<p>Alter security controls to make the system more or less vulnerable to attack.</p>
+<p>Manipulating security controls involves making configuration changes to the security settings of a system including things like modifying Group Policies, disabling/enabling autorun for removable media, and tightening or relaxing system firewalls, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to use security controls on systems in order to affect the success of an adversary.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender could implement security controls to force an adversary to modify the authentication process if they want to collect or utilize credentials on a system.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Weaken security controls on a system to allow for leaking of credentials via network connection poisoning.
+Implement policies on a system to prevent the insecure storage of passwords in the registry. This may force an adversary to revert these changes or find another way to access cached credentials.</p>
+</div>
 </div>
 </div>
 

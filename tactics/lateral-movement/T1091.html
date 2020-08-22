@@ -132,6 +132,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1210.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1021.003.html">
      T1021.003 - Distributed Component Object Model
     </a>
@@ -152,8 +157,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1563.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1072.html">
      T1072 - Software Deployment Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1072.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -169,6 +184,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -217,8 +237,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1021.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1534.html">
      T1534 - Internal Spearphishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1534.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,13 +257,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1080.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1570.html">
      T1570 - Lateral Tool Transfer
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1570.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1550.html">
      T1550 - Use Alternate Authentication Material
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1550.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -358,6 +403,27 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor file access on removable media. Detect processes that execute from removable media after it is mounted or when initiated by a user. If a remote access tool is used in this manner to move laterally, then additional actions are likely to occur after execution, such as opening network connections for Command and Control and system and network information Discovery.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-activity-monitoring">
+<h2>System Activity Monitoring<a class="headerlink" href="#system-activity-monitoring" title="Permalink to this headline">¶</a></h2>
+<p>Collect system activity logs which can reveal adversary activity.</p>
+<p>Capturing system logs can show logins, user and system events, etc.  Collecting this data and potentially sending it to a centralized location can help reveal the presence of an adversary and the actions they perform on a compromised system.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to deploy a tripwire that triggers an alert when an adversary touches a network resource or uses a specific technique.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can monitor systems for the use of removeable media.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Ensure that systems capture and retain common system level activity artifacts that might be produced.
+Monitor Windows systems for event codes that reflect an adversary changing passwords, adding accounts to groups, etc.</p>
+</div>
 </div>
 </div>
 

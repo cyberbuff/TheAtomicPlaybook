@@ -132,6 +132,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1210.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1021.003.html">
      T1021.003 - Distributed Component Object Model
     </a>
@@ -152,8 +157,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1563.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1072.html">
      T1072 - Software Deployment Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1072.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -169,6 +184,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1091.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -217,8 +237,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1021.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1534.html">
      T1534 - Internal Spearphishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1534.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,13 +257,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1080.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1570.html">
      T1570 - Lateral Tool Transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1570.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1550 - Use Alternate Authentication Material
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -360,6 +405,28 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Configure robust, consistent account activity audit policies across the enterprise and with externally accessible services.(Citation: TechNet Audit Policy) Look for suspicious account behavior across systems that share accounts, either user, admin, or service accounts. Examples: one account logged into multiple systems simultaneously; multiple accounts logged into the same machine simultaneously; accounts logged in at odd times or outside of business hours. Activity may be from interactive login sessions or process ownership from accounts being used to execute binaries on a remote system as a particular account. Correlate other security systems with login information (e.g., a user has an active login session but has not entered the building or does not have VPN access).</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="behavioral-analytics">
+<h2>Behavioral Analytics<a class="headerlink" href="#behavioral-analytics" title="Permalink to this headline">¶</a></h2>
+<p>Deploy tools that detect unusual system or user behavior.</p>
+<p>Instrument a system to collect detailed information about process execution and user activity, develop a sense of normal or expected behaviors, and alert on abnormal or unexpected activity.  This can be accomplished either onboard the target system or by shipping data to a centralized analysis and alerting system.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to detect the presence of an adversary by identifying and alerting on anomalous behaviors.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>Defenders can look for anomalies in where an account is authenticating and what it is authenticating to in order to detect potentially malicious intent.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Use behavioral analytics to detect Living Off The Land Binaries (LOLBins) being used to download and execute a file.
+Use behavioral analytics to identify a system running development tools, but is not used by someone who does development.
+Use behavioral analytics to identify abnormal system processes being used to launch a different process.</p>
+</div>
 </div>
 </div>
 

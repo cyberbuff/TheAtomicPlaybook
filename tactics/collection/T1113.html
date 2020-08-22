@@ -136,9 +136,19 @@
      T1074 - Data Staged
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1074.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1113 - Screen Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -152,13 +162,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1056.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1115.html">
      T1115 - Clipboard Data
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1115.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1213.html">
      T1213 - Data from Information Repositories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1213.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -172,8 +197,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1560.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1114.html">
      T1114 - Email Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1114.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -192,6 +227,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1557.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1074.002.html">
      T1074.002 - Remote Data Staging
     </a>
@@ -202,13 +242,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1005.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1125.html">
      T1125 - Video Capture
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1125.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1530.html">
      T1530 - Data from Cloud Storage Object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1530.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -222,6 +277,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1025.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1213.001.html">
      T1213.001 - Confluence
     </a>
@@ -229,6 +289,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1123.html">
      T1123 - Audio Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1123.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -247,6 +312,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1185.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1074.001.html">
      T1074.001 - Data Staged: Local Data Staging
     </a>
@@ -257,8 +327,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1039.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1119.html">
      T1119 - Automated Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1119.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -549,6 +629,27 @@ xwud -in /tmp/T1113_desktop.xwd
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitoring for screen capture behavior will depend on the method used to obtain data from the operating system and write output files. Detection methods could include collecting information from unusual processes using API calls used to obtain image data, and monitoring for image files written to disk. The sensor data may need to be correlated with other events to identify malicious activity, depending on the legitimacy of this behavior within a given network environment.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="decoy-content">
+<h2>Decoy Content<a class="headerlink" href="#decoy-content" title="Permalink to this headline">¶</a></h2>
+<p>Seed content that can be used to lead an adversary in a specific direction, entice a behavior, etc.</p>
+<p>Decoy Content is the data used to tell a story to an adversary. This content can be legitimate or synthetic data which is used to reinforce or validate your defensive strategy. Examples of decoy content are files on a storage object, entries in the system registry, system shortcuts, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to feed content to an adversary to influence their behaviors, test their interest in specific topics, or add legitimacy to a system or environment.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can display decoy content on the screen which may be of interest to an adversary in an attempt to elicit further engagement.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Create directories and files with names and contents using key words that may be relevant to an adversary to see if they examine or exfiltrate the data.
+Seed a file system with content that is of no value to the company but reinforces the legitimacy of the system if viewed by an adversary.</p>
+</div>
 </div>
 </div>
 

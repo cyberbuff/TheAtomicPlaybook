@@ -147,8 +147,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1561.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1498.html">
      T1498 - Network Denial of Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1498.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -172,8 +182,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1565.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1485.html">
      T1485 - Data Destruction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1485.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -192,8 +212,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1499.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1486.html">
      T1486 - Data Encrypted for Impact
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1486.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -202,8 +232,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1491.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1495.html">
      T1495 - Firmware Corruption
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1495.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -214,6 +254,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1529.html">
      T1529 - System Shutdown/Reboot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1529.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -237,8 +282,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1489.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1490.html">
      T1490 - Inhibit System Recovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1490.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -261,9 +316,19 @@
      T1496 - Resource Hijacking
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1496.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1531 - Account Access Removal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -560,6 +625,27 @@ if((Get-ADUser remove_user -Properties memberof).memberof -like &quot;CN=Domain 
 <li><p>Event ID 4740 - A user account was locked out</p></li>
 </ul>
 <p>Alerting on <a class="reference external" href="https://attack.mitre.org/software/S0039">Net</a> and these Event IDs may generate a high degree of false positives, so compare against baseline knowledge for how systems are typically used and correlate modification events with other indications of malicious activity where possible.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-activity-monitoring">
+<h2>System Activity Monitoring<a class="headerlink" href="#system-activity-monitoring" title="Permalink to this headline">¶</a></h2>
+<p>Collect system activity logs which can reveal adversary activity.</p>
+<p>Capturing system logs can show logins, user and system events, etc.  Collecting this data and potentially sending it to a centralized location can help reveal the presence of an adversary and the actions they perform on a compromised system.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to create a detection with a moderately high probability of success.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can implement monitoring to alert if a user account is altered outside normal business hours, from remote locations, etc.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Ensure that systems capture and retain common system level activity artifacts that might be produced.
+Monitor Windows systems for event codes that reflect an adversary changing passwords, adding accounts to groups, etc.</p>
+</div>
 </div>
 </div>
 

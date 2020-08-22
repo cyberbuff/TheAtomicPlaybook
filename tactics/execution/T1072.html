@@ -102,6 +102,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1204.002.html">
      T1204.002 - User Execution: Malicious Link
     </a>
@@ -117,8 +122,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1129.html">
      T1129 - Shared Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1129.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -129,6 +144,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1559.html">
      T1559 - Inter-Process Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1559.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,6 +177,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1059.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1064.html">
      T1064 - Scripting
     </a>
@@ -174,6 +199,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1204.html">
      T1204 - User Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1204.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -197,6 +227,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1569.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1059.002.html">
      T1059.002 - Command and Scripting Interpreter: AppleScript
     </a>
@@ -209,6 +244,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1203.html">
      T1203 - Exploitation for Client Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1203.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,8 +267,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1106.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1047.html">
      T1047 - Windows Management Instrumentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1047.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -408,6 +458,27 @@
 <p>The same investigation process can be applied here as with other potentially malicious activities where the distribution vector is initially unknown but the resulting activity follows a discernible pattern. Analyze the process execution trees, historical activities from the third-party application (such as what types of files are usually pushed), and the resulting activities or events from the file/binary/script pushed to systems.</p>
 <p>Often these third-party applications will have logs of their own that can be collected and correlated with other data from the environment. Ensure that third-party application logs are on-boarded to the enterprise logging system and the logs are regularly reviewed. Audit software deployment logs and look for suspicious or unauthorized activity. A system not typically used to push software to clients that suddenly is used for such a task outside of a known admin function may be suspicious. Monitor account login activity on these applications to detect suspicious/abnormal usage.</p>
 <p>Perform application deployment at regular times so that irregular deployment activity stands out. Monitor process activity that does not correlate to known good software. Monitor account login activity on the deployment system.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="decoy-system">
+<h2>Decoy System<a class="headerlink" href="#decoy-system" title="Permalink to this headline">¶</a></h2>
+<p>Configure a computing system to serve as an attack target or experimental environment.</p>
+<p>A decoy system is a computing resource presented to the adversary in support of active defense.  The underlying system can be real, virtual, or simulated, and can be presented as one of a variety of IT devices including user workstations, servers, networking systems, IOT (embedded devices), mobile systems like phones, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to study the adversary and collect first-hand observations about them and their tools.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can deploy a decoy software deployment tool within an adversary engagement environment to see how the adversary attempts to use the device during their activity.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Use an isolated system to visit a suspected compromised website.  Collect any associated scripting code or files dropped onto the system.
+Setup a server which appears to be something that is commonly expected within a network, such as web server.</p>
+</div>
 </div>
 </div>
 

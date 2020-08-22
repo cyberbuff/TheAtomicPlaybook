@@ -102,6 +102,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1072.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1204.002.html">
      T1204.002 - User Execution: Malicious Link
     </a>
@@ -117,8 +122,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1129.html">
      T1129 - Shared Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1129.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -129,6 +144,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1559.html">
      T1559 - Inter-Process Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1559.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,6 +177,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1059.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1064.html">
      T1064 - Scripting
     </a>
@@ -174,6 +199,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1204.html">
      T1204 - User Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1204.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -197,6 +227,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1569.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1059.002.html">
      T1059.002 - Command and Scripting Interpreter: AppleScript
     </a>
@@ -209,6 +244,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1203.html">
      T1203 - Exploitation for Client Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1203.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,9 +266,19 @@
      T1106 - Native API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1106.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1047 - Windows Management Instrumentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -634,6 +684,27 @@ A common error message is “Node - (provided IP or default)  ERROR Description 
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor network traffic for WMI connections; the use of WMI in environments that do not typically use WMI may be suspect. Perform process monitoring to capture command-line arguments of “wmic” and detect commands that are used to perform remote behavior. (Citation: FireEye WMI 2015)</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="admin-access">
+<h2>Admin Access<a class="headerlink" href="#admin-access" title="Permalink to this headline">¶</a></h2>
+<p>Modify a user’s administrative privileges.</p>
+<p>Changing the target system to allow or disallow users to perform tasks requiring administrator level permissions gives the defender leverage in inhibiting or facilitating attacks.  The procedures for changing these permissions vary across different operating and software systems.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>In an adversary engagement scenario, there is an opportunity to allow or restrict admin access to support your defensive objectives.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can remove admin access from the local user to prevent an adversary from being able to utilize WMI.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Remove an account’s administrative access from a system or service to require an adversary to reveal techniques for elevating privileges in order to accomplish certain tasks.
+Grant an account administrative access to a system or service to enable an adversary to take advantage of those privileges if they compromise the system or service.</p>
+</div>
 </div>
 </div>
 

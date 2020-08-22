@@ -142,8 +142,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1567.html">
      T1567 - Exfiltration Over Web Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1567.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,8 +167,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1011.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1029.html">
      T1029 - Scheduled Transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1029.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,8 +187,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1030.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1048.html">
      T1048 - Exfiltration Over Alternative Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1048.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -197,8 +227,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1020.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1041.html">
      T1041 - Exfiltration Over C2 Channel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1041.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,6 +249,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1537.html">
      T1537 - Transfer Data to Cloud Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1537.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -323,6 +368,27 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor file access on removable media. Detect processes that execute when removable media are mounted.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="peripheral-management">
+<h2>Peripheral Management<a class="headerlink" href="#peripheral-management" title="Permalink to this headline">¶</a></h2>
+<p>Manage peripheral devices used on systems within the network for active defense purposes.</p>
+<p>Peripheral Management is the administration of peripheral devices used on systems within the network for defensive or deceptive purposes. A defender can choose to allow or deny certain types of peripherals from being used on systems. Defenders can also introduce certain peripherals to an adversary-controlled system to see how the adversary reacts.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to determine adversary capabilities or preferences by controlling aspects of the engagement environment.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender could use decoy peripherals, such as external Wi-Fi adapters, USB devices, etc. to determine if adversaries attempt to use them for exfiltration purposes.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Introduce external devices (e.g. a USB drive) to a machine in an adversary engagement scenario to see how quickly an adversary gains awareness to its presence and if they attempt to leverage the device.
+Configure controls (such as AutoRun) which would require an adversary to take additional steps when leveraging a peripheral device to execute their tools.</p>
+</div>
 </div>
 </div>
 

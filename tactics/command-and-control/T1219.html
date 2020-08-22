@@ -142,6 +142,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1090.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1001.002.html">
      T1001.002 - Steganography
     </a>
@@ -149,6 +154,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1092.html">
      T1092 - Communication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1092.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -169,6 +179,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1008.html">
      T1008 - Fallback Channels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1008.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,6 +227,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1071.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1102.002.html">
      T1102.002 - Bidirectional Communication
     </a>
@@ -227,8 +247,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1095.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1132.html">
      T1132 - Data Encoding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1132.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -242,6 +272,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1573.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1132.002.html">
      T1132.002 - Non-Standard Encoding
     </a>
@@ -252,13 +287,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1568.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1571.html">
      T1571 - Non-Standard Port
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1571.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1219 - Remote Access Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -277,8 +327,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1001.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1105.html">
      T1105 - Ingress Tool Transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1105.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -297,6 +357,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1572.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1573.002.html">
      T1573.002 - Asymmetric Cryptography
     </a>
@@ -309,6 +374,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1102.html">
      T1102 - Web Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1102.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,8 +397,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1104.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1205.html">
      T1205 - Traffic Signaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1205.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -573,6 +653,27 @@ Start-Process &#39;C:\Program Files (x86)\LogMeInIgnition\LMIIgnition.exe&#39; &
 <p>Monitor for applications and processes related to remote admin tools. Correlate activity with other suspicious behavior that may reduce false positives if these tools are used by legitimate users and administrators.</p>
 <p>Analyze network data for uncommon data flows (e.g., a client sending significantly more data than it receives from a server). Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious. Analyze packet contents to detect application layer protocols that do not follow the expected protocol for the port that is being used.</p>
 <p><a class="reference external" href="https://attack.mitre.org/techniques/T1090/004">Domain Fronting</a> may be used in conjunction to avoid defenses. Adversaries will likely need to deploy and/or install these remote tools to compromised systems. It may be possible to detect or prevent the installation of these tools with host-based solutions.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="decoy-system">
+<h2>Decoy System<a class="headerlink" href="#decoy-system" title="Permalink to this headline">¶</a></h2>
+<p>Configure a computing system to serve as an attack target or experimental environment.</p>
+<p>A decoy system is a computing resource presented to the adversary in support of active defense.  The underlying system can be real, virtual, or simulated, and can be presented as one of a variety of IT devices including user workstations, servers, networking systems, IOT (embedded devices), mobile systems like phones, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to study the adversary and collect first-hand observations about them and their tools.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can install remote access tools on decoy systems across the network to see if the adversary uses these tools for command and control.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Use an isolated system to visit a suspected compromised website.  Collect any associated scripting code or files dropped onto the system.
+Setup a server which appears to be something that is commonly expected within a network, such as web server.</p>
+</div>
 </div>
 </div>
 

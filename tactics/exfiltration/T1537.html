@@ -142,8 +142,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1052.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1567.html">
      T1567 - Exfiltration Over Web Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1567.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,8 +167,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1011.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1029.html">
      T1029 - Scheduled Transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1029.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,8 +187,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1030.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1048.html">
      T1048 - Exfiltration Over Alternative Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1048.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -197,8 +227,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1020.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1041.html">
      T1041 - Exfiltration Over C2 Channel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1041.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,6 +249,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1537 - Transfer Data to Cloud Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -325,6 +370,28 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor account activity for attempts to share data, snapshots, or backups with untrusted or unusual accounts on the same cloud service provider. Monitor for anomalous file transfer activity between accounts and to untrusted VPCs.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="behavioral-analytics">
+<h2>Behavioral Analytics<a class="headerlink" href="#behavioral-analytics" title="Permalink to this headline">¶</a></h2>
+<p>Deploy tools that detect unusual system or user behavior.</p>
+<p>Instrument a system to collect detailed information about process execution and user activity, develop a sense of normal or expected behaviors, and alert on abnormal or unexpected activity.  This can be accomplished either onboard the target system or by shipping data to a centralized analysis and alerting system.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to detect the presence of an adversary by identifying and alerting on anomalous behaviors.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>Defenders can detect adversaries attempting to exfiltrate to a cloud account. This can detect a system connecting to these cloud providers that it might not normally connect to, not using an account that it normally does, or during a time when it normally doesn’t do so.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Use behavioral analytics to detect Living Off The Land Binaries (LOLBins) being used to download and execute a file.
+Use behavioral analytics to identify a system running development tools, but is not used by someone who does development.
+Use behavioral analytics to identify abnormal system processes being used to launch a different process.</p>
+</div>
 </div>
 </div>
 

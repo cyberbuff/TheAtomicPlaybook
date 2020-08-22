@@ -147,8 +147,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1561.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1498.html">
      T1498 - Network Denial of Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1498.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -171,9 +181,19 @@
      T1565 - Data Manipulation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1565.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1485 - Data Destruction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -192,8 +212,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1499.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1486.html">
      T1486 - Data Encrypted for Impact
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1486.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -202,8 +232,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1491.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1495.html">
      T1495 - Firmware Corruption
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1495.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -214,6 +254,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1529.html">
      T1529 - System Shutdown/Reboot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1529.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -237,8 +282,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1489.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1490.html">
      T1490 - Inhibit System Recovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1490.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -262,8 +317,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1496.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1531.html">
      T1531 - Account Access Removal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1531.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -542,6 +607,28 @@ To stop the test, break the command with CTRL/CMD+C.</p>
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Use process monitoring to monitor the execution and command-line parameters of binaries that could be involved in data destruction activity, such as <a class="reference external" href="https://attack.mitre.org/software/S0195">SDelete</a>. Monitor for the creation of suspicious files as well as high unusual file modification activity. In particular, look for large quantities of file modifications in user directories and under <code>C:\Windows\System32&lt;/code&gt;.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="backup-and-recovery">
+<h2>Backup and Recovery<a class="headerlink" href="#backup-and-recovery" title="Permalink to this headline">¶</a></h2>
+<p>Make copies of key system software, configuration, and data to enable rapid system restoration.</p>
+<p>Employ disk imaging, system backup, or file synchronization tools to create copies of key data on a protected backup repository.  This is typically done to capture/restore an entire system or major subsystems.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to test what an adversary might do if destroyed data is selectively replaced by the defender.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can ensure data is backed up on a regular basis and backups are stored offline from the system.  If an adversary is detected destroying or altering data, the defender could selectively restore data from backup to see how the adversary reacts.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Backup data on public facing websites and retain the files offline. In the event of data damage or loss, restore the data from backup.
+Backup data on an end-user system and store offline.  If an adversary alters or deletes data on the system, restore the data using the backup copy.
+In an adversary engagement situation, if an adversary deletes or alters files on a machine they are controlling, restore the data to it original state and location to see how the adversary reacts.</p>
+</div>
 </div>
 </div>
 

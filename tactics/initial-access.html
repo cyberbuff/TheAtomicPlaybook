@@ -92,8 +92,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1133.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="initial-access/T1190.html">
      T1190 - Exploit Public-Facing Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1190.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -102,8 +112,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1189.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="initial-access/T1091.html">
      T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1091.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -112,8 +132,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1195.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="initial-access/T1566.html">
      T1566 - Phishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1566.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -137,6 +167,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1200.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="initial-access/T1566.002.html">
      T1566.002 - Spearphishing Link
     </a>
@@ -144,6 +179,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="initial-access/T1199.html">
      T1199 - Trusted Relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1199.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -174,6 +214,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="initial-access/T1078.html">
      T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="initial-access/T1078.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,9 +409,6 @@ T1566.001 | Spearphishing Attachment | Adversaries may send spearphishing emails
 <p>There are many options for the attachment such as Microsoft Office documents, executables, PDFs, or archived files. Upon opening the attachment (and potentially clicking past protections), the adversary’s payload exploits a vulnerability or directly executes on the user’s system. The text of the spearphishing email usually tries to give a plausible reason why the file should be opened, and may explain how to bypass system protections in order to do so. The email may also contain instructions on how to decrypt an attachment, such as a zip file password, in order to evade email boundary defenses. Adversaries frequently manipulate file extensions and icons in order to make attached executables appear to be document files, or files exploiting one application appear to be a file for a different one.
 T1566 | Phishing | Adversaries may send phishing messages to elicit sensitive information and/or gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.</p>
 <p>Adversaries may send victim’s emails containing malicious attachments or links, typically to execute malicious code on victim systems or to gather credentials for use of <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a>. Phishing may also be conducted via third-party services, like social media platforms.
-T1190 | Exploit Public-Facing Application | Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause unintended or unanticipated behavior. The weakness in the system can be a bug, a glitch, or a design vulnerability. These applications are often websites, but can include databases (like SQL)(Citation: NVD CVE-2016-6662), standard services (like SMB(Citation: CIS Multiple SMB Vulnerabilities) or SSH), and any other applications with Internet accessible open sockets, such as web servers and related services.(Citation: NVD CVE-2014-7169) Depending on the flaw being exploited this may include <a class="reference external" href="https://attack.mitre.org/techniques/T1211">Exploitation for Defense Evasion</a>.</p>
-<p>If an application is hosted on cloud-based infrastructure, then exploiting it may lead to compromise of the underlying instance. This can allow an adversary a path to access the cloud APIs or to take advantage of weak identity and access management policies.</p>
-<p>For websites and databases, the OWASP top 10 and CWE top 25 highlight the most common web-based vulnerabilities.(Citation: OWASP Top 10)(Citation: CWE top 25)
 T1189 | Drive-by Compromise | Adversaries may gain access to a system through a user visiting a website over the normal course of browsing. With this technique, the user’s web browser is typically targeted for exploitation, but adversaries may also use compromised websites for non-exploitation behavior such as acquiring <a class="reference external" href="https://attack.mitre.org/techniques/T1550/001">Application Access Token</a>.</p>
 <p>Multiple ways of delivering exploit code to a browser exist, including:</p>
 <ul class="simple">
@@ -392,6 +434,9 @@ T1189 | Drive-by Compromise | Adversaries may gain access to a system through a 
 </ol>
 <p>Unlike <a class="reference external" href="https://attack.mitre.org/techniques/T1190">Exploit Public-Facing Application</a>, the focus of this technique is to exploit software on a client endpoint upon visiting a website. This will commonly give an adversary access to systems on the internal network instead of external systems that may be in a DMZ.</p>
 <p>Adversaries may also use compromised websites to deliver a user to a malicious application designed to <a class="reference external" href="https://attack.mitre.org/techniques/T1528">Steal Application Access Token</a>s, like OAuth tokens, to gain access to protected applications and information. These malicious applications have been delivered through popups on legitimate websites.(Citation: Volexity OceanLotus Nov 2017)
+T1190 | Exploit Public-Facing Application | Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause unintended or unanticipated behavior. The weakness in the system can be a bug, a glitch, or a design vulnerability. These applications are often websites, but can include databases (like SQL)(Citation: NVD CVE-2016-6662), standard services (like SMB(Citation: CIS Multiple SMB Vulnerabilities) or SSH), and any other applications with Internet accessible open sockets, such as web servers and related services.(Citation: NVD CVE-2014-7169) Depending on the flaw being exploited this may include <a class="reference external" href="https://attack.mitre.org/techniques/T1211">Exploitation for Defense Evasion</a>.</p>
+<p>If an application is hosted on cloud-based infrastructure, then exploiting it may lead to compromise of the underlying instance. This can allow an adversary a path to access the cloud APIs or to take advantage of weak identity and access management policies.</p>
+<p>For websites and databases, the OWASP top 10 and CWE top 25 highlight the most common web-based vulnerabilities.(Citation: OWASP Top 10)(Citation: CWE top 25)
 T1200 | Hardware Additions | Adversaries may introduce computer accessories, computers, or networking hardware into a system or network that can be used as a vector to gain access. While public references of usage by APT groups are scarce, many penetration testers leverage hardware additions for initial access. Commercial and open source products are leveraged with capabilities such as passive network tapping (Citation: Ossmann Star Feb 2011), man-in-the middle encryption breaking (Citation: Aleks Weapons Nov 2015), keystroke injection (Citation: Hak5 RubberDuck Dec 2016), kernel memory reading via DMA (Citation: Frisk DMA August 2016), adding new wireless access to an existing network (Citation: McMillan Pwn March 2012), and others.
 T1195 | Supply Chain Compromise | Adversaries may manipulate products or product delivery mechanisms prior to receipt by a final consumer for the purpose of data or system compromise.</p>
 <p>Supply chain compromise can take place at any stage of the supply chain including:</p>
@@ -416,7 +461,8 @@ T1078 | Valid Accounts | Adversaries may obtain and abuse credentials of existin
 <p>The overlap of permissions for local, domain, and cloud accounts across a network of systems is of concern because the adversary may be able to pivot across accounts and systems to reach a high level of access (i.e., domain or enterprise administrator) to bypass access controls set within the enterprise. (Citation: TechNet Credential Theft)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span><span class="o">-</span><span class="n">By</span> <span class="o">-</span><span class="n">Tactic</span> <span class="n">initial</span><span class="o">-</span><span class="n">access</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Invoke-AtomicTest-By can be downloaded from https://github.com/haresudhan/ART-Utils/tree/master/Invoke-AtomicTest-By</span>
+<span class="n">Invoke</span><span class="o">-</span><span class="n">AtomicTest</span><span class="o">-</span><span class="n">By</span> <span class="o">-</span><span class="n">Tactic</span> <span class="n">initial</span><span class="o">-</span><span class="n">access</span>
 </pre></div>
 </div>
 </div>

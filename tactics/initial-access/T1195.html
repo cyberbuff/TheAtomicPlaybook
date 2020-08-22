@@ -92,8 +92,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1133.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1190.html">
      T1190 - Exploit Public-Facing Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1190.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -102,8 +112,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1189.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1091.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -112,8 +132,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1566.html">
      T1566 - Phishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1566.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -137,6 +167,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1200.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1566.002.html">
      T1566.002 - Spearphishing Link
     </a>
@@ -144,6 +179,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1199.html">
      T1199 - Trusted Relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1199.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -174,6 +214,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1078.html">
      T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -351,6 +396,27 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Use verification of distributed binaries through hash checking or other integrity checking mechanisms. Scan downloads for malicious signatures and attempt to test software and updates prior to deployment while taking note of potential suspicious activity. Perform physical inspection of hardware to look for potential tampering.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="decoy-network">
+<h2>Decoy Network<a class="headerlink" href="#decoy-network" title="Permalink to this headline">¶</a></h2>
+<p>Create a target network with a set of target systems, for the purpose of active defense.</p>
+<p>Decoy networks are comprised of multiple computing resources that can be used for defensive or deceptive purposes.  A decoy network can be used to safely perform dynamic analysis of suspected malicious code. A defender can also use a specially crafted decoy network to perform adversary engagement.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>Hardware and/or software additions can be tested and verified in controlled environments prior to deployment.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can install any suspect hardware or software on an isolated system or network and monitor for non-standard behaviors.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Create an isolated network populated with decoy systems that can be used to study an adversary’s tactics, techniques, and procedures (TTPs).
+Use a segregated network to visit a compromised site.  If the machine becomes infected, allow the machine to remain on with internet access to see if an adversary engages and takes action on the system.</p>
+</div>
 </div>
 </div>
 

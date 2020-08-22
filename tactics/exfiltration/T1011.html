@@ -142,8 +142,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1052.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1567.html">
      T1567 - Exfiltration Over Web Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1567.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,8 +167,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1029.html">
      T1029 - Scheduled Transfer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1029.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,8 +187,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1030.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1048.html">
      T1048 - Exfiltration Over Alternative Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1048.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -197,8 +227,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1020.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1041.html">
      T1041 - Exfiltration Over C2 Channel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1041.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,6 +249,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1537.html">
      T1537 - Transfer Data to Cloud Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1537.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -325,6 +370,27 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor for processes utilizing the network that do not normally have network communication or have never been seen before. Processes that normally require user-driven events to access the network (for example, a web browser opening with a mouse click or key press) but access the network without such may be malicious.</p>
 <p>Monitor for and investigate changes to host adapter settings, such as addition and/or replication of communication interfaces.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="security-controls">
+<h2>Security Controls<a class="headerlink" href="#security-controls" title="Permalink to this headline">¶</a></h2>
+<p>Alter security controls to make the system more or less vulnerable to attack.</p>
+<p>Manipulating security controls involves making configuration changes to the security settings of a system including things like modifying Group Policies, disabling/enabling autorun for removable media, and tightening or relaxing system firewalls, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>In an adversary engagement scenario, there is an opportunity to implement security controls to support your defensive objectives over a prolonged engagement.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can prevent an adversary from enabling Wi-Fi or Bluetooth interfaces which could be connected to surrounding access points or devices and used for exfiltration.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Weaken security controls on a system to allow for leaking of credentials via network connection poisoning.
+Implement policies on a system to prevent the insecure storage of passwords in the registry. This may force an adversary to revert these changes or find another way to access cached credentials.</p>
+</div>
 </div>
 </div>
 

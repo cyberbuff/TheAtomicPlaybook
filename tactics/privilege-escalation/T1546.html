@@ -132,6 +132,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1547.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1547.009.html">
      T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification
     </a>
@@ -167,8 +172,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1543.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1037.html">
      T1037 - Boot or Logon Initialization Scripts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -207,6 +222,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1546.012.html">
      T1546.012 - Event Triggered Execution: Image File Execution Options Injection
     </a>
@@ -227,6 +247,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1055.013.html">
      T1055.013 - Process Doppelgänging
     </a>
@@ -244,6 +269,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1134.html">
      T1134 - Access Token Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -287,13 +317,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1068.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1055.html">
      T1055 - Process Injection
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1055.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1484.html">
      T1484 - Group Policy Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1484.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -379,6 +424,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1548.html">
      T1548 - Abuse Elevation Control Mechanism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -497,6 +547,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1134.003.html">
      T1134.003 - Make and Impersonate Token
     </a>
@@ -519,6 +574,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1574.html">
      T1574 - Hijack Execution Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -689,6 +749,27 @@
 <p>Monitor for processes, API/System calls, and other common ways of manipulating these event repositories.</p>
 <p>Tools such as Sysinternals Autoruns can be used to detect changes to execution triggers that could be attempts at persistence. Also look for abnormal process call trees for execution of other commands that could relate to Discovery actions or other techniques.</p>
 <p>Monitor DLL loads by processes, specifically looking for DLLs that are not recognized or not normally loaded into a process. Look for abnormal process behavior that may be due to a process loading a malicious DLL. Data and events should not be viewed in isolation, but as part of a chain of behavior that could lead to other activities, such as making network connections for Command and Control, learning details about the environment through Discovery, and conducting Lateral Movement.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="baseline">
+<h2>Baseline<a class="headerlink" href="#baseline" title="Permalink to this headline">¶</a></h2>
+<p>Identify key system elements to establish a baseline and be prepared to reset a system to that baseline when necessary.</p>
+<p>Identify elements of software and configuration critical to a set of objectives, define their proper values, and be prepared to reset a running system to its intended state.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to use tools and controls to stop an adversary’s activity.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can revert a system to a verified baseline a frequent, recurring basis in order to remove adversary persistence mechanisms.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Maintain a verified baseline firewall configuration and use that copy as a fallback if an adversary alters that information.
+Maintain a verified list of group policies enforced on a system and use that copy if an adversary attempts to deviate from the baseline.</p>
+</div>
 </div>
 </div>
 

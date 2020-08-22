@@ -137,8 +137,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1074.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1113.html">
      T1113 - Screen Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1113.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -152,13 +162,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1056.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1115.html">
      T1115 - Clipboard Data
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1115.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1213.html">
      T1213 - Data from Information Repositories
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1213.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -172,8 +197,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1560.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1114.html">
      T1114 - Email Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1114.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -192,6 +227,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1074.002.html">
      T1074.002 - Remote Data Staging
     </a>
@@ -202,13 +242,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1005.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1125.html">
      T1125 - Video Capture
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1125.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1530.html">
      T1530 - Data from Cloud Storage Object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1530.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -222,6 +277,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1025.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1213.001.html">
      T1213.001 - Confluence
     </a>
@@ -229,6 +289,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1123.html">
      T1123 - Audio Capture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1123.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -247,6 +312,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1185.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1074.001.html">
      T1074.001 - Data Staged: Local Data Staging
     </a>
@@ -257,8 +327,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1039.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1119.html">
      T1119 - Automated Collection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1119.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -399,6 +479,27 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor network traffic for anomalies associated with known MiTM behavior. Consider monitoring for modifications to system configuration files involved in shaping network traffic flow.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="network-monitoring">
+<h2>Network Monitoring<a class="headerlink" href="#network-monitoring" title="Permalink to this headline">¶</a></h2>
+<p>Monitor network traffic in order to detect adversary activity.</p>
+<p>Network monitoring involves capturing network activity data, including capturing of server, firewall, and other relevant logs. A defender can then review them or send them to a centralized collection location for further analysis.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to monitor network traffic for different protocols, anomalous traffic patterns, transfer of data, etc. to determine the presence of an adversary.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can monitor network traffic for anomalies associated with known MiTM behavior.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Capture network logs for internet-facing devices and send those logs to a central collection location.
+Capture all network  device (router, switches, proxy, etc.) logs on a decoy network and send those logs to a central collection location.</p>
+</div>
 </div>
 </div>
 

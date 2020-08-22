@@ -92,8 +92,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1190.html">
      T1190 - Exploit Public-Facing Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1190.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -102,8 +112,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1189.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1091.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -112,8 +132,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1195.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1566.html">
      T1566 - Phishing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1566.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -137,6 +167,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1200.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1566.002.html">
      T1566.002 - Spearphishing Link
     </a>
@@ -144,6 +179,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1199.html">
      T1199 - Trusted Relationship
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1199.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -174,6 +214,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1078.html">
      T1078 - Valid Accounts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,6 +384,27 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Follow best practices for detecting adversary use of <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a> for authenticating to remote services. Collect authentication logs and analyze for unusual access patterns, windows of activity, and access outside of normal business hours.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="decoy-system">
+<h2>Decoy System<a class="headerlink" href="#decoy-system" title="Permalink to this headline">¶</a></h2>
+<p>Configure a computing system to serve as an attack target or experimental environment.</p>
+<p>A decoy system is a computing resource presented to the adversary in support of active defense.  The underlying system can be real, virtual, or simulated, and can be presented as one of a variety of IT devices including user workstations, servers, networking systems, IOT (embedded devices), mobile systems like phones, etc.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to determine if an adversary already has valid account credentials for your network and if they are trying to use them access your network via remote services.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can setup a decoy VPN server and see if an adversary attempts to use valid account to authenticate to it.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Use an isolated system to visit a suspected compromised website.  Collect any associated scripting code or files dropped onto the system.
+Setup a server which appears to be something that is commonly expected within a network, such as web server.</p>
+</div>
 </div>
 </div>
 

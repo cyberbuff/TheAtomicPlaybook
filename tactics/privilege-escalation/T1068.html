@@ -132,6 +132,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1547.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1547.009.html">
      T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification
     </a>
@@ -167,8 +172,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1543.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1037.html">
      T1037 - Boot or Logon Initialization Scripts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1037.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -207,6 +222,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1546.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1546.012.html">
      T1546.012 - Event Triggered Execution: Image File Execution Options Injection
     </a>
@@ -227,6 +247,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1055.013.html">
      T1055.013 - Process Doppelgänging
     </a>
@@ -244,6 +269,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1134.html">
      T1134 - Access Token Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1134.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -287,13 +317,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1055.html">
      T1055 - Process Injection
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1055.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1484.html">
      T1484 - Group Policy Modification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1484.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -379,6 +424,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1548.html">
      T1548 - Abuse Elevation Control Mechanism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1548.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -497,6 +547,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1078.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1134.003.html">
      T1134.003 - Make and Impersonate Token
     </a>
@@ -519,6 +574,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1574.html">
      T1574 - Hijack Execution Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1574.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -685,6 +745,27 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash. Also look for behavior on the endpoint system that might indicate successful compromise, such as abnormal behavior of the processes. This could include suspicious files written to disk, evidence of <a class="reference external" href="https://attack.mitre.org/techniques/T1055">Process Injection</a> for attempts to hide execution or evidence of Discovery.</p>
 <p>Higher privileges are often necessary to perform additional actions such as some methods of <a class="reference external" href="https://attack.mitre.org/techniques/T1003">OS Credential Dumping</a>. Look for additional activity that may indicate an adversary has gained higher privileges.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="admin-access">
+<h2>Admin Access<a class="headerlink" href="#admin-access" title="Permalink to this headline">¶</a></h2>
+<p>Modify a user’s administrative privileges.</p>
+<p>Changing the target system to allow or disallow users to perform tasks requiring administrator level permissions gives the defender leverage in inhibiting or facilitating attacks.  The procedures for changing these permissions vary across different operating and software systems.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to study the adversary and collect first-hand observations about them and their tools.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can configure system users to not have admin access in order to ensure privilege escalation requires exploitation.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Remove an account’s administrative access from a system or service to require an adversary to reveal techniques for elevating privileges in order to accomplish certain tasks.
+Grant an account administrative access to a system or service to enable an adversary to take advantage of those privileges if they compromise the system or service.</p>
+</div>
 </div>
 </div>
 

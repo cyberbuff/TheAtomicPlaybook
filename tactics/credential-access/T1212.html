@@ -126,9 +126,19 @@
      T1111 - Two-Factor Authentication Interception
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1111.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1212 - Exploitation for Credential Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -147,6 +157,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1056.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
      T1556.003 - Pluggable Authentication Modules
     </a>
@@ -162,8 +177,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1539.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1558.html">
      T1558 - Steal or Forge Kerberos Tickets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1558.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -184,6 +209,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.html">
      T1110 - Brute Force
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1110.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,6 +242,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1557.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
      T1552.003 - Unsecured Credentials: Bash History
     </a>
@@ -227,8 +262,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1555.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1040.html">
      T1040 - Network Sniffing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1040.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,6 +312,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1003.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
      T1003.003 - OS Credential Dumping: NTDS
     </a>
@@ -287,8 +337,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1187.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1556.html">
      T1556 - Modify Authentication Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1556.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,6 +364,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.html">
      T1552 - Unsecured Credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1552.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,6 +404,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1528.html">
      T1528 - Steal Application Access Token
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1528.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -473,6 +543,27 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash. Also look for behavior on the system that might indicate successful compromise, such as abnormal behavior of processes. Credential resources obtained through exploitation may be detectable in use if they are not normally used or seen.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="application-diversity">
+<h2>Application Diversity<a class="headerlink" href="#application-diversity" title="Permalink to this headline">¶</a></h2>
+<p>Present the adversary with a variety of installed applications and services.</p>
+<p>Application diversity is presenting multiple software targets to the adversary. On a single target system, defenders can configure multiple different services or user software applications.  On a target network, defenders can present systems with a variety of operating systems, operating system versions, applications, and services.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>In an adversary engagement scenario, there is an opportunity to use a variety of applications on a system to see what an adversary tries to exploit in order to acquire credentials.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can use a variety of applications on a decoy system or in a decoy network to see what an adversary tries to exploit in order to acquire credentials.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Use a mix of vulnerable and nonvulnerable software on a system to allow you to see what exploits the adversary leverages in their attacks.
+Install Anti-virus or other end-point detection tools on systems to see if an adversary takes note of them and if so, how they react.</p>
+</div>
 </div>
 </div>
 

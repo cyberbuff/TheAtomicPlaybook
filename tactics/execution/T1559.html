@@ -102,6 +102,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1072.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1204.002.html">
      T1204.002 - User Execution: Malicious Link
     </a>
@@ -117,8 +122,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1053.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1129.html">
      T1129 - Shared Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1129.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -129,6 +144,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1559 - Inter-Process Communication
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,6 +177,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1059.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1064.html">
      T1064 - Scripting
     </a>
@@ -174,6 +199,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1204.html">
      T1204 - User Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1204.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -197,6 +227,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1569.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1059.002.html">
      T1059.002 - Command and Scripting Interpreter: AppleScript
     </a>
@@ -209,6 +244,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1203.html">
      T1203 - Exploitation for Client Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1203.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,8 +267,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1106.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1047.html">
      T1047 - Windows Management Instrumentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1047.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -404,6 +454,29 @@
 <div class="section" id="detection">
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor for strings in files/commands, loaded DLLs/libraries, or spawned processes that are associated with abuse of IPC mechanisms.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="software-manipulation">
+<h2>Software Manipulation<a class="headerlink" href="#software-manipulation" title="Permalink to this headline">¶</a></h2>
+<p>Make changes to a system’s software properties and functions to achieve a desired effect.</p>
+<p>Software Manipulation allows a defender to alter or replace elements of the operating system, file system, or any other software installed and executed on a system.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity for the defender to observe the adversary and control what they can see, what effects they can have, and/or what data they can access.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can modify system calls to break communications, route things to decoy systems, prevent full execution, etc.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Hook the Win32 Sleep() function so that it always performs a Sleep(1) instead of the intended duration. This can increase the speed at which dynamic analysis can be performed when a normal malicious file sleeps for long periods before attempting additional capabilities.
+Hook the Win32 NetUserChangePassword() and modify it such that the new password is different from the one provided. The data passed into the function is encrypted along with the modified new password, then logged so a defender can get alerted about the change as well as decrypt the new password for use.
+Alter the output of an adversary’s profiling commands to make newly-built systems look like the operating system was installed months earlier.
+Alter the output of adversary recon commands to not show important assets, such as a file server containing sensitive data.</p>
+</div>
 </div>
 </div>
 

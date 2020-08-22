@@ -147,8 +147,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1561.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1498.html">
      T1498 - Network Denial of Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1498.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -172,8 +182,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1565.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1485.html">
      T1485 - Data Destruction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1485.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -192,8 +212,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1486.html">
      T1486 - Data Encrypted for Impact
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1486.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -202,8 +232,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1491.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1495.html">
      T1495 - Firmware Corruption
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1495.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -214,6 +254,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1529.html">
      T1529 - System Shutdown/Reboot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1529.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -237,8 +282,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1489.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1490.html">
      T1490 - Inhibit System Recovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1490.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -262,8 +317,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="T1496.html#shield-active-defense">
+     Shield Active Defense
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="T1531.html">
      T1531 - Account Access Removal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="T1531.html#shield-active-defense">
+     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -381,6 +446,27 @@
 <p>Detection of Endpoint DoS can sometimes be achieved before the effect is sufficient to cause significant impact to the availability of the service, but such response time typically requires very aggressive monitoring and responsiveness. Typical network throughput monitoring tools such as netflow, SNMP, and custom scripts can be used to detect sudden increases in circuit utilization.(Citation: Cisco DoSdetectNetflow) Real-time, automated, and qualitative study of the network traffic can identify a sudden surge in one type of protocol can be used to detect an attack as it starts.</p>
 <p>In addition to network level detections, endpoint logging and instrumentation can be useful for detection. Attacks targeting web applications may generate logs in the web server, application server, and/or database server that can be used to identify the type of attack, possibly before the impact is felt.</p>
 <p>Externally monitor the availability of services that may be targeted by an Endpoint DoS.</p>
+</div>
+</div>
+<div class="section" id="shield-active-defense">
+<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="network-manipulation">
+<h2>Network Manipulation<a class="headerlink" href="#network-manipulation" title="Permalink to this headline">¶</a></h2>
+<p>Make changes to network properties and functions to achieve a desired effect.</p>
+<p>Network Manipulation allows a defender to throttle network speeds, segment the network, maintain a unique IP addressing scheme, or add a kill switch to cut off network access if needed.</p>
+<div class="section" id="opportunity">
+<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<p>There is an opportunity to alter the network configuration in order to disrupt an adversary who is trying to saturate the network or a system via denial of service.</p>
+</div>
+<div class="section" id="use-case">
+<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<p>A defender can configure network devices to analyze network traffic, detect a potential DoS attack, and make appropriate adjustments to mitigate the situation.</p>
+</div>
+<div class="section" id="procedures">
+<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<p>Add a kill switch to a decoy network that can be used to shutdown all network communication if an adversary takes an action that is out of the desired scope.
+Introduce intermittent network packet loss on a decoy network to interfere with an adversary’s activities.</p>
+</div>
 </div>
 </div>
 
