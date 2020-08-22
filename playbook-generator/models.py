@@ -1,6 +1,7 @@
 from enum import Enum
 from functools import reduce
 import os
+from shield.api import shield
 
 _home_path = os.path.expanduser("~")
 _atomics_folder_path = os.path.join(_home_path, "AtomicRedTeam", "atomics")
@@ -53,6 +54,8 @@ class AttackTechnique:
                 value_dict["technique_id"] = self.id
                 value_dict["test_number"] = index+1
                 self.atomic_tests.append(AtomicTest(value_dict))
+        #Note: Shield is not mapped to sub techniques yet. There might be issues because of that. Working on that.
+        self.shield_object = shield.get_shield_obj(self.id)
         
     def has_atomic_tests(self):
         return self.atomic_tests.count != 0
@@ -68,6 +71,8 @@ class AttackTechnique:
             cells.append(JupyterCells.quick_initialize_markdown(value=["## Atomic Tests:","Currently, no tests are available for this technique."]))
         if self.detection:
             cells.append(JupyterCells(type=JupyterCells.Type.MARKDOWN, value=["## Detection", "\n", self.detection]))
+        if self.shield_object:
+            cells.append(JupyterCells.quick_initialize_markdown([self.shield_object.to_markdown()]))
         return [i.__repr__() for i in cells if i != dict()]
                 
 class AtomicTest:
@@ -181,5 +186,5 @@ class AttackTactic:
             markdown.append(f'{i["id"]} | {i["name"]} | {i["description"]}')
         cells = []
         cells.append(JupyterCells.quick_initialize_markdown(markdown))
-        cells.append(JupyterCells.quick_initialize_code(["Invoke-AtomicTest-By -Tactic {0}".format(self.short_name)]))
+        cells.append(JupyterCells.quick_initialize_code(["#Invoke-AtomicTest-By can be downloaded from https://github.com/haresudhan/ART-Utils/tree/master/Invoke-AtomicTest-By","Invoke-AtomicTest-By -Tactic {0}".format(self.short_name)]))
         return [i.__repr__() for i in cells if i != dict()]

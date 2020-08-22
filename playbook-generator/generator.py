@@ -8,6 +8,7 @@ from functools import reduce
 from models import AttackTactic, AttackTechnique, _atomics_folder_path, _home_path, JupyterCells
 import os
 
+#TODO: Cleanup code. Add Docstrings, etc.
 class PlaybookGenerator:
     def __init__(self):
         self.attack_client = attack_client()
