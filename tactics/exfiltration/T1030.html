@@ -142,18 +142,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1052.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1567.html">
      T1567 - Exfiltration Over Web Service
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1567.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,18 +157,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1011.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1029.html">
      T1029 - Scheduled Transfer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1029.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -187,18 +167,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1048.html">
      T1048 - Exfiltration Over Alternative Protocol
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1048.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,18 +197,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1020.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1041.html">
      T1041 - Exfiltration Over C2 Channel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1041.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -249,11 +209,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1537.html">
      T1537 - Transfer Data to Cloud Account
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1537.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -395,6 +350,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pcap-collection">
+     PCAP Collection
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -469,24 +453,24 @@ ls -l /tmp/T1030
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Analyze network data for uncommon data flows (e.g., a client sending significantly more data than it receives from a server). If a process maintains a long connection during which it consistently sends fixed size data packets or a process opens connections and sends fixed sized data packets at regular intervals, it may be performing an aggregate data transfer. Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious. Analyze packet contents to detect communications that do not follow the expected protocol behavior for the port that is being used. (Citation: University of Birmingham C2)</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="pcap-collection">
-<h2>PCAP Collection<a class="headerlink" href="#pcap-collection" title="Permalink to this headline">¶</a></h2>
+<h3>PCAP Collection<a class="headerlink" href="#pcap-collection" title="Permalink to this headline">¶</a></h3>
 <p>Collect full network traffic for future research and analysis.</p>
 <p>PCAP Collection allows a defenders to use the data to examine an adversary’s network traffic more closely, including studying if it is encoded and/or encrypted. PCAP can be run through tools to replay the traffic to get a real-time view of what happened over the wire. These tools can also parse the traffic and send results to a SIEM for monitoring and alerting.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to collect network data and analyze the adversary activity it contains.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>Collecting full packet capture of all network traffic allows you to review what happened over the connection and identify command and control traffic and/or exfiltration activity.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Collect PCAP on a decoy network to improve visibility into an adversary’s network activity.</p>
+</div>
 </div>
 </div>
 </div>

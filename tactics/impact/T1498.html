@@ -146,19 +146,9 @@
      T1561 - Disk Wipe
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1561.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1498 - Network Denial of Service
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -182,18 +172,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1565.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1485.html">
      T1485 - Data Destruction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1485.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,18 +192,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1499.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1486.html">
      T1486 - Data Encrypted for Impact
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1486.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -232,18 +202,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1491.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1495.html">
      T1495 - Firmware Corruption
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1495.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -254,11 +214,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1529.html">
      T1529 - System Shutdown/Reboot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1529.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -282,18 +237,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1489.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1490.html">
      T1490 - Inhibit System Recovery
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1490.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -317,18 +262,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1496.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1531.html">
      T1531 - Account Access Removal
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1531.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -418,6 +353,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#network-manipulation">
+     Network Manipulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -443,25 +407,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Detection of Network DoS can sometimes be achieved before the traffic volume is sufficient to cause impact to the availability of the service, but such response time typically requires very aggressive monitoring and responsiveness or services provided by an upstream network service provider. Typical network throughput monitoring tools such as netflow(Citation: Cisco DoSdetectNetflow), SNMP, and custom scripts can be used to detect sudden increases in network or service utilization. Real-time, automated, and qualitative study of the network traffic can identify a sudden surge in one type of protocol can be used to detect an Network DoS event as it starts. Often, the lead time may be small and the indicator of an event availability of the network or service drops. The analysis tools mentioned can then be used to determine the type of DoS causing the outage and help with remediation.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="network-manipulation">
-<h2>Network Manipulation<a class="headerlink" href="#network-manipulation" title="Permalink to this headline">¶</a></h2>
+<h3>Network Manipulation<a class="headerlink" href="#network-manipulation" title="Permalink to this headline">¶</a></h3>
 <p>Make changes to network properties and functions to achieve a desired effect.</p>
 <p>Network Manipulation allows a defender to throttle network speeds, segment the network, maintain a unique IP addressing scheme, or add a kill switch to cut off network access if needed.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to alter the network configuration in order to disrupt an adversary who is trying to saturate the network or a system via denial of service.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can configure network devices to analyze network traffic, detect a potential DoS attack, and make appropriate adjustments to mitigate the situation.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Add a kill switch to a decoy network that can be used to shutdown all network communication if an adversary takes an action that is out of the desired scope.
 Introduce intermittent network packet loss on a decoy network to interfere with an adversary’s activities.</p>
+</div>
 </div>
 </div>
 </div>

@@ -132,11 +132,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1210.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1021.003.html">
      T1021.003 - Distributed Component Object Model
     </a>
@@ -157,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1563.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1072.html">
      T1072 - Software Deployment Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1072.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -184,11 +169,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1091.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -237,28 +217,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1021.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1534.html">
      T1534 - Internal Spearphishing
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1534.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1080.html">
      T1080 - Taint Shared Content
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1080.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -267,18 +232,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1550.html">
      T1550 - Use Alternate Authentication Material
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1550.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -383,6 +338,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#network-monitoring">
+     Network Monitoring
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -404,25 +388,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor for file creation and files transferred within a network using protocols such as SMB. Unusual processes with internal network connections creating files on-system may be suspicious. Consider monitoring for abnormal usage of utilities and command-line arguments that may be used in support of remote transfer of files. Considering monitoring for alike file hashes or characteristics (ex: filename) that are created on multiple hosts.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="network-monitoring">
-<h2>Network Monitoring<a class="headerlink" href="#network-monitoring" title="Permalink to this headline">¶</a></h2>
+<h3>Network Monitoring<a class="headerlink" href="#network-monitoring" title="Permalink to this headline">¶</a></h3>
 <p>Monitor network traffic in order to detect adversary activity.</p>
 <p>Network monitoring involves capturing network activity data, including capturing of server, firewall, and other relevant logs. A defender can then review them or send them to a centralized collection location for further analysis.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to monitor network traffic for different protocols, anomalous traffic patterns, transfer of data, etc. to determine the presence of an adversary.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>The defender can implement network monitoring for and alert on  anomalous traffic patterns, large  or unexpected data transfers, and other activity that may reveal the presence of an adversary.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Capture network logs for internet-facing devices and send those logs to a central collection location.
 Capture all network  device (router, switches, proxy, etc.) logs on a decoy network and send those logs to a central collection location.</p>
+</div>
 </div>
 </div>
 </div>

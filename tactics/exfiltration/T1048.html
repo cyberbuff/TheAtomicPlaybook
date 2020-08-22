@@ -142,18 +142,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1052.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1567.html">
      T1567 - Exfiltration Over Web Service
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1567.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -167,18 +157,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1011.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1029.html">
      T1029 - Scheduled Transfer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1029.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -186,19 +166,9 @@
      T1030 - Data Transfer Size Limits
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1030.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1048 - Exfiltration Over Alternative Protocol
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,18 +197,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1020.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1041.html">
      T1041 - Exfiltration Over C2 Channel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1041.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -249,11 +209,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1537.html">
      T1537 - Transfer Data to Cloud Account
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1537.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -384,6 +339,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#network-manipulation">
+     Network Manipulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -455,25 +439,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Analyze network data for uncommon data flows (e.g., a client sending significantly more data than it receives from a server). Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious. Analyze packet contents to detect communications that do not follow the expected protocol behavior for the port that is being used. (Citation: University of Birmingham C2)</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="network-manipulation">
-<h2>Network Manipulation<a class="headerlink" href="#network-manipulation" title="Permalink to this headline">¶</a></h2>
+<h3>Network Manipulation<a class="headerlink" href="#network-manipulation" title="Permalink to this headline">¶</a></h3>
 <p>Make changes to network properties and functions to achieve a desired effect.</p>
 <p>Network Manipulation allows a defender to throttle network speeds, segment the network, maintain a unique IP addressing scheme, or add a kill switch to cut off network access if needed.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to disrupt or enable and adversary’s exfiltration activities by blocking/unblocking the traffic to their Command and Control (C2) location.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can prevent or enable use of alternate protocols for exfiltration by blocking/unblocking unnecessary ports and protocols.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Add a kill switch to a decoy network that can be used to shutdown all network communication if an adversary takes an action that is out of the desired scope.
 Introduce intermittent network packet loss on a decoy network to interfere with an adversary’s activities.</p>
+</div>
 </div>
 </div>
 </div>

@@ -147,18 +147,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1561.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1498.html">
      T1498 - Network Denial of Service
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1498.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -182,18 +172,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1485.html">
      T1485 - Data Destruction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1485.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -212,18 +192,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1499.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1486.html">
      T1486 - Data Encrypted for Impact
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1486.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -232,18 +202,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1491.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1495.html">
      T1495 - Firmware Corruption
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1495.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -254,11 +214,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1529.html">
      T1529 - System Shutdown/Reboot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1529.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -282,18 +237,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1489.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1490.html">
      T1490 - Inhibit System Recovery
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1490.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -317,18 +262,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1496.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1531.html">
      T1531 - Account Access Removal
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1531.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -418,6 +353,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decoy-content">
+     Decoy Content
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -440,25 +404,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Where applicable, inspect important file hashes, locations, and modifications for suspicious/unexpected values. With some critical processes involving transmission of data, manual or out-of-band integrity checking may be useful for identifying manipulated data.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="decoy-content">
-<h2>Decoy Content<a class="headerlink" href="#decoy-content" title="Permalink to this headline">¶</a></h2>
+<h3>Decoy Content<a class="headerlink" href="#decoy-content" title="Permalink to this headline">¶</a></h3>
 <p>Seed content that can be used to lead an adversary in a specific direction, entice a behavior, etc.</p>
 <p>Decoy Content is the data used to tell a story to an adversary. This content can be legitimate or synthetic data which is used to reinforce or validate your defensive strategy. Examples of decoy content are files on a storage object, entries in the system registry, system shortcuts, etc.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>In an adversary engagement scenario, there is an opportunity  to observe how an adversary might manipulate data on a system.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can deploy decoy content to see if an adversary attempts to manipulate data on the system or connected storage devices.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Create directories and files with names and contents using key words that may be relevant to an adversary to see if they examine or exfiltrate the data.
 Seed a file system with content that is of no value to the company but reinforces the legitimacy of the system if viewed by an adversary.</p>
+</div>
 </div>
 </div>
 </div>

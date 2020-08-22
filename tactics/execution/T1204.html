@@ -102,11 +102,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1072.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1204.002.html">
      T1204.002 - User Execution: Malicious Link
     </a>
@@ -122,18 +117,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1053.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1129.html">
      T1129 - Shared Modules
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1129.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -144,11 +129,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1559.html">
      T1559 - Inter-Process Communication
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1559.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -177,11 +157,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1059.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1064.html">
      T1064 - Scripting
     </a>
@@ -199,11 +174,6 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1204 - User Execution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,11 +197,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1569.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1059.002.html">
      T1059.002 - Command and Scripting Interpreter: AppleScript
     </a>
@@ -244,11 +209,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1203.html">
      T1203 - Exploitation for Client Execution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1203.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -267,18 +227,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1106.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1047.html">
      T1047 - Windows Management Instrumentation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1047.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -433,6 +383,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detonate-malware">
+     Detonate Malware
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -456,25 +435,25 @@
 <p>Monitor the execution of and command-line arguments for applications that may be used by an adversary to gain Initial Access that require user interaction. This includes compression applications, such as those for zip files, that can be used to <a class="reference external" href="https://attack.mitre.org/techniques/T1140">Deobfuscate/Decode Files or Information</a> in payloads.</p>
 <p>Anti-virus can potentially detect malicious documents and files that are downloaded and executed on the user’s computer. Endpoint sensing or network sensing can potentially detect malicious events once the file is opened (such as a Microsoft Word document or PDF reaching out to the internet or spawning powershell.exe).</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="detonate-malware">
-<h2>Detonate Malware<a class="headerlink" href="#detonate-malware" title="Permalink to this headline">¶</a></h2>
+<h3>Detonate Malware<a class="headerlink" href="#detonate-malware" title="Permalink to this headline">¶</a></h3>
 <p>Execute malware under controlled conditions to analyze its functionality.</p>
 <p>An execution environment can range from a somewhat sterile commercial malware execution appliance, to a bespoke system crafted to meet engagement goals.  The execution environment will typically be highly instrumented and have special controls to ensure the experiment is contained and harmless to unrelated systems.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to study the adversary and collect first-hand observations about them and their tools.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can execute adversary malware on a decoy system and examine its behaviors or potentially engage with the adversary to obtain further intelligence.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Take malware received via spearphishing and detonate it on an isolated system in order to collect execution and network communication artifacts.
 Detonate a malware sample in a decoy network to engage with an adversary and study their TTPs.</p>
+</div>
 </div>
 </div>
 </div>

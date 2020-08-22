@@ -132,11 +132,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1021.003.html">
      T1021.003 - Distributed Component Object Model
     </a>
@@ -157,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1563.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1072.html">
      T1072 - Software Deployment Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1072.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -184,11 +169,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1091.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -237,18 +217,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1021.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1534.html">
      T1534 - Internal Spearphishing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1534.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -257,28 +227,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1080.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1570.html">
      T1570 - Lateral Tool Transfer
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1570.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1550.html">
      T1550 - Use Alternate Authentication Material
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1550.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -383,6 +338,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-diversity">
+     Application Diversity
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -407,25 +391,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash. Also look for behavior on the endpoint system that might indicate successful compromise, such as abnormal behavior of the processes. This could include suspicious files written to disk, evidence of <a class="reference external" href="https://attack.mitre.org/techniques/T1055">Process Injection</a> for attempts to hide execution, evidence of Discovery, or other unusual network traffic that may indicate additional tools transferred to the system.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="application-diversity">
-<h2>Application Diversity<a class="headerlink" href="#application-diversity" title="Permalink to this headline">¶</a></h2>
+<h3>Application Diversity<a class="headerlink" href="#application-diversity" title="Permalink to this headline">¶</a></h3>
 <p>Present the adversary with a variety of installed applications and services.</p>
 <p>Application diversity is presenting multiple software targets to the adversary. On a single target system, defenders can configure multiple different services or user software applications.  On a target network, defenders can present systems with a variety of operating systems, operating system versions, applications, and services.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to provide a variety of applications to an adversary to see what things an adversary prefers or to influence their operations.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can stand up decoy systems or processes using a wide array of applications. These applications can be hardened to test an adversary’s capabilities, or easily exploited to entice an adversary to move in that direction.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Use a mix of vulnerable and nonvulnerable software on a system to allow you to see what exploits the adversary leverages in their attacks.
 Install Anti-virus or other end-point detection tools on systems to see if an adversary takes note of them and if so, how they react.</p>
+</div>
 </div>
 </div>
 </div>

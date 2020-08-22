@@ -127,18 +127,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1111.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1212.html">
      T1212 - Exploitation for Credential Access
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1212.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,11 +147,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
      T1556.003 - Pluggable Authentication Modules
     </a>
@@ -177,18 +162,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1539.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1558.html">
      T1558 - Steal or Forge Kerberos Tickets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1558.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,11 +184,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.html">
      T1110 - Brute Force
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1110.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -242,11 +212,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1557.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
      T1552.003 - Unsecured Credentials: Bash History
     </a>
@@ -262,18 +227,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1555.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1040.html">
      T1040 - Network Sniffing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1040.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -312,11 +267,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1003.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
      T1003.003 - OS Credential Dumping: NTDS
     </a>
@@ -337,18 +287,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1187.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.html">
      T1556 - Modify Authentication Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1556.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,11 +304,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.html">
      T1552 - Unsecured Credentials
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1552.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -404,11 +339,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1528.html">
      T1528 - Steal Application Access Token
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1528.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -523,6 +453,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decoy-content">
+     Decoy Content
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -544,25 +503,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Detection may vary depending on how input is captured but may include monitoring for certain Windows API calls (e.g. <code class="docutils literal notranslate"><span class="pre">SetWindowsHook</span></code>, <code class="docutils literal notranslate"><span class="pre">GetKeyState</span></code>, and <code class="docutils literal notranslate"><span class="pre">GetAsyncKeyState</span></code>)(Citation: Adventures of a Keystroke), monitoring for malicious instances of <a class="reference external" href="https://attack.mitre.org/techniques/T1059">Command and Scripting Interpreter</a>, and ensuring no unauthorized drivers or kernel modules that could indicate keylogging or API hooking are present.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="decoy-content">
-<h2>Decoy Content<a class="headerlink" href="#decoy-content" title="Permalink to this headline">¶</a></h2>
+<h3>Decoy Content<a class="headerlink" href="#decoy-content" title="Permalink to this headline">¶</a></h3>
 <p>Seed content that can be used to lead an adversary in a specific direction, entice a behavior, etc.</p>
 <p>Decoy Content is the data used to tell a story to an adversary. This content can be legitimate or synthetic data which is used to reinforce or validate your defensive strategy. Examples of decoy content are files on a storage object, entries in the system registry, system shortcuts, etc.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to feed content to an adversary to influence their behaviors, test their interest in specific topics, or add legitimacy to a system or environment.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can feed decoy data to an adversary that is using a key-logger or other tool, so as to shape the encounter.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Create directories and files with names and contents using key words that may be relevant to an adversary to see if they examine or exfiltrate the data.
 Seed a file system with content that is of no value to the company but reinforces the legitimacy of the system if viewed by an adversary.</p>
+</div>
 </div>
 </div>
 </div>

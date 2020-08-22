@@ -132,11 +132,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1210.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1021.003.html">
      T1021.003 - Distributed Component Object Model
     </a>
@@ -157,18 +152,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1563.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1072.html">
      T1072 - Software Deployment Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1072.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -184,11 +169,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1091.html">
      T1091 - Replication Through Removable Media
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1091.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -236,19 +216,9 @@
      T1021 - Remote Services
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1021.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1534 - Internal Spearphishing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -257,28 +227,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1080.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1570.html">
      T1570 - Lateral Tool Transfer
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1570.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1550.html">
      T1550 - Use Alternate Authentication Material
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1550.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -383,6 +338,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-training">
+     User Training
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -406,25 +390,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Network intrusion detection systems and email gateways usually do not scan internal email, but an organization can leverage the journaling-based solution which sends a copy of emails to a security service for offline analysis or incorporate service-integrated solutions using on-premise or API-based integrations to help detect internal spearphishing attacks.(Citation: Trend Micro When Phishing Starts from the Inside 2017)</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="user-training">
-<h2>User Training<a class="headerlink" href="#user-training" title="Permalink to this headline">¶</a></h2>
+<h3>User Training<a class="headerlink" href="#user-training" title="Permalink to this headline">¶</a></h3>
 <p>Train users to detect malicious intent or activity, how to report it, etc.</p>
 <p>User training involves teaching end users to be human sensors who know how to recognize cyber threats and the procedures for reporting them.  Users can be effective sensors for social engineering attempts, phishing email detection, as well as other cyber threats.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to detect the presence of an adversary by identifying and alerting on anomalous behaviors.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A program to train users to report emails that they did not send but appear in their sent folder.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Train users to immediately report suspicious emails.  Those emails could then be used for malware detonation or adversary engagement purposes.
 Train users to report potentially compromised devices so they can be isolated or migrated into deception networks.</p>
+</div>
 </div>
 </div>
 </div>

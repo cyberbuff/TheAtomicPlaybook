@@ -127,18 +127,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1111.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1212.html">
      T1212 - Exploitation for Credential Access
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1212.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,11 +147,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1056.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
      T1556.003 - Pluggable Authentication Modules
     </a>
@@ -177,18 +162,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1539.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1558.html">
      T1558 - Steal or Forge Kerberos Tickets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1558.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,11 +184,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.html">
      T1110 - Brute Force
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1110.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -242,11 +212,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1557.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
      T1552.003 - Unsecured Credentials: Bash History
     </a>
@@ -262,18 +227,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1555.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1040.html">
      T1040 - Network Sniffing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1040.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -312,11 +267,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1003.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
      T1003.003 - OS Credential Dumping: NTDS
     </a>
@@ -337,18 +287,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1187.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.html">
      T1556 - Modify Authentication Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1556.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,11 +304,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.html">
      T1552 - Unsecured Credentials
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1552.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -404,11 +339,6 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1528 - Steal Application Access Token
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -523,6 +453,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-training">
+     User Training
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -549,25 +508,25 @@
 <p>Security analysts can hunt for malicious apps using the tools available in their CASB, identity provider, or resource provider (depending on platform.) For example, they can filter for apps that are authorized by a small number of users, apps requesting high risk permissions, permissions incongruous with the app’s purpose, or apps with old “Last authorized” fields. A specific app can be investigated using an activity log displaying activities the app has performed, although some activities may be mis-logged as being performed by the user. App stores can be useful resources to further investigate suspicious apps.</p>
 <p>Administrators can set up a variety of logs and leverage audit tools to monitor actions that can be conducted as a result of OAuth 2.0 access. For instance, audit reports enable admins to identify privilege escalation actions such as role creations or policy modifications, which could be actions performed after initial access.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="user-training">
-<h2>User Training<a class="headerlink" href="#user-training" title="Permalink to this headline">¶</a></h2>
+<h3>User Training<a class="headerlink" href="#user-training" title="Permalink to this headline">¶</a></h3>
 <p>Train users to detect malicious intent or activity, how to report it, etc.</p>
 <p>User training involves teaching end users to be human sensors who know how to recognize cyber threats and the procedures for reporting them.  Users can be effective sensors for social engineering attempts, phishing email detection, as well as other cyber threats.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>Users trained and encouraged to report unsolicited application authorization requests can detect attacks that other defenses do not.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A program to train users on how to recognize and report third-party applications requesting authorization can create “Human Sensors” that help detect application token theft.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Train users to immediately report suspicious emails.  Those emails could then be used for malware detonation or adversary engagement purposes.
 Train users to report potentially compromised devices so they can be isolated or migrated into deception networks.</p>
+</div>
 </div>
 </div>
 </div>

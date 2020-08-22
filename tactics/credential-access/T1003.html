@@ -127,18 +127,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1111.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1212.html">
      T1212 - Exploitation for Credential Access
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1212.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,11 +147,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1056.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
      T1556.003 - Pluggable Authentication Modules
     </a>
@@ -177,18 +162,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1539.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1558.html">
      T1558 - Steal or Forge Kerberos Tickets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1558.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,11 +184,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.html">
      T1110 - Brute Force
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1110.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -242,11 +212,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1557.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
      T1552.003 - Unsecured Credentials: Bash History
     </a>
@@ -262,18 +227,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1555.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1040.html">
      T1040 - Network Sniffing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1040.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -312,11 +267,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
      T1003.003 - OS Credential Dumping: NTDS
     </a>
@@ -337,18 +287,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1187.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.html">
      T1556 - Modify Authentication Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1556.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,11 +304,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.html">
      T1552 - Unsecured Credentials
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1552.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -404,11 +339,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1528.html">
      T1528 - Steal Application Access Token
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1528.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -644,6 +574,35 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decoy-credentials">
+     Decoy Credentials
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -816,24 +775,24 @@ echo &quot;[!] Please, logout and log back in. Cleartext password for this accou
 <p>To obtain the passwords and hashes stored in memory, processes must open a maps file in the /proc filesystem for the process being analyzed. This file is stored under the path <code>/proc/<pid>/maps</code>, where the <code><pid></code> directory is the unique pid of the program being interrogated for such authentication data. The AuditD monitoring tool, which ships stock in many Linux distributions, can be used to watch for hostile processes opening this file in the proc file system, alerting on the pid, process name, and arguments of such programs.</p>
 </div>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="decoy-credentials">
-<h2>Decoy Credentials<a class="headerlink" href="#decoy-credentials" title="Permalink to this headline">¶</a></h2>
+<h3>Decoy Credentials<a class="headerlink" href="#decoy-credentials" title="Permalink to this headline">¶</a></h3>
 <p>Create user credentials that are used for active defense purposes.</p>
 <p>Seed a target system with credentials (such as username/password, browser tokens, and other forms of authentication data) for the purpose of engagement. Decoy credentials can be planted in many locations and leveraged in a variety of ways.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to deploy a tripwire that triggers an alert when an adversary touches a network resource or uses a specific technique.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can seed systems with decoy credentials in a variety of locations and establish alerting that will trigger if an adversary harvests the credentials and attempts to use them.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Create user credentials for a decoy account, such as ‘User ABC’.  Store those credentials in the browser and other places on the system to see if an adversary attempts to harvest them.</p>
+</div>
 </div>
 </div>
 </div>

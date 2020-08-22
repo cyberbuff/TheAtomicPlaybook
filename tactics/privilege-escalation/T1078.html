@@ -132,11 +132,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1547.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1547.009.html">
      T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification
     </a>
@@ -172,18 +167,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1543.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1037.html">
      T1037 - Boot or Logon Initialization Scripts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1037.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -222,11 +207,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1546.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1546.012.html">
      T1546.012 - Event Triggered Execution: Image File Execution Options Injection
     </a>
@@ -247,11 +227,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1053.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1055.013.html">
      T1055.013 - Process Doppelgänging
     </a>
@@ -269,11 +244,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1134.html">
      T1134 - Access Token Manipulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1134.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -317,28 +287,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1068.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1055.html">
      T1055 - Process Injection
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1055.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1484.html">
      T1484 - Group Policy Modification
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1484.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -424,11 +379,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1548.html">
      T1548 - Abuse Elevation Control Mechanism
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1548.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -547,11 +497,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1134.003.html">
      T1134.003 - Make and Impersonate Token
     </a>
@@ -574,11 +519,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1574.html">
      T1574 - Hijack Execution Flow
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1574.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -723,6 +663,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decoy-account">
+     Decoy Account
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -746,25 +715,25 @@
 <p>Configure robust, consistent account activity audit policies across the enterprise and with externally accessible services. (Citation: TechNet Audit Policy) Look for suspicious account behavior across systems that share accounts, either user, admin, or service accounts. Examples: one account logged into multiple systems simultaneously; multiple accounts logged into the same machine simultaneously; accounts logged in at odd times or outside of business hours. Activity may be from interactive login sessions or process ownership from accounts being used to execute binaries on a remote system as a particular account. Correlate other security systems with login information (e.g., a user has an active login session but has not entered the building or does not have VPN access).</p>
 <p>Perform regular audits of domain and local system accounts to detect accounts that may have been created by an adversary for persistence. Checks on these accounts could also include whether default accounts such as Guest have been activated. These audits should also include checks on any appliances and applications for default credentials or SSH keys, and if any are discovered, they should be updated immediately.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="decoy-account">
-<h2>Decoy Account<a class="headerlink" href="#decoy-account" title="Permalink to this headline">¶</a></h2>
+<h3>Decoy Account<a class="headerlink" href="#decoy-account" title="Permalink to this headline">¶</a></h3>
 <p>Create an account that is used for active defense purposes.</p>
 <p>A decoy account is one that is created specifically for defensive or deceptive purposes. It can be in the form of user accounts, service accounts, software accounts, etc. The decoy account can be used to make a system, service, or software look more realistic or to entice an action.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to introduce user accounts that are used to make a system look more realistic.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can create decoy user accounts which are used to make a decoy system or network look more realistic.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Create a user account with a specified job function. Populate the user account’s groups, description, logon hours, etc., with decoy data that looks normal in the environment.
 Create a user that has a valid email account.  Use this account in such a way that the email address could be harvested by the adversary. This can be monitored to see if it is used in future attacks.</p>
+</div>
 </div>
 </div>
 </div>

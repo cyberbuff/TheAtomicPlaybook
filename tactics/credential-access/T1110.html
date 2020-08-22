@@ -127,18 +127,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1111.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1212.html">
      T1212 - Exploitation for Credential Access
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1212.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,11 +147,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1056.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
      T1556.003 - Pluggable Authentication Modules
     </a>
@@ -177,18 +162,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1539.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1558.html">
      T1558 - Steal or Forge Kerberos Tickets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1558.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -209,11 +184,6 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      T1110 - Brute Force
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -242,11 +212,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1557.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
      T1552.003 - Unsecured Credentials: Bash History
     </a>
@@ -262,18 +227,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1555.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1040.html">
      T1040 - Network Sniffing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1040.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -312,11 +267,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1003.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
      T1003.003 - OS Credential Dumping: NTDS
     </a>
@@ -337,18 +287,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="T1187.html#shield-active-defense">
-     Shield Active Defense
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="T1556.html">
      T1556 - Modify Authentication Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1556.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,11 +304,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.html">
      T1552 - Unsecured Credentials
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1552.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
    <li class="toctree-l2">
@@ -404,11 +339,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="T1528.html">
      T1528 - Steal Application Access Token
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="T1528.html#shield-active-defense">
-     Shield Active Defense
     </a>
    </li>
   </ul>
@@ -523,6 +453,35 @@
    Detection
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shield-active-defense">
+   Shield Active Defense
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#system-activity-monitoring">
+     System Activity Monitoring
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#opportunity">
+       Opportunity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-case">
+       Use Case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#procedures">
+       Procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -544,25 +503,25 @@
 <h2>Detection<a class="headerlink" href="#detection" title="Permalink to this headline">¶</a></h2>
 <p>Monitor authentication logs for system and application login failures of <a class="reference external" href="https://attack.mitre.org/techniques/T1078">Valid Accounts</a>. If authentication failures are high, then there may be a brute force attempt to gain access to a system using legitimate credentials. Also monitor for many failed authentication attempts across various accounts that may result from password spraying attempts. It is difficult to detect when hashes are cracked, since this is generally done outside the scope of the target network.</p>
 </div>
-</div>
 <div class="section" id="shield-active-defense">
-<h1>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h1>
+<h2>Shield Active Defense<a class="headerlink" href="#shield-active-defense" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="system-activity-monitoring">
-<h2>System Activity Monitoring<a class="headerlink" href="#system-activity-monitoring" title="Permalink to this headline">¶</a></h2>
+<h3>System Activity Monitoring<a class="headerlink" href="#system-activity-monitoring" title="Permalink to this headline">¶</a></h3>
 <p>Collect system activity logs which can reveal adversary activity.</p>
 <p>Capturing system logs can show logins, user and system events, etc.  Collecting this data and potentially sending it to a centralized location can help reveal the presence of an adversary and the actions they perform on a compromised system.</p>
 <div class="section" id="opportunity">
-<h3>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h3>
+<h4>Opportunity<a class="headerlink" href="#opportunity" title="Permalink to this headline">¶</a></h4>
 <p>There is an opportunity to create a detection with a moderately high probability of success.</p>
 </div>
 <div class="section" id="use-case">
-<h3>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h3>
+<h4>Use Case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h4>
 <p>A defender can monitor for user login activity that may reveal an adversary leveraging brute force techniques.</p>
 </div>
 <div class="section" id="procedures">
-<h3>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h3>
+<h4>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h4>
 <p>Ensure that systems capture and retain common system level activity artifacts that might be produced.
 Monitor Windows systems for event codes that reflect an adversary changing passwords, adding accounts to groups, etc.</p>
+</div>
 </div>
 </div>
 </div>
