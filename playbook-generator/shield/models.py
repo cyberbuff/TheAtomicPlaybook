@@ -77,7 +77,7 @@ class Opportunity(ShieldBaseObject):
         return Opportunity(id, description)
 
     def to_markdown(self) -> str:
-        return f'### Opportunity\n{self.description}'
+        return f'#### Opportunity\n{self.description}'
 
 
 class UseCase(ShieldBaseObject):
@@ -89,7 +89,7 @@ class UseCase(ShieldBaseObject):
         return UseCase(id, description)
 
     def to_markdown(self) -> str:
-        return f'### Use Case\n{self.description}'
+        return f'#### Use Case\n{self.description}'
 
 
 class Procedure(ShieldBaseObject):
@@ -137,7 +137,7 @@ class ShieldTechnique:
 
     def to_markdown(self) -> str:
         # Since Opportunity is an array, it will have a common title. 
-        return f'## {self.name} \n {self.description} \n\n {self.long_description}'
+        return f'### {self.name} \n {self.description} \n\n {self.long_description}'
 
 class ShieldElement:
     attack_id: str
@@ -177,7 +177,7 @@ class ShieldElement:
         return result
 
     def to_markdown(self) -> str:
-        procedures_md = "### Procedures\n" + "\n".join([x.to_markdown() for x in self.procedures])
+        procedures_md = "#### Procedures\n" + "\n".join([x.to_markdown() for x in self.procedures])
         return "\n".join(["# Shield Active Defense", self.technique.to_markdown(), 
             self.opportunity.to_markdown(),
             self.use_case.to_markdown(), procedures_md
