@@ -189,7 +189,7 @@ class ShieldElement:
     def to_markdown(self) -> str:
         procedures_md = "#### Procedures\n" + \
             "\n".join([x.to_markdown() for x in self.procedures])
-        return "\n".join(["# Shield Active Defense", self.technique.to_markdown(),
+        return "\n".join(["## Shield Active Defense", self.technique.to_markdown(),
                           self.opportunity.to_markdown(),
                           self.use_case.to_markdown(), procedures_md
                           ])
