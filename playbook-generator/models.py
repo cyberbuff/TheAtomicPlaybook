@@ -80,7 +80,7 @@ class AttackTechnique:
                     type=JupyterCells.Type.MARKDOWN,
                     value=["## Atomic Tests"]))
             cells.append(JupyterCells.quick_initialize_code(value=[
-                         f'#Import the Module before running the tests.\n# Checkout Jupyter Notebook at https://github.com/haresudhan/TheAtomicPlaybook to run PS scripts.\nImport-Module {_atomics_folder_path}/invoke-atomicredteam/Invoke-AtomicRedTeam.psd1 - Force']))
+                         f'#Import the Module before running the tests.\n# Checkout Jupyter Notebook at https://github.com/cyb3rbuff/TheAtomicPlaybook to run PS scripts.\nImport-Module {_atomics_folder_path}/invoke-atomicredteam/Invoke-AtomicRedTeam.psd1 - Force']))
             cells += reduce(lambda x, y: x +
                             y, [i.__repr__() for i in self.atomic_tests])
         else:
@@ -258,7 +258,7 @@ class AttackTactic:
         cells.append(
             JupyterCells.quick_initialize_code(
                 [
-                    "#Invoke-AtomicTest-By can be downloaded from https://github.com/haresudhan/ART-Utils/Invoke-AtomicTest-By",
+                    "#Invoke-AtomicTest-By can be downloaded from https://github.com/cyb3rbuff/ART-Utils/Invoke-AtomicTest-By",
                     "Invoke-AtomicTest-By -Tactic {0}".format(
                         self.short_name)]))
         return [i.__repr__() for i in cells if i != dict()]

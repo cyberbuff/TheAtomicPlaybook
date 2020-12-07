@@ -3,3 +3,5 @@
 */**/__pycache__
 playbook/_build
 .DS_Store
+pythonenv3.8
+.vscode
