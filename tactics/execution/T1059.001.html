@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>T1059.001 - Command and Scripting Interpreter: PowerShell &#8212; The Atomic Playbook</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,20 +34,17 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -3171,21 +3168,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -3203,16 +3200,16 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -3231,11 +3228,11 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -3595,6 +3592,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -3709,7 +3707,7 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 <div class="section" id="atomic-test-4-obfuscation-tests">
 <h3>Atomic Test #4 - Obfuscation Tests<a class="headerlink" href="#atomic-test-4-obfuscation-tests" title="Permalink to this headline">¶</a></h3>
-<p>Different obfuscated methods to test. Upon execution, reaches out to bit.ly/L3g1t and displays: “SUCCESSFULLY EXECUTED POWERSHELL CODE FROM REMOTE LOCATION”</p>
+<p>Different obfuscated methods to test. Upon execution, reaches out to <a class="reference external" href="http://bit.ly/L3g1t">bit.ly/L3g1t</a> and displays: “SUCCESSFULLY EXECUTED POWERSHELL CODE FROM REMOTE LOCATION”</p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id2">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
@@ -3749,7 +3747,7 @@ Elevation Required (e.g. root or admin)</p>
 <div class="section" id="atomic-test-6-invoke-apppathbypass">
 <h3>Atomic Test #6 - Invoke-AppPathBypass<a class="headerlink" href="#atomic-test-6-invoke-apppathbypass" title="Permalink to this headline">¶</a></h3>
 <p>Note: Windows 10 only. Upon execution windows backup and restore window will be opened.</p>
-<p>Bypass is based on: https://enigma0x3.net/2017/03/14/bypassing-uac-using-app-paths/</p>
+<p>Bypass is based on: <a class="reference external" href="https://enigma0x3.net/2017/03/14/bypassing-uac-using-app-paths/">https://enigma0x3.net/2017/03/14/bypassing-uac-using-app-paths/</a></p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id4">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
@@ -3768,7 +3766,7 @@ Elevation Required (e.g. root or admin)</p>
 <div class="section" id="atomic-test-7-powershell-msxml-com-object-with-prompt">
 <h3>Atomic Test #7 - Powershell MsXml COM object - with prompt<a class="headerlink" href="#atomic-test-7-powershell-msxml-com-object-with-prompt" title="Permalink to this headline">¶</a></h3>
 <p>Powershell MsXml COM object. Not proxy aware, removing cache although does not appear to write to those locations. Upon execution, “Download Cradle test success!” will be displayed.</p>
-<p>Provided by https://github.com/mgreen27/mgreen27.github.io</p>
+<p>Provided by <a class="reference external" href="https://github.com/mgreen27/mgreen27.github.io">https://github.com/mgreen27/mgreen27.github.io</a></p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id5">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
@@ -3787,7 +3785,7 @@ Elevation Required (e.g. root or admin)</p>
 <div class="section" id="atomic-test-8-powershell-xml-requests">
 <h3>Atomic Test #8 - Powershell XML requests<a class="headerlink" href="#atomic-test-8-powershell-xml-requests" title="Permalink to this headline">¶</a></h3>
 <p>Powershell xml download request. Upon execution, “Download Cradle test success!” will be dispalyed.</p>
-<p>Provided by https://github.com/mgreen27/mgreen27.github.io</p>
+<p>Provided by <a class="reference external" href="https://github.com/mgreen27/mgreen27.github.io">https://github.com/mgreen27/mgreen27.github.io</a></p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id6">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
@@ -3806,7 +3804,7 @@ Elevation Required (e.g. root or admin)</p>
 <div class="section" id="atomic-test-9-powershell-invoke-mshta-exe-download">
 <h3>Atomic Test #9 - Powershell invoke mshta.exe download<a class="headerlink" href="#atomic-test-9-powershell-invoke-mshta-exe-download" title="Permalink to this headline">¶</a></h3>
 <p>Powershell invoke mshta to download payload. Upon execution, a new PowerShell window will be opened which will display “Download Cradle test success!”.</p>
-<p>Provided by https://github.com/mgreen27/mgreen27.github.io</p>
+<p>Provided by <a class="reference external" href="https://github.com/mgreen27/mgreen27.github.io">https://github.com/mgreen27/mgreen27.github.io</a></p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="id7">
 <h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
@@ -3824,7 +3822,7 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 <div class="section" id="atomic-test-10-powershell-invoke-downloadcradle">
 <h3>Atomic Test #10 - Powershell Invoke-DownloadCradle<a class="headerlink" href="#atomic-test-10-powershell-invoke-downloadcradle" title="Permalink to this headline">¶</a></h3>
-<p>Provided by https://github.com/mgreen27/mgreen27.github.io
+<p>Provided by <a class="reference external" href="https://github.com/mgreen27/mgreen27.github.io">https://github.com/mgreen27/mgreen27.github.io</a>
 Invoke-DownloadCradle is used to generate Network and Endpoint artifacts.</p>
 <p><strong>Supported Platforms:</strong> windows
 Run it with these steps!</p>
@@ -3858,7 +3856,7 @@ Elevation Required (e.g. root or admin)</p>
 <div class="section" id="atomic-test-12-powershell-downgrade-attack">
 <h3>Atomic Test #12 - PowerShell Downgrade Attack<a class="headerlink" href="#atomic-test-12-powershell-downgrade-attack" title="Permalink to this headline">¶</a></h3>
 <p>This test requires the manual installation of PowerShell V2.</p>
-<p>Attempts to run powershell commands in version 2.0 https://www.leeholmes.com/blog/2017/03/17/detecting-and-preventing-powershell-downgrade-attacks/</p>
+<p>Attempts to run powershell commands in version 2.0 <a class="reference external" href="https://www.leeholmes.com/blog/2017/03/17/detecting-and-preventing-powershell-downgrade-attacks/">https://www.leeholmes.com/blog/2017/03/17/detecting-and-preventing-powershell-downgrade-attacks/</a></p>
 <p><strong>Supported Platforms:</strong> windows</p>
 <div class="section" id="dependencies-run-with-none">
 <h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">¶</a></h4>
@@ -4036,21 +4034,21 @@ Catch {
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="T1064.html" title="previous page">T1064 - Scripting</a>
     <a class='right-next' id="next-link" href="T1059.005.html" title="next page">T1059.005 - Command and Scripting Interpreter: Visual Basic</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By Hare Sudhan Muthusamy<br/>
+          By The Jupyter Book community<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
@@ -4063,7 +4061,7 @@ Catch {
     </div>
 
     
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
