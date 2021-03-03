@@ -1,6 +1,5 @@
 # Book settings
 title: The Atomic Playbook
-author: Hare Sudhan Muthusamy
 logo: logo.png
 execute:
   execute_notebooks: 'off'
