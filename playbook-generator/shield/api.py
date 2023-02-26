@@ -1,4 +1,5 @@
 import requests
+
 from .models import shield_element_from_dict
 
 

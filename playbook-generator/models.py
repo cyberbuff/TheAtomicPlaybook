@@ -1,10 +1,11 @@
+import os
 from enum import Enum
 from functools import reduce
-import os
+
 from shield.api import shield
 
 _home_path = os.path.expanduser("~")
-_atomics_folder_path = os.path.join(_home_path, "AtomicRedTeam", "atomics")
+_atomics_folder_path = os.path.join(_home_path, "Pro", "atomic-red-team", "atomics")
 
 
 class JupyterCells:
@@ -16,8 +17,7 @@ class JupyterCells:
     def __init__(self, type: Type, value):
         self.type = type
         self.val = value
-        self.hash_table = {"metadata": {}}
-        self.hash_table["cell_type"] = self.type.value
+        self.hash_table = {"metadata": {}, "cell_type": self.type.value}
         if type == JupyterCells.Type.CODE:
             self.hash_table["execution_count"] = None
             self.hash_table["outputs"] = []
@@ -44,15 +44,13 @@ class AttackTechnique:
         self.description = stix_object["description"]
         self.name = stix_object["name"]
         self.id = stix_object["external_references"][0]["external_id"]
-        self.detection = stix_object["x_mitre_detection"]
+        self.detection = stix_object.get("x_mitre_detection", None)
         # self.permissions_required = stix_object["x_mitre_permissions_required"]
         self.platforms = stix_object["x_mitre_platforms"]
         # self.defense_bypassed = stix_object["x_mitre_defense_bypassed"]
         # self.data_sources = stix_object["x_mitre_data_sources"]
-        self.external_references = [
-            i for i in stix_object["external_references"] if i["source_name"] != "mitre-attack"]
         self.atomic_tests = []
-        if(atomic_object):
+        if atomic_object:
             self.name = atomic_object["display_name"]
             for index, value_dict in enumerate(atomic_object["atomic_tests"]):
                 value_dict["technique_id"] = self.id
@@ -79,10 +77,8 @@ class AttackTechnique:
                 JupyterCells(
                     type=JupyterCells.Type.MARKDOWN,
                     value=["## Atomic Tests"]))
-            cells.append(JupyterCells.quick_initialize_code(value=[
-                         f'#Import the Module before running the tests.\n# Checkout Jupyter Notebook at https://github.com/cyb3rbuff/TheAtomicPlaybook to run PS scripts.\nImport-Module {_atomics_folder_path}/invoke-atomicredteam/Invoke-AtomicRedTeam.psd1 - Force']))
             cells += reduce(lambda x, y: x +
-                            y, [i.__repr__() for i in self.atomic_tests])
+                                         y, [i.__repr__() for i in self.atomic_tests])
         else:
             cells.append(
                 JupyterCells.quick_initialize_markdown(
@@ -136,10 +132,8 @@ class AtomicTest:
         self.executor = atomic_test["executor"]["name"]
         self.description = atomic_test["description"]
         self.platforms = atomic_test["supported_platforms"]
-        if self.executor == "manual":
-            self.steps = atomic_test["executor"]["steps"]
-        else:
-            self.command = atomic_test["executor"]["command"]
+        self.steps = atomic_test["executor"].get("steps", None)
+        self.command = atomic_test["executor"].get("command", None)
         self.cleanup_command = get_value_or_404(
             atomic_test["executor"], "cleanup")
         self.elevation_required = get_value_or_404(
@@ -159,7 +153,7 @@ class AtomicTest:
                 self.command, input_args)
             self.cleanup_command = self.replace_command_with_input_args(
                 self.cleanup_command, input_args)
-            if(get_value_or_404(atomic_test, "dependencies")):
+            if get_value_or_404(atomic_test, "dependencies"):
                 for i in self.dependencies:
                     i.get_pre_req_command = self.replace_command_with_input_args(
                         i.get_pre_req_command, input_args)
@@ -194,7 +188,7 @@ class AtomicTest:
                     JupyterCells.quick_initialize_markdown(
                         value=markdown))
                 cells.append(JupyterCells.quick_initialize_code(value=[
-                             f'Invoke-AtomicTest {self.technique_id} -TestNumbers {self.test_number} -GetPreReqs']))
+                    f'Invoke-AtomicTest {self.technique_id} -TestNumbers {self.test_number} -GetPreReqs']))
                 markdown = []
             markdown.append(
                 "#### Attack Commands: Run with `{0}`".format(
@@ -213,7 +207,7 @@ class AtomicTest:
                 cells.append(JupyterCells.quick_initialize_markdown(
                     ["#### Cleanup: ", f'```{self.executor}{self.cleanup_command}```']))
                 cells.append(JupyterCells.quick_initialize_code(value=[
-                             f'Invoke-AtomicTest {self.technique_id} -TestNumbers {self.test_number} -Cleanup']))
+                    f'Invoke-AtomicTest {self.technique_id} -TestNumbers {self.test_number} -Cleanup']))
         return cells
 
     def replace_command_with_input_args(
@@ -245,20 +239,19 @@ class AttackTactic:
         self.techniques = techniques
 
     def __repr__(self):
-        markdown = []
-        markdown.append(f'# {self.name}')
-        markdown.append(self.description)
-        markdown.append("## Techniques")
-        markdown.append("| ID      | Name | Description |")
-        markdown.append("| :--------: | :---------: | :---------: |")
+        markdown = [
+            f'# {self.name}',
+            self.description,
+            "## Techniques",
+            "| ID      | Name | Description |",
+            "| :--------: | :---------: | :---------: |"
+        ]
         for i in self.techniques:
             markdown.append(f'{i["id"]} | {i["name"]} | {i["description"]}')
-        cells = []
-        cells.append(JupyterCells.quick_initialize_markdown(markdown))
-        cells.append(
-            JupyterCells.quick_initialize_code(
-                [
-                    "#Invoke-AtomicTest-By can be downloaded from https://github.com/cyb3rbuff/ART-Utils/Invoke-AtomicTest-By",
-                    "Invoke-AtomicTest-By -Tactic {0}".format(
-                        self.short_name)]))
+        cells = [JupyterCells.quick_initialize_markdown(markdown),
+                 JupyterCells.quick_initialize_code(
+                     [
+                         "#Invoke-AtomicTest-By can be downloaded from https://github.com/cyberbuff/ART-Utils/Invoke-AtomicTest-By",
+                         "Invoke-AtomicTest-By -Tactic {0}".format(
+                             self.short_name)])]
         return [i.__repr__() for i in cells if i != dict()]

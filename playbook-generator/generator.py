@@ -1,12 +1,10 @@
-from attackcti import attack_client
-from stix2 import TAXIICollectionSource, Filter, CompositeDataSource, FileSystemSource
-from sys import platform
-import yaml
-from enum import Enum
 import json
-from functools import reduce
-from models import AttackTactic, AttackTechnique, _atomics_folder_path, _home_path, JupyterCells
 import os
+
+import yaml
+from attackcti import attack_client
+from models import (AttackTactic, AttackTechnique, JupyterCells,
+                    _atomics_folder_path)
 
 # TODO: Cleanup code. Add Docstrings, etc.
 
@@ -22,6 +20,9 @@ class PlaybookGenerator:
         pass
 
     def get_tactics(self):
+        if not os.path.exists(f'{os.getcwd()}/playbook/tactics'):
+            os.mkdir(f'{os.getcwd()}/playbook/tactics')
+
         stix_tactics = self.attack_client.get_enterprise_tactics()
         stix_tactics.sort(
             key=lambda x: x["external_references"][0]["external_id"])
@@ -34,17 +35,17 @@ class PlaybookGenerator:
                 i, self.get_techniques_by_tactic(
                     i["x_mitre_shortname"]))
             self.generate_notebook(
-                file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics/{tactic.short_name}',
+                file_name=f'{os.getcwd()}/playbook/tactics/{tactic.short_name}',
                 cells=tactic.__repr__())
             desc = tactic.description.split("\n")[0]
             markdown.append(f'| {tactic.id} | {tactic.name} | {desc}|')
         cells = [JupyterCells.quick_initialize_markdown(markdown).__repr__()]
         self.generate_notebook(
-            file_name=f'{os.path.dirname(os.getcwd())}/playbook/tactics',
+            file_name=f'{os.getcwd()}/playbook/tactics',
             cells=cells)
 
     def get_techniques_by_tactic(self, tactic):
-        folder_path = f'{os.path.dirname(os.getcwd())}/playbook/tactics/{tactic}'
+        folder_path = f'{os.getcwd()}/playbook/tactics/{tactic}'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
         techniques = self.attack_client.get_techniques_by_tactic(tactic)
@@ -52,7 +53,7 @@ class PlaybookGenerator:
         for stix in techniques:
             technique_id = stix["external_references"][0]["external_id"]
             file_path = f'{_atomics_folder_path}/{technique_id}/{technique_id}.yaml'
-            if(os.path.exists(file_path)):
+            if (os.path.exists(file_path)):
                 with open(file_path, "r") as f:
                     atomic = yaml.load(f.read(), Loader=yaml.SafeLoader)
                     playbook_technique = AttackTechnique(stix, atomic)
@@ -72,7 +73,7 @@ class PlaybookGenerator:
         file = f'{file_name}.ipynb'
         # if os.path.exists(file):
         #     pass
-        with open(file, "w") as f:
+        with open(file, "w+") as f:
             final_json = {
                 "cells": cells,
                 "metadata": {
