@@ -194,7 +194,7 @@ class AtomicTest:
                 "#### Attack Commands: Run with `{0}`".format(
                     self.executor))
             markdown.append(
-                "```{0}\n{1}```".format(
+                "```{0}\n{1}\n```".format(
                     self.executor,
                     self.command))
             cells.append(
