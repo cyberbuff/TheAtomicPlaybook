@@ -1,12 +1,28 @@
 exclude: "\\.(ipynb)$"
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.4.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
+      - id: check-ast
+      - id: check-json
+      - id: pretty-format-json
+      - id: check-toml
   - repo: https://github.com/pycqa/isort
-    rev: 5.5.4
+    rev: 5.12.0
     hooks:
       - id: isort
         files: "\\.(py)$"
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.0.1
+    hooks:
+      - id: autoflake
+        language: python
+        "types": [ python ]
+        require_serial: true
+        args:
+          - "--in-place"
+          - "--expand-star-imports"
+          - "--remove-duplicate-keys"
+          - "--remove-unused-variables"
