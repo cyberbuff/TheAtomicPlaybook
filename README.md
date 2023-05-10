@@ -11,7 +11,10 @@ The Atomic Playbook uses
 - Dotnet Interactive(To support Powershell in Jupyter)
 - [MITRE Shield](https://shield.mitre.org)
 
-To install the above requirements, checkout
+
+### Requirements: 
+
+Checkout the following links to install the requirements
 - https://github.com/redcanaryco/invoke-atomicredteam/wiki/Installing-Atomic-Red-Team
 - https://github.com/hunters-forge/ATTACK-Python-Client
 - https://github.com/dotnet/interactive/blob/master/docs/NotebooksLocalExperience.md
