@@ -63,7 +63,7 @@ class PlaybookGenerator:
                 }
             )
 
-        with open(os.path.join(os.getcwd(), "playbook", "_toc.yaml"), "w") as f:
+        with open(os.path.join(os.getcwd(), "playbook", "_toc.yml"), "w") as f:
             toc = {
                 "format": "jb-article",
                 "root": "intro",
