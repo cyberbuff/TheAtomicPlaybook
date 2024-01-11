@@ -32,7 +32,7 @@ class AttackTechnique:
         self.name = name
 
     @staticmethod
-    def from_dict(obj: Any) -> 'AttackTechnique':
+    def from_dict(obj: Any) -> "AttackTechnique":
         assert isinstance(obj, dict)
         id = from_str(obj.get("id"))
         name = from_str(obj.get("name"))
@@ -45,7 +45,7 @@ class AttackTechnique:
         return result
 
     def to_markdown(self) -> str:
-        return f'### Att&ckTechnique \n {self.id} - {self.name}'
+        return f"### Att&ckTechnique \n {self.id} - {self.name}"
 
 
 class ShieldBaseObject:
@@ -57,7 +57,7 @@ class ShieldBaseObject:
         self.description = description
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ShieldBaseObject':
+    def from_dict(obj: Any) -> "ShieldBaseObject":
         assert isinstance(obj, dict)
         id = from_str(obj.get("id"))
         description = from_str(obj.get("description"))
@@ -72,32 +72,32 @@ class ShieldBaseObject:
 
 class Opportunity(ShieldBaseObject):
     @staticmethod
-    def from_dict(obj: Any) -> 'Opportunity':
+    def from_dict(obj: Any) -> "Opportunity":
         assert isinstance(obj, dict)
         id = from_str(obj.get("id"))
         description = from_str(obj.get("description"))
         return Opportunity(id, description)
 
     def to_markdown(self) -> str:
-        return f'#### Opportunity\n{self.description}'
+        return f"#### Opportunity\n{self.description}"
 
 
 class UseCase(ShieldBaseObject):
     @staticmethod
-    def from_dict(obj: Any) -> 'UseCase':
+    def from_dict(obj: Any) -> "UseCase":
         assert isinstance(obj, dict)
         id = from_str(obj.get("id"))
         description = from_str(obj.get("description"))
         return UseCase(id, description)
 
     def to_markdown(self) -> str:
-        return f'#### Use Case\n{self.description}'
+        return f"#### Use Case\n{self.description}"
 
 
 class Procedure(ShieldBaseObject):
     # TODO: Change static initializers for all base objects.
     @staticmethod
-    def from_dict(obj: Any) -> 'Procedure':
+    def from_dict(obj: Any) -> "Procedure":
         assert isinstance(obj, dict)
         id = from_str(obj.get("id"))
         description = from_str(obj.get("description"))
@@ -114,15 +114,14 @@ class ShieldTechnique:
     description: str
     long_description: str
 
-    def __init__(self, id: str, name: str, description: str,
-                 long_description: str):
+    def __init__(self, id: str, name: str, description: str, long_description: str):
         self.id = id
         self.name = name
         self.description = description
         self.long_description = long_description
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ShieldTechnique':
+    def from_dict(obj: Any) -> "ShieldTechnique":
         assert isinstance(obj, dict)
         id = from_str(obj.get("id"))
         name = from_str(obj.get("name"))
@@ -140,7 +139,7 @@ class ShieldTechnique:
 
     def to_markdown(self) -> str:
         # Since Opportunity is an array, it will have a common title.
-        return f'### {self.name} \n {self.description} \n\n {self.long_description}'
+        return f"### {self.name} \n {self.description} \n\n {self.long_description}"
 
 
 class ShieldElement:
@@ -151,8 +150,15 @@ class ShieldElement:
     technique: ShieldTechnique
     procedures: List[Procedure]
 
-    def __init__(self, attack_id: str, attack_technique: AttackTechnique, opportunity: Opportunity,
-                 use_case: UseCase, technique: ShieldTechnique, procedures: List[Procedure]):
+    def __init__(
+            self,
+            attack_id: str,
+            attack_technique: AttackTechnique,
+            opportunity: Opportunity,
+            use_case: UseCase,
+            technique: ShieldTechnique,
+            procedures: List[Procedure],
+    ):
         self.attack_id = attack_id
         self.attack_technique = attack_technique
         self.opportunity = opportunity
@@ -161,34 +167,34 @@ class ShieldElement:
         self.procedures = procedures
 
     @staticmethod
-    def from_dict(obj: Any) -> 'ShieldElement':
+    def from_dict(obj: Any) -> "ShieldElement":
         assert isinstance(obj, dict)
         attack_id = from_str(obj.get("attack_id"))
-        attack_technique = AttackTechnique.from_dict(
-            obj.get("attack_technique"))
+        attack_technique = AttackTechnique.from_dict(obj.get("attack_technique"))
         opportunity = Opportunity.from_dict(obj.get("opportunity"))
         use_case = UseCase.from_dict(obj.get("use_case"))
         technique = ShieldTechnique.from_dict(obj.get("technique"))
         procedures = from_list(Procedure.from_dict, obj.get("procedures"))
-        return ShieldElement(attack_id, attack_technique,
-                             opportunity, use_case, technique, procedures)
+        return ShieldElement(
+            attack_id, attack_technique, opportunity, use_case, technique, procedures
+        )
 
     def to_dict(self) -> dict:
         result: dict = {}
         result["attack_id"] = from_str(self.attack_id)
-        result["attack_technique"] = to_class(
-            AttackTechnique, self.attack_technique)
+        result["attack_technique"] = to_class(AttackTechnique, self.attack_technique)
         result["opportunity"] = to_class(Opportunity, self.opportunity)
         result["use_case"] = to_class(UseCase, self.use_case)
         result["technique"] = to_class(ShieldTechnique, self.technique)
         result["procedures"] = from_list(
-            lambda x: to_class(
-                Procedure, x), self.procedures)
+            lambda x: to_class(Procedure, x), self.procedures
+        )
         return result
 
     def to_markdown(self) -> str:
-        procedures_md = "#### Procedures\n" + \
-                        "\n".join([x.to_markdown() for x in self.procedures])
+        procedures_md = "#### Procedures\n" + "\n".join(
+            [x.to_markdown() for x in self.procedures]
+        )
         return f"""
 ## Shield Active Defense
 {self.technique.to_markdown()}
